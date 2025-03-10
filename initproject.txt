@@ -1,6 +1,3 @@
-<<<<<<< HEAD
 Este es el archivo origen de main
-=======
 Este es el archivo del texto extendido
 Estoy aprendiendo Github
->>>>>>> texto-expandido
