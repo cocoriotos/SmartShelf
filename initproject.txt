@@ -1,1 +1,2 @@
-Este es el archivo del lab
+Este es el archivo del texto extendido
+Estoy aprendiendo Github
