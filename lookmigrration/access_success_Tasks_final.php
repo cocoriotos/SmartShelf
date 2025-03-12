@@ -82,6 +82,7 @@ $global_username=$_POST['email'];
 $_SESSION['email']=$global_username;
 $local_username=$_SESSION['email'];
 $password=$_POST['password'];
+$admrole =0;
 
 	if($_POST)
  {
@@ -90,7 +91,7 @@ $password=$_POST['password'];
   $db_pass="C0mp13t3501ut10n5*";
   $db_name="u927778197_appsdb";
   $conn=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
-  
+
 		if(mysqli_connect_errno()) 
 					{	
 					include("No_DB_Connectionfinal.php");
@@ -135,8 +136,10 @@ $password=$_POST['password'];
 
 				$query10="select adm_role from videotips_app_access_list where username ='$local_username'"; 
 				$result10=mysqli_query($conn, $query10);
+				$admrole = $result4->fetch_assoc()['adm_role'];
 				
-				if ($result10 > 0){
+				if ($admrole > 0){
+					$admrole = 0;
 					header("refresh:0; url=appmgmt.php");
 					exit();
 				}
