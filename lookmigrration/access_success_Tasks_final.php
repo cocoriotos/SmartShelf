@@ -136,7 +136,7 @@ $admrole =0;
 
 				$query10="select adm_role from videotips_app_access_list where username ='$local_username'"; 
 				$result10=mysqli_query($conn, $query10);
-				$admrole = $result4->fetch_assoc()['adm_role'];
+				$admrole = $result10->fetch_assoc()['adm_role'];
 				
 				if ($admrole > 0){
 					$admrole = 0;
