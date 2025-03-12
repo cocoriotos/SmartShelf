@@ -1,0 +1,279 @@
+@charset "utf-8"; /* characters to be used*/
+
+font-face /*Fonts*/ {
+  font-family: arial; /*To charge text fonts and ensuring fonts, TTF fonts loaded in apache folder*/
+  src: url(arial.ttf); /*Font file location, it must be in apache folder publication*/
+}
+
+HR /*head TOP*/ {
+  /*-moz-transform:scale(1);	
+	 -ms-transform:scale(1);	
+	 -o-transform:scale(1);
+	 -webkit-transform:scale(1);*/
+  width: 1600px;
+  border-radius: 10px;
+  font-family: arial;
+  margin: 15px auto;
+}
+
+header /* where  title is*/ {
+  /*float:bottom;*/
+  height: 100px;
+  color: #0c316d;
+  background-color: #032642;
+  width: 98%;
+  font-family: arial;
+  border-radius: 15px;
+  margin: 15px auto;
+  text-shadow: white 5px 5px 20px;
+}
+
+head /*where  title is*/ {
+  /*float:bottom;*/
+  height: 100px;
+  color: #0c316d;
+  background-color: #032642;
+  width: 1600px;
+  font-family: arial;
+}
+
+body {
+  /*background-color:#0c316d; /* background color in the entire page, body is the entire page*/
+  background-color: white;
+  font-size: 80%;
+  height: 100px;
+  font-family: arial;
+}
+
+h1 {
+  text-align: center;
+  /*font:strong 5.4em Arial;*/
+  font-size: 320%;
+  font-family: arial;
+}
+
+h6 {
+  color: white;
+  font-size: 115%;
+  margin: auto;
+  font-family: arial;
+}
+
+tab li {
+  font-size: 100%;
+  font-family: arial;
+}
+
+th,
+td {
+  color: black;
+  font-family: arial;
+}
+
+ul {
+  font-size: 115%;
+  font-family: arial;
+}
+
+footer {
+  background-color: #0085c3; /* background color for footer  only*/
+  width: 98%;
+  font-family: arial;
+  margin: 40px auto;
+  border-radius: 15px;
+  text-shadow: white 5px 5px 20px;
+}
+
+#notes {
+  background-color: #0085c3; /* background color for footer  only*/
+  width: 98%;
+  font-family: arial;
+  margin: 40px auto;
+  border-radius: 15px;
+  text-shadow: white 5px 5px 20px;
+}
+
+#resume {
+  background-color: white;
+  /*text-color:black;*/
+  font-family: arial;
+}
+
+#contact {
+  background-color: #032642;
+  width: 98%;
+  margin: 40px auto;
+  font-family: arial;
+}
+
+#cancel {
+  font-size: 150%;
+  /*background-color:#5F9EA0;*/
+  margin: 40px auto;
+  padding: 5px;
+  background: gray;
+  box-shadow: #999 5px 5px 10px;
+  width: 600px;
+  font-family: arial;
+}
+
+#login,
+#accessrequestform,
+#accessrequestform,
+#AddUser {
+  font-size: 105%;
+  background-color: #5f9ea0;
+  margin: 40px auto;
+  padding: 5px;
+  background: gray;
+  box-shadow: #999 5px 5px 10px;
+  width: 600px;
+  border-radius: 10px;
+  font-family: arial;
+}
+
+.inputdata,
+.inputdata1 input {
+  margin-left: 0.5em;
+  width: 50%;
+  height: 2em;
+  font-size: 15%;
+  font-family: arial;
+}
+
+.inputdata,
+.inputdata1 label {
+  position: absolute;
+  font-family: arial;
+}
+
+/*.inputdata1 	input
+{
+		margin-left: 0.5em;
+		width:50%;
+		height:2em;
+		font-size:15%;		
+		font-family: arial;
+	}
+	
+	.inputdata1 label
+{
+		position:absolute;	
+		font-family: arial;
+	}*/
+
+#username,
+#username1,
+#access {
+  font-size: 200%;
+  font-family: arial;
+}
+/*#username1 
+	{
+		font-size:200%;
+		margin-left: 2em;
+		font-family: arial;
+	}*/
+
+#img_login,
+#img_fix {
+  size: 1200%;
+  font-family: arial;
+}
+
+#form_title1 {
+  font-size: 140%;
+  position: absolute;
+  margin-left: 0.5em;
+  font-family: arial;
+}
+#form_title {
+  font-size: 32px;
+  margin-left: 0.05em;
+  font-family: arial;
+}
+*/ #Register,
+#Signout {
+  font-size: 100%;
+  background-color: #0085c3;
+  margin: 40px auto;
+  padding: 5px;
+  background: gray;
+  box-shadow: #999 5px 5px 10px;
+  width: 600px;
+  font-family: arial;
+}
+
+#div Display {
+  background-color: red;
+  box-shadow: #999 5px 5px 10px;
+}
+
+/* Style the list */
+ul.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 5px double #ccc;
+  background-color: #f1f1f1;
+  font-family: arial;
+}
+
+/* Float the list items side by side */
+ul.tab li {
+  float: left;
+  font-family: arial;
+}
+
+/* Style the links inside the list items */
+ul.tab li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 30px;
+  font-family: arial;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+  background-color: #ddd;
+  font-family: arial;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus,
+.active {
+  background-color: #ccc;
+  font-family: arial;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  font-family: arial;
+}
+
+#loginbutton,
+#requestaccess,
+#registerbutton,
+#cancelbutton,
+#submitbutton {
+  /*font-size:250%;*/
+  font-family: arial;
+  display: inline-block;
+  /*margin-left: 10px;*/
+}
+
+#main {
+  font-size: 250%;
+  font-family: arial;
+  display: inline-block;
+  margin-right: 10px;
+}

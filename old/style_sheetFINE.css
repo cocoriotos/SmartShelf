@@ -1,0 +1,463 @@
+@charset "utf-8"; /* characters to be used*/
+
+
+
+font-face /*Fonts*/
+			{	
+				font-family:arial;/*To charge text fonts and ensuring fonts, TTF fonts loaded in apache folder*/ 
+				src:url(arial.ttf); /*Font file location, it must be in apache folder publication*/		  
+			}
+
+HR /*head TOP*/
+	{
+	width:100%; 
+	max-width :1600px;
+    font-family: arial;
+	margin: 15px auto;
+	box-sizing: border-box;
+	}
+
+header /* where  title is*/
+	{
+		/*height:100%;*/
+        color:#0c316d;
+		background-color:#032642;
+		width:98%;
+		font-family: arial;
+		border-radius:15px;
+		margin: 15px auto;
+		text-shadow: white 5px 5px 20px;
+}
+
+head /*where  title is*/
+	{
+		/*float:bottom;*/
+		/*height:100%;*/
+        color:#0c316d;
+		background-color:#032642;
+		width:98%;
+		font-family: arial;
+}
+
+body {
+		/*background-color:#0c316d; /* background color in the entire page, body is the entire page*/
+		/*background-color:white;*/
+		width: 100%;
+		font-size:80%;
+		/*height:100vh;*/
+		font-family: arial;
+		background-image: url('img/background.jpg');
+		background-size: cover;
+		background-position: center center ;
+		background-repeat: no-repeat;
+	}
+
+	@media (max-width: 768px) {
+		body {
+			background-size: contain; /* Ajusta la imagen para que quepa completamente en la pantalla */
+			background-position: center center; /* Asegura que se mantenga centrada */
+		}
+	}
+
+	h1
+	   {
+		text-align:center;
+		/*font:strong 5.4em Arial;*/
+		font-size:320%;
+		font-family: arial;
+	  }
+	
+	h6 
+	   {
+		color:white;
+		font-size:115%;
+		margin:auto;		
+		font-family: arial;
+	  }
+	  
+	tab li
+	  {
+	 font-size:100%;
+	 font-family: arial;
+	  }
+	 
+	 th, td
+	 {
+		 color:black;
+		 font-family: arial;
+	 }
+
+	 th{
+		text-align: center;
+	 }
+	 
+	 ul{
+		font-size:115%; 
+		font-family: arial;
+	 }
+	 
+	 footer
+	{
+		background-color:#0085c3; /* background color for footer  only*/	
+		width:98%;
+		font-family: arial;
+		margin:40px auto;
+		border-radius:15px;
+		text-shadow: white 5px 5px 20px;
+	}
+	
+   	#notes
+	{
+		background-color:#0085c3; /* background color */	
+		width:98%;
+		font-family: arial;
+		margin:40px auto;
+		border-radius:15px;
+		text-shadow: white 5px 5px 20px;
+	}
+
+	
+	#resume {
+		background-color:white;
+		/*text-color:black;*/
+		font-family:arial;
+	}
+	
+	
+	#contact
+	{
+	background-color:#032642;
+	width:98%;
+	margin:40px auto;
+	font-family: arial;
+	padding: 20px;
+	max-width: 1200px;
+	}
+	
+	
+	#cancel
+       {
+		font-size:150%;
+		/*background-color:#5F9EA0;*/
+		margin:40px auto;
+		padding:5px;
+		background:gray;
+		box-shadow:#999 5px 5px 10px;
+		width:600px;
+		font-family: arial;
+	}
+	
+
+#login, #accessrequestform, #accessrequestform, #AddUser
+       {
+		font-size:105%;
+		background-color:#5F9EA0;
+		margin:40px auto;
+		padding:5px;
+		background:gray;
+		box-shadow:#999 5px 5px 10px;
+		width:600px;
+		border-radius: 10px;
+		font-family: arial;
+	}
+
+	.inputdata 	input
+{
+		margin-left: 8em;
+		width:56%;
+		font-size:105%;
+		font-family: arial;
+	}
+	
+	.inputdata  label
+{
+		position:absolute;	
+		font-family: arial;
+	}
+	
+	.inputdata1 	input
+{
+		/*margin-left: 0.5em;*/
+		width:50%;
+		height:2em;
+		font-size:15%;		
+		font-family: arial;
+	}
+	
+	.inputdata1 label
+{
+		position:absolute;	
+		font-family: arial;
+	}
+
+#username, #access
+	{
+		font-size:200%;
+		font-family: arial;
+		
+	}	
+#username1 
+	{
+		font-size:200%;
+		margin-left: 2em;
+		font-family: arial;
+	}
+		
+	
+#img_login, #img_fix
+	{
+		size:1200%;
+		font-family: arial;
+	}
+	
+#form_title1
+	{
+	 font-size:140%;
+     position:absolute;	
+	 margin-left:0.5em;	 
+	 font-family: arial;
+	}
+#form_title
+	{
+	 font-size:32px;
+	 margin-left:0.05em;
+     font-family: arial;
+	}	
+	
+#Register, #Signout
+       {
+		font-size:100%;
+		background-color:#0085c3;
+		margin:40px auto;
+		padding:5px;
+		background:gray;
+		box-shadow:#999 5px 5px 10px;
+		width:600px;
+		font-family: arial;
+	}
+	
+#div Display{
+	background-color:red;
+	box-shadow:#999 5px 5px 10px;
+}
+
+div .column-custom-wrap{
+	width: 80%;
+	margin: auto;
+}
+
+
+ /* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 5px double #ccc;
+	background-color: #f1f1f1;
+	font-family: arial;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left; 
+	font-family: arial;
+}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 30px;
+	font-family: arial;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+	background-color: #ddd; 
+	font-family: arial
+}
+
+/* Create an active/current ink class */
+ul.tab li a:focus, .active {
+	background-color: #ccc;
+	font-family: arial
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+}
+	
+#loginbutton, #requestaccess,  #registerbutton, #cancelbutton, #submitbutton
+	{
+	font-size:250%;
+	font-family: arial;
+	display: inline-block;
+    margin-left: 10px;
+	}
+	
+#main
+	{
+	font-size:250%;
+	font-family: arial;
+	display: inline-block;
+    margin-right: 10px;
+	}
+
+
+#bodyadminmodule, #adminmodulecontainer  {
+	background-color: #D9F2D0;
+	margin: 10px;
+	padding: 0%;
+}
+
+
+#autosearch, #tableswhite {
+	background-color: white;
+}
+
+#welcome {
+	font-size: 35px;
+}
+
+form hr{
+	max-width: 100%;
+	width:80%;
+	border: 1px solid #ccc;
+	margin: 10px auto;
+	box-sizing: border-box;
+}
+
+#autosearch th, #autoserach td {
+	white-space: nowrap; /* Evita el salto de línea dentro de las celdas */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    text-overflow: ellipsis; /* Agrega '...' si el contenido es demasiado largo */
+}
+
+#autosearch td:nth-child(2), #autosearch th:nth-child(2) {
+    /*max-width: 90px; /* Ajusta el valor según el ancho deseado*/
+    width: 70px; /* Ajusta el ancho fijo si es necesario */
+    word-wrap: break-word; /* Permite que los enlaces largos se ajusten al contenido */
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Otros anchos opcionales para las otras columnas */
+#autosearch td:nth-child(3), #autosearch th:nth-child(3),
+#autosearch td:nth-child(4), #autosearch th:nth-child(4) {
+    width: 100px;
+}
+
+#autosearch td:nth-child(5), #autosearch th:nth-child(5){
+    width: 30px;
+}
+#autosearch td:nth-child(6), #autosearch th:nth-child(6) {
+    width: 10px;
+}
+
+/*#autosearch td:nth-child(7), #autosearch th:nth-child(7) {
+    max-width: 20px;
+}*/
+
+
+#autosearch {
+    width: 100%;
+    table-layout: auto; /* Asegura que la tabla se ajuste al contenido */
+}
+
+#autosearch td, #autosearch th {
+    word-wrap: break-word;
+    max-width: 200px; /* Ajustar el valor a tus necesidades */
+}
+
+/* Si deseas un efecto de ocultar el contenido largo con '...':
+   .table td, .table th {
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+   }
+*/
+
+.btn-short {
+    width: 20px;  /* Adjust the width as necessary */
+    margin-right: 10px; /* Space between buttons */
+    display: inline-block;  /* Allow buttons to be next to each other */
+}
+
+.btn {
+    /* Optional: Style the buttons consistently */
+    padding: 10px;  /* Control padding */
+    text-align: center;
+}
+
+/* Personalización de las notificaciones de Alertify */
+
+/* Aumentar el tamaño de la fuente en las notificaciones */
+.ajs-message {
+    font-size: 24px !important; /* Cambia el tamaño de la fuente */
+    font-weight: bold !important; /* Cambiar a negrita si lo deseas */
+}
+
+/* Centrando las notificaciones */
+.ajs-container {
+    font-size: 18px !important;
+	top: 50% !important;          /* Centrado vertical */
+    left: 50% !important;         /* Centrado horizontal */
+    transform: translate(-50%, -50%) !important; /* Ajuste exacto en el centro */
+    position: absolute;
+    z-index: 9999;                /* Asegura que la notificación quede encima de otros elementos */
+}
+
+/* Personalización para las notificaciones de éxito */
+.ajs-success {
+	text-align: center !important;
+	width: 700px !important;
+	height: 30px !important;
+	padding: 5px 15px; /* Añade un poco de relleno para que el texto no toque los bordes */
+	font-size: 22px !important;
+	font-weight: bold !important;  /* Pone el texto en negrita */
+    background-color: #4CAF50 !important;  /* Verde para éxito */
+    color: white !important;
+	display: inline-flex; /* Usamos inline flexbox */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+}
+
+/* Personalización para las notificaciones de error */
+.ajs-error {
+    text-align: center !important;
+	width: 700px !important;
+	height: 30px !important;
+	padding: 5px 15px; /* Añade un poco de relleno para que el texto no toque los bordes */
+	font-size: 22px !important;
+	font-weight: bold !important;  /* Pone el texto en negrita */
+	background-color: #f44336 !important;  /* Rojo para error */
+    color: white !important;
+	display: inline-flex; /* Usamos inline flexbox */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+}
+
+/* Personalización para las notificaciones de advertencia */
+.ajs-warning {
+	text-align: center !important;
+	width: 700px !important;
+	height: 30px !important;
+	padding: 5px 15px; /* Añade un poco de relleno para que el texto no toque los bordes */
+	font-size: 22px !important;
+	font-weight: bold !important;  /* Pone el texto en negrita */
+    background-color: #ff9800 !important;  /* Naranja para advertencia */
+    color: white !important;
+	display: inline-flex; /* Usamos inline flexbox */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+}

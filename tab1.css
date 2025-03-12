@@ -1,0 +1,414 @@
+ /* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 5px double #ccc;
+    background-color: #f1f1f1;
+	font-family: arial;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left; font-family: arial;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 30px;
+	font-family: arial;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd; font-family: arial}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc; font-family: arial}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+}
+
+#form_title2{
+	background-color:gray;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+    margin-left: 5px;	
+}
+
+#form_title3{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 340px;
+    float:auto;
+}
+
+#form_title4{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 245px;
+	float:auto;
+}
+#form_title5{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 195px;
+	float:auto;
+}
+#form_title6{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 225px;
+	float:auto;
+}
+#form_title7{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 193px;
+	float:auto;
+}
+#form_title8{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 143px;
+	float:auto;
+}
+#form_title9{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 260px;
+	float:auto;
+}
+#form_title10{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 270px;
+	float:auto;
+}
+#form_title11{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 240px;
+	float:auto;
+}
+#form_title12{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 223px;
+	float:auto;
+}
+#form_title13{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 187px;
+	float:auto;
+}
+#form_title14{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 213px;
+	float:auto;
+}
+
+#form_title16{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 165px;
+	float:auto;
+}
+#form_title17{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 78px;
+	float:auto;
+}
+#form_title18{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 177px;
+	float:auto;
+}
+#form_title19{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 263px;
+	float:auto;
+}
+
+#form_title20{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title21{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title22{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title23{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title24{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title25{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title26{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title27{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title28{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 255px;
+	float:auto;
+}
+#form_title29{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title30{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title31{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title32{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title33{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title34{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title35{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 246px;
+	float:auto;
+}
+#form_title36{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 250px;
+	float:auto;
+}
+#form_title37{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 250px;
+	float:auto;
+}
+#form_title38{
+	background-color:white;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	border-radius:10px;
+	margin-left: 250px;
+	float:auto;
+}
+
+
+#Display{
+	background-color:#ccc;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	font-family: arial;
+	float:auto;
+}

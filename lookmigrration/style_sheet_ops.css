@@ -1,0 +1,528 @@
+/*---------------nuevas lineas --------------*/
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  color: #032642;
+}
+
+/* Estilos para el contenedor principal */
+.container-fluid {
+  padding: 20px;
+}
+
+/* Estilos para las tarjetas */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los títulos */
+label.col-form-label {
+  font-size: 28px;
+  font-weight: bold;
+  color: #032642;
+}
+
+/* Estilos para los campos de formulario */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #032642;
+}
+
+.form-control:focus {
+  border-color: #032642;
+  box-shadow: 0 0 5px rgba(3, 38, 66, 0.1);
+}
+
+/* Estilos para los botones */
+.btn-success {
+  background-color: #032642;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #0c316d;
+}
+
+.btn-success:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Estilos para la cuadrícula */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  /*background-color: #ffffff;*/
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: flex-end;*/ /* Alinea el contenido hacia la parte inferior */
+  height: 100%; /* Ocupa toda la altura del grid-item */
+}
+
+.grid-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.grid-item-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.grid-item-actions {
+  position: relative;
+}
+
+.grid-item-action-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.grid-item-action-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.grid-item-action-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.grid-item-action-menu button:hover {
+  background-color: #f1f1f1;
+}
+
+.grid-item-body {
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Alinea el contenido hacia la parte inferior */
+  overflow: auto; /* Habilita el desplazamiento si el contenido excede el espacio */
+}
+
+.grid-item-body {
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*justify-content: flex-end;*/ /* Alinea el contenido hacia la parte inferior */
+  overflow: auto; /* Habilita el desplazamiento si el contenido excede el espacio */
+}
+
+.grid-item-body p {
+  margin: 5px 0; /* Espaciado entre párrafos */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+}
+
+.grid-item-body .p-title {
+  font-weight: bold; /* Texto en negrita para los títulos */
+  margin-bottom: 2px; /* Espacio entre el título y el contenido */
+}
+
+.grid-item-body .p-content {
+  white-space: nowrap; /* Evita el salto de línea */
+  /*overflow: hidden;*/ /* Oculta el contenido que excede */
+  /*text-overflow: ellipsis;*/ /* Muestra "..." si el texto es demasiado largo */
+}
+
+.grid-item-body a.btn-primary {
+  /*margin-top: auto;*/ /* Empuja el botón hacia la parte inferior */
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  background-color: #032642;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.grid-item-body a.btn-primary:hover {
+  background-color: #0c316d;
+}
+
+.btn-primary {
+  background-color: #032642;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0c316d;
+}
+/*------------End Nuevas lineas -----------------------*/
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  color: #032642;
+}
+
+/* Estilos para el contenedor principal */
+.container-fluid {
+  padding: 20px;
+}
+
+/* Estilos para las tarjetas */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los títulos */
+label.col-form-label {
+  font-size: 28px;
+  font-weight: bold;
+  color: #032642;
+}
+
+/* Estilos para los campos de formulario */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #032642;
+}
+
+.form-control:focus {
+  border-color: #032642;
+  box-shadow: 0 0 5px rgba(3, 38, 66, 0.1);
+}
+
+/* Estilos para los botones */
+.btn-success {
+  background-color: #032642;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background-color: #0c316d;
+}
+
+.btn-success:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Estilos para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #032642;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para los botones de acción */
+.fas.fa-copy {
+  color: #032642;
+  cursor: pointer;
+}
+
+.fas.fa-copy:hover {
+  color: #0c316d;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+  background-color: #032642 !important;
+  padding: 10px 20px;
+}
+
+.navbar .d-flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en varias líneas */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar .btn {
+  flex: 1; /* Hace que todos los botones tengan el mismo ancho */
+  white-space: nowrap; /* Evita que el texto de los botones se divida en varias líneas */
+  text-align: center; /* Centra el texto dentro del botón */
+  min-width: 0; /* Permite que el botón se ajuste al contenido */
+}
+
+.navbar .btn:hover {
+  opacity: 0.9;
+}
+
+/* Ajustes específicos para móviles */
+@media (max-width: 768px) {
+  .navbar .d-flex {
+    flex-direction: column; /* Coloca los botones en una columna en móviles */
+  }
+
+  .navbar .btn {
+    width: 100%; /* Hace que los botones ocupen todo el ancho en móviles */
+  }
+}
+
+/* Estilos para los botones de la barra de navegación */
+.btn-primary {
+  background-color: #032642;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0c316d;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Estilos para los mensajes de SweetAlert2 */
+.custom-swal-popup {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.custom-swal-title {
+  color: #032642;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.custom-swal-content {
+  color: #555;
+  font-size: 16px;
+}
+
+.custom-swal-confirm-button {
+  background-color: #032642 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+}
+
+.custom-swal-confirm-button:hover {
+  background-color: #0c316d !important;
+}
+
+#tdlink a {
+  display: inline-block;
+  max-width: 300px; /* Ajusta este valor según tus necesidades */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para el buscador */
+
+.search-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px 40px 10px 40px; /* Espacio para los íconos */
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #032642;
+  pointer-events: none; /* Evitar que el ícono interfiera con el input */
+}
+
+.clear-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #032642;
+  cursor: pointer;
+  display: none; /* Ocultar inicialmente */
+}
+
+.clear-icon:hover {
+  color: #0c316d;
+}
+
+/* Estilos para la paginación */
+
+/* Estilos para las cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el contador de cards */
+.total-cards {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #032642;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc; /* Color de la línea */
+  margin: 10px 0; /* Espacio arriba y abajo de la línea */
+}
+
+/* Estilos adicionales para las pestañas */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  margin-bottom: 20px;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #032642;
+  color: white;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
