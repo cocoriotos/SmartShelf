@@ -82,6 +82,7 @@ $global_username=$_POST['email'];
 $_SESSION['email']=$global_username;
 $local_username=$_SESSION['email'];
 $password=$_POST['password'];
+$admrole=0;
 
 	if($_POST)
  {
@@ -142,8 +143,15 @@ $password=$_POST['password'];
 							{	
 								$query5="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), visits = visits+1 where username ='$local_username'"; 
 								$result5=mysqli_query($conn, $query5);
-								header("refresh:0; url=videolinkadminmodule.php");
-								exit();
+								$query10="select arm_role from videotips_app_access_list where username ='$local_username'"; 
+								$result10=mysqli_query($conn, $query10);
+									if ($admrole > 0){
+											header("refresh:0; url=appmgmt.php");
+											exit();
+									} else{
+											header("refresh:0; url=videolinkadminmodule.php");
+											exit();
+									}
 							}
 							else 
 							{
