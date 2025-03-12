@@ -140,7 +140,7 @@ $admrole =0;
 				
 				if ($admrole > 0){
 					$admrole = 0;
-					header("refresh:0; url=appmgmt.php");
+					header("refresh:0; url=AppMgmt.php");
 					exit();
 				}
 
