@@ -3,6 +3,14 @@ session_start();
 $captcha_input = $_POST["captcha"];
 $captchaok = 0;
 
+$to1 = "cocoriotos@hotmail.com, adm@solicionespro.com";
+      $subject1 = "Nuevo Mensaje de SmartShelf";
+      $body1 = "Nombre: $name\nCorreo: $email\nMensaje: $message";
+      $headers1 = "From: adm@solicionespro.com";
+
+      $mail3 = mail($to1, $subject1, $body1, $headers1);
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_POST["name"]) || !isset($_POST["email"]) || !isset($_POST["message"]) || !isset($_POST["captcha"])) {
         echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
