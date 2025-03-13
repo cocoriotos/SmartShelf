@@ -6,7 +6,7 @@ $_SESSION['email'] = $global_username;
 $local_username = $_SESSION['email'];
 $password = $_POST["password"];
 $captcha_input = $_POST["captcha"];
-echo $captcha_input;
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar que los campos existan
@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     timerProgressBar: true,
                     willClose: () => {
                         window.location.href = 'closetaskscon.php';
+                        window.location.href = 'requestaccessfinal.php';
                     }
                 });
             });
