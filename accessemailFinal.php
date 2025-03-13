@@ -89,7 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['Email']);
     $country = mysqli_real_escape_string($conn, $_POST['Country']);
     $city = mysqli_real_escape_string($conn, $_POST['City']);
-    $password = password_hash($_POST['password1'], PASSWORD_DEFAULT);
+    /*$password = password_hash($_POST['password1'], PASSWORD_DEFAULT);*/
+    $password = mysqli_real_escape_string($conn, $_POST['password1']);
 
     $query3 = "SELECT * from videotips_app_access_list where email = '$email'";
     $result3 = $conn->query($query3);
