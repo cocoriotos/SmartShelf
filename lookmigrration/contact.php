@@ -15,7 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $body1 = "Nombre: $name\nCorreo: $email\nMensaje: $message";
   $headers1 = "From: adm@solicionespro.com";
 
-  $mail3 = mail($to1, $subject1, $body1, $headers1);   
+  $mail3 = mail($to1, $subject1, $body1, $headers1);
+  include ("index.php");
 }
 
 ?>
