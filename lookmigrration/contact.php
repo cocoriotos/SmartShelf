@@ -75,6 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          include ("index.php");
          exit();
       }
+      // Destruir el CAPTCHA después de la verificación para evitar reutilización
+      unset($_SESSION["captcha"]);
       if ($captchaok = 1) {
         $to1 = "cocoriotos@hotmail.com, adm@solicionespro.com";
         $subject1 = "Nuevo Mensaje de SmartShelf";
