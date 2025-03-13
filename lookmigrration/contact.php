@@ -4,7 +4,7 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $message = $_POST["message"];
 $captcha_input = $_POST["captcha"];
-$captchaok = 0;
+$captchaok = 1;
 
       
 
@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               });
           });
          </script>";
-         $captchaok = 1;
+         $captchaok = 0;
+         include ("index.php");
          exit();
   }
   if (!isset($_SESSION["captcha"])) {
@@ -48,7 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 });
             });
            </script>";
-           $captchaok = 1;
+           $captchaok = 0;
+           include ("index.php");
            exit();
     }
     // Comparar el CAPTCHA ingresado con el almacenado en sesión
@@ -69,10 +71,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             });
           });
          </script>";
-         $captchaok = 1;
+         $captchaok = 0;
+         include ("index.php");
          exit();
       }
-  include ("index.php");
+      if ($captchaok = 1) {
+        $to1 = "cocoriotos@hotmail.com, adm@solicionespro.com";
+        $subject1 = "Nuevo Mensaje de SmartShelf";
+        $body1 = "Nombre: $name\nCorreo: $email\nMensaje: $message";
+        $headers1 = "From: adm@solicionespro.com";
+      
+        $mail3 = mail($to1, $subject1, $body1, $headers1);
+  
+          // Alerta de éxito y redirección
+          /*echo "El Mensaje fué enviado correctamente";*/
+          echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+          echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  title: 'Mensaje',
+                  text: 'Gracias por contactarnos, estamos revisando tu mensaje y te responderemos pronto.',
+                  icon: 'success',
+                  confirmButtonText: 'Aceptar',
+                  timer: 2000, // 2 segundos antes de redirigir
+                  timerProgressBar: true, // Barra de progreso
+                  willClose: () => {
+                    window.location.href = 'index.php'; // Redirección automática
+                  }
+                  });
+                });
+              </script>";
+              exit();
+      }
 }
 ?>
 
