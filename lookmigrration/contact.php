@@ -1,5 +1,8 @@
 <?php
 session_start();
+$name = $_POST["name"];
+$email = $_POST["email"];
+$message = $_POST["message"];
 $captcha_input = $_POST["captcha"];
 $captchaok = 0;
 
