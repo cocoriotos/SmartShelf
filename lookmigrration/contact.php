@@ -101,7 +101,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 });
               });
             </script>";
-            $captchaok = 0;
             exit();
     } else {
         // Alerta de error y redirección

@@ -103,7 +103,7 @@
         </div>
     </section>
 
-   <!--<section id="contact" class="contact">
+   <section id="contact" class="contact">
         <div class="container">
             <h2>Contáctanos</h2>
             <form action="contact.php" method="POST">
@@ -116,7 +116,7 @@
                 <br>
             </form>
         </div>
-    </section>--> 
+    </section>
 
     <footer>
         <div class="container">
