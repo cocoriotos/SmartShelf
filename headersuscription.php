@@ -15,7 +15,7 @@ $name = $_SESSION['name'];
 
   <center><nav class="navbar navbar-dark bg-dark d-flex justify-content-center align-items-center">
 	        <div class="d-flex flex-wrap flex-grow-1">
-               <input id="headerfonts" type="button" class="btn btn-success btn-block" value="Paypal: YSXRZMT2AAG4G"  style="color: white" onclick="copiarPaypal();">  
+               <input id="headerfonts" type="button" class="btn btn-success btn-block" value="Paypal: YSXRZMT2AAG4G"  style="color: white,font-size: 18px" onclick="copiarPaypal();">  
                <input id="headerfonts" type="button" class="btn btn-success btn-block" value="Ir a Paypal"  style="color: white" onclick="window.open('https://www.paypal.com/', '_blank');"></input>
                <input id="headerfonts" type="button" class="btn btn-success btn-block" value="Nequi: 3054293185" style="color: white" onclick="copiarNumero();">  
                <input id="headerfonts" type="button" class="btn btn-success btn-block" value="Ir a Nequi" style="color: white" onclick="window.open('https://clientes.nequi.com.co/recargas', '_blank');"></input>
