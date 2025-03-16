@@ -53,9 +53,9 @@ if (($result) && ($result1)) {
     $suscriptionstodue = $row2['suscriptionstodue'];
     $row3 = mysqli_fetch_assoc($result3);
     $pendingaccess = $row3['pendingaccess'];
-    /*$row5 = mysqli_fetch_assoc($result5);
+    $row5 = mysqli_fetch_assoc($result5);
     $monthtoduesuscriptions = $row5['monthtoduesuscriptions'];
-    $row6 = mysqli_fetch_assoc($result6);
+    /*$row6 = mysqli_fetch_assoc($result6);
     $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
     $row7 = mysqli_fetch_assoc($result7);
     $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];*/
