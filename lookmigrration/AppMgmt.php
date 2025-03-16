@@ -47,7 +47,7 @@ $result7 = mysqli_query($conn, $quer7);*/
 if (($result) && ($result1)) {
     $row = mysqli_fetch_assoc($result);
     $total_suscriptions = $row['total_suscriptions'];
-    $row1 = mysqli_fetch_assoc($result1);
+    /*$row1 = mysqli_fetch_assoc($result1);
     $active_users = $row1['active_users'];
     $row2 = mysqli_fetch_assoc($result2);
     $suscriptionstodue = $row2['suscriptionstodue'];
@@ -62,8 +62,8 @@ if (($result) && ($result1)) {
 
     
 } else {
-    $total_suscriptores = 0; // En caso de error, mostrar 0
-    $usuarios_activos = 0;
+    $total_suscriptions = 0; // En caso de error, mostrar 0
+    /*$active_users = 0;
     $suscriptionstodue = 0;
     /*$pendingaccess = 0;
     $monthtoduesuscriptions = 0;
@@ -131,7 +131,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                         <div class="grid-item-body">
                             <p class="p-title">Usuarios Activos:</p>
-                            <center><p class="p-content"><?php echo $active_users; ?></p></center>
+                            <!--<center><p class="p-content"><?php /*echo $active_users;*/ ?></p></center>-->
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
