@@ -38,10 +38,10 @@ $query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_l
 $result5 = mysqli_query($conn, $query5);
 
 $query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
-$result6 = mysqli_query($conn, $quer6);
+$result6 = mysqli_query($conn, $query6);
 
-/*$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
-$result7 = mysqli_query($conn, $quer7);*/
+$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
+$result7 = mysqli_query($conn, $query7);
 
 
 if (($result) && ($result1)) {
@@ -57,8 +57,8 @@ if (($result) && ($result1)) {
     $monthtoduesuscriptions = $row5['monthtoduesuscriptions'];
     $row6 = mysqli_fetch_assoc($result6);
     $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
-    /*$row7 = mysqli_fetch_assoc($result7);
-    $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];*/
+    $row7 = mysqli_fetch_assoc($result7);
+    $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];
 
     
 } else {
