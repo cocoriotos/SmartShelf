@@ -31,10 +31,10 @@ $result1 = mysqli_query($conn, $query1);
 $query2 = "SELECT COUNT(*) as suscritpionstodue FROM videotips_app_access_list WHERE (active = 1 and suscriptionpayed = 1 and suscriptiondaysleft > 335 and suscriptionkind = 'De Pago')";
 $result2 = mysqli_query($conn, $query2);
 
-/*$query3 = "SELECT COUNT(*) as pendingaccess FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
+$query3 = "SELECT COUNT(*) as pendingaccess FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
 $result3 = mysqli_query($conn, $query3);
 
-$query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30)";
+/*$query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30)";
 $result5 = mysqli_query($conn, $query5);
 
 $query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60)";
@@ -51,9 +51,9 @@ if (($result) && ($result1)) {
     $active_users = $row1['active_users'];
     $row2 = mysqli_fetch_assoc($result2);
     $suscriptionstodue = $row2['suscriptionstodue'];
-    /*$row3 = mysqli_fetch_assoc($result3);
+    $row3 = mysqli_fetch_assoc($result3);
     $pendingaccess = $row3['pendingaccess'];
-    $row5 = mysqli_fetch_assoc($result5);
+    /*$row5 = mysqli_fetch_assoc($result5);
     $monthtoduesuscriptions = $row5['monthtoduesuscriptions'];
     $row6 = mysqli_fetch_assoc($result6);
     $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
@@ -65,8 +65,8 @@ if (($result) && ($result1)) {
     $total_suscriptores = 0; // En caso de error, mostrar 0
     $usuarios_activos = 0;
     $suscriptionstodue = 0;
-    /*$pendingaccess = 0;
-    $monthtoduesuscriptions = 0;
+    $pendingaccess = 0;
+    /*$monthtoduesuscriptions = 0;
     $twomothtoduesuscriptions = 0;
     $trimothtoduesuscriptions = 0;*/
 }
@@ -143,7 +143,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                         <div class="grid-item-body">
                             <p class="p-title">Accesos Pendientes:</p>
-                            <!--<center><p class="p-content"><?php /*echo $pendingaccess; */?></p></center>-->
+                            <center><p class="p-content"><?php echo $pendingaccess; ?></p></center>
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
