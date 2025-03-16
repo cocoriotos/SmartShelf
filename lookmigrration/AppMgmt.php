@@ -37,10 +37,10 @@ $result3 = mysqli_query($conn, $query3);
 $query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30";
 $result5 = mysqli_query($conn, $query5);
 
-/*$query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
+$query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
 $result6 = mysqli_query($conn, $quer6);
 
-$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
+/*$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
 $result7 = mysqli_query($conn, $quer7);*/
 
 
@@ -55,9 +55,9 @@ if (($result) && ($result1)) {
     $pendingaccess = $row3['pendingaccess'];
     $row5 = mysqli_fetch_assoc($result5);
     $monthtoduesuscriptions = $row5['monthtoduesuscriptions'];
-    /*$row6 = mysqli_fetch_assoc($result6);
+    $row6 = mysqli_fetch_assoc($result6);
     $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
-    $row7 = mysqli_fetch_assoc($result7);
+    /*$row7 = mysqli_fetch_assoc($result7);
     $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];*/
 
     
