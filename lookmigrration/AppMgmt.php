@@ -31,8 +31,8 @@ $result1 = mysqli_query($conn, $query1);
 $query2 = "SELECT COUNT(*) FROM videotips_app_access_list WHERE (active = 1 and suscriptionpayed = 1 and suscriptiondaysleft > 335 and suscriptionkind = 'De Pago')";
 $result2 = mysqli_query($conn, $query2);
 
-$query3 = "SELECT COUNT(*) FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
-$result3 = mysqli_query($conn, $query3);
+/*$query3 = "SELECT COUNT(*) FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
+$result3 = mysqli_query($conn, $query3);*/
 
 /*$query5 = "SELECT COUNT(*) FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30)";
 $result5 = mysqli_query($conn, $query5);
@@ -62,8 +62,8 @@ if (($result) && ($result1)) {
 
     
 } else {
-    $total_suscriptions = 0; // En caso de error, mostrar 0
-    /*$active_users = 0;
+    $total_suscriptores = 0; // En caso de error, mostrar 0
+    $usuarios_activos = 0;
     $suscriptionstodue = 0;
     /*$pendingaccess = 0;
     $monthtoduesuscriptions = 0;
