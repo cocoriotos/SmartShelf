@@ -37,11 +37,11 @@ $result3 = mysqli_query($conn, $query3);
 $query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30";
 $result5 = mysqli_query($conn, $query5);
 
-/*$query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60)";
+$query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
 $result6 = mysqli_query($conn, $quer6);
 
-$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90)";
-$result7 = mysqli_query($conn, $quer7);*/
+$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
+$result7 = mysqli_query($conn, $quer7);
 
 
 if (($result) && ($result1)) {
@@ -55,10 +55,10 @@ if (($result) && ($result1)) {
     $pendingaccess = $row3['pendingaccess'];
     $row5 = mysqli_fetch_assoc($result5);
     $monthtoduesuscriptions = $row5['monthtoduesuscriptions'];
-    /*$row6 = mysqli_fetch_assoc($result6);
+    $row6 = mysqli_fetch_assoc($result6);
     $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
     $row7 = mysqli_fetch_assoc($result7);
-    $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];*/
+    $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];
 
     
 } else {
@@ -67,8 +67,8 @@ if (($result) && ($result1)) {
     $suscriptionstodue = 0;
     $pendingaccess = 0;
     $monthtoduesuscriptions = 0;
-    /*$twomothtoduesuscriptions = 0;
-    $trimothtoduesuscriptions = 0;*/
+    $twomothtoduesuscriptions = 0;
+    $trimothtoduesuscriptions = 0;
 }
 
 // Verificar si el usuario está autenticado (si $_SESSION['email'] está definido)
@@ -158,10 +158,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <center><p class="p-content"><?php echo $suscriptionstodue; ?></p></center>
                             <p class="p-title">A un Mes:</p>
                             <center><p class="p-content"><?php echo $monthtoduesuscriptions; ?></p></center>
-                            <!--<p class="p-title">A dos Meses:</p>
+                            <p class="p-title">A dos Meses:</p>
                             <center><p class="p-content"><?php /*echo $twomothtoduesuscriptions; */?></p></center>
                             <p class="p-title">A tres Meses:</p>
-                            <center><p class="p-content"><?php /*echo $trimothtoduesuscriptions; */?></p></center>-->
+                            <center><p class="p-content"><?php /*echo $trimothtoduesuscriptions; */?></p></center>
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
