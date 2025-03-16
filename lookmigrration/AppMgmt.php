@@ -34,7 +34,7 @@ $result2 = mysqli_query($conn, $query2);
 $query3 = "SELECT COUNT(*) as pendingaccess FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
 $result3 = mysqli_query($conn, $query3);
 
-$query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30)";
+$query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30";
 $result5 = mysqli_query($conn, $query5);
 
 /*$query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60)";
