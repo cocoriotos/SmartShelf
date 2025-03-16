@@ -155,10 +155,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                         <div class="grid-item-body">
                             <p class="p-title">Total Suscripciones:</p>
-                            <center><p class="p-content"><?php /*echo $suscriptionstodue;*/ ?></p></center>
-                            <!--<p class="p-title">A un Mes:</p>
-                            <center><p class="p-content"><?php /*echo $monthtoduesuscriptions; */?></p></center>
-                            <p class="p-title">A dos Meses:</p>
+                            <center><p class="p-content"><?php echo $suscriptionstodue; ?></p></center>
+                            <p class="p-title">A un Mes:</p>
+                            <center><p class="p-content"><?php echo $monthtoduesuscriptions; ?></p></center>
+                            <!--<p class="p-title">A dos Meses:</p>
                             <center><p class="p-content"><?php /*echo $twomothtoduesuscriptions; */?></p></center>
                             <p class="p-title">A tres Meses:</p>
                             <center><p class="p-content"><?php /*echo $trimothtoduesuscriptions; */?></p></center>-->
