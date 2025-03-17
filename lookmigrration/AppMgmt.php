@@ -43,7 +43,7 @@ $result6 = mysqli_query($conn, $query6);
 $query7 = "SELECT COUNT(*) as threesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
 $result7 = mysqli_query($conn, $query7);
 
-$query8 = "SELECT COUNT(*) as fouruscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
+$query8 = "SELECT COUNT(*) as foursuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
 $result8 = mysqli_query($conn, $query8);
 
 $query9 = "SELECT COUNT(*) as fivesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 121 and 150";
@@ -121,10 +121,10 @@ if (($result) && ($result1)) {
     $sixsuscriptions = 0;
     $sevensuscriptions = 0;
     $eightsuscriptions = 0;
-    $ninefivesuscriptions = 0;
+    $ninesuscriptions = 0;
     $tensuscriptions = 0;
-    $elevesuscriptions = 0;
-    $twelvemonthoduesuscriptions = 0;
+    $elevensuscriptions = 0;
+    $twelvesuscriptions = 0;
 }
 
 // Verificar si el usuario está autenticado (si $_SESSION['email'] está definido)
@@ -227,11 +227,11 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <p class="p-title">A Ocho Meses:</p>
                             <center><p class="p-content"><?php echo $eightsuscriptions; ?></p></center>
                             <p class="p-title">A Nueve Meses:</p>
-                            <center><p class="p-content"><?php echo $ninefivesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $ninesuscriptions; ?></p></center>
                             <p class="p-title">A Diez Meses:</p>
                             <center><p class="p-content"><?php echo $tensuscriptions; ?></p></center>
                             <p class="p-title">A Once Meses:</p>
-                            <center><p class="p-content"><?php echo $elevesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $elevensuscriptions; ?></p></center>
                             <p class="p-title">A Doce Meses:</p>
                             <center><p class="p-content"><?php echo $twelvesuscriptions; ?></p></center>
                             <a href="#" class="btn-primary">Ver Detalles</a>
