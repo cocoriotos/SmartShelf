@@ -43,6 +43,34 @@ $result6 = mysqli_query($conn, $query6);
 $query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
 $result7 = mysqli_query($conn, $query7);
 
+$query8 = "SELECT COUNT(*) as fourmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
+$result8 = mysqli_query($conn, $query8);
+
+$query9 = "SELECT COUNT(*) as fivemothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 121 and 150";
+$result9 = mysqli_query($conn, $query9);
+
+$query10 = "SELECT COUNT(*) as sixmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 151 and 180";
+$result10 = mysqli_query($conn, $query10);
+
+$query11 = "SELECT COUNT(*) as sevenmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 181 and 210";
+$result11 = mysqli_query($conn, $query11);
+
+$query12 = "SELECT COUNT(*) as eightmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 211 and 240";
+$result12 = mysqli_query($conn, $query12);
+
+$query13 = "SELECT COUNT(*) as ninemothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 241 and 270";
+$result13 = mysqli_query($conn, $query13);
+
+$query14 = "SELECT COUNT(*) as tenmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 271 and 300";
+$result14 = mysqli_query($conn, $query14);
+
+$query15 = "SELECT COUNT(*) as elevenmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 301 and 330";
+$result15 = mysqli_query($conn, $query15);
+
+$query16 = "SELECT COUNT(*) as twelvemothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 331 and 366";
+$result16 = mysqli_query($conn, $query16);
+
+
 
 if (($result) && ($result1)) {
     $row = mysqli_fetch_assoc($result);
@@ -59,6 +87,25 @@ if (($result) && ($result1)) {
     $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
     $row7 = mysqli_fetch_assoc($result7);
     $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];
+    $row8 = mysqli_fetch_assoc($result8);
+    $fourmothtoduesuscriptions = $row8['fourmothtoduesuscriptions'];
+    $row9 = mysqli_fetch_assoc($result9);
+    $fivementhoduesuscriptions = $row8['fivementhoduesuscriptions'];
+    $row10 = mysqli_fetch_assoc($result10);
+    $sixmenthoduesuscriptions = $row8['sixmenthoduesuscriptions'];
+    $row11 = mysqli_fetch_assoc($result11);
+    $sevenmenthoduesuscriptions = $row8['sevenmenthoduesuscriptions'];
+    $row12 = mysqli_fetch_assoc($result12);
+    $eightmenthoduesuscriptions = $row8['eightmenthoduesuscriptions'];
+    $row13 = mysqli_fetch_assoc($result13);
+    $ninefivementhoduesuscriptions = $row8['ninefivementhoduesuscriptions'];
+    $row14 = mysqli_fetch_assoc($result14);
+    $tenmenthoduesuscriptions = $row8['tenmenthoduesuscriptions'];
+    $row15 = mysqli_fetch_assoc($result15);
+    $elevementhoduesuscriptions = $row8['elevementhoduesuscriptions'];
+    $row16 = mysqli_fetch_assoc($result16);
+    $twelvemonthoduesuscriptions = $row8['twelvemonthoduesuscriptions'];
+    
 
     
 } else {
@@ -69,6 +116,15 @@ if (($result) && ($result1)) {
     $monthtoduesuscriptions = 0;
     $twomothtoduesuscriptions = 0;
     $trimothtoduesuscriptions = 0;
+    $fourmothtoduesuscriptions = 0;
+    $fivementhoduesuscriptions = 0;
+    $sixmenthoduesuscriptions = 0;
+    $sevenmenthoduesuscriptions = 0;
+    $eightmenthoduesuscriptions = 0;
+    $ninefivementhoduesuscriptions = 0;
+    $tenmenthoduesuscriptions = 0;
+    $elevementhoduesuscriptions = 0;
+    $twelvemonthoduesuscriptions = 0;
 }
 
 // Verificar si el usuario está autenticado (si $_SESSION['email'] está definido)
@@ -154,14 +210,30 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <div class="grid-item-title">Suscripciones por Vencer</div>
                         </div>
                         <div class="grid-item-body">
-                            <p class="p-title">Total Suscripciones:</p>
-                            <center><p class="p-content"><?php echo $suscriptionstodue; ?></p></center>
-                            <p class="p-title">A un Mes:</p>
+                            <p class="p-title">A Un Mes:</p>
                             <center><p class="p-content"><?php echo $monthtoduesuscriptions; ?></p></center>
-                            <p class="p-title">A dos Meses:</p>
+                            <p class="p-title">A Dos Meses:</p>
                             <center><p class="p-content"><?php echo $twomothtoduesuscriptions; ?></p></center>
-                            <p class="p-title">A tres Meses:</p>
+                            <p class="p-title">A Tres Meses:</p>
                             <center><p class="p-content"><?php echo $trimothtoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Cuatro Meses:</p>
+                            <center><p class="p-content"><?php echo $fourmothtoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Cinco Meses:</p>
+                            <center><p class="p-content"><?php echo $fivementhoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Seis Meses:</p>
+                            <center><p class="p-content"><?php echo $sixmenthoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Siete Meses:</p>
+                            <center><p class="p-content"><?php echo $sevenmenthoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Ocho Meses:</p>
+                            <center><p class="p-content"><?php echo $eightmenthoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Nueve Meses:</p>
+                            <center><p class="p-content"><?php echo $ninefivementhoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Diez Meses:</p>
+                            <center><p class="p-content"><?php echo $tenmenthoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Once Meses:</p>
+                            <center><p class="p-content"><?php echo $elevementhoduesuscriptions; ?></p></center>
+                            <p class="p-title">A Doce Meses:</p>
+                            <center><p class="p-content"><?php echo $twelvemonthoduesuscriptions; ?></p></center>
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
