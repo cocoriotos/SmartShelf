@@ -210,31 +210,18 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <div class="grid-item-title">Suscripciones por Vencer en:</div>
                         </div>
                         <div class="grid-item-body">
-                        <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $monthsuscriptions; ?></span></p>
-                            <p class="p-title">A 1 Mes: <?php echo $monthsuscriptions; ?></p>
-                            <center><p class="p-content"><?php echo $monthsuscriptions; ?></p></center>
-                            <p class="p-title">A Dos Meses:</p>
-                            <center><p class="p-content"><?php echo $twosuscriptions; ?></p></center>
-                            <p class="p-title">A Tres Meses:</p>
-                            <center><p class="p-content"><?php echo $threesuscriptions; ?></p></center>
-                            <p class="p-title">A Cuatro Meses:</p>
-                            <center><p class="p-content"><?php echo $foursuscriptions; ?></p></center>
-                            <p class="p-title">A Cinco Meses:</p>
-                            <center><p class="p-content"><?php echo $fivesuscriptions; ?></p></center>
-                            <p class="p-title">A Seis Meses:</p>
-                            <center><p class="p-content"><?php echo $sixsuscriptions; ?></p></center>
-                            <p class="p-title">A Siete Meses:</p>
-                            <center><p class="p-content"><?php echo $sevensuscriptions; ?></p></center>
-                            <p class="p-title">A Ocho Meses:</p>
-                            <center><p class="p-content"><?php echo $eightsuscriptions; ?></p></center>
-                            <p class="p-title">A Nueve Meses:</p>
-                            <center><p class="p-content"><?php echo $ninesuscriptions; ?></p></center>
-                            <p class="p-title">A Diez Meses:</p>
-                            <center><p class="p-content"><?php echo $tensuscriptions; ?></p></center>
-                            <p class="p-title">A Once Meses:</p>
-                            <center><p class="p-content"><?php echo $elevensuscriptions; ?></p></center>
-                            <p class="p-title">A Doce Meses:</p>
-                            <center><p class="p-content"><?php echo $twelvesuscriptions; ?></p></center>
+                            <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $monthsuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $twosuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 3 Meses&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $threesuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $foursuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $fivesuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $sixsuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $sevensuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $eightsuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $ninesuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $tensuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $elevensuscriptions; ?></span></p>
+                            <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $twelvesuscriptions; ?></span></p>
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
