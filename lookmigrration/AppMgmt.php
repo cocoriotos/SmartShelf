@@ -166,7 +166,6 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 
         <!-- Contenido de las pestañas -->
         <div id="Operaciones" class="tabcontent">
-            <label class="col-form-label">Operaciones</label>
             <div class="grid-container">
                 <div class="grid-item">
                     <div class="grid-item-content">
