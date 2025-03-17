@@ -526,3 +526,17 @@ hr {
   border: 1px solid #ccc;
   border-top: none;
 }
+
+.p-title {
+  display: flex;
+  justify-content: space-between; /* Esto alinea los elementos a los extremos */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+}
+
+.left-text {
+  text-align: left;
+}
+
+.right-text {
+  text-align: right;
+}
