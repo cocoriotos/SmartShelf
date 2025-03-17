@@ -90,21 +90,21 @@ if (($result) && ($result1)) {
     $row8 = mysqli_fetch_assoc($result8);
     $foursuscriptions = $row8['foursuscriptions'];
     $row9 = mysqli_fetch_assoc($result9);
-    $fivesuscriptions = $row8['fivesuscriptions'];
+    $fivesuscriptions = $row9['fivesuscriptions'];
     $row10 = mysqli_fetch_assoc($result10);
-    $sixsuscriptions = $row8['sixsuscriptions'];
+    $sixsuscriptions = $row10['sixsuscriptions'];
     $row11 = mysqli_fetch_assoc($result11);
-    $sevensuscriptions = $row8['sevensuscriptions'];
+    $sevensuscriptions = $row11['sevensuscriptions'];
     $row12 = mysqli_fetch_assoc($result12);
-    $eightsuscriptions = $row8['eightsuscriptions'];
+    $eightsuscriptions = $row12['eightsuscriptions'];
     $row13 = mysqli_fetch_assoc($result13);
-    $ninesuscriptions = $row8['ninesuscriptions'];
+    $ninesuscriptions = $row13['ninesuscriptions'];
     $row14 = mysqli_fetch_assoc($result14);
-    $tensuscriptions = $row8['tensuscriptions'];
+    $tensuscriptions = $row14['tensuscriptions'];
     $row15 = mysqli_fetch_assoc($result15);
-    $elevensuscriptions = $row8['elevensuscriptions'];
+    $elevensuscriptions = $row15['elevensuscriptions'];
     $row16 = mysqli_fetch_assoc($result16);
-    $twelvesuscriptions = $row8['twelvesuscriptions'];
+    $twelvesuscriptions = $row16['twelvesuscriptions'];
     
 
     
