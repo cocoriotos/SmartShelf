@@ -527,16 +527,14 @@ hr {
   border-top: none;
 }
 
-.p-title {
-  display: flex;
-  justify-content: space-between; /* Esto alinea los elementos a los extremos */
-  width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+.green {
+  color: green;
 }
 
-.left-text {
-  text-align: left;
+.orange {
+  color: orange;
 }
 
-.right-text {
-  text-align: right;
+.red {
+  color: red;
 }
