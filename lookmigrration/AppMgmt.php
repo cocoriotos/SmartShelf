@@ -40,7 +40,7 @@ $result5 = mysqli_query($conn, $query5);
 $query6 = "SELECT COUNT(*) as twosuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
 $result6 = mysqli_query($conn, $query6);
 
-$query7 = "SELECT COUNT(*) as trisuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
+$query7 = "SELECT COUNT(*) as threesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
 $result7 = mysqli_query($conn, $query7);
 
 $query8 = "SELECT COUNT(*) as fouruscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
@@ -113,17 +113,17 @@ if (($result) && ($result1)) {
     $usuarios_activos = 0;
     $suscriptionstodue = 0;
     $pendingaccess = 0;
-    $monthtoduesuscriptions = 0;
-    $twomothtoduesuscriptions = 0;
-    $trimothtoduesuscriptions = 0;
-    $fourmothtoduesuscriptions = 0;
-    $fivementhoduesuscriptions = 0;
-    $sixmenthoduesuscriptions = 0;
-    $sevenmenthoduesuscriptions = 0;
-    $eightmenthoduesuscriptions = 0;
-    $ninefivementhoduesuscriptions = 0;
-    $tenmenthoduesuscriptions = 0;
-    $elevementhoduesuscriptions = 0;
+    $monthsuscriptions = 0;
+    $twosuscriptions = 0;
+    $threesuscriptions = 0;
+    $foursuscriptions = 0;
+    $fivesuscriptions = 0;
+    $sixsuscriptions = 0;
+    $sevensuscriptions = 0;
+    $eightsuscriptions = 0;
+    $ninefivesuscriptions = 0;
+    $tensuscriptions = 0;
+    $elevesuscriptions = 0;
     $twelvemonthoduesuscriptions = 0;
 }
 
@@ -211,29 +211,29 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                         <div class="grid-item-body">
                             <p class="p-title">A Un Mes:</p>
-                            <center><p class="p-content"><?php echo $monthtoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $monthsuscriptions; ?></p></center>
                             <p class="p-title">A Dos Meses:</p>
-                            <center><p class="p-content"><?php echo $twomothtoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $twosuscriptions; ?></p></center>
                             <p class="p-title">A Tres Meses:</p>
-                            <center><p class="p-content"><?php echo $trimothtoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $trisuscriptions; ?></p></center>
                             <p class="p-title">A Cuatro Meses:</p>
-                            <center><p class="p-content"><?php echo $fourmothtoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $foursuscriptions; ?></p></center>
                             <p class="p-title">A Cinco Meses:</p>
-                            <center><p class="p-content"><?php echo $fivementhoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $fivesuscriptions; ?></p></center>
                             <p class="p-title">A Seis Meses:</p>
-                            <center><p class="p-content"><?php echo $sixmenthoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $sixsuscriptions; ?></p></center>
                             <p class="p-title">A Siete Meses:</p>
-                            <center><p class="p-content"><?php echo $sevenmenthoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $sevensuscriptions; ?></p></center>
                             <p class="p-title">A Ocho Meses:</p>
-                            <center><p class="p-content"><?php echo $eightmenthoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $eightsuscriptions; ?></p></center>
                             <p class="p-title">A Nueve Meses:</p>
-                            <center><p class="p-content"><?php echo $ninefivementhoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $ninefivesuscriptions; ?></p></center>
                             <p class="p-title">A Diez Meses:</p>
-                            <center><p class="p-content"><?php echo $tenmenthoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $tensuscriptions; ?></p></center>
                             <p class="p-title">A Once Meses:</p>
-                            <center><p class="p-content"><?php echo $elevementhoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $elevesuscriptions; ?></p></center>
                             <p class="p-title">A Doce Meses:</p>
-                            <center><p class="p-content"><?php echo $twelvemonthoduesuscriptions; ?></p></center>
+                            <center><p class="p-content"><?php echo $twelvesuscriptions; ?></p></center>
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
