@@ -34,40 +34,40 @@ $result2 = mysqli_query($conn, $query2);
 $query3 = "SELECT COUNT(*) as pendingaccess FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
 $result3 = mysqli_query($conn, $query3);
 
-$query5 = "SELECT COUNT(*) as monthtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30";
+$query5 = "SELECT COUNT(*) as monthsuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30";
 $result5 = mysqli_query($conn, $query5);
 
-$query6 = "SELECT COUNT(*) as twomothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
+$query6 = "SELECT COUNT(*) as twosuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
 $result6 = mysqli_query($conn, $query6);
 
-$query7 = "SELECT COUNT(*) as trimothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
+$query7 = "SELECT COUNT(*) as trisuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
 $result7 = mysqli_query($conn, $query7);
 
-$query8 = "SELECT COUNT(*) as fourmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
+$query8 = "SELECT COUNT(*) as fouruscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
 $result8 = mysqli_query($conn, $query8);
 
-$query9 = "SELECT COUNT(*) as fivemothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 121 and 150";
+$query9 = "SELECT COUNT(*) as fivesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 121 and 150";
 $result9 = mysqli_query($conn, $query9);
 
-$query10 = "SELECT COUNT(*) as sixmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 151 and 180";
+$query10 = "SELECT COUNT(*) as sixsuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 151 and 180";
 $result10 = mysqli_query($conn, $query10);
 
-$query11 = "SELECT COUNT(*) as sevenmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 181 and 210";
+$query11 = "SELECT COUNT(*) as sevensuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 181 and 210";
 $result11 = mysqli_query($conn, $query11);
 
-$query12 = "SELECT COUNT(*) as eightmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 211 and 240";
+$query12 = "SELECT COUNT(*) as eightsuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 211 and 240";
 $result12 = mysqli_query($conn, $query12);
 
-$query13 = "SELECT COUNT(*) as ninemothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 241 and 270";
+$query13 = "SELECT COUNT(*) as ninesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 241 and 270";
 $result13 = mysqli_query($conn, $query13);
 
-$query14 = "SELECT COUNT(*) as tenmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 271 and 300";
+$query14 = "SELECT COUNT(*) as tensuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 271 and 300";
 $result14 = mysqli_query($conn, $query14);
 
-$query15 = "SELECT COUNT(*) as elevenmothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 301 and 330";
+$query15 = "SELECT COUNT(*) as elevensuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 301 and 330";
 $result15 = mysqli_query($conn, $query15);
 
-$query16 = "SELECT COUNT(*) as twelvemothtoduesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 331 and 366";
+$query16 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 331 and 366";
 $result16 = mysqli_query($conn, $query16);
 
 
@@ -82,29 +82,29 @@ if (($result) && ($result1)) {
     $row3 = mysqli_fetch_assoc($result3);
     $pendingaccess = $row3['pendingaccess'];
     $row5 = mysqli_fetch_assoc($result5);
-    $monthtoduesuscriptions = $row5['monthtoduesuscriptions'];
+    $monthsuscriptions = $row5['monthsuscriptions'];
     $row6 = mysqli_fetch_assoc($result6);
-    $twomothtoduesuscriptions = $row6['twomothtoduesuscriptions'];
+    $twosuscriptions = $row6['twosuscriptions'];
     $row7 = mysqli_fetch_assoc($result7);
-    $trimothtoduesuscriptions = $row7['trimothtoduesuscriptions'];
+    $threesuscriptions = $row7['threesuscriptions'];
     $row8 = mysqli_fetch_assoc($result8);
-    $fourmothtoduesuscriptions = $row8['fourmothtoduesuscriptions'];
+    $foursuscriptions = $row8['foursuscriptions'];
     $row9 = mysqli_fetch_assoc($result9);
-    $fivementhoduesuscriptions = $row8['fivementhoduesuscriptions'];
+    $fivesuscriptions = $row8['fivesuscriptions'];
     $row10 = mysqli_fetch_assoc($result10);
-    $sixmenthoduesuscriptions = $row8['sixmenthoduesuscriptions'];
+    $sixsuscriptions = $row8['sixsuscriptions'];
     $row11 = mysqli_fetch_assoc($result11);
-    $sevenmenthoduesuscriptions = $row8['sevenmenthoduesuscriptions'];
+    $sevensuscriptions = $row8['sevensuscriptions'];
     $row12 = mysqli_fetch_assoc($result12);
-    $eightmenthoduesuscriptions = $row8['eightmenthoduesuscriptions'];
+    $eightsuscriptions = $row8['eightsuscriptions'];
     $row13 = mysqli_fetch_assoc($result13);
-    $ninefivementhoduesuscriptions = $row8['ninefivementhoduesuscriptions'];
+    $ninesuscriptions = $row8['ninesuscriptions'];
     $row14 = mysqli_fetch_assoc($result14);
-    $tenmenthoduesuscriptions = $row8['tenmenthoduesuscriptions'];
+    $tensuscriptions = $row8['tensuscriptions'];
     $row15 = mysqli_fetch_assoc($result15);
-    $elevementhoduesuscriptions = $row8['elevementhoduesuscriptions'];
+    $elevensuscriptions = $row8['elevensuscriptions'];
     $row16 = mysqli_fetch_assoc($result16);
-    $twelvemonthoduesuscriptions = $row8['twelvemonthoduesuscriptions'];
+    $twelvesuscriptions = $row8['twelvesuscriptions'];
     
 
     
