@@ -223,9 +223,9 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <a href="#" class="btn-primary">Ver Detalles</a>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
+    </div>
 
         <div id="Administracion" class="tabcontent">
             <label class="col-form-label">Administración</label>

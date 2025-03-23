@@ -521,10 +521,12 @@ hr {
 }
 
 .tabcontent {
-  display: none;
+  /*display: none;*/
   padding: 20px;
   border: 1px solid #ccc;
   border-top: none;
+  justify-content: space-between; /* Distribuye los divs de manera equitativa */
+  gap: 10px; /* Puedes ajustar el espacio entre los divs */
 }
 
 .green {
