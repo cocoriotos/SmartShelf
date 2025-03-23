@@ -239,7 +239,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item-body">
                             <p class="p-title">Renovaciones</p>
                             <p class="p-content">Rehabilitar accesos</p>
-                            <a class="btn-primary" onclick="openTab(event, 'Reportes')">Usuarios</a>
+                            <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Usuarios</a>
                         </div>
                     </div>
                 </div>
@@ -316,12 +316,12 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
         </div>
 
         <div id="Suscriptions" class="tabcontent">
-            <label class="col-form-label">Reportes y Estadísticas</label>
+            <label class="col-form-label">Suscripciones</label>
             <div class="grid-container">
                 <div class="grid-item">
                     <div class="grid-item-content">
                         <div class="grid-item-header">
-                            <div class="grid-item-title">Reporte de Suscripciones</div>
+                            <div class="grid-item-title">Listado de usuarios Activos</div>
                         </div>
                         <div class="grid-item-body">
                             <p class="p-title">Total Suscripciones:</p>
@@ -330,18 +330,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                     </div>
                 </div>
-                <div class="grid-item">
-                    <div class="grid-item-content">
-                        <div class="grid-item-header">
-                            <div class="grid-item-title">Estadísticas de Visitas</div>
-                        </div>
-                        <div class="grid-item-body">
-                            <p class="p-title">Visitas Totales:</p>
-                            <p class="p-content">10,000</p>
-                            <a href="#" class="btn-primary">Ver Estadísticas</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
 
