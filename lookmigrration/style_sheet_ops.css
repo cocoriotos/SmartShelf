@@ -522,6 +522,7 @@ hr {
 
 .tabcontent {
   /*display: none;*/
+  display: flex;
   padding: 20px;
   border: 1px solid #ccc;
   border-top: none;
