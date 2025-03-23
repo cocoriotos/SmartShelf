@@ -1,6 +1,6 @@
 <!-- Developed by Julián González Bucheli -->
 <html>
-<p?php
+<?php
 include "sessions.php";
 include "sessionvalidation.php";
 include "headermgmt.php";
@@ -230,18 +230,6 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
         <div id="Administracion" class="tabcontent">
             <label class="col-form-label">Administración</label>
             <div class="grid-container">
-                <!--<div class="grid-item">
-                    <div class="grid-item-content">
-                        <div class="grid-item-header">
-                            <div class="grid-item-title">Suscripciones </div>
-                        </div>
-                        <div class="grid-item-body">
-                            <p class="p-title">Renovaciones:</p>
-                            <p class="p-content">Habilitar Accesso</p>
-                            <p class="btn-primary" onclick="openTab(event, 'Operacionesasa')">Pendientes</p>
-                        </div>
-                    </div>
-                </div>-->
                 <div class="grid-item">
                     <div class="grid-item-content">
                         <div class="grid-item-header">
@@ -266,18 +254,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                     </div>
                 </div>
-                <div class="grid-item">
-                    <div class="grid-item-content">
-                        <div class="grid-item-header">
-                            <div class="grid-item-title"></div>
-                        </div>
-                        <div class="grid-item-body">
-                            <p class="p-title">Plantilla de Correo:</p>
-                            <p class="p-content">Promoción Especial</p>
-                            <a href="#" class="btn-primary">Enviar Correo</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
 
