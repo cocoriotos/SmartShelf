@@ -381,7 +381,9 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     </div>
                 </div>
         </div>
+</div>        
 </body>
+
     <script>
         // Función para abrir pestañas
         function openTab(evt, tabName) {
