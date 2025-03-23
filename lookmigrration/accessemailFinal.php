@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message .= "Dear Customer, you will be receiving Tool admin message advising if was granted or denied your request \n\n";
         $message .= "Email Application sender";
         $header = "From: adm@solicionespro.com" . "\r\n";
-        $header .= "Bcc: cocoriotos@hotmail.com\r\n";
+        $header .= "Bcc: adm@solicionespro.com\r\n";
         $header .= "Reply-To: noreply@solicionespro.com" . "\r\n";
         $header .= "X-Mailer: PHP/" . phpversion();
 
@@ -160,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message .= "Gracias por su registro, ya puede ingresar a la app desde este enlace https://solicionespro.com/SmartShelf/videotrackerauth.php con su usuario $email y la contraseña que escogió. \n\n";
         $message .= "Puedes también ingresar por este enlace donde podrás obtener más información importante de la aplicación así como videos tutoriales y manual del usuario https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5. \n\n";
         $header = "From: adm@solicionespro.com" . "\r\n";
-        $header .= "Bcc: cocoriotos@hotmail.com\r\n";
+        $header .= "Bcc: adm@solicionespro.com\r\n";
         $header .= "X-Mailer: PHP/" . phpversion();
 
         $mail1 = mail($to, $subject, $message, $header);
