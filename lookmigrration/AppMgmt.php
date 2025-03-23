@@ -1,6 +1,6 @@
 <!-- Developed by Julián González Bucheli -->
 <html>
-<d?php
+<?php
 include "sessions.php";
 include "sessionvalidation.php";
 include "headermgmt.php";
@@ -153,7 +153,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
 </head>
 
-< id="bodyadminmodule" style="padding: 0%;">
+<body id="bodyadminmodule" style="padding: 0%;">
     <div class="container-fluid">
         <!-- Barra de navegación -->
         
@@ -229,7 +229,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 
         <div id="Administracion" class="tabcontent">
             <label class="col-form-label">Administración</label>
-            <div class="grid-container">
+     <div class="grid-container">
 
             <div class="grid-item">
                     <div class="grid-item-content">
@@ -381,7 +381,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     </div>
                 </div>
         </div>
-</div>
+</body>
     <script>
         // Función para abrir pestañas
         function openTab(evt, tabName) {
