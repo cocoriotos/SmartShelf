@@ -67,8 +67,7 @@ label.col-form-label {
 
 /* Estilos para la cuadrícula */
 .grid-container {
-  display: flex;
-  /*display: grid;*/
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
@@ -522,7 +521,6 @@ hr {
 }
 
 .tabcontent {
-  /*display: none;*/
   display: flex;
   padding: 20px;
   border: 1px solid #ccc;
