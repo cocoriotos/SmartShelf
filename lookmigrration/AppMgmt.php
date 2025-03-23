@@ -316,25 +316,71 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
         </div>
 
         <div id="Suscriptions" class="tabcontent">
-            <label class="col-form-label">Suscripciones</label>
-            <div class="grid-container">
-                <div class="grid-item">
-                    <div class="grid-item-content">
-                        <div class="grid-item-header">
-                            <div class="grid-item-title">Listado de usuarios Activos</div>
-                        </div>
-                        <div class="grid-item-body">
-                            <p class="p-title">Total Suscripciones:</p>
-                            <p class="p-content">500</p>
-                            <a href="#" class="btn-primary">Generar Reporte</a>
+                <label class="col-form-label">Suscripciones</label>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Listado de usuarios Activos</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Total Suscripciones:</p>
+                                <p class="p-content">500</p>
+                                <a href="#" class="btn-primary">Generar Reporte</a>
+                                
+                                <!-- Tabla de usuarios -->
+                                <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Active</th>
+                                            <th>Suscription Kind</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Conexión a la base de datos MySQL
+                                        $servername = "localhost";  // Cambia según tu servidor
+                                        $username = "root";         // Tu usuario de la base de datos
+                                        $password = "";             // Tu contraseña de la base de datos
+                                        $dbname = "mi_base_de_datos"; // Cambia al nombre de tu base de datos
+
+                                        // Crear conexión
+                                        $conn = new mysqli($servername, $username, $password, $dbname);
+
+                                        // Verificar la conexión
+                                        if ($conn->connect_error) {
+                                            die("Conexión fallida: " . $conn->connect_error);
+                                        }
+
+                                        // Consulta SQL
+                                        $sql = "SELECT username, active, suscription_kind FROM userslist";
+                                        $result = $conn->query($sql);
+
+                                        // Mostrar los resultados en la tabla
+                                        if ($result->num_rows > 0) {
+                                            // Iterar a través de los resultados y mostrarlos en la tabla
+                                            while ($row = $result->fetch_assoc()) {
+                                                echo "<tr>";
+                                                echo "<td>" . $row['username'] . "</td>";
+                                                echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
+                                                echo "<td>" . $row['suscription_kind'] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                        } else {
+                                            echo "<tr><td colspan='3'>No hay usuarios activos</td></tr>";
+                                        }
+
+                                        // Cerrar la conexión
+                                        $conn->close();
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-            </div>
         </div>
-
-    </div>
 
     <script>
         // Función para abrir pestañas
