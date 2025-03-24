@@ -224,11 +224,11 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
                             <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptions < 8) ? 'green' : (($twelvesuscriptions >= 9 && $twelvesuscriptions <= 10) ? 'orange' : ($twelvesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptions; ?></span></span></p>
                             <a href="#" class="btn-primary">Ver Detalles</a>
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
+    
 
     <div id="Administracion" class="tabcontent">
             <label class="col-form-label">Administración</label>
@@ -427,7 +427,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 </div>
             </div>
     </div>
-
+</div>
     <script>
         // Función para abrir pestañas
         function openTab(evt, tabName) {
