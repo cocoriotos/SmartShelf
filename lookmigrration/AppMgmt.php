@@ -343,7 +343,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         echo "<tr>";
                                         echo "<td>" . $row['username'] . "</td>";
                                         echo "<td>" . ($row['active'] ? 'Yes' : 'No') . "</td>";
-                                        echo "<td>" . $row['suscriptionactive'] . "</td>";
+                                        echo "<td>" . ($row['suscriptionactive'] ? 'Yes' : 'No'). "</td>";
                                         echo "<td>" . $row['suscriptionkind'] . "</td>";
                                         echo "</tr>";
                                     }
