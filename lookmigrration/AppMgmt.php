@@ -239,6 +239,19 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 <div class="grid-item-title">Suscripciones</div>
                             </div>
                             <div class="grid-item-body">
+                                <p class="p-title">Potenciales Usuarios a contactar</p>
+                                <p class="p-content">Inactivos</p>
+                                <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="grid-container">
+                <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Suscripciones</div>
+                            </div>
+                            <div class="grid-item-body">
                                 <p class="p-title">Renovaciones</p>
                                 <p class="p-content">Rehabilitar accesos</p>
                                 <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
@@ -321,7 +334,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 <div class="grid-item1">
                     <div class="grid-item-content1">
                         <div class="grid-item-header">
-                            <div class="grid-item-title">Listado de Usuarios Inactivos</div>
+                            <div class="grid-item-title">Usuarios Inactivos</div>
                         </div>
                         
                         <table border="1" cellpadding="5" cellspacing="0" class="user-table">
@@ -356,6 +369,56 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     }
                                 } else {
                                     echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+
+
+                <div class="grid-item1">
+                    <div class="grid-item-content1">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Usuarios Activos en Trial</div>
+                        </div>
+                        
+                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Usuario</th>
+                                    <th>Usuario Activo</th>
+                                    <th>Suscripción Activa</th>
+                                    <th>Tipo de Suscripción</th>
+                                    <th>Días en Trial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Consulta SQL
+                                $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind, trialdaysleft FROM videotips_app_access_list where active = 1 and suscriptionactive = 0 and suscriptionkind = 'Trial' and trialdaysleft < 16)";
+                                $result = $conn->query($sql);
+
+                                // Mostrar los resultados en la tabla
+                                if ($result->num_rows > 0) {
+                                    // Iterar a través de los resultados y mostrarlos en la tabla
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['lastname'] . "</td>";
+                                        echo "<td>" . $row['username'] . "</td>";
+                                        echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
+                                        echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
+                                        echo "<td>" . $row['suscriptionkind'] . "</td>";
+                                        echo "<td>" . $row['trialdaysleft'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
                                 }
                                 ?>
                             </tbody>
