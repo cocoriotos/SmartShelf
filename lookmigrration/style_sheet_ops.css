@@ -89,6 +89,14 @@ label.col-form-label {
   /*justify-content: flex-end;*/ /* Alinea el contenido hacia la parte inferior */
   height: 100%; /* Ocupa toda la altura del grid-item */
 }
+.grid-item-content1 {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  table-layout: auto; /* Ajusta las columnas según el contenido */
+}
 
 .grid-item-header {
   display: flex;

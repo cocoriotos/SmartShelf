@@ -316,7 +316,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             <label class="col-form-label">Suscripciones</label>
             <div class="grid-container">
                 <div class="grid-item">
-                    <div class="grid-item-content">
+                    <div class="grid-item-content1">
                         <div class="grid-item-header">
                             <div class="grid-item-title">Listado de Usuarios Inactivos</div>
                         </div>
@@ -342,7 +342,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     while ($row = $result->fetch_assoc()) {
                                         echo "<tr>";
                                         echo "<td>" . $row['username'] . "</td>";
-                                        echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
+                                        echo "<td>" . ($row['active'] ? 'Yes' : 'No') . "</td>";
                                         echo "<td>" . $row['suscriptionactive'] . "</td>";
                                         echo "<td>" . $row['suscriptionkind'] . "</td>";
                                         echo "</tr>";
