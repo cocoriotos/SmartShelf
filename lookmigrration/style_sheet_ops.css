@@ -83,8 +83,16 @@ label.col-form-label {
 }
 
 .grid-item1 {
-  /*background-color: #ffffff;*/
-  height: 100vh;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0 10px; /* Margen de 10px a los lados */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
+}
+
+.grid-item-content1 {
+  display: inline-block; /* Permite que el ancho se ajuste al contenido */
+  overflow-x: auto; /* Agrega desplazamiento horizontal si la tabla es muy ancha */
 }
 
 .grid-item-content {
@@ -93,11 +101,6 @@ label.col-form-label {
   flex-direction: column;
   /*justify-content: flex-end;*/ /* Alinea el contenido hacia la parte inferior */
   height: 100%; /* Ocupa toda la altura del grid-item */
-}
-.grid-item-content1 {
-  overflow-x: auto;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-  margin: 0 10px; /* Margen de 10px a los lados */
 }
 
 .user-table {
