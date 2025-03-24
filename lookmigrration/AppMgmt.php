@@ -386,6 +386,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
         // Abrir la pestaña por defecto al cargar la página
         document.getElementById("defaultOpen").click();
     </script>
+</div>
 </body>
 
 </html>
