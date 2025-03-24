@@ -166,7 +166,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <button class="tablinks" onclick="openTab(event, 'Administracion')">Administración</button>
                     <button class="tablinks" onclick="openTab(event, 'Reportes')">Reportes y Estadísticas</button>
                 </div>
-    </div>
+    
                 <!-- Contenido de las pestañas -->
                 <div id="Operaciones" class="tabcontent">
                     <div class="grid-container">
