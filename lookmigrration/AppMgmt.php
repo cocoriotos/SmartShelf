@@ -157,7 +157,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 </head>
 
 <body id="bodyadminmodule" style="padding: 0%;">
-    <di class="container-fluid">
+    <div class="container-fluid">
                 <!-- Barra de navegación -->
                 
                 <!-- Pestañas -->
@@ -278,46 +278,46 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <label class="col-form-label">Suscripciones</label>
                     <div class="grid-container">
                     <div class="grid-item1">
-                     <div class="grid-item-content1">
-                         <div class="grid-item-header">
-                                     <div class="grid-item-title">Usuarios Inactivos</div>
-                         </div> 
-                            <table border="1" cellpadding="5" cellspacing="0" class="user-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Usuario</th>
-                                            <th>Usuario Activo</th>
-                                            <th>Suscripción Activa</th>
-                                            <th>Tipo de Suscripción</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        /* Consulta SQL */
-                                        $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
-                                        $result = $conn->query($sql);
-                                        // Mostrar los resultados en la tabla
-                                        if ($result->num_rows > 0) {
-                                            // Iterar a través de los resultados y mostrarlos en la tabla
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<tr>";
-                                                echo "<td>" . $row['name'] . "</td>";
-                                                echo "<td>" . $row['lastname'] . "</td>";
-                                                echo "<td>" . $row['username'] . "</td>";
-                                                echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
-                                                echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
-                                                echo "<td>" . $row['suscriptionkind'] . "</td>";
-                                                echo "</tr>";
-                                                }   
-                                            } else {
-                                        echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
-                                        }
-                                    ?>
-                                    </tbody>
-                            </table>
-                     </div>
+                            <div class="grid-item-content1">
+                                <div class="grid-item-header">
+                                            <div class="grid-item-title">Usuarios Inactivos</div>
+                                </div> 
+                                    <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Apellido</th>
+                                                    <th>Usuario</th>
+                                                    <th>Usuario Activo</th>
+                                                    <th>Suscripción Activa</th>
+                                                    <th>Tipo de Suscripción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                /* Consulta SQL */
+                                                $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
+                                                $result = $conn->query($sql);
+                                                // Mostrar los resultados en la tabla
+                                                if ($result->num_rows > 0) {
+                                                    // Iterar a través de los resultados y mostrarlos en la tabla
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        echo "<tr>";
+                                                        echo "<td>" . $row['name'] . "</td>";
+                                                        echo "<td>" . $row['lastname'] . "</td>";
+                                                        echo "<td>" . $row['username'] . "</td>";
+                                                        echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
+                                                        echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
+                                                        echo "<td>" . $row['suscriptionkind'] . "</td>";
+                                                        echo "</tr>";
+                                                        }   
+                                                    } else {
+                                                echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
+                                                }
+                                            ?>
+                                            </tbody>
+                                    </table>
+                            </div>
                     </div>
                     <div class="grid-item1">
                      <div class="grid-item-content1">
