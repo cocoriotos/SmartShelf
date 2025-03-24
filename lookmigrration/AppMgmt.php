@@ -355,9 +355,9 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<td>" . $row['trialdaysleft'] . "</td>";
                                                 echo "</tr>";
                                              }
-                                        } else {
+                                        } else {*/
                                                  echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
-                                        }*/
+                                        /*}*/
                                         ?>
                                 </tbody>
                             </table>
