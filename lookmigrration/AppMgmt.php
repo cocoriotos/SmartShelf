@@ -157,7 +157,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 </head>
 
 <body id="bodyadminmodule" style="padding: 0%;">
-    < class="container-fluid">
+    <div class="container-fluid">
                 <!-- Barra de navegación -->
                 
                 <!-- Pestañas -->
