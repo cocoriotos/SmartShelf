@@ -82,6 +82,16 @@ label.col-form-label {
   flex-direction: column;
 }
 
+.grid-item1 {
+  /*background-color: #ffffff;*/
+  height: 100vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
 .grid-item-content {
   padding: 20px;
   display: flex;
