@@ -83,7 +83,7 @@ label.col-form-label {
 }
 
 .grid-item1 {
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  min-width: 100vh; /* Ocupa toda la altura de la pantalla */
   margin: 0 10px; /* Margen de 10px a los lados */
   display: flex;
   justify-content: center; /* Centra el contenido horizontalmente */
