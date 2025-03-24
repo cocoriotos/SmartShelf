@@ -324,6 +324,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <table border="1" cellpadding="5" cellspacing="0" class="user-table">
                             <thead>
                                 <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
                                     <th>Usuario</th>
                                     <th>Usuario Activo</th>
                                     <th>Suscripción Activa</th>
@@ -333,7 +335,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <tbody>
                                 <?php
                                 // Consulta SQL
-                                $sql = "SELECT username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 1 and suscriptionactive = 1 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
+                                $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
                                 $result = $conn->query($sql);
 
                                 // Mostrar los resultados en la tabla
@@ -341,6 +343,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     // Iterar a través de los resultados y mostrarlos en la tabla
                                     while ($row = $result->fetch_assoc()) {
                                         echo "<tr>";
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['lastname'] . "</td>";
                                         echo "<td>" . $row['username'] . "</td>";
                                         echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
                                         echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
@@ -348,7 +352,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         echo "</tr>";
                                     }
                                 } else {
-                                    echo "<tr><td colspan='4'>No hay usuarios activos</td></tr>";
+                                    echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
                                 }
                                 ?>
                             </tbody>
