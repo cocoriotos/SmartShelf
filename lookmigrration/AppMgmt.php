@@ -166,7 +166,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <button class="tablinks" onclick="openTab(event, 'Administracion')">Administración</button>
                     <button class="tablinks" onclick="openTab(event, 'Reportes')">Reportes y Estadísticas</button>
                 </div>
-
+    </div>
                 <!-- Contenido de las pestañas -->
                 <div id="Operaciones" class="tabcontent">
                     <div class="grid-container">
@@ -275,26 +275,25 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     </div>
             </div>
             <div id="Suscriptions" class="tabcontent">
-                    <label class="col-form-label">Suscripciones</label>
-                    <div class="grid-container">
-                        <div class="grid-item1">
-                            <div class="grid-item-content1">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Usuarios Inactivos</div>
-                                </div>
-                                
-                                <table border="1" cellpadding="5" cellspacing="0" class="user-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Usuario</th>
-                                            <th>Usuario Activo</th>
-                                            <th>Suscripción Activa</th>
-                                            <th>Tipo de Suscripción</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                    <label class="col-form-label">Suscripciones</label>
+                    <div class="grid-container">
+                    <div class="grid-item1">
+                     <div class="grid-item-content1">
+                         <div class="grid-item-header">
+                                     <div class="grid-item-title">Usuarios Inactivos</div>
+                         </div> 
+                            <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Usuario</th>
+                                            <th>Usuario Activo</th>
+                                            <th>Suscripción Activa</th>
+                                            <th>Tipo de Suscripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                         <?php
                                         /* Consulta SQL */
                                         $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
@@ -316,31 +315,29 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
                                         }
                                     ?>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                        <div class="grid-item1">
-                            <div class="grid-item-content1">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Usuarios Activos en Trial</div>
-                                </div>
-                                
-                                <table border="1" cellpadding="5" cellspacing="0" class="user-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Usuario</th>
-                                            <th>Usuario Activo</th>
-                                            <th>Suscripción Activa</th>
-                                            <th>Tipo de Suscripción</th>
-                                            <th>Días en Trial</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="grid-item1">
+                          <div class="grid-item-content1">
+                                <div class="grid-item-header">
+                                    <div class="grid-item-title">Usuarios Activos en Trial</div>
+                                </div>
+                                <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                                <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Usuario</th>
+                                            <th>Usuario Activo</th>
+                                            <th>Suscripción Activa</th>
+                                            <th>Tipo de Suscripción</th>
+                                            <th>Días en Trial</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
                                         // Consulta SQL
                                         $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind, trialdaysleft FROM videotips_app_access_list where active = 1 and suscriptionactive = 0 and suscriptionkind = 'Trial' and trialdaysleft < 16)";
                                         $result = $conn->query($sql);
@@ -362,14 +359,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                  echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
                                         }
                                         ?>
-                                    </tbody>
-                                </table>
-                        
-                            </div>
-                        </div>
-                    </div>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
             </div>   
-    </div>             
+                 
 
     <script>
         // Función para abrir pestañas
