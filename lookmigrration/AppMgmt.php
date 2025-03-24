@@ -245,7 +245,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     </div>
                                 </div>
                         </div>
-                    <div class="grid-container">
+                    <!--<div class="grid-container">-->
                         <div class="grid-item">
                                    <div class="grid-item-content">
                                        <div class="grid-item-header">
@@ -295,7 +295,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         </div>
                                     </div>
                             </div>-->
-                    </div>
+                    <!--</div>-->
                     </div>
             </div>
     </div>                
