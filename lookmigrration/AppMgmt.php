@@ -157,7 +157,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 </head>
 
 <body id="bodyadminmodule" style="padding: 0%;">
-    <div class="container-fluid">
+    < class="container-fluid">
                 <!-- Barra de navegación -->
                 
                 <!-- Pestañas -->
@@ -387,7 +387,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
         // Abrir la pestaña por defecto al cargar la página
         document.getElementById("defaultOpen").click();
     </script>
-</div>
+
 </body>
 
 </html>
