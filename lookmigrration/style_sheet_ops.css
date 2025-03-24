@@ -91,6 +91,8 @@ label.col-form-label {
 }
 .grid-item-content1 {
   overflow-x: auto;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0 10px; /* Margen de 10px a los lados */
 }
 
 .user-table {
