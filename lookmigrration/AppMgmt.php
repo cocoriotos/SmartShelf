@@ -423,10 +423,6 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 ?>
                             </tbody>
                         </table>
-
-
-                    </div>
-                </div>
                 
             </div>
     </div>
