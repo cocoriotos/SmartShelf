@@ -245,59 +245,59 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     </div>
                                 </div>
                         </div>
-                        < class="grid-container">
+                    <div class="grid-container">
                         <div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                        <div class="grid-item-title">Suscripciones</div>
-                                    </div>
-                                    <div class="grid-item-body">
-                                        <p class="p-title">Renovaciones</p>
-                                        <p class="p-content">Rehabilitar accesos</p>
-                                        <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
-                                    </div>
-                                </div>
-                        </div>
+                                   <div class="grid-item-content">
+                                       <div class="grid-item-header">
+                                           <div class="grid-item-title">Suscripciones</div>
+                                       </div>
+                                       <div class="grid-item-body">
+                                           <p class="p-title">Renovaciones</p>
+                                           <p class="p-content">Rehabilitar accesos</p>
+                                           <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
+                                       </div>
+                                   </div>
+                           </div>
 
-                    <!--<div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                        <div class="grid-item-title">Visitas de Usuarios</div>
+                        <!--<div class="grid-item">
+                                    <div class="grid-item-content">
+                                        <div class="grid-item-header">
+                                            <div class="grid-item-title">Visitas de Usuarios</div>
+                                        </div>
+                                        <div class="grid-item-body">
+                                            <p class="p-title">Visitas Hoy:</p>
+                                            <p class="p-content">120</p>
+                                            <a href="#" class="btn-primary">Ver Detalles</a>
+                                        </div>
                                     </div>
-                                    <div class="grid-item-body">
-                                        <p class="p-title">Visitas Hoy:</p>
-                                        <p class="p-content">120</p>
-                                        <a href="#" class="btn-primary">Ver Detalles</a>
+                            </div>
+                            <div class="grid-item">
+                                    <div class="grid-item-content">
+                                        <div class="grid-item-header">
+                                            <div class="grid-item-title">Envío de Correos Masivos</div>
+                                        </div>
+                                        <div class="grid-item-body">
+                                            <p class="p-title">Plantilla de Correo:</p>
+                                            <p class="p-content">Promoción Especial</p>
+                                            <a href="#" class="btn-primary">Enviar Correo</a>
+                                        </div>
                                     </div>
-                                </div>
-                        </div>
-                        <div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                        <div class="grid-item-title">Envío de Correos Masivos</div>
+                            </div> 
+                            <div class="grid-item">
+                                    <div class="grid-item-content">
+                                        <div class="grid-item-header">
+                                            <div class="grid-item-title">Envío de Correos Masivos1</div>
+                                        </div>
+                                        <div class="grid-item-body">
+                                            <p class="p-title">Plantilla de Correo1:</p>
+                                            <p class="p-content">Promoción Especial1</p>
+                                            <a href="#" class="btn-primary">Enviar Correo1</a>
+                                        </div>
                                     </div>
-                                    <div class="grid-item-body">
-                                        <p class="p-title">Plantilla de Correo:</p>
-                                        <p class="p-content">Promoción Especial</p>
-                                        <a href="#" class="btn-primary">Enviar Correo</a>
-                                    </div>
-                                </div>
-                        </div> 
-                        <div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                        <div class="grid-item-title">Envío de Correos Masivos1</div>
-                                    </div>
-                                    <div class="grid-item-body">
-                                        <p class="p-title">Plantilla de Correo1:</p>
-                                        <p class="p-content">Promoción Especial1</p>
-                                        <a href="#" class="btn-primary">Enviar Correo1</a>
-                                    </div>
-                                </div>
-                        </div>-->
+                            </div>-->
                     </div>
-            </div>
-    </div>        
+                    </div>
+            </div>        
 
     <script>
         // Función para abrir pestañas
