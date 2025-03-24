@@ -157,7 +157,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 </head>
 
 <body id="bodyadminmodule" style="padding: 0%;">
-    <div class="container-fluid">
+    <di class="container-fluid">
                 <!-- Barra de navegación -->
                 
                 <!-- Pestañas -->
@@ -168,7 +168,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 </div>
     
                 <!-- Contenido de las pestañas -->
-                <div id="Operaciones" class="tabcontent">
+                <!--<div id="Operaciones" class="tabcontent">
                     <div class="grid-container">
                         <div class="grid-item">
                             <div class="grid-item-content">
@@ -227,10 +227,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             
 
-            <div id="Administracion" class="tabcontent">
+            <!--<div id="Administracion" class="tabcontent">
                     <label class="col-form-label">Administración</label>
                     <div class="grid-container">
                         <div class="grid-item">
@@ -258,7 +258,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                    </div>
                         </div>
 
-                        <!--<div class="grid-item">
+                        <div class="grid-item">
                                     <div class="grid-item-content">
                                         <div class="grid-item-header">
                                             <div class="grid-item-title">Visitas de Usuarios</div>
@@ -269,11 +269,11 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <a href="#" class="btn-primary">Ver Detalles</a>
                                         </div>
                                     </div>
-                            </div>-->
+                            </div>
                             
                     
                     </div>
-            </div>
+            </div>-->
             <div id="Suscriptions" class="tabcontent">
                     <label class="col-form-label">Suscripciones</label>
                     <div class="grid-container">
@@ -365,7 +365,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     </div>
                     </div>
             </div> 
-      
+    </div> 
               
 
     <script>
@@ -387,7 +387,6 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
         // Abrir la pestaña por defecto al cargar la página
         document.getElementById("defaultOpen").click();
     </script>
-</div>
 </body>
 
 </html>
