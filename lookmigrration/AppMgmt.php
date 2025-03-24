@@ -274,7 +274,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     
                     </div>
             </div>
-            <!--<div id="Suscriptions" class="tabcontent">
+            <div id="Suscriptions" class="tabcontent">
                     <label class="col-form-label">Suscripciones</label>
                     <div class="grid-container">
                     <div class="grid-item1">
@@ -316,15 +316,15 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         }*/
                                     ?>
                                 </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="grid-item1">
-                          <div class="grid-item-content1">
-                                <div class="grid-item-header">
+                            </table>
+                     </div>
+                    </div>
+                    <div class="grid-item1">
+                     <div class="grid-item-content1">
+                        <div class="grid-item-header">
                                     <div class="grid-item-title">Usuarios Activos en Trial</div>
-                                </div>
-                                <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                        </div>
+                            <table border="1" cellpadding="5" cellspacing="0" class="user-table">
                                 <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -359,12 +359,12 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                  echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
                                         }*/
                                         ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                </tbody>
+                            </table>
+                     </div>
                     </div>
-            </div>-->   
+                    </div>
+            </div> 
     </div>             
 
     <script>
