@@ -324,29 +324,16 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <table border="1" cellpadding="5" cellspacing="0" class="user-table">
                             <thead>
                                 <tr>
-                                    <th>Username</th>
-                                    <th>Active</th>
-                                    <th>Suscription Kind</th>
+                                    <th>Usuario</th>
+                                    <th>Activo</th>
+                                    <th>Suscription Activa</th>
+                                    <th>Tipo de Suscripción</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                // Conexión a la base de datos MySQL
-                                $servername = "localhost";  // Cambia según tu servidor
-                                $username = "root";         // Tu usuario de la base de datos
-                                $password = "";             // Tu contraseña de la base de datos
-                                $dbname = "mi_base_de_datos"; // Cambia al nombre de tu base de datos
-
-                                // Crear conexión
-                                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                                // Verificar la conexión
-                                if ($conn->connect_error) {
-                                    die("Conexión fallida: " . $conn->connect_error);
-                                }
-
                                 // Consulta SQL
-                                $sql = "SELECT username, active, suscription_kind FROM userslist";
+                                $sql = "SELECT username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 1 and suscriptionactive = 1 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
                                 $result = $conn->query($sql);
 
                                 // Mostrar los resultados en la tabla
@@ -356,15 +343,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         echo "<tr>";
                                         echo "<td>" . $row['username'] . "</td>";
                                         echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
-                                        echo "<td>" . $row['suscription_kind'] . "</td>";
+                                        echo "<td>" . $row['suscriptionactive'] . "</td>";
+                                        echo "<td>" . $row['suscriptionkind'] . "</td>";
                                         echo "</tr>";
                                     }
                                 } else {
-                                    echo "<tr><td colspan='3'>No hay usuarios activos</td></tr>";
+                                    echo "<tr><td colspan='4'>No hay usuarios activos</td></tr>";
                                 }
-
-                                // Cerrar la conexión
-                                $conn->close();
                                 ?>
                             </tbody>
                         </table>
