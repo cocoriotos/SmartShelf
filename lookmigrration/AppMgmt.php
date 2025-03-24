@@ -70,7 +70,7 @@ $result15 = mysqli_query($conn, $query15);
 $query16 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 331 and 366";
 $result16 = mysqli_query($conn, $query16);
 
-$query17 = "UPDATE videotips_app_access_list SET active = 0, suscriptionactive = 0 WHERE (suscriptiondaysleft = 19455 or suscriptiondaysleft > 16) and suscriptionkind = 'Trial'";
+$query17 = "UPDATE videotips_app_access_list SET active = 0, suscriptionactive = 0 WHERE (suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate)  > 16) and suscriptionkind = 'Trial'";
 $result17 = mysqli_query($conn, $query17);
 
 
