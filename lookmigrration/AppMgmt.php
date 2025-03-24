@@ -239,7 +239,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         <div class="grid-item-title">Suscripciones</div>
                                     </div>
                                     <div class="grid-item-body">
-                                        <p class="p-title">Potenciales Usuarios a contactar</p>
+                                        <p class="p-title">Usuarios a contactar</p>
                                         <p class="p-content">Inactivos</p>
                                         <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
                                     </div>
