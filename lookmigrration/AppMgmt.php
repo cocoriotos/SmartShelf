@@ -230,7 +230,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 </div>
             
 
-            <!--<div id="Administracion" class="tabcontent">
+            <div id="Administracion" class="tabcontent">
                     <label class="col-form-label">Administración</label>
                     <div class="grid-container">
                         <div class="grid-item">
@@ -273,7 +273,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             
                     
                     </div>
-            </div>-->
+            </div>
             <div id="Suscriptions" class="tabcontent">
                     <label class="col-form-label">Suscripciones</label>
                     <div class="grid-container">
