@@ -293,7 +293,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                     <th>Tipo de Suscripción</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <!--<tbody>
                                                 <?php
                                                 /* Consulta SQL */
                                                 $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
@@ -315,7 +315,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
                                                 }
                                             ?>
-                                            </tbody>
+                                            </tbody>-->
                                     </table>
                             </div>
                     </div>
