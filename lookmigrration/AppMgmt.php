@@ -278,8 +278,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             <div id="Suscriptions" class="tabcontent">
                     <label class="col-form-label">Suscripciones</label>
                     <div class="grid-container">
-                        <div class="grid-item">
-                                <div class="grid-item-content">
+                        <div class="grid-item1">
+                                <div class="grid-item-content1">
                                     <div class="grid-item-header">
                                                 <div class="grid-item-title">Usuarios Inactivos</div>
                                     </div> 
