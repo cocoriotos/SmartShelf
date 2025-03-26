@@ -297,7 +297,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    /*$sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
+                                                    $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
@@ -314,7 +314,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                             }   
                                                         } else {
                                                     echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
-                                                    }*/
+                                                    }
                                                 ?>
                                                 </tbody>
                                         </table>
