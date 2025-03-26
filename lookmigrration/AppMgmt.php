@@ -157,235 +157,293 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 </head>
 
 <body id="bodyadminmodule" style="padding: 0%;">
-    <div class="container-fluid">
-                <!-- Barra de navegación -->
-                
-                <!-- Pestañas -->
-                <div class="tab">
-                    <button class="tablinks" onclick="openTab(event, 'Operaciones')" id="defaultOpen">Operaciones</button>
-                    <button class="tablinks" onclick="openTab(event, 'Administracion')">Administración</button>
-                    <button class="tablinks" onclick="openTab(event, 'Reportes')">Reportes y Estadísticas</button>
-                </div>
-    
-                <!-- Contenido de las pestañas -->
-                <div id="Operaciones" class="tabcontent">
-                    <div class="grid-container">
-                        <div class="grid-item">
-                            <div class="grid-item-content">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Listado de Suscripciones</div>
-                                </div>
-                                <div class="grid-item-body">
-                                    <p class="p-title">Total Suscripciones:</p>
-                                    <center><p class="p-content" style="font-size: 32px;"><?php echo $total_suscriptions; ?></p></center>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="grid-item-content">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Suscripciones por Usuario</div>
-                                </div>
-                                <div class="grid-item-body">
-                                    <p class="p-title">Activos:</p>
-                                    <center><p class="p-content" style="font-size: 32px;"><?php echo $active_users; ?></p></center>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="grid-item-content">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Habilitación de Acceso</div>
-                                </div>
-                                <div class="grid-item-body">
-                                    <p class="p-title">Pendientes:</p>
-                                    <center><p class="p-content"style="font-size: 32px;"><?php echo $pendingaccess; ?></p></center>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="grid-item-content">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Suscripciones por Vencer en:</div>
-                                </div>
-                                    <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptions < 8) ? 'green' : (($monthsuscriptions >= 9 && $monthsuscriptions <= 10) ? 'orange' : ($monthsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 3 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($threesuscriptions < 8) ? 'green' : (($threesuscriptions >= 9 && $threesuscriptions <= 10) ? 'orange' : ($threesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $threesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($foursuscriptions < 8) ? 'green' : (($foursuscriptions >= 9 && $foursuscriptions <= 10) ? 'orange' : ($foursuscriptions == 11 ? 'red' : '')); ?>"><?php echo $foursuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptions < 8) ? 'green' : (($fivesuscriptionss >= 9 && $fivesuscriptions <= 10) ? 'orange' : ($fivesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptions < 8) ? 'green' : (($sixsuscriptions >= 9 && $sixsuscriptions <= 10) ? 'orange' : ($sixsuscriptions== 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sevensuscriptions  < 8) ? 'g reen' : (($sevensuscriptions >= 9 && $sevensuscriptions <= 10) ? 'orange' : ($sevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $sevensuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($eightsuscriptions < 8) ? 'green' : (($eightsuscriptions >= 9 && $eightsuscriptions <= 10) ? 'orange' : ($eightsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $eightsuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($ninesuscriptions < 8) ? 'green' : (($ninesuscriptions >= 9 && $ninesuscriptions <= 10) ? 'orange' : ($ninesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $ninesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptions < 8) ? 'green' : (($tensuscriptions >= 9 && $tensuscriptions <= 10) ? 'orange' : ($tensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptions < 8) ? 'green' : (($twelvesuscriptions >= 9 && $twelvesuscriptions <= 10) ? 'orange' : ($twelvesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptions; ?></span></span></p>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
+    <div class="container-fluid">
+        <!-- Barra de navegación -->
+        
+        <!-- Pestañas -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Operaciones')" id="defaultOpen">Operaciones</button>
+            <button class="tablinks" onclick="openTab(event, 'Administracion')">Administración</button>
+            <button class="tablinks" onclick="openTab(event, 'Reportes')">Reportes y Estadísticas</button>
+        </div>
 
-            <div id="Administracion" class="tabcontent">
-                    <label class="col-form-label">Administración</label>
-                    <div class="grid-container">
-                        <div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                        <div class="grid-item-title">Suscripciones</div>
-                                    </div>
-                                    <div class="grid-item-body">
-                                        <p class="p-title">Usuarios a contactar</p>
-                                        <p class="p-content">Inactivos</p>
-                                        <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="grid-item">
-                                   <div class="grid-item-content">
-                                       <div class="grid-item-header">
-                                           <div class="grid-item-title">Suscripciones</div>
-                                       </div>
-                                       <div class="grid-item-body">
-                                           <p class="p-title">Renovaciones</p>
-                                           <p class="p-content">Rehabilitar accesos</p>
-                                           <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
-                                       </div>
-                                   </div>
-                        </div>
+        <!-- Contenido de las pestañas -->
+        <div id="Operaciones" class="tabcontent">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Listado de Suscripciones</div>
+                        </div>
+                        <div class="grid-item-body">
+                            <p class="p-title">Total Suscripciones:</p>
+                            <center><p class="p-content" style="font-size: 32px;"><?php echo $total_suscriptions; ?></p></center>
+                            <a href="#" class="btn-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Suscripciones por Usuario</div>
+                        </div>
+                        <div class="grid-item-body">
+                            <p class="p-title">Activos:</p>
+                            <center><p class="p-content" style="font-size: 32px;"><?php echo $active_users; ?></p></center>
+                            <a href="#" class="btn-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Habilitación de Acceso</div>
+                        </div>
+                        <div class="grid-item-body">
+                            <p class="p-title">Pendientes:</p>
+                            <center><p class="p-content"style="font-size: 32px;"><?php echo $pendingaccess; ?></p></center>
+                            <a href="#" class="btn-primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Suscripciones por Vencer en:</div>
+                        </div>
+                            <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptions < 8) ? 'green' : (($monthsuscriptions >= 9 && $monthsuscriptions <= 10) ? 'orange' : ($monthsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 3 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($threesuscriptions < 8) ? 'green' : (($threesuscriptions >= 9 && $threesuscriptions <= 10) ? 'orange' : ($threesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $threesuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($foursuscriptions < 8) ? 'green' : (($foursuscriptions >= 9 && $foursuscriptions <= 10) ? 'orange' : ($foursuscriptions == 11 ? 'red' : '')); ?>"><?php echo $foursuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptions < 8) ? 'green' : (($fivesuscriptionss >= 9 && $fivesuscriptions <= 10) ? 'orange' : ($fivesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptions < 8) ? 'green' : (($sixsuscriptions >= 9 && $sixsuscriptions <= 10) ? 'orange' : ($sixsuscriptions== 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sevensuscriptions < 8) ? 'g reen' : (($sevensuscriptions >= 9 && $sevensuscriptions <= 10) ? 'orange' : ($sevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $sevensuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($eightsuscriptions < 8) ? 'green' : (($eightsuscriptions >= 9 && $eightsuscriptions <= 10) ? 'orange' : ($eightsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $eightsuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($ninesuscriptions < 8) ? 'green' : (($ninesuscriptions >= 9 && $ninesuscriptions <= 10) ? 'orange' : ($ninesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $ninesuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptions < 8) ? 'green' : (($tensuscriptions >= 9 && $tensuscriptions <= 10) ? 'orange' : ($tensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
+                            <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptions < 8) ? 'green' : (($twelvesuscriptions >= 9 && $twelvesuscriptions <= 10) ? 'orange' : ($twelvesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptions; ?></span></span></p>
+                            <a href="#" class="btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
 
-                        <div class="grid-item">
-                                    <div class="grid-item-content">
-                                        <div class="grid-item-header">
-                                            <div class="grid-item-title">Visitas de Usuarios</div>
-                                        </div>
-                                        <div class="grid-item-body">
-                                            <p class="p-title">Visitas Hoy:</p>
-                                            <p class="p-content">120</p>
-                                            <a href="#" class="btn-primary">Ver Detalles</a>
-                                        </div>
-                                    </div>
-                            </div>
-                            
-                    
-                    </div>
-            </div>
-            <div id="Suscriptions" class="tabcontent">
-                    <label class="col-form-label">Suscripciones</label>
-                    <div class="grid-container">
-                        <div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                                <div class="grid-item-title">Usuarios Inactivos</div>
-                                    </div> 
-                                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Apellido</th>
-                                                        <th>Usuario</th>
-                                                        <th>Usuario Activo</th>
-                                                        <th>Suscripción Activa</th>
-                                                        <th>Tipo de Suscripción</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    /* Consulta SQL */
-                                                    /*$sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
-                                                    $result = $conn->query($sql);
-                                                    // Mostrar los resultados en la tabla
-                                                    if ($result->num_rows > 0) {
-                                                        // Iterar a través de los resultados y mostrarlos en la tabla
-                                                        while ($row = $result->fetch_assoc()) {
-                                                            echo "<tr>";
-                                                            echo "<td>" . $row['name'] . "</td>";
-                                                            echo "<td>" . $row['lastname'] . "</td>";
-                                                            echo "<td>" . $row['username'] . "</td>";
-                                                            echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
-                                                            echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
-                                                            echo "<td>" . $row['suscriptionkind'] . "</td>";
-                                                            echo "</tr>";
-                                                            }   
-                                                        } else {
-                                                    echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
-                                                    }*/
-                                                ?>
-                                                </tbody>
-                                        </table>
-                                </div>
-                        </div>
-                        <div class="grid-item">
-                                <div class="grid-item-content">
-                                    <div class="grid-item-header">
-                                                <div class="grid-item-title">Usuarios Activos en Trial</div>
-                                    </div>
-                                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
-                                            <thead>
-                                                    <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Apellido</th>
-                                                        <th>Usuario</th>
-                                                        <th>Usuario Activo</th>
-                                                        <th>Suscripción Activa</th>
-                                                        <th>Tipo de Suscripción</th>
-                                                        <th>Días en Trial</th>
-                                                    </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                    // Consulta SQL
-                                                    /*$sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind, trialdaysleft FROM videotips_app_access_list where active = 1 and suscriptionactive = 0 and suscriptionkind = 'Trial' and trialdaysleft < 16)";
-                                                    $result = $conn->query($sql);
-                                                    // Mostrar los resultados en la tabla
-                                                    if ($result->num_rows > 0) {
-                                                    // Iterar a través de los resultados y mostrarlos en la tabla
-                                                    while ($row = $result->fetch_assoc()) {
-                                                            echo "<tr>";
-                                                            echo "<td>" . $row['name'] . "</td>";
-                                                            echo "<td>" . $row['lastname'] . "</td>";
-                                                            echo "<td>" . $row['username'] . "</td>";
-                                                            echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
-                                                            echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
-                                                            echo "<td>" . $row['suscriptionkind'] . "</td>";
-                                                            echo "<td>" . $row['trialdaysleft'] . "</td>";
-                                                            echo "</tr>";
-                                                        }
-                                                    } else {
-                                                            echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
-                                                    }*/
-                                                    ?>
-                                            </tbody>
-                                        </table>
-                                </div>
-                        </div>
-                    </div>
-            </div> 
-    </div> 
-           
+    <div id="Administracion" class="tabcontent">
+            <label class="col-form-label">Administración</label>
+            <div class="grid-container">
+                <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Suscripciones</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Potenciales Usuarios a contactar</p>
+                                <p class="p-content">Inactivos</p>
+                                <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="grid-container">
+                <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Suscripciones</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Renovaciones</p>
+                                <p class="p-content">Rehabilitar accesos</p>
+                                <a class="btn-primary" onclick="openTab(event, 'Suscriptions')">Listado de Usuarios</a>
+                            </div>
+                        </div>
+                </div>
 
-    <script>
-        // Función para abrir pestañas
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
+              <!--<div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Visitas de Usuarios</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Visitas Hoy:</p>
+                                <p class="p-content">120</p>
+                                <a href="#" class="btn-primary">Ver Detalles</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Envío de Correos Masivos</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Plantilla de Correo:</p>
+                                <p class="p-content">Promoción Especial</p>
+                                <a href="#" class="btn-primary">Enviar Correo</a>
+                            </div>
+                        </div>
+                </div> 
+                <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Envío de Correos Masivos1</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Plantilla de Correo1:</p>
+                                <p class="p-content">Promoción Especial1</p>
+                                <a href="#" class="btn-primary">Enviar Correo1</a>
+                            </div>
+                        </div>
+                </div>-->
+                </div>
+            </div>
+    </div>
 
-        // Abrir la pestaña por defecto al cargar la página
-        document.getElementById("defaultOpen").click();
-    </script>
+    <div id="Reportes" class="tabcontent">
+            <label class="col-form-label">Reportes y Estadísticas</label>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Reporte de Suscripciones</div>
+                        </div>
+                        <div class="grid-item-body">
+                            <p class="p-title">Total Suscripciones:</p>
+                            <p class="p-content">500</p>
+                            <a href="#" class="btn-primary">Generar Reporte</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="grid-item-content">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Estadísticas de Visitas</div>
+                        </div>
+                        <div class="grid-item-body">
+                            <p class="p-title">Visitas Totales:</p>
+                            <p class="p-content">10,000</p>
+                            <a href="#" class="btn-primary">Ver Estadísticas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div id="Suscriptions" class="tabcontent">
+            <label class="col-form-label">Suscripciones</label>
+            <div class="grid-container">
+                <div class="grid-item1">
+                    <div class="grid-item-content1">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Usuarios Inactivos</div>
+                        </div>
+                        
+                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Usuario</th>
+                                    <th>Usuario Activo</th>
+                                    <th>Suscripción Activa</th>
+                                    <th>Tipo de Suscripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
+                                $result = $conn->query($sql);
+
+                                // Mostrar los resultados en la tabla
+                                if ($result->num_rows > 0) {
+                                    // Iterar a través de los resultados y mostrarlos en la tabla
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['lastname'] . "</td>";
+                                        echo "<td>" . $row['username'] . "</td>";
+                                        echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
+                                        echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
+                                        echo "<td>" . $row['suscriptionkind'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="grid-item1">
+                    <div class="grid-item-content1">
+                        <div class="grid-item-header">
+                            <div class="grid-item-title">Usuarios Activos en Trial</div>
+                        </div>
+                        
+                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Usuario</th>
+                                    <th>Usuario Activo</th>
+                                    <th>Suscripción Activa</th>
+                                    <th>Tipo de Suscripción</th>
+                                    <th>Días en Trial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Consulta SQL
+                                $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind, trialdaysleft FROM videotips_app_access_list where active = 1 and suscriptionactive = 0 and suscriptionkind = 'Trial' and trialdaysleft < 16)";
+                                $result = $conn->query($sql);
+
+                                // Mostrar los resultados en la tabla
+                                if ($result->num_rows > 0) {
+                                    // Iterar a través de los resultados y mostrarlos en la tabla
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['name'] . "</td>";
+                                        echo "<td>" . $row['lastname'] . "</td>";
+                                        echo "<td>" . $row['username'] . "</td>";
+                                        echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
+                                        echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
+                                        echo "<td>" . $row['suscriptionkind'] . "</td>";
+                                        echo "<td>" . $row['trialdaysleft'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        // Función para abrir pestañas
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Abrir la pestaña por defecto al cargar la página
+        document.getElementById("defaultOpen").click();
+    </script>
 </body>   
 </html>
