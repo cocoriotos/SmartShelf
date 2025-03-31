@@ -100,6 +100,7 @@ $suscriptionkind = "None";
 					exit();
 					}
 		mysqli_select_db($conn,$db_name) or die ("<center>No hay conexión disponible a la aplicación</center>");		
+		
 
 		if ($conn==true)
 				{
@@ -112,6 +113,7 @@ $suscriptionkind = "None";
 				$stmt->execute();
 				$result12 = $stmt->get_result();
 				$suscriptionkind = $result12->fetch_assoc()['suscriptionkind'];
+				echo $suscriptionkind;
 
 				$stmt = $conn->prepare("SELECT suscriptiondaysleft FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
