@@ -141,7 +141,7 @@ $admrole =0;
 		
 
 				if($suscriptionkind == "Trial") {
-					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (365 - (DATEDIFF(CURDATE(), registrationdate))), trialdaysleft = (365 - (DATEDIFF(CURDATE(), registrationdate))) where username ='$local_username'" and $suscriptionkind = "Trial"; 
+					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username'" and $suscriptionkind = "Trial"; 
 					$result11=mysqli_query($conn, $query11);
 				}
 				
