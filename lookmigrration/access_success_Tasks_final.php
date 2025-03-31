@@ -113,7 +113,6 @@ $suscriptionkind = "None";
 				$stmt->execute();
 				$result12 = $stmt->get_result();
 				$suscriptionkind = $result12->fetch_assoc()['suscriptionkind'];
-				echo $suscriptionkind;
 
 				$stmt = $conn->prepare("SELECT suscriptiondaysleft FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
@@ -136,6 +135,9 @@ $suscriptionkind = "None";
 				$query1="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
 				$result1=mysqli_query($conn, $query1); 
 				
+				echo $suscriptionkind;
+				echo $suscriptiondaysleft;
+				echo $suscriptionpayed;	
 
 				$query2="UPDATE videotips_suscription_payments SET currentdate = CURDATE() where username ='$local_username'"; 
 				$result2=mysqli_query($conn, $query2);
