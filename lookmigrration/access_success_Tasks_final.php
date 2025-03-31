@@ -150,7 +150,7 @@ $admrole =0;
 				}
 
 
-				if (($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == "trial") || ($suscriptiondaysleft > 365 && $suscriptionpayed == 0 && $suscriptionkind == "De Pago")) {
+				if ($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == "trial")  {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
