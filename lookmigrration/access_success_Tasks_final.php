@@ -83,6 +83,7 @@ $_SESSION['email']=$global_username;
 $local_username=$_SESSION['email'];
 $password=$_POST['password'];
 $admrole =0;
+$suscriptionkind = "None";
 
 	if($_POST)
  {
@@ -105,17 +106,18 @@ $admrole =0;
 
 				} 
 				
-				/*$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username' and $suscriptionkind = 'Trial'"; 
-				$result11=mysqli_query($conn, $query11);*/
 				
+				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
+				$stmt->bind_param("s", $local_username);
+				$stmt->execute();
+				$result12 = $stmt->get_result();
+				$suscriptionkind = $result12->fetch_assoc()['suscriptionkind'];
 
 				$stmt = $conn->prepare("SELECT suscriptiondaysleft FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
 				$result3 = $stmt->get_result();
 				$suscriptiondaysleft = $result3->fetch_assoc()['suscriptiondaysleft'];
-
-
 
 				$stmt = $conn->prepare("SELECT suscriptionpayed FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
@@ -151,6 +153,10 @@ $admrole =0;
 					exit();
 				}
 
+				if ($suscriptionkind == 'Trial'){
+					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username' and $suscriptionkind = 'Trial'"; 
+					$result11=mysqli_query($conn, $query11);
+				}
 
 				if ($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial')  {
 					$_SESSION['suscriptiondue']=1;
