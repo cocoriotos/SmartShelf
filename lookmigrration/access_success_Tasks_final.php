@@ -105,6 +105,8 @@ $admrole =0;
 
 				} 
 				
+				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username' and $suscriptionkind = 'Trial'"; 
+				$result11=mysqli_query($conn, $query11);
 				
 
 				$stmt = $conn->prepare("SELECT suscriptiondaysleft FROM videotips_app_access_list WHERE username = ?");
@@ -112,6 +114,8 @@ $admrole =0;
 				$stmt->execute();
 				$result3 = $stmt->get_result();
 				$suscriptiondaysleft = $result3->fetch_assoc()['suscriptiondaysleft'];
+
+
 
 				$stmt = $conn->prepare("SELECT suscriptionpayed FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
@@ -139,9 +143,7 @@ $admrole =0;
 				$result10=mysqli_query($conn, $query10);
 				$admrole = $result10->fetch_assoc()['adm_role'];
 				
-				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username'" and $suscriptionkind = "Trial"; 
-				$result11=mysqli_query($conn, $query11);
-				$suscriptionkind = $result11->fetch_assoc()['suscriptionkind'];
+				
 
 				if ($admrole > 0){
 					$admrole = 0;
