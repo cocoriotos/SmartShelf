@@ -133,11 +133,7 @@ $suscriptionkind = "None";
 				$_SESSION['name'] = $result7->fetch_assoc()['name'];
 
 				$query1="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
-				$result1=mysqli_query($conn, $query1); 
-				
-				echo $suscriptionkind;
-				echo $suscriptiondaysleft;
-				echo $suscriptionpayed;	
+				$result1=mysqli_query($conn, $query1); 	
 
 				$query2="UPDATE videotips_suscription_payments SET currentdate = CURDATE() where username ='$local_username'"; 
 				$result2=mysqli_query($conn, $query2);
@@ -161,6 +157,9 @@ $suscriptionkind = "None";
 					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username' and $suscriptionkind = 'Trial'"; 
 					$result11=mysqli_query($conn, $query11);
 				}
+				echo $suscriptionkind;
+				echo $suscriptiondaysleft;
+				echo $suscriptionpayed;
 
 				if ($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial')  {
 					$_SESSION['suscriptiondue']=1;
