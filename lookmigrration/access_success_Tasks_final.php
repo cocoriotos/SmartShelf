@@ -153,13 +153,15 @@ $suscriptionkind = "None";
 					exit();
 				}
 
+				echo $suscriptionkind;
+				echo $suscriptiondaysleft;
+				echo $suscriptionpayed;
+				
 				if ($suscriptionkind == 'Trial'){
 					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (DATEDIFF(CURDATE(), registrationdate)), trialdaysleft = (DATEDIFF(CURDATE(), registrationdate)) where username ='$local_username' and $suscriptionkind = 'Trial'"; 
 					$result11=mysqli_query($conn, $query11);
 				}
-				echo $suscriptionkind;
-				echo $suscriptiondaysleft;
-				echo $suscriptionpayed;
+				
 
 				if ($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial')  {
 					$_SESSION['suscriptiondue']=1;
