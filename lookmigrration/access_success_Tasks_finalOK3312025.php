@@ -127,8 +127,6 @@ $admrole =0;
 
 				$query1="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
 				$result1=mysqli_query($conn, $query1); 
-				$trialdaysleft = $result1->fetch_assoc()['trialdaysleft'];
-				$suscriptionkind = $result1->fetch_assoc()['suscriptionkind'];
 
 				$query2="UPDATE videotips_suscription_payments SET currentdate = CURDATE() where username ='$local_username'"; 
 				$result2=mysqli_query($conn, $query2);
@@ -139,14 +137,8 @@ $admrole =0;
 				$query10="select adm_role from videotips_app_access_list where username ='$local_username'"; 
 				$result10=mysqli_query($conn, $query10);
 				$admrole = $result10->fetch_assoc()['adm_role'];
-		
-
-				if($trialdaysleft < 17 && $suscriptionkind == "Trial") {
-					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = (365 - (DATEDIFF(CURDATE(), registrationdate))), trialdaysleft = (365 - (DATEDIFF(CURDATE(), registrationdate))) where username ='$local_username'" and $suscriptionkind = "Trial"; 
-					$result11=mysqli_query($conn, $query11);
-				}
 				
-
+				
 				if ($admrole > 0){
 					$admrole = 0;
 					header("refresh:0; url=AppMgmt.php");
