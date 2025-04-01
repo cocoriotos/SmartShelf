@@ -107,6 +107,8 @@ $suscriptionkind = "None";
 
 				} 
 				
+				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate) where username ='$local_username' and suscriptionkind = 'Trial'"; 
+				$result11=mysqli_query($conn, $query11);
 				
 				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
@@ -152,11 +154,6 @@ $suscriptionkind = "None";
 					header("refresh:0; url=AppMgmt.php");
 					exit();
 				}
-
-				if ($suscriptionkind = "Trial"){
-					$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate) where username ='$local_username' and suscriptionkind = 'Trial'"; 
-					$result11=mysqli_query($conn, $query11);
-				}
 				
 
 				if ($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
@@ -164,8 +161,8 @@ $suscriptionkind = "None";
 					echo $suscriptiondaysleft;
 					echo $suscriptionpayed;
 					echo $suscriptionkind;
-					/*header("refresh:0; url=suscriptionpayment.php");
-					exit();*/
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
 				  }else{	
 						if(mysqli_num_rows($result1)==true)
 							{	
