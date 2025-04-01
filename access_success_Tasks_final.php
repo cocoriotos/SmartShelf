@@ -158,9 +158,6 @@ $suscriptionkind = "None";
 
 				if ($suscriptiondaysleft > 15 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
-					echo $suscriptiondaysleft;
-					echo $suscriptionpayed;
-					echo $suscriptionkind;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }else{	
