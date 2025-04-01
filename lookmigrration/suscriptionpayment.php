@@ -81,7 +81,7 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
 
   <div class="col-md-12">
 					<br>
-				<?php include("search.php") ?>
+				<!--<?php /*include("search.php") */?>-->
 				<div class="card card-body">
 				<center><label for="description" class="col-form-label" style="color: black; font-size: 28px;"><strong> Resúmen de tu estado de cuenta </strong></label></center>
 
