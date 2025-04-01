@@ -156,7 +156,7 @@ $suscriptionkind = "None";
 				}
 				
 
-				if ($suscriptiondaysleft > 16 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
+				if ($suscriptiondaysleft > 15 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
 					echo $suscriptiondaysleft;
 					echo $suscriptionpayed;
