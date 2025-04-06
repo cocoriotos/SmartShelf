@@ -442,21 +442,21 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    $sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind desc";
+                                                    $sql = "SELECT lastname FROM videotips_app_access_list WHERE active = 1";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
                                                         // Iterar a través de los resultados y mostrarlos en la tabla
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";
-                                                            echo "<td>" . $row['name'] . "</td>";
                                                             echo "<td>" . $row['lastname'] . "</td>";
+                                                            /*echo "<td>" . $row['lastname'] . "</td>";
                                                             echo "<td>" . $row['username'] . "</td>";
-                                                            echo "<td>" . $row['suscriptionkind'] . "</td>";
+                                                            echo "<td>" . $row['suscriptionkind'] . "</td>";*/
                                                             echo "</tr>";
                                                             }   
                                                         } else {
-                                                    echo "<tr><td colspan='4'>No hay usuarios activos</td></tr>";
+                                                    echo "<tr><td colspan='1'>No hay usuarios activos</td></tr>";
                                                     }
                                                 ?>
                                                 </tbody>
