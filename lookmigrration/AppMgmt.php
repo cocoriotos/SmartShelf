@@ -421,14 +421,14 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 </div>
             </div>   
             
-            <div id="opsactives" class="tabcontent">
+            <!--<div id="opsactives" class="tabcontent">
                 <div class="grid-containeropstable">
                     <div class="grid-item">
                         <div class="grid-item-content">
                             <div class="grid-item-header">
                                 <div class="grid-item-title">Listado por tipo de Suscripción</div>
                             </div>
-                                <!-- Aquí va la tabla que listará los resultados -->
+                                 Aquí va la tabla que listará los resultados 
                                 <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
                                     <thead>
                                         <tr>
@@ -438,10 +438,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Tipo de Suscripción</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody>-->
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
+                                        /*$sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
                                         $result20 = $conn->query($sql20);
 
                                         // Mostrar los resultados en la tabla
@@ -458,15 +458,15 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
                                         }
 
-                                        $conn->close();
+                                        $conn->close();*/
                                         ?>
-                                    </tbody>
+                                    <!--</tbody>
                                 </table>
                             
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div> -->  
             
     </div>
     <script>
