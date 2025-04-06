@@ -162,13 +162,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 
                 <!-- Pestañas -->
                 <div class="tab">
-                    <button class="tablinks" onclick="openTab(event, 'Operaciones')" id="defaultOpen">Operaciones</button>
-                    <button class="tablinks" onclick="openTab(event, 'Administracion')">Administración</button>
-                    <button class="tablinks" onclick="openTab(event, 'Reportes')">Reportes y Estadísticas</button>
+                    <button class="tablinks" onclick="openTab(event, 'Ops')" id="defaultOpen">Operaciones</button>
+                    <button class="tablinks" onclick="openTab(event, 'Administration')">Administración</button>
+                    <button class="tablinks" onclick="openTab(event, 'Reports')">Reportes y Estadísticas</button>
                 </div>
     
                 <!-- Contenido de las pestañas -->
-                <div id="Operaciones" class="tabcontent">
+                <div id="Ops" class="tabcontent">
                     <div class="grid-container">
                         <div class="grid-item">
                             <div class="grid-item-content">
@@ -179,7 +179,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <p class="p-title">Total Suscripciones:</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $total_suscriptions; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
-                                    <a class="btn-primary" onclick="openTab(event, 'Administracion')">Ver Detalles</a>
+                                    <a class="btn-primary" onclick="openTab(event, 'opstotalsuscriptions')">Ver Detalles</a>
                                     
                                 </div>
                             </div>
@@ -232,7 +232,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                 </div>
             
 
-            <div id="Administracion" class="tabcontent">
+            <div id="Administration" class="tabcontent">
                     <label class="col-form-label">Administración</label>
                     <div class="grid-container">
                         <div class="grid-item">
@@ -375,9 +375,62 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                     </div>
             </div>
-    </div> 
-           
 
+            <div id="opstotalsuscriptions" class="tabcontent">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Listado de Suscripciones</div>
+                            </div>
+                            <div class="grid-item-body">
+                                <p class="p-title">Total Suscripciones:</p>
+                                <center><p class="p-content" style="font-size: 42px;"><?php echo $total_suscriptions; ?></p></center>
+                                <a href="#" class="btn-primary">Ver Detalles</a>
+                                <a class="btn-primary" onclick="openTab(event, 'Administracion')">Ver Detalles</a>
+                                
+                                <!-- Aquí va la tabla que listará los resultados -->
+                                <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Usuario</th>
+                                            <th>Días de Suscripción Restantes</th>
+                                            <th>Tipo de Suscripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Ejecutar la consulta
+                                        $sql = "SELECT name, lastname, username, suscriptiondaysleft, suscriptionkind FROM videotips_app_access_list WHERE suscriptionkind = 'De Pago'";
+                                        $result = $conn->query($sql);
+
+                                        // Mostrar los resultados en la tabla
+                                        if ($result->num_rows > 0) {
+                                            while($row = $result->fetch_assoc()) {
+                                                echo "<tr>";
+                                                echo "<td>" . $row["name"] . "</td>";
+                                                echo "<td>" . $row["lastname"] . "</td>";
+                                                echo "<td>" . $row["username"] . "</td>";
+                                                echo "<td>" . $row["suscriptiondaysleft"] . "</td>";
+                                                echo "<td>" . $row["suscriptionkind"] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                        } else {
+                                            echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
+                                        }
+
+                                        $conn->close();
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+    </div>
     <script>
         // Función para abrir pestañas
         function openTab(evt, tabName) {
