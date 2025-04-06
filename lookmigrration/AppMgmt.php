@@ -34,40 +34,40 @@ $result2 = mysqli_query($conn, $query2);
 $query3 = "SELECT COUNT(*) as pendingaccess FROM videotips_accessrequests WHERE (processed = 'No'and granted = 'No')";
 $result3 = mysqli_query($conn, $query3);
 
-$query5 = "SELECT COUNT(*) as monthsuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 0 and 30";
+$query5 = "SELECT COUNT(*) as monthsuscriptions FROM videotips_app_access_list  WHERE  suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 0 and 30)";
 $result5 = mysqli_query($conn, $query5);
 
-$query6 = "SELECT COUNT(*) as twosuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 31 and 60";
+$query6 = "SELECT COUNT(*) as twosuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 31 and 60)";
 $result6 = mysqli_query($conn, $query6);
 
-$query7 = "SELECT COUNT(*) as threesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 61 and 90";
+$query7 = "SELECT COUNT(*) as threesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 61 and 90)";
 $result7 = mysqli_query($conn, $query7);
 
-$query8 = "SELECT COUNT(*) as foursuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 91 and 120";
+$query8 = "SELECT COUNT(*) as foursuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 91 and 120)";
 $result8 = mysqli_query($conn, $query8);
 
-$query9 = "SELECT COUNT(*) as fivesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 121 and 150";
+$query9 = "SELECT COUNT(*) as fivesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 121 and 150)";
 $result9 = mysqli_query($conn, $query9);
 
-$query10 = "SELECT COUNT(*) as sixsuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 151 and 180";
+$query10 = "SELECT COUNT(*) as sixsuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 151 and 180)";
 $result10 = mysqli_query($conn, $query10);
 
-$query11 = "SELECT COUNT(*) as sevensuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 181 and 210";
+$query11 = "SELECT COUNT(*) as sevensuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 181 and 210)";
 $result11 = mysqli_query($conn, $query11);
 
-$query12 = "SELECT COUNT(*) as eightsuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 211 and 240";
+$query12 = "SELECT COUNT(*) as eightsuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 211 and 240)";
 $result12 = mysqli_query($conn, $query12);
 
-$query13 = "SELECT COUNT(*) as ninesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 241 and 270";
+$query13 = "SELECT COUNT(*) as ninesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 241 and 270)";
 $result13 = mysqli_query($conn, $query13);
 
-$query14 = "SELECT COUNT(*) as tensuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 271 and 300";
+$query14 = "SELECT COUNT(*) as tensuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 271 and 300)";
 $result14 = mysqli_query($conn, $query14);
 
-$query15 = "SELECT COUNT(*) as elevensuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 301 and 330";
+$query15 = "SELECT COUNT(*) as elevensuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 301 and 330)";
 $result15 = mysqli_query($conn, $query15);
 
-$query16 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE  365-suscriptiondaysleft between 331 and 366";
+$query16 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
 $result16 = mysqli_query($conn, $query16);
 
 $query17 = "UPDATE videotips_app_access_list SET active = 0, suscriptionactive = 0 WHERE trialdaysleft  > 16 and suscriptionkind = 'Trial'";
@@ -203,7 +203,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 </div>
                                 <div class="grid-item-body">
                                     <p class="p-title">Pendientes:</p>
-                                    <p class="p-title" style="color: green;"> </p>
+                                    <p class="p-title"> </p>
                                     <center><p class="p-content"style="font-size: 42px;"><?php echo $pendingaccess; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
                                 </div>
