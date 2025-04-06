@@ -429,7 +429,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 <div class="grid-item-title">Listado por tipo de Suscripción</div>
                             </div>
                                 <!-- Aquí va la tabla que listará los resultados --> 
-                                <!--<table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                                <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -438,7 +438,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Tipo de Suscripción</th>
                                         </tr>
                                     </thead>
-                                    <tbody>-->
+                                    <!--<tbody>
                                         <?php
                                         // Ejecutar la consulta
                                         /*$sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
@@ -460,8 +460,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 
                                         $conn->close();*/
                                         ?>
-                                    <!--</tbody>
-                                </table>-->
+                                    </tbody>-->
+                                </table>
                             
                         </div>
                     </div>
