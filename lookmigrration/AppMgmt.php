@@ -410,8 +410,6 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         } else {
                                             echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
                                         }
-
-                                        $conn->close();
                                         ?>
                                     </tbody>
                                 </table>
@@ -433,27 +431,26 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         <table border="1" cellpadding="5" cellspacing="0" class="user-table">
                                                 <thead>
                                                     <tr>
+                                                        <th>Nombre</th>
                                                         <th>Apellido</th>
-                                                        <!--<th>Apellido</th>
                                                         <th>Usuario</th>
-                                                        <th>Tipo de Suscripción</th>-->
+                                                        <th>Tipo de Suscripción</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    include("db_connection1.php");
-                                                    $sql = "SELECT lastname FROM videotips_app_access_list";
+                                                    $sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind desc";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
                                                         // Iterar a través de los resultados y mostrarlos en la tabla
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";
+                                                            echo "<td>" . $row['name'] . "</td>";
                                                             echo "<td>" . $row['lastname'] . "</td>";
-                                                            /*echo "<td>" . $row['lastname'] . "</td>";
                                                             echo "<td>" . $row['username'] . "</td>";
-                                                            echo "<td>" . $row['suscriptionkind'] . "</td>";*/
+                                                            echo "<td>" . $row['suscriptionkind'] . "</td>";
                                                             echo "</tr>";
                                                             }   
                                                         } else {
