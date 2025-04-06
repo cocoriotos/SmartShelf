@@ -203,6 +203,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 </div>
                                 <div class="grid-item-body">
                                     <p class="p-title">Pendientes:</p>
+                                    <p class="p-title"> </p>
                                     <center><p class="p-content"style="font-size: 42px;"><?php echo $pendingaccess; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
                                 </div>
