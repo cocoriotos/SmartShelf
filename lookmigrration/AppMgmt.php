@@ -188,7 +188,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <div class="grid-item-title">Suscripciones por Usuario</div>
                                 </div>
                                 <div class="grid-item-body">
-                                    <p class="p-title">Activos: De Pago, Test, Owner y Partner</p>
+                                    <p class="p-title">Activos:</p>
+                                    <p class="p-title">De Pago, Test, Owner y Partner</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
                                 </div>
