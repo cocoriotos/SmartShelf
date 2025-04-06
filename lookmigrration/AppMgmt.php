@@ -455,7 +455,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "</tr>";
                                             }
                                         } else {
-                                            echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
+                                            echo "<tr><td colspan='4'>No se encontraron resultados</td></tr>";
                                         }
                                         $conn->close();
                                         ?>
