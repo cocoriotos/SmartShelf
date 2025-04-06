@@ -381,14 +381,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <div class="grid-item">
                         <div class="grid-item-content">
                             <div class="grid-item-header">
-                                <div class="grid-item-title">Listado de Suscripciones</div>
+                                <div class="grid-item-title">Listado de Suscriptores Activos</div>
                             </div>
-                            <div class="grid-item-body">
-                                <p class="p-title">Total Suscripciones:</p>
-                                <center><p class="p-content" style="font-size: 42px;"><?php echo $total_suscriptions; ?></p></center>
-                                <a href="#" class="btn-primary">Ver Detalles</a>
-                                <a class="btn-primary" onclick="openTab(event, 'Administracion')">Ver Detalles</a>
-                                
                                 <!-- Aquí va la tabla que listará los resultados -->
                                 <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
                                     <thead>
@@ -425,7 +419,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         ?>
                                     </tbody>
                                 </table>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
