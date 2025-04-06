@@ -178,8 +178,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 <div class="grid-item-body">
                                     <p class="p-title">Total Suscripciones:</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $total_suscriptions; ?></p></center>
-                                    <a class="btn-primary" onclick="openTab(event, 'opstotalsuscriptions')">Ver Detalles</a>
-                                    
+                                    <a class="btn-primary" onclick="openTab(event, 'opstotalsuscriptions')">Ver Detalles</a> 
                                 </div>
                             </div>
                         </div>
