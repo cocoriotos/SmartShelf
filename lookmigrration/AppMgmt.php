@@ -441,11 +441,11 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
-                                        $result = $conn->query($sql);
+                                        $sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
+                                        $result20 = $conn->query($sql20);
 
                                         // Mostrar los resultados en la tabla
-                                        if ($result->num_rows > 0) {
+                                        if ($result20->num_rows > 0) {
                                             while($row = $result->fetch_assoc()) {
                                                 echo "<tr>";
                                                 echo "<td>" . $row["name"] . "</td>";
