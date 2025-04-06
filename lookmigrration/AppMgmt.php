@@ -423,7 +423,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             
 
             <div id="opsactives" class="tabcontent">
-                    <label class="col-form-label">Listado Suscripcines</label>
+                    <label class="col-form-label">Suscripciones</label>
                     <div class="grid-container">
                         <div class="grid-item1">
                                 <div class="grid-item-content1">
@@ -442,10 +442,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    /*$sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind desc";
-                                                    $result = $conn->query($sql);*/
+                                                    $query20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind desc";
+                                                    $result20 = mysqli_query($conn, $query20);
                                                     // Mostrar los resultados en la tabla
-                                                    if ($result->num_rows > 0) {
+                                                    if ($result20->num_rows > 0) {
                                                         // Iterar a través de los resultados y mostrarlos en la tabla
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";
