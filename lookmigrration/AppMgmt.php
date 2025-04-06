@@ -438,29 +438,28 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Tipo de Suscripción</th>
                                         </tr>
                                     </thead>
-                                    <!--<tbody>
+                                    <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        /*$sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
+                                        $sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
                                         $result20 = $conn->query($sql20);
 
                                         // Mostrar los resultados en la tabla
                                         if ($result20->num_rows > 0) {
-                                            while($row = $result->fetch_assoc()) {
+                                            while($row1 = $result->fetch_assoc()) {
                                                 echo "<tr>";
-                                                echo "<td>" . $row["name"] . "</td>";
-                                                echo "<td>" . $row["lastname"] . "</td>";
-                                                echo "<td>" . $row["username"] . "</td>";
-                                                echo "<td>" . $row["suscriptionkind"] . "</td>";
+                                                echo "<td>" . $row1["name"] . "</td>";
+                                                echo "<td>" . $row1["lastname"] . "</td>";
+                                                echo "<td>" . $row1["username"] . "</td>";
+                                                echo "<td>" . $row1["suscriptionkind"] . "</td>";
                                                 echo "</tr>";
                                             }
                                         } else {
                                             echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
                                         }
-
-                                        $conn->close();*/
+                                        $conn->close();
                                         ?>
-                                    </tbody>-->
+                                    </tbody>
                                 </table>
                             
                         </div>
