@@ -177,7 +177,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 </div>
                                 <div class="grid-item-body">
                                     <p class="p-title">Total Suscripciones:</p>
-                                    <center><p class="p-content" style="font-size: 42px;"><?php echo $total_suscriptions; ?></p></center>
+                                    <center><p class="p-content" style="font-size: 32px;"><?php echo $total_suscriptions; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
                                 </div>
                             </div>
@@ -188,8 +188,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <div class="grid-item-title">Suscripciones por Usuario</div>
                                 </div>
                                 <div class="grid-item-body">
-                                    <p class="p-title">Activos: De Pago, Test, Owner y Partner</p>
-                                    <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
+                                    <p class="p-title">Activos:</p>
+                                    <center><p class="p-content" style="font-size: 32px;"><?php echo $active_users; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 </div>
                                 <div class="grid-item-body">
                                     <p class="p-title">Pendientes:</p>
-                                    <center><p class="p-content"style="font-size: 42px;"><?php echo $pendingaccess; ?></p></center>
+                                    <center><p class="p-content"style="font-size: 32px;"><?php echo $pendingaccess; ?></p></center>
                                     <a href="#" class="btn-primary">Ver Detalles</a>
                                 </div>
                             </div>
