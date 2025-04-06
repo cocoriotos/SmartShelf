@@ -391,13 +391,12 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Apellido</th>
                                             <th>Usuario</th>
                                             <th>Días de Suscripción Restantes</th>
-                                            <th>Tipo de Suscripción</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql = "SELECT name, lastname, username, suscriptiondaysleft, suscriptionkind FROM videotips_app_access_list WHERE suscriptionkind = 'De Pago'";
+                                        $sql = "SELECT name, lastname, username, suscriptiondaysleft, suscriptionkind FROM videotips_app_access_list WHERE suscriptionkind = 'De Pago' order by suscriptiondaysleft desc  ";
                                         $result = $conn->query($sql);
 
                                         // Mostrar los resultados en la tabla
