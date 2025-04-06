@@ -441,7 +441,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = '1' order by suscriptionkind desc";
+                                        $sql20 = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind asc";
                                         $result20 = $conn->query($sql20);
 
                                         // Mostrar los resultados en la tabla
