@@ -6,7 +6,7 @@ include "sessionvalidation.php";
 include "headermgmt.php";
 include "db_connection1.php";
 //include "nobackpage.php"; 
-//include "SessionTimeOut.php";
+include "SessionTimeOut.php";
 // Verificar si el usuario está autenticado (si $_SESSION['email'] está definido)
 //if (!isset($_SESSION['email'])) {
   // Si no hay sesión, redirigir a la página de autenticación
@@ -18,6 +18,10 @@ include "db_connection1.php";
 $local_username = $_SESSION['email']; // Obtener el email del usuario desde la sesión
 
 /*Sync daysleft */
+
+$query20="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)"; 
+$result20=mysqli_query($conn, $query20);
+
 $query4 = "update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)";
 $result4 = mysqli_query($conn, $query4);
 
@@ -223,7 +227,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptions < 8) ? 'green' : (($tensuscriptions >= 9 && $tensuscriptions <= 10) ? 'orange' : ($tensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptions < 8) ? 'green' : (($twelvesuscriptions >= 9 && $twelvesuscriptions <= 10) ? 'orange' : ($twelvesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptions; ?></span></span></p>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
+                                    <!--<a href="#" class="btn-primary">Ver Detalles</a>-->
                             </div>
                         </div>
                     </div>
@@ -286,6 +290,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         <table border="1" cellpadding="5" cellspacing="0" class="user-table">
                                                 <thead>
                                                     <tr>
+                                                        <th>ID</th>
                                                         <th>Nombre</th>
                                                         <th>Apellido</th>
                                                         <th>Usuario</th>
@@ -304,6 +309,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                         // Iterar a través de los resultados y mostrarlos en la tabla
                                                         while ($row = $result->fetch_assoc()) {
                                                             echo "<tr>";
+                                                            echo "<td>" . $row['id'] . "</td>";
                                                             echo "<td>" . $row['name'] . "</td>";
                                                             echo "<td>" . $row['lastname'] . "</td>";
                                                             echo "<td>" . $row['username'] . "</td>";
@@ -313,7 +319,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                             echo "</tr>";
                                                             }   
                                                         } else {
-                                                    echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
+                                                    echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
                                                     }
                                                 ?>
                                                 </tbody>
@@ -440,7 +446,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    $sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind desc";
+                                                    $sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind asc";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
