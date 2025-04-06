@@ -442,7 +442,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    $sql = "SELECT lastname FROM videotips_app_access_list WHERE active = 1";
+                                                    $sql = "SELECT lastname FROM videotips_app_access_list";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
