@@ -433,10 +433,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         <table border="1" cellpadding="5" cellspacing="0" class="user-table">
                                                 <thead>
                                                     <tr>
-                                                        <th>Nombre</th>
                                                         <th>Apellido</th>
+                                                        <!--<th>Apellido</th>
                                                         <th>Usuario</th>
-                                                        <th>Tipo de Suscripción</th>
+                                                        <th>Tipo de Suscripción</th>-->
                                                     </tr>
                                                 </thead>
                                                 <tbody>
