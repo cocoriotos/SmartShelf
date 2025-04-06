@@ -191,7 +191,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 <div class="grid-item-body">
                                     <p class="p-title">Activos: De Pago, Test, Owner y Partner</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
+                                    <a class="btn-primary" onclick="openTab(event, 'opsactives')">Ver Detalles</a>
                                 </div>
                             </div>
                         </div>
@@ -380,7 +380,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <div class="grid-item">
                         <div class="grid-item-content">
                             <div class="grid-item-header">
-                                <div class="grid-item-title">Listado de Suscriptores Activos</div>
+                                <div class="grid-item-title">Listado de Suscriptores</div>
                             </div>
                                 <!-- Aquí va la tabla que listará los resultados -->
                                 <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
@@ -420,7 +420,55 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         </div>
                     </div>
                 </div>
-            </div>       
+            </div>   
+            
+            <div id="opsactives" class="tabcontent">
+                <div class="grid-containeropstable">
+                    <div class="grid-item">
+                        <div class="grid-item-content">
+                            <div class="grid-item-header">
+                                <div class="grid-item-title">Listado por tipo de Suscripción</div>
+                            </div>
+                                <!-- Aquí va la tabla que listará los resultados -->
+                                <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Usuario</th>
+                                            <th>Tipo de Suscripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Ejecutar la consulta
+                                        $sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind asc";
+                                        $result = $conn->query($sql);
+
+                                        // Mostrar los resultados en la tabla
+                                        if ($result->num_rows > 0) {
+                                            while($row = $result->fetch_assoc()) {
+                                                echo "<tr>";
+                                                echo "<td>" . $row["name"] . "</td>";
+                                                echo "<td>" . $row["lastname"] . "</td>";
+                                                echo "<td>" . $row["username"] . "</td>";
+                                                echo "<td>" . $row["suscriptionkind"] . "</td>";
+                                                echo "</tr>";
+                                            }
+                                        } else {
+                                            echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
+                                        }
+
+                                        $conn->close();
+                                        ?>
+                                    </tbody>
+                                </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            
     </div>
     <script>
         // Función para abrir pestañas
