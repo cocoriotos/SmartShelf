@@ -284,7 +284,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                             <div class="grid-item-header">
                                 <div class="grid-item-title">Visitas por facha</div>
                                 <br>
-                                <center><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
+                                <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                             </div>
                                 <!-- Aquí va la tabla que listará los resultados -->
                                 <table border="1" style="width: 90%; margin-top: 20px; border-collapse: collapse;">
