@@ -237,7 +237,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             <div id="Administration" class="tabcontent">
                     <label class="col-form-label">Administración</label>
                     <div class="grid-container">
-                        <div class="grid-item1">
+                        <div class="grid-item">
                                 <div class="grid-item-content">
                                     <div class="grid-item-header">
                                         <div class="grid-item-title">Suscripciones</div>
@@ -429,7 +429,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             <div id="opstotalsuscriptions" class="tabcontent">
                 <div class="grid-containeropstable">
                     <div class="grid-item1" >
-                        <div class="grid-item-content">
+                        <div class="grid-item-content1">
                             <div class="grid-item-header">
                                 <div class="grid-item-title">Listado de Suscriptores</div>
                             </div>
