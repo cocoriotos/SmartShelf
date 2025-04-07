@@ -107,7 +107,7 @@ $suscriptionkind = "None";
 
 				} 
 				
-				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate) where username ='$local_username' and suscriptionkind = 'Trial'"; 
+				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
 				$result11=mysqli_query($conn, $query11);
 				
 				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
@@ -163,7 +163,7 @@ $suscriptionkind = "None";
 				  }else{	
 						if(mysqli_num_rows($result1)==true)
 							{	
-								$query5="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), visits = visits+1 where username ='$local_username'"; 
+								$query5="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), visits = visits+1, lastlogindate = CURDATE() where username ='$local_username'"; 
 								$result5=mysqli_query($conn, $query5);
 								header("refresh:0; url=videolinkadminmodule.php");
 								exit();

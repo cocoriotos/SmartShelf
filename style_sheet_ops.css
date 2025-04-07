@@ -73,6 +73,13 @@ label.col-form-label {
   padding: 20px;
 }
 
+.grid-containeropstable {
+  width: 100vw; /* Esto hace que el contenedor tenga el ancho completo de la ventana */
+  padding: 0; /* Opcional: elimina el padding si no lo necesitas */
+  margin: 0; /* Opcional: elimina el margen si no lo necesitas 
+}
+
+
 .grid-item {
   /*background-color: #ffffff;*/
   border-radius: 10px;
@@ -82,12 +89,30 @@ label.col-form-label {
   flex-direction: column;
 }
 
+.grid-item1 {
+  min-width: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0 10px; /* Margen de 10px a los lados */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
+}
+
+.grid-item-content1 {
+  display: inline-block; /* Permite que el ancho se ajuste al contenido */
+  overflow-x: auto; /* Agrega desplazamiento horizontal si la tabla es muy ancha */
+}
+
 .grid-item-content {
   padding: 20px;
   display: flex;
   flex-direction: column;
   /*justify-content: flex-end;*/ /* Alinea el contenido hacia la parte inferior */
   height: 100%; /* Ocupa toda la altura del grid-item */
+}
+
+.user-table {
+  width: 100%;
+  table-layout: auto; /* Ajusta las columnas según el contenido */
 }
 
 .grid-item-header {
@@ -521,8 +546,22 @@ hr {
 }
 
 .tabcontent {
-  display: none;
+  display: flex;
   padding: 20px;
   border: 1px solid #ccc;
   border-top: none;
+  justify-content: space-between; /* Distribuye los divs de manera equitativa */
+  gap: 10px; /* Puedes ajustar el espacio entre los divs */
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
 }
