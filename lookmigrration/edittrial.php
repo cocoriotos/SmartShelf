@@ -23,7 +23,7 @@ include "db_connection1.php";
 		<div class="col-md-4">
 		     		 
 			 <?php 
-					$query = "select id, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind  from videotips_app_access_list where  id='$id'";
+					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind  from videotips_app_access_list where  id='$id'";
 					$result_tasks = mysqli_query($conn,$query);
 					$row = mysqli_fetch_array($result_tasks);
 			 ?>
@@ -35,6 +35,10 @@ include "db_connection1.php";
 					<div class="form-group">
                         <a>ID</a>
 						<input type="text" name="id" class="form-control" placeholder="id" autofocus value ="<?php echo $row['id'];?>" readonly></input><br>
+					</div>
+                    <div class="form-group">
+                        <a>Usuario</a>
+						<input type="text" name="id" class="form-control" placeholder="username" autofocus value ="<?php echo $row['username'];?>" readonly></input><br>
 					</div>
 					<div class="form-group">
                         <a>Usuario Activo</a>
