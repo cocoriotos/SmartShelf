@@ -2,13 +2,6 @@
 include "sessions.php";
 include "sessionvalidation.php";
 $id = $_GET['id'];
-$videolink = $_GET['videolink'];
-$local_username = $_SESSION['email'];
-$deletedlink = $_SESSION['deletedlink'];
-$updatedlink = $_SESSION['updatedlink'];
-$sessiontimeoutreached = $_SESSION['sessiontimeoutreached'];
-$name = $_SESSION['name'];
-include "headeredit.php";
 include "db_connection1.php";
 ?>
 
@@ -24,7 +17,7 @@ include "db_connection1.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
 </head>
 
-<body id="bodyadminmodule">	
+<body id="bodyadminmodule" style="padding: 0%;">	
 <div class="container p-4">
 	<div class="row">
 		<div class="col-md-4">
