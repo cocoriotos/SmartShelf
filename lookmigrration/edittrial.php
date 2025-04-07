@@ -46,7 +46,7 @@ include "db_connection1.php";
 					</div>
 					<div class="form-group">
                         <a>Suscripción Activa</a><br>
-						<input name="suscriptionactive" class="form-control" placeholder="Suscripción Activa"><?php echo $row['suscriptionactive']?></input>
+						<input type="text" name="suscriptionactive" class="form-control" placeholder="Suscripción Activa" value = "<?php echo $row['suscriptionactive']?>"></input><br>
 					</div>
 					<div class="form-group">
                         <a>Días usados de suscripción</a><br>
