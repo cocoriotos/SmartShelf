@@ -292,12 +292,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Apellido</th>
                                             <th>Usuario</th>
                                             <th>Último Ingreso a la Plataforma </th>
+                                            <th>Tipo de Suscripción</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql = "SELECT name, lastname, username, lastlogindate FROM videotips_app_access_list order by lastlogindate desc";
+                                        $sql = "SELECT name, lastname, username, lastlogindate, suscriptionkind FROM videotips_app_access_list order by lastlogindate desc";
                                         $result = $conn->query($sql);
 
                                         // Mostrar los resultados en la tabla
@@ -306,8 +307,9 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<tr>";
                                                 echo "<td>" . $row["name"] . "</td>";
                                                 echo "<td>" . $row["lastname"] . "</td>";
-                                                echo "<td>" . $row["username"] . "</td>";
+                                                echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";                                                
                                                 echo "<td>" . $row["lastlogindate"] . "</td>";
+                                                echo "<td>" . $row["suscriptionkind"] . "</td>";
                                                 echo "</tr>";
                                             }
                                         } else {
