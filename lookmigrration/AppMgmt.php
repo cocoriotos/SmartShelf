@@ -315,7 +315,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "</tr>";
                                             }
                                         } else {
-                                            echo "<tr><td colspan='4'>No se encontraron resultados</td></tr>";
+                                            echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
                                         }
                                         ?>
                                     </tbody>
@@ -344,12 +344,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                         <th>Usuario Activo</th>
                                                         <th>Suscripción Activa</th>
                                                         <th>Tipo de Suscripción</th>
+                                                        <th>Acciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php
                                                     // Consulta SQL
-                                                    $sql = "SELECT name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
+                                                    $sql = "SELECT id, name, lastname, username, active, suscriptionactive, suscriptionkind FROM videotips_app_access_list where active = 0 and suscriptionactive = 0 and (suscriptionkind = 'Trial' or suscriptionkind = 'De Pago')";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
@@ -358,10 +359,11 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                             echo "<tr>";
                                                             echo "<td>" . $row['name'] . "</td>";
                                                             echo "<td>" . $row['lastname'] . "</td>";
-                                                            echo "<td>" . $row['username'] . "</td>";
+                                                            echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";
                                                             echo "<td>" . ($row['active'] ? 'Sí' : 'No') . "</td>";
                                                             echo "<td>" . ($row['suscriptionactive'] ? 'Sí' : 'No'). "</td>";
                                                             echo "<td>" . $row['suscriptionkind'] . "</td>";
+                                                            echo '<td><a href="edittrial.php?id=' . $row['id'] . '" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                             echo "</tr>";
                                                             }   
                                                         } else {
@@ -455,7 +457,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<tr>";
                                                 echo "<td>" . $row["name"] . "</td>";
                                                 echo "<td>" . $row["lastname"] . "</td>";
-                                                echo "<td>" . $row["username"] . "</td>";
+                                                echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";
                                                 echo "<td>" . $row["suscriptiondaysleft"] . "</td>";
                                                 echo "</tr>";
                                             }
@@ -501,7 +503,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                             echo "<tr>";
                                                             echo "<td>" . $row['name'] . "</td>";
                                                             echo "<td>" . $row['lastname'] . "</td>";
-                                                            echo "<td>" . $row['username'] . "</td>";
+                                                            echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";
                                                             echo "<td>" . $row['suscriptionkind'] . "</td>";
                                                             echo "</tr>";
                                                             }   
