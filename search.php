@@ -43,6 +43,8 @@ function searchCards() {
     }
 }
 
+
+
 function updateCardCount(visibleCards) {
     const totalCardsContainer = document.querySelector(".total-cards");
     totalCardsContainer.textContent = `Total de cards mostrados: ${visibleCards}`;
