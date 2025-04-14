@@ -59,6 +59,10 @@ include "db_connection1.php";
 						<input type="text" name="suscriptionpayed" class="form-control" placeholder="Suscripción Pagada" value = "<?php echo $row['suscriptionpayed'];?>"></input><br>
 					</div>
 					<div class="form-group">
+                        <a> Fecha de Inscripción</a><br>
+						<input type="date" name="registrationdate" class="form-control" placeholder="Fecha de Inscripción" value = "<?php echo $row['registrationdate']?>" readonly></input><br>
+					</div>
+					<div class="form-group">
                         <a>Última Fecha de Pago</a><br>
 						<input type="date" name="lastsuscriptionpaymentdate" class="form-control" placeholder="Última Fecha de Pago" value = "<?php echo $row['lastsuscriptionpaymentdate']?>"></input><br>
 					</div>
