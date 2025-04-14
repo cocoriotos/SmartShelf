@@ -64,7 +64,7 @@ include "db_connection1.php";
 					</div>
                     <div class="form-group">
                         <a>Tipo de Suscripción</a><br>
-						<select name="suscriptionkind" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionactive['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
+						<select name="suscriptionkind" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind order by suscriptionkind desc"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionkind['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
 						<!--<input type="text" name="suscriptionkind" class="form-control" placeholder="Tipo de Suscripción" value = "<?php /*echo $row['suscriptionkind']*/?>"></input><br>-->
 					</div>
 					<input type="submit" class="btn btn-success btn-block" name="update_suscription" value="Actualizar Suscripción"></input>
