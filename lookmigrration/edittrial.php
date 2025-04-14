@@ -23,7 +23,7 @@ include "db_connection1.php";
 		<div class="col-md-4">
 		     		 
 			 <?php 
-					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind  from videotips_app_access_list where  id='$id'";
+					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind, registrationdate  from videotips_app_access_list where  id='$id'";
 					$result_tasks = mysqli_query($conn,$query);
 					$row = mysqli_fetch_array($result_tasks);
 			 ?>
