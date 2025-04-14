@@ -42,6 +42,7 @@ include "db_connection1.php";
 					</div>
 					<div class="form-group">
                         <a>Usuario Activo</a><br>
+						<select name="active" class="form-control" autofocus><?php $query = "SELECT active FROM videotips_active"; $result = mysqli_query($conn, $query); while ($usuarioActivo = mysqli_fetch_assoc($result)) {$active = $usuarioActivo['active']; $selected = ($active == $row['active']) ? 'selected' : ''; echo "<option value='$active' $selected>$active</option>";}?></select>
 						<input type="text" name="active" class="form-control" placeholder="Usuario Activo" autofocus value ="<?php echo $row['active'];?>"></input><br>
 					</div>
 					<div class="form-group">
