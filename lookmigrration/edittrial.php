@@ -60,7 +60,7 @@ include "db_connection1.php";
 					</div>
 					<div class="form-group">
                         <a>Última Fecha de Pago</a><br>
-						<input type="text" name="lastsuscriptionpaymentdate" class="form-control" placeholder="Última Fecha de Pago" value = "<?php echo $row['lastsuscriptionpaymentdate']?>"></input><br>
+						<input type="date" name="lastsuscriptionpaymentdate" class="form-control" placeholder="Última Fecha de Pago" value = "<?php echo $row['lastsuscriptionpaymentdate']?>"></input><br>
 					</div>
                     <div class="form-group">
                         <a>Tipo de Suscripción</a><br>
