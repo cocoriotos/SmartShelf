@@ -74,15 +74,10 @@ include "db_connection1.php";
 						<select name="suscriptionkind" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind order by suscriptionkind desc"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionkind['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
 						<!--<input type="text" name="suscriptionkind" class="form-control" placeholder="Tipo de Suscripción" value = "<?php /*echo $row['suscriptionkind']*/?>"></input><br>-->
 					</div>
-					<div class="form-group">
+					<!--<div class="form-group">
                         <a>Numero de Comprobante</a><br>
-						<input type="text" name="proofofpurchasenumber" class="form-control" placeholder="id" autofocus value ="<?php echo $row1['proofofpurchasenumber'];?>" readonly></input><br>
-					</div>
-					<div class="form-group">
-                        <a>Paquete de Suscripción</a><br>
-						<select name="suscriptionpackage" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind order by suscriptionkind desc"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionkind['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
-						<!--<input type="text" name="suscriptionkind" class="form-control" placeholder="Tipo de Suscripción" value = "<?php /*echo $row['suscriptionkind']*/?>"></input><br>-->
-					</div>
+						<input type="text" name="proofofpurchasenumber" class="form-control" placeholder="id" autofocus value ="<?php /*echo $row1['proofofpurchasenumber'];*/?>"></input><br>
+					</div>-->
 					<input type="submit" class="btn btn-success btn-block" name="update_suscription" value="Actualizar Suscripción"></input>
 					<input type="submit" class="btn btn-success btn-block" name="logout" value="Cancel" formaction="AppMgmt.php"></input>
 				</form>
