@@ -26,7 +26,7 @@ echo $suscriptionkind;
 echo $packages;
 echo $proofofpurchasenumber;
 
-$query = "UPDATE videotips_suscription_payments SET currentpaid = 1, paymentcounter = paymentcounter + 1, lastpaymentdate = $lastsuscriptionpaymentdate, suscription_package = $package, proofofpurchasenumber = $proofofpurchasenumber  WHERE username = $username";
+$query = "UPDATE videotips_suscription_payments SET currentpaid = currentpaid + 1, paymentcounter = paymentcounter + 1, lastpaymentdate = $lastsuscriptionpaymentdate, suscription_package = $packages, proofofpurchasenumber = $proofofpurchasenumber  WHERE username = $username";
 $result = mysqli_query($conn,$query);
 
 $query1 = "UPDATE videotips_app_access_list SET suscriptionactive = $suscriptionactive, suscriptionpayed = $suscriptionpayed, lastsuscriptionpaymentdate = $lastsuscriptionpaymentdate, suscriptionkind = $suscriptionkind  where username = $username";
