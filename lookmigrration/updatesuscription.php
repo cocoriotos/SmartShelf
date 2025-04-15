@@ -26,7 +26,7 @@ echo $suscriptionkind;
 echo $packages;
 echo $proofofpurchasenumber;
 
-$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
+/*$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
                           SET currentpaid = currentpaid + 1, 
                               paymentcounter = paymentcounter + 1, 
                               lastpaymentdate = ?, 
@@ -34,7 +34,7 @@ $stmt = $mysqli->prepare("UPDATE videotips_suscription_payments
                               proofofpurchasenumber = ? 
                           WHERE username = ?");
 $stmt->bind_param("ssss", '$lastsuscriptionpaymentdate', '$packages', '$proofofpurchasenumber', '$username');
-$stmt->execute();
+$stmt->execute();*/
 
 $stmt1 = $mysqli->prepare("UPDATE videotips_app_access_list 
                            SET suscriptionactive = ?, 
@@ -46,7 +46,7 @@ $stmt1->bind_param("sssss", '$suscriptionactive', '$suscriptionpayed', '$lastsus
 $stmt1->execute();
 
 
-if ($stmt->execute() && $stmt1->execute()) {
+if ($stmt1->execute()) {
     header("refresh:0; url=edittrial.php");
     exit();
     }
