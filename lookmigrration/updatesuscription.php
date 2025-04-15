@@ -26,14 +26,27 @@ echo $suscriptionkind;
 echo $packages;
 echo $proofofpurchasenumber;
 
-$query = "UPDATE videotips_suscription_payments SET currentpaid = currentpaid + 1, paymentcounter = paymentcounter + 1, lastpaymentdate = $lastsuscriptionpaymentdate, suscription_package = $packages, proofofpurchasenumber = $proofofpurchasenumber  WHERE username = $username";
-$result = mysqli_query($conn,$query);
+$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
+                          SET currentpaid = currentpaid + 1, 
+                              paymentcounter = paymentcounter + 1, 
+                              lastpaymentdate = ?, 
+                              suscription_package = ?, 
+                              proofofpurchasenumber = ? 
+                          WHERE username = ?");
+$stmt->bind_param("ssss", $lastsuscriptionpaymentdate, $packages, $proofofpurchasenumber, $username);
+$stmt->execute();
 
-$query1 = "UPDATE videotips_app_access_list SET suscriptionactive = $suscriptionactive, suscriptionpayed = $suscriptionpayed, lastsuscriptionpaymentdate = $lastsuscriptionpaymentdate, suscriptionkind = $suscriptionkind  where username = $username";
-$result1 = mysqli_query($conn,$query1);
+$stmt1 = $mysqli->prepare("UPDATE videotips_app_access_list 
+                           SET suscriptionactive = ?, 
+                               suscriptionpayed = ?, 
+                               lastsuscriptionpaymentdate = ?, 
+                               suscriptionkind = ?  
+                           where username = ?");
+$stmt1->bind_param("sssss", $suscriptionactive, $suscriptionpayed, $lastsuscriptionpaymentdate, $suscriptionkind, $username);
+$stmt1->execute();
 
 
-if ($result && $result1) {
+if ($stmt && $stmt1) {
     header("refresh:0; url=edittrial.php");
   exit();
     }
