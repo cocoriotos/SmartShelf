@@ -15,6 +15,16 @@ $suscriptionkind = $_POST['suscriptionkind'];
 $packages = $_POST['packages'];
 $proofofpurchasenumber = $_POST['proofofpurchasenumber'];
 
+echo $username;
+echo $active;
+echo $suscriptionactive;
+echo $suscriptiondaysleft;
+echo $suscriptionpayed;
+echo $registrationdate;
+echo $lastsuscriptionpaymentdate;
+echo $suscriptionkind;
+echo $packages;
+echo $proofofpurchasenumber;
 
 $query = "UPDATE videotips_suscription_payments SET currentpaid = 1, paymentcounter = paymentcounter + 1, lastpaymentdate = $lastsuscriptionpaymentdate, suscription_package = $package, proofofpurchasenumber = $proofofpurchasenumber  WHERE username = $username";
 $result = mysqli_query($conn,$query);
