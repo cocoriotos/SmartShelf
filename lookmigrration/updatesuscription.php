@@ -27,13 +27,13 @@ echo $packages;
 echo $proofofpurchasenumber;
 
 $stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
-                          SET currentpaid = currentpaid + 1, 
-                              paymentcounter = paymentcounter + 1, 
+                          SET currentpaid = currentpaid+1, 
+                              paymentcounter = paymentcounter+1, 
                               lastpaymentdate = ?, 
                               suscription_package = ?, 
                               proofofpurchasenumber = ? 
                           WHERE username = ?");
-$stmt->bind_param("ssss", $lastsuscriptionpaymentdate, $packages, $proofofpurchasenumber, $username);
+$stmt->bind_param("ssss", '$lastsuscriptionpaymentdate', '$packages', '$proofofpurchasenumber', '$username');
 $stmt->execute();
 
 $stmt1 = $mysqli->prepare("UPDATE videotips_app_access_list 
@@ -42,7 +42,7 @@ $stmt1 = $mysqli->prepare("UPDATE videotips_app_access_list
                                lastsuscriptionpaymentdate = ?, 
                                suscriptionkind = ?  
                            where username = ?");
-$stmt1->bind_param("sssss", $suscriptionactive, $suscriptionpayed, $lastsuscriptionpaymentdate, $suscriptionkind, $username);
+$stmt1->bind_param("sssss", '$suscriptionactive', '$suscriptionpayed', '$lastsuscriptionpaymentdate', '$suscriptionkind', '$username');
 $stmt1->execute();
 
 
