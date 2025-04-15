@@ -13,16 +13,16 @@ $suscriptionkind = $_POST['suscriptionkind'];
 $packages = $_POST['packages'];
 $proofofpurchasenumber = $_POST['proofofpurchasenumber'];
 
-echo $username;
-echo $active;
-echo $suscriptionactive;
-echo $suscriptiondaysleft;
-echo $suscriptionpayed;
-echo $registrationdate;
-echo $lastsuscriptionpaymentdate;
-echo $suscriptionkind;
-echo $packages;
-echo $proofofpurchasenumber;
+echo $username . "\n\n" ;
+echo $active. "\n\n" ;
+echo $suscriptionactive. "\n\n" ;
+echo $suscriptiondaysleft. "\n\n" ;
+echo $suscriptionpayed. "\n\n" ;
+echo $registrationdate. "\n\n" ;
+echo $lastsuscriptionpaymentdate. "\n\n" ;
+echo $suscriptionkind. "\n\n" ;
+echo $packages. "\n\n" ;
+echo $proofofpurchasenumber. "\n\n" ;
 
 /*$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
                           SET currentpaid = currentpaid + 1, 
