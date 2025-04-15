@@ -27,8 +27,8 @@ echo $packages;
 echo $proofofpurchasenumber;
 
 $stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
-                          SET currentpaid = currentpaid+1, 
-                              paymentcounter = paymentcounter+1, 
+                          SET currentpaid = currentpaid + 1, 
+                              paymentcounter = paymentcounter + 1, 
                               lastpaymentdate = ?, 
                               suscription_package = ?, 
                               proofofpurchasenumber = ? 
@@ -46,9 +46,9 @@ $stmt1->bind_param("sssss", '$suscriptionactive', '$suscriptionpayed', '$lastsus
 $stmt1->execute();
 
 
-if ($stmt && $stmt1) {
+if ($stmt->execute() && $stmt1->execute()) {
     header("refresh:0; url=edittrial.php");
-  exit();
+    exit();
     }
   else{
       header("refresh:0; url=AppMgmt.php");
