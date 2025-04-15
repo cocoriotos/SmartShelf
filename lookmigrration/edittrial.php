@@ -26,7 +26,7 @@ include "db_connection1.php";
 					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind, registrationdate  from videotips_app_access_list where  id='$id'";
 					$result_tasks = mysqli_query($conn,$query);
 					$row = mysqli_fetch_array($result_tasks);
-					$query1 = "select proofofpurchasenumber from videotips_suscription_payments where  id='$row[username]'";
+					$query1 = "select proofofpurchasenumber from videotips_suscription_payments where  username='$row[username]'";
 					$result_tasks1 = mysqli_query($conn,$query1);
 					$row1 = mysqli_fetch_array($result_tasks1);
 			 ?>
