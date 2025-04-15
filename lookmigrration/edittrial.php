@@ -26,7 +26,7 @@ include "db_connection1.php";
 					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind, registrationdate  from videotips_app_access_list where  id='$id'";
 					$result_tasks = mysqli_query($conn,$query);
 					$row = mysqli_fetch_array($result_tasks);
-					$query1 = "select proofofpurchasenumber from videotips_suscription_payments where  username='$row[username]'";
+					$query1 = "select proofofpurchasenumber, suscription_package from videotips_suscription_payments where  username='$row[username]'";
 					$result_tasks1 = mysqli_query($conn,$query1);
 					$row1 = mysqli_fetch_array($result_tasks1);
 			 ?>
@@ -72,6 +72,10 @@ include "db_connection1.php";
                     <div class="form-group">
                         <a>Tipo de Suscripción</a><br>
 						<select name="suscriptionkind" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind order by suscriptionkind desc"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionkind['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
+					</div>
+					<div class="form-group">
+                        <a>Paquete de Suscripción</a><br>
+						<select name="packages" class="form-control" autofocus><?php $query = "SELECT packages FROM videotips_packages order by packages desc"; $result = mysqli_query($conn, $query); while ($packages = mysqli_fetch_assoc($result)) {$packages = $packages['packages']; $selected = ($packages == $row1['suscription_package']) ? 'selected' : ''; echo "<option value='$packages' $selected>$packages</option>";}?></select>
 					</div>
 					<div class="form-group">
                         <a>Numero de Comprobante</a><br>
