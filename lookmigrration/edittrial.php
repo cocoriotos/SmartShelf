@@ -26,6 +26,9 @@ include "db_connection1.php";
 					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind, registrationdate  from videotips_app_access_list where  id='$id'";
 					$result_tasks = mysqli_query($conn,$query);
 					$row = mysqli_fetch_array($result_tasks);
+					$query1 = "select proofofpurchasenumber from vvideotips_suscription_payments where  id='$row[username]'";
+					$result_tasks1 = mysqli_query($conn,$query1);
+					$row1 = mysqli_fetch_array($result_tasks1);
 			 ?>
 			 			 
 		  
@@ -38,7 +41,7 @@ include "db_connection1.php";
 					</div>
                     <div class="form-group">
                         <a>Usuario</a><br>
-						<input type="text" name="id" class="form-control" placeholder="username" autofocus value ="<?php echo $row['username'];?>" readonly></input><br>
+						<input type="text" name="username" class="form-control" placeholder="username" autofocus value ="<?php echo $row['username'];?>" readonly></input><br>
 					</div>
 					<div class="form-group">
                         <a>Usuario Activo</a><br>
@@ -69,6 +72,15 @@ include "db_connection1.php";
                     <div class="form-group">
                         <a>Tipo de Suscripción</a><br>
 						<select name="suscriptionkind" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind order by suscriptionkind desc"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionkind['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
+						<!--<input type="text" name="suscriptionkind" class="form-control" placeholder="Tipo de Suscripción" value = "<?php /*echo $row['suscriptionkind']*/?>"></input><br>-->
+					</div>
+					<div class="form-group">
+                        <a>Numero de Comprobante</a><br>
+						<input type="text" name="proofofpurchasenumber" class="form-control" placeholder="id" autofocus value ="<?php echo $row1['proofofpurchasenumber'];?>" readonly></input><br>
+					</div>
+					<div class="form-group">
+                        <a>Paquete de Suscripción</a><br>
+						<select name="suscriptionpackage" class="form-control" autofocus><?php $query = "SELECT suscriptionkind FROM videotips_suscriptionkind order by suscriptionkind desc"; $result = mysqli_query($conn, $query); while ($suscriptionkind = mysqli_fetch_assoc($result)) {$suscriptionkind = $suscriptionkind['suscriptionkind']; $selected = ($suscriptionkind == $row['suscriptionkind']) ? 'selected' : ''; echo "<option value='$suscriptionkind' $selected>$suscriptionkind</option>";}?></select>
 						<!--<input type="text" name="suscriptionkind" class="form-control" placeholder="Tipo de Suscripción" value = "<?php /*echo $row['suscriptionkind']*/?>"></input><br>-->
 					</div>
 					<input type="submit" class="btn btn-success btn-block" name="update_suscription" value="Actualizar Suscripción"></input>
