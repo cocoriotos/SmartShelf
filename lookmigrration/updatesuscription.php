@@ -28,7 +28,7 @@ echo $proofofpurchasenumber . "\n\n" ;
 $sql = "UPDATE videotips_suscription_payments SET currentpaid = currentpaid + 1, paymentcounter = paymentcounter + 1, lastpaymentdate = '$lastsuscriptionpaymentdate', suscription_package = '$packages', proofofpurchasenumber = '$proofofpurchasenumber' WHERE username = '$username'";
 $result = $conn->query($sql);
 
-$sql1 = "UPDATE videotips_app_access_list SET suscriptionactive = ?, suscriptionpayed = ?, lastsuscriptionpaymentdate = ?, suscriptionkind = ? where username = ?";
+$sql1 = "UPDATE videotips_app_access_list SET suscriptionactive = '$suscriptionactive', suscriptionpayed = '$suscriptionpayed', lastsuscriptionpaymentdate = '$lastsuscriptionpaymentdate', suscriptionkind = '$suscriptionkind' where username = '$username'";
 $result1 = $conn->query($sql1);
 
 /*$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
