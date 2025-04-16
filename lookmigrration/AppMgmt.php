@@ -308,11 +308,11 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                         if ($result->num_rows > 0) {
                                             while($row = $result->fetch_assoc()) {
                                                 echo "<tr>";
-                                                echo "<td>" . $row["name"] . "</td>";
-                                                echo "<td>" . $row["lastname"] . "</td>";
-                                                echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";                                                
-                                                echo "<td>" . $row["lastlogindate"] . "</td>";
-                                                echo "<td>" . $row["suscriptionkind"] . "</td>";
+                                                echo "<td>" . $row['name'] . "</td>";
+                                                echo "<td>" . $row['lastname'] . "</td>";
+                                                echo "<td><a href='mailto:" . $row['username'] . "'>" . $row["username"] . "</a></td>";                                                
+                                                echo "<td>" . $row['lastlogindate'] . "</td>";
+                                                echo "<td>" . $row['suscriptionkind'] . "</td>";
                                                 echo '<td><a href="editnodepagotrial.php?id=' . $row['id'] . '" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 echo "</tr>";
                                             }
