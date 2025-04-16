@@ -3,7 +3,9 @@ include "sessions.php";
 include "sessionvalidation.php";
 $id = $_GET['id'];
 include "db_connection1.php";
+echo $id;
 ?>
+
 
 <head>	
     <script src="head.js" defer></script>
