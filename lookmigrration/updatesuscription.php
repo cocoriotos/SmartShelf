@@ -24,6 +24,13 @@ echo $suscriptionkind . "\n\n" ;
 echo $packages . "\n\n" ;
 echo $proofofpurchasenumber . "\n\n" ;
 
+
+$sql = "UPDATE videotips_suscription_payments SET currentpaid = currentpaid + 1, paymentcounter = paymentcounter + 1, lastpaymentdate = '$lastsuscriptionpaymentdate', suscription_package = '$packages', proofofpurchasenumber = '$proofofpurchasenumber' WHERE username = '$username'";
+$result = $conn->query($sql);
+
+$sql1 = "UPDATE videotips_app_access_list SET suscriptionactive = ?, suscriptionpayed = ?, lastsuscriptionpaymentdate = ?, suscriptionkind = ? where username = ?";
+$result1 = $conn->query($sql1);
+
 /*$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
                           SET currentpaid = currentpaid + 1, 
                               paymentcounter = paymentcounter + 1, 
@@ -34,17 +41,18 @@ echo $proofofpurchasenumber . "\n\n" ;
 $stmt->bind_param("ssss", '$lastsuscriptionpaymentdate', '$packages', '$proofofpurchasenumber', '$username');
 $stmt->execute();*/
 
-$stmt1 = $mysqli->prepare("UPDATE videotips_app_access_list 
+
+/*$stmt1 = $mysqli->prepare("UPDATE videotips_app_access_list 
                            SET suscriptionactive = ?, 
                                suscriptionpayed = ?, 
                                lastsuscriptionpaymentdate = ?, 
                                suscriptionkind = ?  
                            where username = ?");
 $stmt1->bind_param("sssss", '$suscriptionactive', '$suscriptionpayed', '$lastsuscriptionpaymentdate', '$suscriptionkind', '$username');
-$stmt1->execute();
+$stmt1->execute();*/
 
 
-if ($stmt1->execute()) {
+if ($result && $result1) {
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
     echo "<script>
       document.addEventListener('DOMContentLoaded', function() {
