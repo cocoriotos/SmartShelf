@@ -5,55 +5,76 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome para íconos -->
 
 <script>
-/*function searchVisitsByDate() {
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim(); // Obtener y normalizar el término de búsqueda
-    const rows = document.querySelectorAll("table tbody tr"); // Obtener todas las filas de la tabla
-
-    // Dividir el término de búsqueda en palabras individuales
-    const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
-
-    rows.forEach((row) => {
-        const columns = row.querySelectorAll("td"); // Obtener todas las celdas de la fila
-        const content = Array.from(columns).map(col => col.textContent.toLowerCase()).join(" "); // Concatenar todo el contenido de la fila
-
-        let match = true;
-
-        // Verificar si todas las palabras de búsqueda están presentes en el contenido de la fila
-        if (searchWords.length > 0) {
-            match = searchWords.every(word => content.includes(word));
-        }
-
-        // Mostrar u ocultar la fila según si coincide con la búsqueda
-        if (match) {
-            row.style.display = "table-row";
-        } else {
-            row.style.display = "none";
-        }
-    });
-}*/
-
 
 function searchVisitsByDate(inputElement) {
     const searchTerm = inputElement.value.toLowerCase().trim();
     const tableId = inputElement.getAttribute("data-table-id");
     const rows = document.querySelectorAll(`#${tableId} tbody tr`);
-
     const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
 
     rows.forEach((row) => {
         const columns = row.querySelectorAll("td");
         const content = Array.from(columns).map(col => col.textContent.toLowerCase()).join(" ");
-        let match = searchWords.length === 0 || searchWords.every(word => content.includes(word));
+        const match = searchWords.length === 0 || searchWords.every(word => content.includes(word));
         row.style.display = match ? "table-row" : "none";
     });
 }
 
-function clearSearch() {
-    const searchInput = document.getElementById("searchInput");
-    searchInput.value = ""; // Limpiar el campo de búsqueda
-    searchVisitsByDate(); // Actualizar la búsqueda
+function clearSearch(iconElement) {
+    const wrapper = iconElement.closest(".search-wrapper");
+    const input = wrapper.querySelector(".searchInput");
+    input.value = "";
+    searchVisitsByDate(input);
+    input.focus(); // Para mantener foco después de limpiar
 }
 </script>
+
+<style>
+.search-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+}
+
+.search-wrapper input.searchInput {
+    width: 100%;
+    padding: 10px 35px 10px 35px; /* espacio para íconos */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+}
+
+.clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #999;
+    cursor: pointer;
+    display: none; /* Oculta por defecto */
+}
+
+/* Mostrar el ícono "X" cuando hay texto */
+.search-wrapper input:not(:placeholder-shown) ~ .clear-icon {
+    display: block;
+}
+</style>
 
 <div class="search-container">
     <div class="search-wrapper">
