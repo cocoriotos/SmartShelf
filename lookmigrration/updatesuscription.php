@@ -14,15 +14,15 @@ $packages = $_POST['packages'];
 $proofofpurchasenumber = $_POST['proofofpurchasenumber'];
 
 echo $username . "\n\n" ;
-echo $active. "\n\n" ;
-echo $suscriptionactive. "\n\n" ;
-echo $suscriptiondaysleft. "\n\n" ;
-echo $suscriptionpayed. "\n\n" ;
-echo $registrationdate. "\n\n" ;
-echo $lastsuscriptionpaymentdate. "\n\n" ;
-echo $suscriptionkind. "\n\n" ;
-echo $packages. "\n\n" ;
-echo $proofofpurchasenumber. "\n\n" ;
+echo $active . "\n\n" ;
+echo $suscriptionactive . "\n\n" ;
+echo $suscriptiondaysleft . "\n\n" ;
+echo $suscriptionpayed . "\n\n" ;
+echo $registrationdate . "\n\n" ;
+echo $lastsuscriptionpaymentdate . "\n\n" ;
+echo $suscriptionkind . "\n\n" ;
+echo $packages . "\n\n" ;
+echo $proofofpurchasenumber . "\n\n" ;
 
 /*$stmt = $mysqli->prepare("UPDATE videotips_suscription_payments 
                           SET currentpaid = currentpaid + 1, 
@@ -45,10 +45,44 @@ $stmt1->execute();
 
 
 if ($stmt1->execute()) {
+    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+    echo "<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+          title: 'Mensaje',
+          text: 'Conexión a la aplicación exitosa',
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+          customClass: {
+            popup: 'custom-swal-popup',
+            title: 'custom-swal-title',
+            content: 'custom-swal-content',
+            confirmButton: 'custom-swal-confirm-button'
+          }
+        })
+      });
+      </script>";	
     header("refresh:0; url=edittrial.php");
     exit();
     }
   else{
+      echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+				echo "<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						Swal.fire({
+							title: 'Mensaje',
+							text: 'Conexión a la aplicación no exitosa',
+							icon: 'error',
+							confirmButtonText: 'Aceptar',
+							customClass: {
+								popup: 'custom-swal-popup',
+								title: 'custom-swal-title',
+								content: 'custom-swal-content',
+								confirmButton: 'custom-swal-confirm-button'
+							}
+						})
+					});
+					</script>";	
       header("refresh:0; url=AppMgmt.php");
       exit();
       }
