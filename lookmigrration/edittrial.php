@@ -57,7 +57,8 @@ include "db_connection1.php";
 					</div>
 					<div class="form-group">
                         <a>Suscripción Pagada</a><br>
-						<input type="text" name="suscriptionpayed" class="form-control" placeholder="Suscripción Pagada" value = "<?php echo $row['suscriptionpayed'];?>"></input><br>
+						<select name="suscriptionpayed" class="form-control" autofocus><?php $query = "SELECT active FROM videotips_active"; $result = mysqli_query($conn, $query); while ($suscriptionpayed = mysqli_fetch_assoc($result)) {$active = $suscriptionpayed['active']; $selected = ($active == $row['suscriptionpayed']) ? 'selected' : ''; echo "<option value='$active' $selected>$active</option>";}?></select>
+						<!--<input type="text" name="suscriptionpayed" class="form-control" placeholder="Suscripción Pagada" value = "<?php echo $row['suscriptionpayed'];?>"></input><br>-->
 					</div>
 					<div class="form-group">
                         <a> Fecha de Inscripción</a><br>
