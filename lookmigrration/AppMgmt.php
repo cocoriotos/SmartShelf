@@ -339,7 +339,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <br>
                                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                                     </div> 
-                                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                                        <table id="inactiveUsersTable" border="1" cellpadding="5" cellspacing="0" class="user-table">
                                                 <thead>
                                                     <tr>
                                                         <th>Nombre</th>
@@ -392,7 +392,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                             </div>
                                 <!-- Aquí va la tabla que listará los resultados -->
-                                <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                                <table id="inactiveUsersTable" border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -442,7 +442,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 <br>
                                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                                     </div> 
-                                        <table border="1" cellpadding="5" cellspacing="0" class="user-table">
+                                        <table id="inactiveUsersTable" border="1" cellpadding="5" cellspacing="0" class="user-table">
                                                 <thead>
                                                     <tr>
                                                         <th>Nombre</th>
