@@ -32,6 +32,8 @@ function searchVisitsByDate() {
     });
 }
 
+}
+
 function clearSearch() {
     const searchInput = document.getElementById("searchInput");
     searchInput.value = ""; // Limpiar el campo de búsqueda

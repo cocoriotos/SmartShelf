@@ -37,32 +37,37 @@ if ($result && $result1) {
         content: 'custom-swal-content',
         confirmButton: 'custom-swal-confirm-button'
       }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'AppMgmt.php';
+      }
     });
   });
   </script>";
-    
-    header("refresh:0; url=AppMgmt.php");
-    exit();
-    }
+  exit(); // Solo para asegurarte de que no se ejecuta más PHP
+}
   else{
-    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-    echo "<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      Swal.fire({
-        title: 'Mensaje',
-        text: 'Suscripción No Pudo Ser Actualizada Correctamente',
-        icon: 'error',
-        confirmButtonText: 'Aceptar',
-        customClass: {
-          popup: 'custom-swal-popup',
-          title: 'custom-swal-title',
-          content: 'custom-swal-content',
-          confirmButton: 'custom-swal-confirm-button'
-        }
+      echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+      echo "<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+          title: 'Mensaje',
+          text: 'Suscripción No Pudo Ser Actualizada Correctamente',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+          customClass: {
+            popup: 'custom-swal-popup',
+            title: 'custom-swal-title',
+            content: 'custom-swal-content',
+            confirmButton: 'custom-swal-confirm-button'
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = 'AppMgmt.php';
+          }
+        });
       });
-    });
-    </script>";    
-      header("refresh:0; url=AppMgmt.php");
-      exit();
-      }
+      </script>";
+      exit(); // Solo para asegurarte de que no se ejecuta más PHP
+    }        
 ?>
