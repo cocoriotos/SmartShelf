@@ -443,13 +443,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Apellido</th>
                                             <th>Usuario</th>
                                             <th>Días de Suscripción Usados</th>
-
+                                            <th>Acción</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql = "SELECT name, lastname, username, suscriptiondaysleft, suscriptionkind FROM videotips_app_access_list WHERE suscriptionkind = 'De Pago' order by suscriptiondaysleft desc  ";
+                                        $sql = "SELECT id, name, lastname, username, suscriptiondaysleft, suscriptionkind FROM videotips_app_access_list WHERE suscriptionkind = 'De Pago' order by suscriptiondaysleft desc  ";
                                         $result = $conn->query($sql);
 
                                         // Mostrar los resultados en la tabla
@@ -460,7 +460,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<td>" . $row["lastname"] . "</td>";
                                                 echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";
                                                 echo "<td>" . $row["suscriptiondaysleft"] . "</td>";
-                                                echo '<td><a href="editdepago.php?id=' . $row['username'] . '" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
+                                                echo '<td><a href="editdepago.php?id=' . $row['id'] . '" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 echo "</tr>";
                                             }
                                         } else {
