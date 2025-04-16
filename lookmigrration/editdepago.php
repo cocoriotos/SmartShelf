@@ -33,7 +33,7 @@ include "db_connection1.php";
 			 			 
 		  
 			<div class="card card-body">
-				<form action="updatesuscription.php" method="POST"> 
+				<form action="updatedepagosuscription.php" method="POST"> 
 					
 					<div class="form-group">
                         <a>ID</a><br>
