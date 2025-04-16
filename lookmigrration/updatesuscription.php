@@ -77,7 +77,7 @@ if ($result && $result1) {
       });
     });
     </script>";	
-    header("refresh:0; url=edittrial.php");
+    header("refresh:0; url=AppMgmt.php");
     exit();
     }
   else{

@@ -443,6 +443,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Apellido</th>
                                             <th>Usuario</th>
                                             <th>Días de Suscripción Usados</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -459,6 +460,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<td>" . $row["lastname"] . "</td>";
                                                 echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";
                                                 echo "<td>" . $row["suscriptiondaysleft"] . "</td>";
+                                                echo '<td><a href="editdepago.php?id=' . $row['username'] . '" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 echo "</tr>";
                                             }
                                         } else {
