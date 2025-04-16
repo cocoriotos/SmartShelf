@@ -287,7 +287,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                             </div>
                                 <!-- Aquí va la tabla que listará los resultados -->
-                                <table  id="inactiveUsersTable" class="user-table" border="1" border="1" cellpadding="5" cellspacing="0">
+                                <table  id="inactiveUsersTable" border="1" cellpadding="5" cellspacing="0" class="user-table">
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
@@ -317,7 +317,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "</tr>";
                                             }
                                         } else {
-                                            echo "<tr><td colspan='5'>No se encontraron resultados</td></tr>";
+                                            echo "<tr><td colspan='6'>No se encontraron resultados</td></tr>";
                                         }
                                         ?>
                                     </tbody>
@@ -371,7 +371,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                             echo "</tr>";
                                                             }   
                                                         } else {
-                                                    echo "<tr><td colspan='6'>No hay usuarios activos</td></tr>";
+                                                    echo "<tr><td colspan='7'>No hay usuarios activos</td></tr>";
                                                     }
                                                 ?>
                                                 </tbody>
