@@ -32,7 +32,7 @@ function searchVisitsByDate() {
     });
 }
 
-}
+
 
 function clearSearch() {
     const searchInput = document.getElementById("searchInput");
