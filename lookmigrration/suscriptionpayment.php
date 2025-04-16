@@ -89,11 +89,11 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                   <thead id="tableswhite">
                   <tr>
                   <th>Usuario</th>
-                    <th>Fecha de último Pago</th>
-                    <th>Fecha inicial de acceso </th>
-                    <th>Tipo Suscripcion</th>
-                    <th>Paquete de Suscripcion</th>
-                    <th>Días Usados de Suscripción</th>
+                    <th>Fecha Pago</th>
+                    <th>Fecha inicial </th>
+                    <th>Suscripcion</th>
+                    <th>Paquete</th>
+                    <th>Días Usados</th>
                     <!--<th>Descargar Documento</th>-->
                   </tr>
                   </thead>
