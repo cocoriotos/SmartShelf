@@ -55,42 +55,56 @@ $stmt1->execute();*/
 if ($result && $result1) {
     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
     echo "<script>
-      document.addEventListener('DOMContentLoaded', function() {
-        Swal.fire({
-          title: 'Mensaje',
-          text: 'Conexión a la aplicación exitosa',
-          icon: 'success',
-          confirmButtonText: 'Aceptar',
-          customClass: {
-            popup: 'custom-swal-popup',
-            title: 'custom-swal-title',
-            content: 'custom-swal-content',
-            confirmButton: 'custom-swal-confirm-button'
-          }
-        })
+    document.addEventListener('DOMContentLoaded', function() {
+      Swal.fire({
+        title: 'Mensaje',
+        text: 'Suscripción Actualizada Correctamente',
+        icon: 'success',
+        confirmButtonText: 'Aceptar',
+        customClass: {
+          popup: 'custom-swal-popup',
+          title: 'custom-swal-title',
+          content: 'custom-swal-content',
+          confirmButton: 'custom-swal-confirm-button'
+        },
+        timer: 3000, // 3000 milisegundos = 3 segundos
+        timerProgressBar: true, // Muestra una barra de progreso
+        didOpen: () => {
+          Swal.showLoading(); // Muestra un indicador de carga
+        },
+        willClose: () => {
+        }
       });
-      </script>";	
+    });
+    </script>";	
     header("refresh:0; url=edittrial.php");
     exit();
     }
   else{
-      echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-				echo "<script>
-					document.addEventListener('DOMContentLoaded', function() {
-						Swal.fire({
-							title: 'Mensaje',
-							text: 'Conexión a la aplicación no exitosa',
-							icon: 'error',
-							confirmButtonText: 'Aceptar',
-							customClass: {
-								popup: 'custom-swal-popup',
-								title: 'custom-swal-title',
-								content: 'custom-swal-content',
-								confirmButton: 'custom-swal-confirm-button'
-							}
-						})
-					});
-					</script>";	
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+        document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+            title: 'Mensaje',
+            text: 'Suscripción No Pudo Ser Actualizada Correctamente',
+            icon: 'error',
+            confirmButtonText: 'Aceptar',
+            customClass: {
+              popup: 'custom-swal-popup',
+              title: 'custom-swal-title',
+              content: 'custom-swal-content',
+              confirmButton: 'custom-swal-confirm-button'
+            },
+            timer: 3000, // 3000 milisegundos = 3 segundos
+            timerProgressBar: true, // Muestra una barra de progreso
+            didOpen: () => {
+              Swal.showLoading(); // Muestra un indicador de carga
+            },
+            willClose: () => {
+            }
+          });
+        });
+      </script>";
       header("refresh:0; url=AppMgmt.php");
       exit();
       }
