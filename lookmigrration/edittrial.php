@@ -27,7 +27,7 @@ include "db_connection1.php";
 					$query = "select id, username, active, suscriptionactive, suscriptiondaysleft, suscriptionpayed, lastsuscriptionpaymentdate, suscriptionkind, registrationdate  from videotips_app_access_list where  id='$id'";
 					$result_tasks = mysqli_query($conn,$query);
 					$row = mysqli_fetch_array($result_tasks);
-					$query1 = "select proofofpurchasenumber, suscription_package from videotips_suscription_payments where  username='$row[username]'";
+					$query1 = "select active, proofofpurchasenumber, suscription_package from videotips_suscription_payments where  username='$row[username]'";
 					$result_tasks1 = mysqli_query($conn,$query1);
 					$row1 = mysqli_fetch_array($result_tasks1);
 			 ?>
@@ -46,7 +46,7 @@ include "db_connection1.php";
 					</div>
 					<div class="form-group">
                         <a>Usuario Activo</a><br>
-						<select name="active" class="form-control" autofocus><?php $query = "SELECT active FROM videotips_active"; $result = mysqli_query($conn, $query); while ($usuarioActivo = mysqli_fetch_assoc($result)) {$active = $usuarioActivo['active']; $selected = ($active == $row['active']) ? 'selected' : ''; echo "<option value='$active' $selected>$active</option>";}?></select>
+						<select name="active" class="form-control" autofocus><?php $query = "SELECT active FROM videotips_active"; $result = mysqli_query($conn, $query); while ($active = mysqli_fetch_assoc($result)) {$active = $active['active']; $selected = ($active == $row['active']) ? 'selected' : ''; echo "<option value='$active' $selected>$active</option>";}?></select>
 					</div>
 					<div class="form-group">
                         <a>Suscripción Activa</a><br>
