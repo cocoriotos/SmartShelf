@@ -235,7 +235,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             
 
             <div id="Administration" class="tabcontent">
-                    <label class="col-form-label">Administración</label>
+                    <label class="col-form-label"></label>
                     <div class="grid-container">
                         <div class="grid-item">
                                 <div class="grid-item-content">
@@ -330,7 +330,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 
 
             <div id="Suscriptions" class="tabcontent">
-                    <label class="col-form-label">Suscripciones</label>
+                    <label class="col-form-label"></label>
                     <div class="grid-containeropstable">
                         <div class="grid-item1">
                                 <div class="grid-item-content1">
@@ -433,12 +433,12 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
             
 
             <div id="opsactives" class="tabcontent">
-                    <label class="col-form-label">Suscripciones</label>
+                    <label class="col-form-label"></label>
                     <div class="grid-containeropstable">
                         <div class="grid-item1">
                                 <div class="grid-item-content1">
                                     <div class="grid-item-header">
-                                                <div class="grid-item-title">Listado por tipo de Suscripción | Operación</div>
+                                                <div class="grid-item-title">Suscripciones por Usuario | Operación</div>
                                                 <br>
                                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                                     </div> 
