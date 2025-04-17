@@ -282,7 +282,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <div class="grid-item1">
                         <div class="grid-item-content">
                             <div class="grid-item-header">
-                                <div class="grid-item-title">Visitas por fecha</div>
+                                <div class="grid-item-title">Visitas por fecha | Administración</div>
                                 <br>
                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                             </div>
@@ -335,7 +335,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item1">
                                 <div class="grid-item-content1">
                                     <div class="grid-item-header">
-                                                <div class="grid-item-title">Usuarios Inactivos</div>
+                                                <div class="grid-item-title">Usuarios Inactivos | Administración</div>
                                                 <br>
                                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                                     </div> 
@@ -387,7 +387,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <div class="grid-item1" >
                         <div class="grid-item-content1">
                             <div class="grid-item-header">
-                                <div class="grid-item-title">Listado de Suscriptores</div>
+                                <div class="grid-item-title">Listado de Suscriptores | Operación</div>
                                 <br>
                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                             </div>
@@ -438,7 +438,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item1">
                                 <div class="grid-item-content1">
                                     <div class="grid-item-header">
-                                                <div class="grid-item-title">Listado por tipo de Suscripción</div>
+                                                <div class="grid-item-title">Listado por tipo de Suscripción | Operación</div>
                                                 <br>
                                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                                     </div> 
