@@ -13,8 +13,11 @@ $suscriptionkind = $_POST['suscriptionkind'];
 $packages = $_POST['packages'];
 $proofofpurchasenumber = $_POST['proofofpurchasenumber'];
 
-echo $active;
-echo $suscriptionactive;
+
+echo $suscriptionactive . "Susctipcion Activa, ";
+echo $active . "Usuario Activo, ";
+echo $suscriptionpayed . "Susctipcion Pagada";
+
 
 $sql = "UPDATE videotips_suscription_payments SET currentpaid = currentpaid + 1, paymentcounter = paymentcounter + 1, lastpaymentdate = '$lastsuscriptionpaymentdate', suscription_package = '$packages', proofofpurchasenumber = '$proofofpurchasenumber' WHERE username = '$username'";
 $result = $conn->query($sql);
@@ -39,12 +42,12 @@ if ($result && $result1) {
       }
     }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = 'AppMgmt.php';
+        window.location.href = '';
       }
     });
   });
   </script>";
-  exit(); // Solo para asegurarte de que no se ejecuta más PHP
+  /*exit(); // Solo para asegurarte de que no se ejecuta más PHP*/
 }
   else{
       echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
