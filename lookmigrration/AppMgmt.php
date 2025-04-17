@@ -22,7 +22,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 $query20="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)"; 
 $result20=mysqli_query($conn, $query20);
 
-$query4 = "update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)";
+$query4 = "UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)";
 $result4 = mysqli_query($conn, $query4);
 
 /*Consulta para contar los usuarios suscritos*/
@@ -74,7 +74,7 @@ $result15 = mysqli_query($conn, $query15);
 $query16 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
 $result16 = mysqli_query($conn, $query16);
 
-$query17 = "UPDATE videotips_app_access_list SET active = 0, suscriptionactive = 0 WHERE trialdaysleft  > 16 and suscriptionkind = 'Trial'";
+$query17 = "UPDATE videotips_app_access_list SET suscriptionactive = 0 WHERE trialdaysleft  > 16 and suscriptionkind = 'Trial'";
 $result17 = mysqli_query($conn, $query17);
 
 
