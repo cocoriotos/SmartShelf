@@ -13,10 +13,10 @@ $suscriptionkind = $_POST['suscriptionkind'];
 $packages = $_POST['packages'];
 $proofofpurchasenumber = $_POST['proofofpurchasenumber'];
 
-
-echo $suscriptionactive . "Susctipcion Activa, ";
-echo $active . "Usuario Activo, ";
-echo $suscriptionpayed . "Susctipcion Pagada";
+echo $username ." " . "Usuario, ";
+echo $active ." " . "Usuario Activo, ";
+echo $suscriptionactive ." " . "Susctipcion Activa, ";
+echo $suscriptionpayed ." "  . "Susctipcion Pagada";
 
 
 $sql = "UPDATE videotips_suscription_payments SET currentpaid = currentpaid + 1, paymentcounter = paymentcounter + 1, lastpaymentdate = '$lastsuscriptionpaymentdate', suscription_package = '$packages', proofofpurchasenumber = '$proofofpurchasenumber' WHERE username = '$username'";
