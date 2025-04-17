@@ -177,10 +177,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Listado de Suscripciones</div>
+                                    <div class="grid-item-title">Listado de Suscripción</div>
                                 </div>
                                 <div class="grid-item-body">
-                                    <p class="p-title">Total Suscripciones:</p>
+                                    <p class="p-title">Total Suscripciones De Pago:</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $total_suscriptions; ?></p></center>
                                     <a class="btn-primary" onclick="openTab(event, 'opstotalsuscriptions')">Ver Detalles</a> 
                                 </div>
@@ -189,10 +189,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Suscripciones por Usuario</div>
+                                    <div class="grid-item-title">Listado De Suscripciones</div>
                                 </div>
                                 <div class="grid-item-body">
-                                    <p class="p-title">Activos: De Pago, Test, Owner y Partner</p>
+                                    <p class="p-title">Por Tipo Suscripción</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
                                     <a class="btn-primary" onclick="openTab(event, 'opsactives')">Ver Detalles</a>
                                 </div>
@@ -201,7 +201,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Habilitación de Acceso</div>
+                                    <div class="grid-item-title">Habilitar Acceso</div>
                                 </div>
                                 <div class="grid-item-body">
                                     <p class="p-title">Pendientes:</p>
@@ -249,7 +249,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     </div>
                                 </div>
                         </div>
-                        <div class="grid-item">
+                        <!--<div class="grid-item">
                                    <div class="grid-item-content">
                                        <div class="grid-item-header">
                                            <div class="grid-item-title">Suscripciones</div>
@@ -260,7 +260,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                            <a class="btn-primary" onclick="openTab(event, 'SuscriptionsRenewals')">Listado de Usuarios</a>
                                        </div>
                                    </div>
-                        </div>
+                        </div>-->
 
                         <div class="grid-item">
                                     <div class="grid-item-content">
@@ -387,7 +387,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                     <div class="grid-item1" >
                         <div class="grid-item-content1">
                             <div class="grid-item-header">
-                                <div class="grid-item-title">Listado de Suscriptores | Operación</div>
+                                <div class="grid-item-title">Suscriptores De Pago | Operación</div>
                                 <br>
                                 <center style="width: 90%;"><?php include("searchvisits.php") ?></center> <!-- Incluir el buscador -->
                             </div>
