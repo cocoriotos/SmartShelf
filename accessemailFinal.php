@@ -126,6 +126,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query2 = "INSERT INTO videotips_suscription_payments (username, active, freeregistrationdate) SELECT email, active, registrationdate from videotips_app_access_list where username = '$email'";
         $result2 = $conn->query($query2);
 
+        $query3 = "UPDATE videotips_app_access_list t1 JOIN videotips_suscription_payments t2 ON t1.username = t2.username SET t1.suscription_package = t2.suscription_package;";
+        $result3 = $conn->query($query3);
+        
+
         /*Destination email information*/
         $to = "adm@solicionespro.com";
         $subject = "Urgent SmartShelf access request";

@@ -89,24 +89,24 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                   <thead id="tableswhite">
                   <tr>
                   <th>Usuario</th>
-                    <th>Fecha Actual</th>
-                    <th>Fecha de último Pago</th>
-                    <th>Fecha inicial de acceso </th>
-                    <th>Tipo Suscripcion</th>
-                    <th>Días Restantes</th>
+                    <th>Fecha Pago</th>
+                    <th>Fecha inicial </th>
+                    <th>Suscripcion</th>
+                    <th>Paquete</th>
+                    <th>Días Usados</th>
                     <!--<th>Descargar Documento</th>-->
                   </tr>
                   </thead>
                   <tbody>
                     <?php 
-                    $query1 = "select * from videotips_suscription_payments where active = '1' and username ='$local_username'";
+                    $query1 = "select * from videotips_app_access_list where active = '1' and username ='$local_username'";
                     $result_links = mysqli_query($conn,$query1);
                     while($links = mysqli_fetch_array($result_links)) { ?>
                     <tr>
                       <td align="center"><?php echo $links['username']?></td>
-                      <td align="center"><?php echo $links['currentdate'] ?></td>
-                      <td align="center"><?php echo $links['lastpaymentdate'] ?></td>
-                      <td align="center"><?php echo $links['freeregistrationdate'] ?></td>
+                      <td align="center"><?php echo $links['lastsuscriptionpaymentdate'] ?></td>
+                      <td align="center"><?php echo $links['registrationdate'] ?></td>
+                      <td align="center"><?php echo $links['suscriptionkind'] ?></td>
                       <td align="center"><?php echo $links['suscription_package'] ?></td>
                       <td align="center"><?php echo $links['suscriptiondaysleft'] ?></td>
                       </td>
