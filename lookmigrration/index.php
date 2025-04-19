@@ -6,10 +6,8 @@
     <title>SmartShelf - Tu Biblioteca Digital Inteligente - Contenidos Útiles</title>
     <meta name="description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
     <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/>
-    
 
-
-    <meta property="og:url" content="https://solicionespro.com/SmartShelf" />
+    <meta property="og:url" content="https://solicionespro.com/SmartShelf/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="SmartShelf Software" />
     <meta property="og:description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
@@ -17,7 +15,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes"/>
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-    <link rel="canonical" href="https://solicionespro.com/SmartShelf" />
+    <link rel="canonical" href="https://solicionespro.com/SmartShelf/" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="SmartShelf | Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
     <meta property="og:type" content="article" />
@@ -42,19 +40,6 @@
     <!-- Incluye SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 </head>
 <body>
     <header>

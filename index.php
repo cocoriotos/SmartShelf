@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartShelf - Tu Biblioteca Digital Inteligente</title>
+    <title>SmartShelf - Tu Biblioteca Digital Inteligente - Contenidos Útiles</title>
+    <meta name="description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/>
+
+    <meta property="og:url" content="https://solicionespro.com/SmartShelf/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="SmartShelf Software" />
+    <meta property="og:description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta charset="UTF-8"/>
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes"/>
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+    <link rel="canonical" href="https://solicionespro.com/SmartShelf/" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="SmartShelf | Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta property="og:description" content="La plataforma más fácil para Centralizar, Organizar y Acceder a Todos tus contenidos útiles en un Solo Lugar."/>
+    <meta property="og:url" content="solicionespro.com/SmartShelf/"/>
+
+    <meta property="og:image" content={${process.env.NEXT_PUBLIC_CLIENT_URL}/vivoadmin-opengraph.jpg}/>
+    <meta property="og:image:secure_url" content={${process.env.NEXT_PUBLIC_CLIENT_URL}/vivoadmin-opengraph.jpg}/>
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="690" />
+    <meta property="og:image:type" content="image/jpg" />
+
+    <meta name="google-site-verification" content="google-site-verification: google23a5a3b403400d31.html"/>
+
     <link rel="stylesheet" href="style_sheet_landing_page.css">
     <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -12,6 +39,7 @@
     <meta http-equiv="Expires" content="0">
     <!-- Incluye SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
     <header>
@@ -23,7 +51,7 @@
     </header>
     <section class="hero">
         <div class="container">
-            <h2>Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h2>
+            <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
             <a href="videotrackerauth.php" class="btn">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn">Registrarse</a>
