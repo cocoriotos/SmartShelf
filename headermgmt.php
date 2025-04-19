@@ -13,8 +13,7 @@ $name = $_SESSION['name'];
     <div class="container-fluid d-flex justify-content-between align-items-center">
         <!-- Texto de bienvenida -->
         <a id="welcome" class="navbar-brand">
-            Bienvenido <span class="username-style"><?php echo $name; ?></span>. Administración de Operaciones, Usuarios y Suscripciones
-        </a>
+            Bienvenido <span class="username-style"><?php echo $name; ?></span>. Administración de Operaciones</a>
 
         <!-- Botón Salir -->
         <a id="headerfonts" href="videotrackerauth.php" class="btn btn-danger" style="background-color: #9A97F5; color: black; font-weight: bold;"><i class="fas fa-sign-out-alt"></i> Salir
