@@ -77,9 +77,8 @@ label.col-form-label {
 .grid-containeropstable {
   width: 100vw; /* Esto hace que el contenedor tenga el ancho completo de la ventana */
   padding: 0; /* Opcional: elimina el padding si no lo necesitas */
-  margin: 0; /* Opcional: elimina el margen si no lo necesitas 
+  margin: 0; /* Opcional: elimina el margen si no lo necesitas */
 }
-
 
 .grid-item {
   /*background-color: #ffffff;*/
@@ -91,15 +90,21 @@ label.col-form-label {
 }
 
 .grid-item1 {
-  min-width: 100vh; /* Ocupa toda la altura de la pantalla */
-  margin: 0 10px; /* Margen de 10px a los lados */
+  width: 100%;
+  margin: 0 auto;
+  /*min-width: 100vh; /* Ocupa toda la altura de la pantalla */
+  /*margin: 0 10px; /* Margen de 10px a los lados */
   display: flex;
   justify-content: center; /* Centra el contenido horizontalmente */
   align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .grid-item-content1 {
-  display: inline-block; /* Permite que el ancho se ajuste al contenido */
+  width: 100%;
+  box-sizing: border-box;
+  /*display: inline-block; /* Permite que el ancho se ajuste al contenido */
   overflow-x: auto; /* Agrega desplazamiento horizontal si la tabla es muy ancha */
 }
 
@@ -565,4 +570,36 @@ hr {
 
 .red {
   color: red;
+}
+
+@media (max-width: 768px) {
+  .grid-item1 {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .grid-item-content1 {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .user-table {
+    font-size: 14px;
+    min-width: 600px; /* Si la tabla tiene muchas columnas, le damos ancho mínimo */
+  }
+
+  .grid-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .grid-item-title {
+    font-size: 16px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
 }
