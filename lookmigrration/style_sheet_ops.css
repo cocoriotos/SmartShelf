@@ -77,9 +77,8 @@ label.col-form-label {
 .grid-containeropstable {
   width: 100vw; /* Esto hace que el contenedor tenga el ancho completo de la ventana */
   padding: 0; /* Opcional: elimina el padding si no lo necesitas */
-  margin: 0; /* Opcional: elimina el margen si no lo necesitas 
+  margin: 0; /* Opcional: elimina el margen si no lo necesitas */
 }
-
 
 .grid-item {
   /*background-color: #ffffff;*/
