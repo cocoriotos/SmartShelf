@@ -77,7 +77,7 @@ $result16 = mysqli_query($conn, $query16);
 $query17 = "UPDATE videotips_app_access_list SET suscriptionpayed = 0 WHERE trialdaysleft  > 16 and suscriptionkind = 'Trial'";
 $result17 = mysqli_query($conn, $query17);
 
-$query18 = "UPDATE access_list a JOIN ( SELECT username, COUNT(*) AS link_count FROM videotips GROUP BY username) v ON a.username = v.username SET a.linksquantity = v.link_count";
+$query18 = "UPDATE access_list a JOIN (SELECT username, COUNT(*) AS link_count FROM videotips GROUP BY username) v ON a.username = v.username SET a.linksquantity = v.link_count";
 $result18 = mysqli_query($conn, $query18);
 
 
