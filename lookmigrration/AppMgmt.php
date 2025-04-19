@@ -77,6 +77,9 @@ $result16 = mysqli_query($conn, $query16);
 $query17 = "UPDATE videotips_app_access_list SET suscriptionpayed = 0 WHERE trialdaysleft  > 16 and suscriptionkind = 'Trial'";
 $result17 = mysqli_query($conn, $query17);
 
+$query18 = "UPDATE access_list a JOIN ( SELECT username, COUNT(*) AS link_count FROM videotips GROUP BY username) v ON a.username = v.username SET a.linksquantity = v.link_count";
+$result18 = mysqli_query($conn, $query18);
+
 
 
 if (($result) && ($result1)) {
@@ -294,6 +297,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                             <th>Apellido</th>
                                             <th>Usuario</th>
                                             <th>Último Ingreso a la Plataforma </th>
+                                            <th>Cantidad Links Guardados </th>
                                             <th>Tipo de Suscripción</th>
                                             <th>Modificar</th>
                                         </tr>
@@ -301,7 +305,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <tbody>
                                         <?php
                                         // Ejecutar la consulta
-                                        $sql = "SELECT id, name, lastname, username, lastlogindate, suscriptionkind FROM videotips_app_access_list order by lastlogindate desc";
+                                        $sql = "SELECT id, name, lastname, username, lastlogindate, suscriptionkind, linksquantity FROM videotips_app_access_list order by lastlogindate desc";
                                         $result = $conn->query($sql);
 
                                         // Mostrar los resultados en la tabla
@@ -312,6 +316,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                 echo "<td>" . $row['lastname'] . "</td>";
                                                 echo "<td><a href='mailto:" . $row['username'] . "'>" . $row["username"] . "</a></td>";                                                
                                                 echo "<td>" . $row['lastlogindate'] . "</td>";
+                                                echo "<td>" . $row['linksquantity'] . "</td>"; 
                                                 echo "<td>" . $row['suscriptionkind'] . "</td>";
                                                 echo '<td><a href="editnodepagotrial.php?id=' . $row['id'] . '" class="btn btn-secondary"><i class="fas fa-marker"></i></a></td>';
                                                 echo "</tr>";
