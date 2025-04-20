@@ -129,6 +129,7 @@
             <p>Con <strong>SmartShelf</strong>, nunca más volverás a perder un enlace importante.</p>
             <a href="#contact" class="btn">¡Descubre SmartShelf Hoy!</a>
         </div>
+        <h2>_________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
         <h2>Testimonios</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
