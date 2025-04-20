@@ -129,7 +129,7 @@
             <p>Con <strong>SmartShelf</strong>, nunca más volverás a perder un enlace importante.</p>
             <a href="#contact" class="btn">¡Descubre SmartShelf Hoy!</a>
         </div>
-        <h2>______________________________________________________________________________________________</h2>
+        <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
         <h2>Testimonios</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
@@ -146,7 +146,7 @@
             <p class="text-lg italic text-gray-700">“La app para guardar enlaces es realmente práctica. Me ha ayudado a organizar la gran cantidad de sitios web que uso a diario, y lo mejor es que puedo encontrarlos rápidamente, de manera ágil y personalizada según mis necesidades.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">— Oscar Ariza</p>
         </div>
-        <h2>______________________________________________________________________________________________</h2>
+        <h2>________________________________________________________________________________________________________</h2>
         </div>
     </section>
 
