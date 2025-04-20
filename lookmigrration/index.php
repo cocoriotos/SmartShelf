@@ -131,7 +131,7 @@
         </div>
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
-        <h2>Testimonios</h2>
+        <h2 style="color: red;">Testimonios</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
             <p class="text-lg italic text-gray-700">“SmartShelf me ha resultado increíblemente útil. Antes tenía mis enlaces importantes repartidos por todos lados, pero ahora puedo organizarlos en un solo lugar y acceder a ellos facilmente.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">— Sandra Ojeda</p>
