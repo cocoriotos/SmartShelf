@@ -133,17 +133,17 @@
         <h2>Testimonios</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
             <p class="text-lg italic text-gray-700">“SmartShelf me ha resultado increíblemente útil. Antes tenía mis enlaces importantes repartidos por todos lados, pero ahora puedo organizarlos en un solo lugar y acceder a ellos facilmente.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">— Usuario de SmartShelf</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">— Sandra Ojeda</p>
         </div>
 
         <div class="bg-white rounded-2xl p-6 shadow-md">
             <p class="text-lg italic text-gray-700">“SmartShelf es una herramienta muy útil. Me permite guardar de forma ordenada y segura los enlaces a las páginas que considero importantes.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">— Usuario de SmartShelf</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">— María José Ospino</p>
         </div>
 
         <div class="bg-white rounded-2xl p-6 shadow-md">
             <p class="text-lg italic text-gray-700">“La app para guardar enlaces es realmente práctica. Me ha ayudado a organizar la gran cantidad de sitios web que uso a diario, y lo mejor es que puedo encontrarlos rápidamente, de manera ágil y personalizada según mis necesidades.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">— Usuario de SmartShelf</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">— Oscar Ariza</p>
         </div>
         </div>
     </section>
