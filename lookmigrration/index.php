@@ -136,13 +136,13 @@
             <!-- Div 1 -->
             <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
                 <img src="SandraOFeedback.png" alt="Imagen 1" class="w-full h-40 object-contain mb-4">
-                <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Sandra Ojeda</p>
+                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
             </div>
             
             <!-- Div 2 -->
             <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
                 <img src="MariaJOspinoFeedback.png" alt="Imagen 2" class="w-full h-40 object-contain mb-4">
-                <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — María J Ospino</p>
+                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María J Ospino</p>
             </div>
             
             <!-- Div 3 -->

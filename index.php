@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartShelf - Tu Biblioteca Digital Inteligente - Contenidos Útiles</title>
     <meta name="description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
-    <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/>
+    <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.ico"/>
 
     <meta property="og:url" content="https://solicionespro.com/SmartShelf/" />
     <meta property="og:type" content="article" />
@@ -128,6 +128,30 @@
             <h2>Transforma tu Forma de Gestionar el Conocimiento</h2>
             <p>Con <strong>SmartShelf</strong>, nunca más volverás a perder un enlace importante.</p>
             <a href="#contact" class="btn">¡Descubre SmartShelf Hoy!</a>
+        </div>
+        <h2>________________________________________________________________________________________________________</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
+        <h2 style="color: red;">Testimonios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <!-- Div 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
+                <img src="SandraOFeedback.png" alt="Imagen 1" class="w-full h-40 object-contain mb-4">
+                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
+            </div>
+            
+            <!-- Div 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
+                <img src="MariaJOspinoFeedback.png" alt="Imagen 2" class="w-full h-40 object-contain mb-4">
+                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María J Ospino</p>
+            </div>
+            
+            <!-- Div 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
+                <img src="SandraOFeedback.png" alt="Imagen 3" class="w-full h-40 object-contain mb-4">
+                <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
+            </div>
+        </div>
+        <h2>________________________________________________________________________________________________________</h2>
         </div>
     </section>
 
