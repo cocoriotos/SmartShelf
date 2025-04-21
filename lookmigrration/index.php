@@ -132,19 +132,24 @@
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
         <h2 style="color: red;">Testimonios</h2>
-        <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p class="text-lg italic text-gray-700">“SmartShelf me ha resultado increíblemente útil. Antes tenía mis enlaces importantes repartidos por todos lados, pero ahora puedo organizarlos en un solo lugar y acceder a ellos facilmente.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">— Sandra Ojeda</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p class="text-lg italic text-gray-700">“SmartShelf es una herramienta muy útil. Me permite guardar de forma ordenada y segura los enlaces a las páginas que considero importantes.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">— María José Ospino</p>
-        </div>
-
-        <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p class="text-lg italic text-gray-700">“La app para guardar enlaces es realmente práctica. Me ha ayudado a organizar la gran cantidad de sitios web que uso a diario, y lo mejor es que puedo encontrarlos rápidamente, de manera ágil y personalizada según mis necesidades.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">— Oscar Ariza</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <!-- Div 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
+                <img src="SandraOFeedback.png" alt="Imagen 1" class="w-full h-40 object-contain mb-4">
+                <p class="mt-4 font-semibold text-sm text-gray-500">— Sandra Ojeda</p>
+            </div>
+            
+            <!-- Div 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
+                <img src="MariaJOspinoFeedback.png" alt="Imagen 2" class="w-full h-40 object-contain mb-4">
+                <p class="mt-4 font-semibold text-sm text-gray-500">— María J Ospino</p>
+            </div>
+            
+            <!-- Div 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
+                <img src="SandraOFeedback.png" alt="Imagen 3" class="w-full h-40 object-contain mb-4">
+                <p class="mt-4 font-semibold text-sm text-gray-500">— Oscar Ariza</p>
+            </div>
         </div>
         <h2>________________________________________________________________________________________________________</h2>
         </div>
