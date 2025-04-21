@@ -134,6 +134,11 @@
         <h2 style="color: red;">Testimonios</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
             <!-- Div 1 -->
+            <div class="bg-white rounded-2xl p-4 shadow-md flex flex-col">
+        <div class="flex-1 min-h-0"> <!-- Contenedor flexible para la imagen -->
+            <img src="SandraOFeedback.png" alt="Imagen 1" class="w-full h-full object-contain max-h-[200px] mx-auto"></div>
+             <p class="mt-3 font-semibold text-sm text-gray-500 text-center">Usuaria SmartShelf — Sandra Ojeda</p>
+        </div>
             <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
                 <img src="SandraOFeedback.png" alt="Imagen 1" class="w-full h-40 object-contain mb-4">
                 <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
