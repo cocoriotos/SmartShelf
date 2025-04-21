@@ -134,7 +134,7 @@
         <h2 style="color: orange;">Testimonios</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
             <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p class="text-lg text-gray-700 transform skew-x-3">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
+            <p style="font-size: 1.125rem; font-style: italic; color: #374151; transform: skewX(5deg);">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
         </div>
         <h2 style="color: orange">-----------------------------------------------------------------------------------</h2>
