@@ -131,28 +131,24 @@
         </div>
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
-        <h2 style="color: red;">Testimonios</h2>
+        <h2 style="color: orange;">Testimonios</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <!-- Div 1 -->
-            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
-                <img src="SandraOFeedback.png" alt="Imagen 1" class="w-full h-40 object-contain mb-4">
-                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
-            </div>
-            
-            <!-- Div 2 -->
-            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
-                <img src="MariaJOspinoFeedback.png" alt="Imagen 2" class="w-full h-40 object-contain mb-4">
-                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María J Ospino</p>
-            </div>
-            
-            <!-- Div 3 -->
-            <div class="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center">
-                <img src="SandraOFeedback.png" alt="Imagen 3" class="w-full h-40 object-contain mb-4">
-                <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
-            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-md">
+            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
+        </div>
+        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Es una página útil. Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes.”</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María José Ospino</p>
+        </div>
+        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
+        <div class="bg-white rounded-2xl p-6 shadow-md">
+            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy practica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
         </div>
         <h2>________________________________________________________________________________________________________</h2>
-        </div>
+    </div>
     </section>
 
    <section id="contact" class="contact">
