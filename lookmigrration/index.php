@@ -137,12 +137,12 @@
             <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
         </div>
-        <h2 style="color: orange">-----------------------------------------------------------------------------------</h2>
+        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
             <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Es una página útil. Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María José Ospino</p>
         </div>
-        <h2 style="color: orange">-----------------------------------------------------------------------------------</h2>
+        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
             <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy practica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
