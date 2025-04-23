@@ -144,6 +144,13 @@
         </div>
         <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
         <div class="bg-white rounded-2xl p-6 shadow-md">
+            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Recomiendo a SmartShelf como una biblioteca digital personal y fácil de usar. Permite guardar y organizar archivos de diversas categorías, facilitando la búsqueda rápida y eficiente a través de su función de busqueda🔍. Su eficacia para buscar y encontrar archivos la convierte en una herramienta imprescindible para cualquier persona que maneje un volumen considerable de archivos.”</p>
+            <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Carol Zambrano</p>
+        </div>
+        
+
+        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
+        <div class="bg-white rounded-2xl p-6 shadow-md">
             <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy practica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
             <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
         </div>
