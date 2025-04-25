@@ -156,6 +156,7 @@
                     <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
                 </div>
                 <h2>________________________________________________________________________________________________________</h2>
+                <br>
             </div>
         </div>
     </section>
