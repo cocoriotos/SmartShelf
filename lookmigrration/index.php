@@ -157,7 +157,7 @@
         <h2>________________________________________________________________________________________________________</h2>
     </div>
     <div class="social-icons">
-                <a style="color: #D2691E" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i>por aca</a>
+                <a href="https://www.instagram.com" target="_blank"><i style="color: #D2691E" class="fab fa-instagram"></i>por aca</a>
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
