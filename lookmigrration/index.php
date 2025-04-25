@@ -171,18 +171,19 @@
                 <br>
             </form>
         </div>
+        <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:smartshelfcol@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
     </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 SmartShelf. Todos los derechos reservados.</p>
-            <div class="social-icons">
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="mailto:smartshelf@email.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        </div>
+            
         </div>
     </footer>
 </body>
