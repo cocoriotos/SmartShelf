@@ -177,6 +177,14 @@
         <div class="container">
             <p>&copy; 2025 SmartShelf. Todos los derechos reservados.</p>
         </div>
+        <div class="social-icons">
+                <!--<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>-->
+                <a href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
+                <a href="mailto:adm@solicionespro.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</a>
+                <a href="https://www.tiktok.com/@smartshelfcol" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i>TikTok</a>
+                <a href="https://wa.me/573054293185" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+        </div>
     </footer>
 </body>
 </html>
