@@ -163,7 +163,7 @@
         <h2>________________________________________________________________________________________________________</h2>
     </div>
     <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>Instagram</a>
                 <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="https://www.tiktok.com" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i></a>
                 <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
