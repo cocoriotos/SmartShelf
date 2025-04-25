@@ -172,12 +172,12 @@
             </form>
         </div>
         <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a style="color: white" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a href="mailto:smartshelfcol@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            </div>
+            </div>  
     </section>
 
     <footer>
