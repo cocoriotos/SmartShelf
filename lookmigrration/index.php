@@ -162,7 +162,7 @@
         </div>
         <h2>________________________________________________________________________________________________________</h2>
     </div>
-    <div class="social-icons">
+    <div >
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
