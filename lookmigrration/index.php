@@ -156,6 +156,13 @@
         </div>
         <h2>________________________________________________________________________________________________________</h2>
     </div>
+    <div class="social-icons">
+                <a style="color: #D2691E" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:smartshelfcol@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+    </div>
     </section>
 
    <section id="contact" class="contact">
@@ -170,14 +177,7 @@
                 <button type="submit" class="btn">Enviar Mensaje</button>
                 <br>
             </form>
-        </div>
-        <div class="social-icons">
-                <a style="color: #D2691E" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="mailto:smartshelfcol@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            </div>  
+        </div>  
     </section>
 
     <footer>
