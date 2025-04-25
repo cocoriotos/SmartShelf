@@ -39,7 +39,13 @@
     <meta http-equiv="Expires" content="0">
     <!-- Incluye SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="plugins/alertifyjs/alertify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
 </head>
 <body>
     <header>
@@ -157,7 +163,7 @@
         <h2>________________________________________________________________________________________________________</h2>
     </div>
     <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank"><i style="color: #D2691E" class="fab fa-instagram"></i>por aca</a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
