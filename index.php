@@ -134,31 +134,31 @@
         </div>
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
-        <h2 style="color: orange;">Testimonios</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
+            <h2 style="color: orange;">Testimonios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="rounded-2xl p-6 shadow-md">
+                <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
+                <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
+                </div>
+                <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
+                <div class="rounded-2xl p-6 shadow-md">
+                    <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Es una página útil. Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes.”</p>
+                    <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María José Ospino</p>
+                </div>
+                <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
+                <div class="rounded-2xl p-6 shadow-md">
+                    <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Recomiendo a SmartShelf como una biblioteca digital personal y fácil de usar. Permite guardar y organizar archivos de diversas categorías, facilitando la búsqueda rápida y eficiente a través de su función de busqueda🔍. Su eficacia para buscar y encontrar archivos la convierte en una herramienta imprescindible para cualquier persona que maneje un volumen considerable de archivos.”</p>
+                    <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Carol Zambrano</p>
+                </div>
+                <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
+                <div class="rounded-2xl p-6 shadow-md">
+                    <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy practica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
+                    <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
+                </div>
+                <h2>________________________________________________________________________________________________________</h2>
+                <br>
+            </div>
         </div>
-        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
-        <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Es una página útil. Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María José Ospino</p>
-        </div>
-        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
-        <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Recomiendo a SmartShelf como una biblioteca digital personal y fácil de usar. Permite guardar y organizar archivos de diversas categorías, facilitando la búsqueda rápida y eficiente a través de su función de busqueda🔍. Su eficacia para buscar y encontrar archivos la convierte en una herramienta imprescindible para cualquier persona que maneje un volumen considerable de archivos.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Carol Zambrano</p>
-        </div>
-        
-
-        <h2 style="color: orange">------------------------------------------------------------------------------------------------------</h2>
-        <div class="bg-white rounded-2xl p-6 shadow-md">
-            <p style="font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy practica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
-            <p class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
-        </div>
-        <h2>________________________________________________________________________________________________________</h2>
-    </div>
     </section>
 
    <section id="contact" class="contact">
@@ -179,6 +179,14 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 SmartShelf. Todos los derechos reservados.</p>
+        </div>
+        <div class="social-icons">
+                <!--<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>-->
+                <a href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
+                <a href="mailto:adm@solicionespro.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</a>
+                <a href="https://www.tiktok.com/@smartshelfcol" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i>TikTok</a>
+                <a href="https://wa.me/573054293185" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
         </div>
     </footer>
 </body>
