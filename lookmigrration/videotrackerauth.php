@@ -48,11 +48,11 @@
             <form id="login" action="access_success_Tasks_final.php" method="POST" autocomplete="off">
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" name="email" placeholder="Email" required>
+                    <input type="text" name="email" placeholder="Email" autocomplete="off" required>
                 </div>
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <input type="password" name="password" placeholder="Contraseña" autocomplete="off" required>
                 </div>
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
