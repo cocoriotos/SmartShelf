@@ -56,8 +56,8 @@
         <div class="container">
             <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
-            <a href="videotrackerauth.php" class="btn">Ingresar</a>
-            <a href="requestaccessfinal.php" class="btn">Registrarse</a>
+            <a href="videotrackerauth.php" class="btn1">Ingresar</a>
+            <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
         </div>
     </section>
     <br>
