@@ -178,7 +178,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 SmartShelf. Todos los derechos reservados.</p>
+            <p>&copy; 2025 SmartShelf. Todos los derechos reservados1.</p>
         </div>
         <div class="social-icons">
                 <!--<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
