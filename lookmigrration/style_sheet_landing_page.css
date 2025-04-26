@@ -58,7 +58,7 @@ a {
 }
 
 .btn1 {
-  /*display: block; /* Hace que cada botón ocupe toda la línea */
+  display: block; /* Hace que cada botón ocupe toda la línea */
   width: 85%; /* Ocupa el ancho completo del contenedor */
   padding: 10px 15px; /* Espacio interno */
   background: #032642;
@@ -115,6 +115,16 @@ header p {
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 10px 20px;
+  /*background: #007bff;2 22 2025*/
+  background: #032642;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
 /* Features Section */
