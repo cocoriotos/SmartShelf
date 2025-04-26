@@ -34,7 +34,7 @@ include "sessionvalidation.php";*/
                     <!--<p> Video paso a paso del uso de la aplicación. Click Aquí</p><br>-->
                     <br>
                     <center><p style="color: blue; font-weight: bold; font-size: 24px;"> Ventajas </p></center>
-                    <p> Gracias por haber usado la herramienta o la versión gratuita de 15 días calendario de la biblioteca de Contenidos Útiles la cuál te ayuda a: </p><br>
+                    <p> Gracias por haber usado la herramienta o la versión gratuita de 30 días calendario de la biblioteca de Contenidos Útiles la cuál te ayuda a: </p><br>
                     <p> 1. Etiquetar con una breve descripción del contenido para que puedas hacer las búsquedas más facilmente</p>
                     <p> 2. Tener todos tus enlaces importantes, indistinto de cual plataforma sea, donde la búsqueda la haces en un solo sitio</p>
                     <p> 3. La búsqueda de un enlace en cualquier histórico o favoritos en las aplicaciones, que normalmente toma mucho tiempo encontrarla, la harás en segundos en tu bliblioteca porque las tendrás en un solo lugar y con un motor de búsqueda efectivo</p>

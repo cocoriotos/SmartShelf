@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $to = "$email, adm@solicionespro.com";
         $subject = "Requerimiento de acceso a SmartShelf";
         $message = "Buen día $lastname, $name :  \n\n";
-        $message .= "Su requerimiento ha sido enviado a los administradores de la herramienta para processar su solicitud. Acá la información de su solicitud \n\n";
+        $message .= "Su requerimiento ha sido exitoso. Acá la información de su solicitud \n\n";
         $message .= str_pad("Nombre", 40) . ": $name \n";
         $message .= str_pad("Apellido", 40) . ": $lastname \n";
         $message .= str_pad("Email", 40) . ": $email \n";

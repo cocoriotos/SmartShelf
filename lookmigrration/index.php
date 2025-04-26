@@ -91,7 +91,7 @@
                         <a href="UCLToolManualDelUsuario2025.pdf" class="btn1" target="_blank" style="color: white">Manual del Usuario</a>
                     </div>-->
                 <div class="feature-item">
-                    <h3 style="color: #D2691E; font-weight: bold; text-transform: uppercase;">¡Prueba Gratis por 15 Días!  Regístrate</h3>
+                    <h3 style="color: #D2691E; font-weight: bold; text-transform: uppercase;">¡Prueba Gratis por 30 Días Calendario!  Regístrate</h3>
                     <p>Explora todas las funciones, organiza tus enlaces importantes y crea categorías personalizadas.</p> 
                     <p>Si necesitas ayuda, ingresa y consulta los videos tutoriales y/o el Manual del Usuario en PDF.</p>
                 </div>
