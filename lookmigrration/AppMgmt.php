@@ -83,7 +83,7 @@ $result18 = mysqli_query($conn, $query18);
 $query19 = "SELECT COUNT(*) as monthsuscriptionsnopayed FROM videotips_app_access_list  WHERE  suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 0 and 30)";
 $result19 = mysqli_query($conn, $query19);
 
-$query20 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
+$query20 = "SELECT COUNT(*) as twelvesuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
 $result20 = mysqli_query($conn, $query20);
 
 if (($result) && ($result1)) {
@@ -142,6 +142,8 @@ if (($result) && ($result1)) {
     $tensuscriptions = 0;
     $elevensuscriptions = 0;
     $twelvesuscriptions = 0;
+    $monthsuscriptionsnopayed = 0;
+    $twelvesuscriptionsnopayed = 0;
 }
 
 // Verificar si el usuario está autenticado (si $_SESSION['email'] está definido)
@@ -187,7 +189,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Listado de Suscripción</div>
+                                    <div class="grid-item-title">Listado de Suscripciones</div>
                                 </div>
                                 <div class="grid-item-body">
                                     <p class="p-title">Total Suscripciones De Pago:</p>
@@ -199,7 +201,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Suscripciones por Vencer en:</div>
+                                    <div class="grid-item-title">Suscripciones De Pago:</div>
                                 </div>
                                     <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptions < 8) ? 'green' : (($monthsuscriptions >= 9 && $monthsuscriptions <= 10) ? 'orange' : ($monthsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
@@ -219,10 +221,10 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Listado De Suscripciones</div>
+                                    <div class="grid-item-title">Listado de Suscripciones</div>
                                 </div>
                                 <div class="grid-item-body">
-                                    <p class="p-title">Por Tipo Suscripción</p>
+                                    <p class="p-title">Total Suscripciones De No Pago:</p>
                                     <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
                                     <a class="btn-primary" onclick="openTab(event, 'opsactives')">Ver Detalles</a>
                                 </div>
@@ -232,7 +234,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Suscripciones Vencidas:</div>
+                                    <div class="grid-item-title">Suscripciones No Pago:</div>
                                 </div>
                                     <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptionsnopayed < 8) ? 'green' : (($monthsuscriptionsnopayed >= 9 && $monthsuscriptionsnopayed <= 10) ? 'orange' : ($monthsuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptionsnopayed; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
