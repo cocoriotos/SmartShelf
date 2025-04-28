@@ -8,11 +8,11 @@ include "db_connection1.php";
 //include "nobackpage.php"; 
 include "SessionTimeOut.php";
 // Verificar si el usuario está autenticado (si $_SESSION['email'] está definido)
-//if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['email'])) {
   // Si no hay sesión, redirigir a la página de autenticación
-//  header('Location: closetaskcon.php');
-//  exit(); // Detener la ejecución del script
-//}
+  header('Location: closetaskcon.php');
+  exit(); // Detener la ejecución del script
+}
 
 // Si el usuario está autenticado, continuar con el resto del código
 $local_username = $_SESSION['email']; // Obtener el email del usuario desde la sesión
@@ -80,7 +80,11 @@ $result17 = mysqli_query($conn, $query17);
 $query18 = "UPDATE videotips_app_access_list a JOIN (SELECT username, COUNT(*) AS link_count FROM videotips_videotips GROUP BY username) v ON a.username = v.username SET a.linksquantity = v.link_count";
 $result18 = mysqli_query($conn, $query18);
 
+$query19 = "SELECT COUNT(*) as monthsuscriptionsnopayed FROM videotips_app_access_list  WHERE  suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 0 and 30)";
+$result19 = mysqli_query($conn, $query19);
 
+$query20 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
+$result20 = mysqli_query($conn, $query20);
 
 if (($result) && ($result1)) {
     $row = mysqli_fetch_assoc($result);
@@ -115,7 +119,10 @@ if (($result) && ($result1)) {
     $elevensuscriptions = $row15['elevensuscriptions'];
     $row16 = mysqli_fetch_assoc($result16);
     $twelvesuscriptions = $row16['twelvesuscriptions'];
-    
+    $row19 = mysqli_fetch_assoc($result19);
+    $monthsuscriptionsnopayed = $row19['monthsuscriptionsnopayed'];
+    $row20 = mysqli_fetch_assoc($result20);
+    $twelvesuscriptionsnopayed = $row20['twelvesuscriptionsnopayed'];
 
     
 } else {
@@ -192,30 +199,6 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                         <div class="grid-item">
                             <div class="grid-item-content">
                                 <div class="grid-item-header">
-                                    <div class="grid-item-title">Listado De Suscripciones</div>
-                                </div>
-                                <div class="grid-item-body">
-                                    <p class="p-title">Por Tipo Suscripción</p>
-                                    <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
-                                    <a class="btn-primary" onclick="openTab(event, 'opsactives')">Ver Detalles</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="grid-item-content">
-                                <div class="grid-item-header">
-                                    <div class="grid-item-title">Habilitar Acceso</div>
-                                </div>
-                                <div class="grid-item-body">
-                                    <p class="p-title">Pendientes:</p>
-                                    <center><p class="p-content"style="font-size: 42px;"><?php echo $pendingaccess; ?></p></center>
-                                    <a href="#" class="btn-primary">Ver Detalles</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="grid-item-content">
-                                <div class="grid-item-header">
                                     <div class="grid-item-title">Suscripciones por Vencer en:</div>
                                 </div>
                                     <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptions < 8) ? 'green' : (($monthsuscriptions >= 9 && $monthsuscriptions <= 10) ? 'orange' : ($monthsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptions; ?></span></span></p>
@@ -230,6 +213,39 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptions < 8) ? 'green' : (($tensuscriptions >= 9 && $tensuscriptions <= 10) ? 'orange' : ($tensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptions < 8) ? 'green' : (($twelvesuscriptions >= 9 && $twelvesuscriptions <= 10) ? 'orange' : ($twelvesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptions; ?></span></span></p>
+                                    <!--<a href="#" class="btn-primary">Ver Detalles</a>-->
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="grid-item-content">
+                                <div class="grid-item-header">
+                                    <div class="grid-item-title">Listado De Suscripciones</div>
+                                </div>
+                                <div class="grid-item-body">
+                                    <p class="p-title">Por Tipo Suscripción</p>
+                                    <center><p class="p-content" style="font-size: 42px;"><?php echo $active_users; ?></p></center>
+                                    <a class="btn-primary" onclick="openTab(event, 'opsactives')">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid-item">
+                            <div class="grid-item-content">
+                                <div class="grid-item-header">
+                                    <div class="grid-item-title">Suscripciones Vencidas:</div>
+                                </div>
+                                    <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptionsnopayed < 8) ? 'green' : (($monthsuscriptionsnopayed >= 9 && $monthsuscriptionsnopayed <= 10) ? 'orange' : ($monthsuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 3 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($threesuscriptions < 8) ? 'green' : (($threesuscriptions >= 9 && $threesuscriptions <= 10) ? 'orange' : ($threesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $threesuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($foursuscriptions < 8) ? 'green' : (($foursuscriptions >= 9 && $foursuscriptions <= 10) ? 'orange' : ($foursuscriptions == 11 ? 'red' : '')); ?>"><?php echo $foursuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptions < 8) ? 'green' : (($fivesuscriptionss >= 9 && $fivesuscriptions <= 10) ? 'orange' : ($fivesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptions < 8) ? 'green' : (($sixsuscriptions >= 9 && $sixsuscriptions <= 10) ? 'orange' : ($sixsuscriptions== 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sevensuscriptions  < 8) ? 'g reen' : (($sevensuscriptions >= 9 && $sevensuscriptions <= 10) ? 'orange' : ($sevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $sevensuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($eightsuscriptions < 8) ? 'green' : (($eightsuscriptions >= 9 && $eightsuscriptions <= 10) ? 'orange' : ($eightsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $eightsuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($ninesuscriptions < 8) ? 'green' : (($ninesuscriptions >= 9 && $ninesuscriptions <= 10) ? 'orange' : ($ninesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $ninesuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptions < 8) ? 'green' : (($tensuscriptions >= 9 && $tensuscriptions <= 10) ? 'orange' : ($tensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptionsnopayed < 8) ? 'green' : (($twelvesuscriptionsnopayed >= 9 && $twelvesuscriptionsnopayed <= 10) ? 'orange' : ($twelvesuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptionsnopayed; ?></span></span></p>
                                     <!--<a href="#" class="btn-primary">Ver Detalles</a>-->
                             </div>
                         </div>
