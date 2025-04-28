@@ -29,7 +29,10 @@ $result4 = mysqli_query($conn, $query4);
 $query = "SELECT COUNT(suscriptionpayed) as total_suscriptions FROM videotips_app_access_list WHERE suscriptionpayed = 1 and suscriptionkind = 'De Pago'";
 $result = mysqli_query($conn, $query);
 
-$query1 = "SELECT COUNT(active) as active_users FROM videotips_app_access_list WHERE active = 1 and suscriptionpayed = 1 and suscriptiondaysleft > 0 and suscriptionkind <> 'De Pago'";
+/*$query1 = "SELECT COUNT(active) as active_users FROM videotips_app_access_list WHERE active = 1 and suscriptionpayed = 1 and suscriptiondaysleft > 0 and suscriptionkind <> 'De Pago'";
+$result1 = mysqli_query($conn, $query1);*/
+
+$query1 = "SELECT COUNT(active) as active_users FROM videotips_app_access_list WHERE suscriptionkind <> 'De Pago'";
 $result1 = mysqli_query($conn, $query1);
 
 $query2 = "SELECT COUNT(*) as suscriptionstodue FROM videotips_app_access_list WHERE (active = 1 and suscriptionpayed = 1 and suscriptiondaysleft > 335 and suscriptionkind = 'De Pago')";
