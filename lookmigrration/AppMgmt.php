@@ -83,6 +83,36 @@ $result18 = mysqli_query($conn, $query18);
 $query19 = "SELECT COUNT(*) as monthsuscriptionsnopayed FROM videotips_app_access_list  WHERE  suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 0 and 30)";
 $result19 = mysqli_query($conn, $query19);
 
+$query21 = "SELECT COUNT(*) as twosuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 31 and 60)";
+$result21 = mysqli_query($conn, $query21);
+
+$query22 = "SELECT COUNT(*) as threesuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 61 and 90)";
+$result22 = mysqli_query($conn, $query22);
+
+$query23 = "SELECT COUNT(*) as foursuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 91 and 120)";
+$result23= mysqli_query($conn, $query23);
+
+$query24 = "SELECT COUNT(*) as fivesuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 121 and 150)";
+$result24 = mysqli_query($conn, $query24);
+
+$query25 = "SELECT COUNT(*) as sixsuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 151 and 180)";
+$result25 = mysqli_query($conn, $query25);
+
+$query26 = "SELECT COUNT(*) as sevensuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 181 and 210)";
+$result26 = mysqli_query($conn, $query26);
+
+$query27 = "SELECT COUNT(*) as eightsuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 211 and 240)";
+$result27 = mysqli_query($conn, $query27);
+
+$query28 = "SELECT COUNT(*) as ninesuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 241 and 270)";
+$result28 = mysqli_query($conn, $query28);
+
+$query29 = "SELECT COUNT(*) as tensuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 271 and 300)";
+$result29 = mysqli_query($conn, $query29);
+
+$query30 = "SELECT COUNT(*) as elevensuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 301 and 330)";
+$result30 = mysqli_query($conn, $query30);
+
 $query20 = "SELECT COUNT(*) as twelvesuscriptionsnopayed FROM videotips_app_access_list  WHERE suscriptionkind <> 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
 $result20 = mysqli_query($conn, $query20);
 
@@ -121,6 +151,26 @@ if (($result) && ($result1)) {
     $twelvesuscriptions = $row16['twelvesuscriptions'];
     $row19 = mysqli_fetch_assoc($result19);
     $monthsuscriptionsnopayed = $row19['monthsuscriptionsnopayed'];
+    $row21 = mysqli_fetch_assoc($result21);
+    $twosuscriptionsnopayed = $row21['twosuscriptionsnopayed'];
+    $row22 = mysqli_fetch_assoc($result22);
+    $threesuscriptionsnopayed = $row22['threesuscriptionsnopayed'];
+    $row23 = mysqli_fetch_assoc($result23);
+    $foursuscriptionsnopayed = $row23['foursuscriptionsnopayed'];
+    $row24 = mysqli_fetch_assoc($result24);
+    $fivesuscriptionsnopayed = $row24['fivesuscriptionsnopayed'];
+    $row25 = mysqli_fetch_assoc($result25); 
+    $sixsuscriptionsnopayed = $row25['sixsuscriptionsnopayed'];
+    $row26 = mysqli_fetch_assoc($result26);
+    $sevensuscriptionsnopayed = $row26['sevensuscriptionsnopayed'];
+    $row27 = mysqli_fetch_assoc($result27);
+    $eightsuscriptionsnopayed = $row27['eightsuscriptionsnopayed'];
+    $row28 = mysqli_fetch_assoc($result28);
+    $ninesuscriptionsnopayed = $row28['ninesuscriptionsnopayed'];
+    $row29 = mysqli_fetch_assoc($result29);
+    $tensuscriptionsnopayed = $row29['tensuscriptionsnopayed'];
+    $row30 = mysqli_fetch_assoc($result30);
+    $elevensuscriptionsnopayed = $row30['elevensuscriptionsnopayed'];
     $row20 = mysqli_fetch_assoc($result20);
     $twelvesuscriptionsnopayed = $row20['twelvesuscriptionsnopayed'];
 
@@ -143,6 +193,16 @@ if (($result) && ($result1)) {
     $elevensuscriptions = 0;
     $twelvesuscriptions = 0;
     $monthsuscriptionsnopayed = 0;
+    $twosuscriptionsnopayed = 0;
+    $threesuscriptionsnopayed = 0;
+    $foursuscriptionsnopayed = 0;
+    $fivesuscriptionsnopayed = 0;
+    $sixsuscriptionsnopayed = 0;
+    $sevensuscriptionsnopayed = 0;
+    $eightsuscriptionsnopayed = 0;
+    $ninesuscriptionsnopayed = 0;
+    $tensuscriptionsnopayed = 0;
+    $elevensuscriptionsnopayed = 0;
     $twelvesuscriptionsnopayed = 0;
 }
 
@@ -207,8 +267,8 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 3 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($threesuscriptions < 8) ? 'green' : (($threesuscriptions >= 9 && $threesuscriptions <= 10) ? 'orange' : ($threesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $threesuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($foursuscriptions < 8) ? 'green' : (($foursuscriptions >= 9 && $foursuscriptions <= 10) ? 'orange' : ($foursuscriptions == 11 ? 'red' : '')); ?>"><?php echo $foursuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptions < 8) ? 'green' : (($fivesuscriptionss >= 9 && $fivesuscriptions <= 10) ? 'orange' : ($fivesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptions < 8) ? 'green' : (($sixsuscriptions >= 9 && $sixsuscriptions <= 10) ? 'orange' : ($sixsuscriptions== 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptions < 8) ? 'green' : (($fivesuscriptions >= 9 && $fivesuscriptions <= 10) ? 'orange' : ($fivesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptions; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptions < 8) ? 'green' : (($sixsuscriptions >= 9 && $sixsuscriptions <= 10) ? 'orange' : ($sixsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sevensuscriptions  < 8) ? 'g reen' : (($sevensuscriptions >= 9 && $sevensuscriptions <= 10) ? 'orange' : ($sevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $sevensuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($eightsuscriptions < 8) ? 'green' : (($eightsuscriptions >= 9 && $eightsuscriptions <= 10) ? 'orange' : ($eightsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $eightsuscriptions; ?></span></span></p>
                                     <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($ninesuscriptions < 8) ? 'green' : (($ninesuscriptions >= 9 && $ninesuscriptions <= 10) ? 'orange' : ($ninesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $ninesuscriptions; ?></span></span></p>
@@ -237,17 +297,17 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                     <div class="grid-item-title">Suscripciones No Pago:</div>
                                 </div>
                                     <p class="p-title"><span class="left-text"> 1 Mes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($monthsuscriptionsnopayed < 8) ? 'green' : (($monthsuscriptionsnopayed >= 9 && $monthsuscriptionsnopayed <= 10) ? 'orange' : ($monthsuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $monthsuscriptionsnopayed; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptions < 8) ? 'green' : (($twosuscriptions >= 9 && $twosuscriptions <= 10) ? 'orange' : ($twosuscriptions == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 3 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($threesuscriptions < 8) ? 'green' : (($threesuscriptions >= 9 && $threesuscriptions <= 10) ? 'orange' : ($threesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $threesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($foursuscriptions < 8) ? 'green' : (($foursuscriptions >= 9 && $foursuscriptions <= 10) ? 'orange' : ($foursuscriptions == 11 ? 'red' : '')); ?>"><?php echo $foursuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptions < 8) ? 'green' : (($fivesuscriptionss >= 9 && $fivesuscriptions <= 10) ? 'orange' : ($fivesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptions < 8) ? 'green' : (($sixsuscriptions >= 9 && $sixsuscriptions <= 10) ? 'orange' : ($sixsuscriptions== 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sevensuscriptions  < 8) ? 'g reen' : (($sevensuscriptions >= 9 && $sevensuscriptions <= 10) ? 'orange' : ($sevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $sevensuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($eightsuscriptions < 8) ? 'green' : (($eightsuscriptions >= 9 && $eightsuscriptions <= 10) ? 'orange' : ($eightsuscriptions == 11 ? 'red' : '')); ?>"><?php echo $eightsuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($ninesuscriptions < 8) ? 'green' : (($ninesuscriptions >= 9 && $ninesuscriptions <= 10) ? 'orange' : ($ninesuscriptions == 11 ? 'red' : '')); ?>"><?php echo $ninesuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptions < 8) ? 'green' : (($tensuscriptions >= 9 && $tensuscriptions <= 10) ? 'orange' : ($tensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptions < 8) ? 'green' : (($elevensuscriptions >= 9 && $elevensuscriptions <= 10) ? 'orange' : ($elevensuscriptions == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptions; ?></span></span></p>
-                                    <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptionsnopayed < 8) ? 'green' : (($twelvesuscriptionsnopayed >= 9 && $twelvesuscriptionsnopayed <= 10) ? 'orange' : ($twelvesuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 2 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twosuscriptionsnopayed < 8) ? 'green' : (($twosuscriptionsnopayed >= 9 && $twosuscriptionsnopayed <= 10) ? 'orange' : ($twosuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $twosuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 3 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($threesuscriptionsnopayed < 8) ? 'green' : (($threesuscriptionsnopayed >= 9 && $threesuscriptionsnopayed <= 10) ? 'orange' : ($threesuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $threesuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 4 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($foursuscriptionsnopayed < 8) ? 'green' : (($foursuscriptionsnopayed >= 9 && $foursuscriptionsnopayed <= 10) ? 'orange' : ($foursuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $foursuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 5 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($fivesuscriptionsnopayed < 8) ? 'green' : (($fivesuscriptionsnopayed >= 9 && $fivesuscriptionsnopayed <= 10) ? 'orange' : ($fivesuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $fivesuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 6 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sixsuscriptionsnopayed < 8) ? 'green' : (($sixsuscriptionsnopayed >= 9 && $sixsuscriptionsnopayed <= 10) ? 'orange' : ($sixsuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $sixsuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 7 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($sevensuscriptionsnopayed  < 8) ? 'g reen' : (($sevensuscriptionsnopayed >= 9 && $sevensuscriptionsnopayed <= 10) ? 'orange' : ($sevensuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $sevensuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 8 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($eightsuscriptionsnopayed < 8) ? 'green' : (($eightsuscriptionsnopayed >= 9 && $eightsuscriptionsnopayed <= 10) ? 'orange' : ($eightsuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $eightsuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 9 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($ninesuscriptionsnopayed < 8) ? 'green' : (($ninesuscriptionsnopayed >= 9 && $ninesuscriptionsnopayed <= 10) ? 'orange' : ($ninesuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $ninesuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 10 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($tensuscriptionsnopayed < 8) ? 'green' : (($tensuscriptionsnopayed >= 9 && $tensuscriptionsnopayed <= 10) ? 'orange' : ($tensuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $tensuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 11 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($elevensuscriptionsnopayed < 8) ? 'green' : (($elevensuscriptionsnopayed >= 9 && $elevensuscriptionsnopayed <= 10) ? 'orange' : ($elevensuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $elevensuscriptionsnopayed; ?></span></span></p>
+                                    <p class="p-title"><span class="left-text"> 12 Meses:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="<?php echo ($twelvesuscriptionsnopayed < 8) ? 'green' : (($twelvesuscriptionsnopayed >= 9 && $twelvesuscriptionsnopayed <= 10) ? 'orange' : ($twelvesuscriptionsnopayed == 11 ? 'red' : '')); ?>"><?php echo $twelvesuscriptionsnopayednopayed; ?></span></span></p>
                                     <!--<a href="#" class="btn-primary">Ver Detalles</a>-->
                             </div>
                         </div>
