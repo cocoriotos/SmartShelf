@@ -151,6 +151,8 @@ $suscriptionkind = "None";
 
 				if ($admrole > 0){
 					$admrole = 0;
+					$query15="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
+					$result15=mysqli_query($conn, $query15);
 					header("refresh:0; url=AppMgmt.php");
 					exit();
 				}
