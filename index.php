@@ -23,11 +23,11 @@
     <meta property="og:description" content="La plataforma más fácil para Centralizar, Organizar y Acceder a Todos tus contenidos útiles en un Solo Lugar."/>
     <meta property="og:url" content="solicionespro.com/SmartShelf/"/>
 
-    <meta property="og:image" content={${process.env.NEXT_PUBLIC_CLIENT_URL}/vivoadmin-opengraph.jpg}/>
-    <meta property="og:image:secure_url" content={${process.env.NEXT_PUBLIC_CLIENT_URL}/vivoadmin-opengraph.jpg}/>
+    <meta property="og:image" content="https://solicionespro.com/SmartShelf/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.png"/>
+    <meta property="og:image:secure_url" content="https://solicionespro.com/SmartShelf/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.png"/>
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="690" />
-    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:type" content="image/png" />
 
     <meta name="google-site-verification" content="google-site-verification: google23a5a3b403400d31.html"/>
 
