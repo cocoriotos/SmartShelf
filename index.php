@@ -54,7 +54,7 @@
     </header>
     <section class="hero">
         <div class="container">
-            <h1 style="font-size: 32px">SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar</h1>
+            <h1 style="font-size: 32px">Software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
             <a href="videotrackerauth.php" class="btn1">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
