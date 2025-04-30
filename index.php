@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartShelf - Tu Biblioteca Digital Inteligente - Contenidos Útiles</title>
-    <meta name="description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta name="description" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
     <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.ico"/>
 
     <meta property="og:url" content="https://solicionespro.com/SmartShelf/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="SmartShelf Software" />
-    <meta property="og:description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta property="og:description" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
     <meta charset="UTF-8"/>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes"/>
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
     <link rel="canonical" href="https://solicionespro.com/SmartShelf/" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="SmartShelf | Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta property="og:site_name" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
+    <meta property="og:title" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
     <meta property="og:description" content="La plataforma más fácil para Centralizar, Organizar y Acceder a Todos tus contenidos útiles en un Solo Lugar."/>
     <meta property="og:url" content="solicionespro.com/SmartShelf/"/>
 
@@ -54,7 +54,7 @@
     </header>
     <section class="hero">
         <div class="container">
-            <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
+            <h1 style="font-size: 32px">SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
             <a href="videotrackerauth.php" class="btn1">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
