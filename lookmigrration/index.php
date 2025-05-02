@@ -23,11 +23,11 @@
     <meta property="og:description" content="La plataforma más fácil para Centralizar, Organizar y Acceder a Todos tus contenidos útiles en un Solo Lugar."/>
     <meta property="og:url" content="solicionespro.com/SmartShelf/"/>
 
-    <meta property="og:image" content={${process.env.NEXT_PUBLIC_CLIENT_URL}/vivoadmin-opengraph.jpg}/>
-    <meta property="og:image:secure_url" content={${process.env.NEXT_PUBLIC_CLIENT_URL}/vivoadmin-opengraph.jpg}/>
+    <meta property="og:image" content="https://solicionespro.com/SmartShelf/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.png"/>
+    <meta property="og:image:secure_url" content="https://solicionespro.com/SmartShelf/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.png"/>
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="690" />
-    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image:type" content="image/png" />
 
     <meta name="google-site-verification" content="google-site-verification: google23a5a3b403400d31.html"/>
 
@@ -181,8 +181,8 @@
             <p>&copy; 2025 SmartShelf. Todos los derechos reservados.</p>
         </div>
         <div class="social-icons">
-                <!--<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-                <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>-->
+                <a href="https://www.instagram.com/smartshelfcol/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+                <a href="https://www.facebook.com/smartshelfcol" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>
                 <a href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
                 <!--<a href="mailto:adm@solicionespro.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</a>-->
                 <a href="https://www.tiktok.com/@smartshelfcol" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i>TikTok</a>
