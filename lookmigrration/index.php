@@ -56,7 +56,8 @@
         <div class="container">
             <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
-            <div style="position: relative; width: 100%; max-width: 560px;">
+            <br>
+            <div style="position: center; width: 100%; max-width: 560px;">
                         <!-- Video embed -->
                         <iframe width="100%" height="315" 
                                 src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0"
