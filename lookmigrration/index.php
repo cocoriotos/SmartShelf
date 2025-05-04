@@ -56,6 +56,19 @@
         <div class="container">
             <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
+            <div style="position: relative; width: 100%; max-width: 560px;">
+                        <!-- Video embed -->
+                        <iframe width="100%" height="315" 
+                                src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0"
+                                title="Video Promocional" frameborder="0" allowfullscreen>
+                        </iframe>
+                        
+                        <!-- Invisible overlay link to open in a new tab -->
+                        <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12"
+                        target="_blank" 
+                        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;">
+                        </a>
+                    </div>
             <a href="videotrackerauth.php" class="btn1">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
         </div>
@@ -94,19 +107,6 @@
                     <h3 style="color: #D2691E; font-weight: bold; text-transform: uppercase;">¡Prueba Gratis por 30 Días Calendario!  Regístrate</h3>
                     <p>Explora todas las funciones, organiza tus enlaces importantes y crea categorías personalizadas.</p> 
                     <p>Si necesitas ayuda, ingresa y consulta los videos tutoriales y/o el Manual del Usuario en PDF.</p>
-                    <div style="position: relative; width: 100%; max-width: 560px;">
-                        <!-- Video embed -->
-                        <iframe width="100%" height="315" 
-                                src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0"
-                                title="Video Promocional" frameborder="0" allowfullscreen>
-                        </iframe>
-                        
-                        <!-- Invisible overlay link to open in a new tab -->
-                        <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12"
-                        target="_blank" 
-                        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;">
-                        </a>
-                    </div>
                 </div>
                 <div class="feature-item">
                     <h3>Primeros pasos después de registrarte e ingresar</h3>
