@@ -72,6 +72,7 @@
                     </a>
                 </div>
             </div>
+            <br>
             <a href="videotrackerauth.php" class="btn1">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
         </div>
