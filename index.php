@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartShelf - Tu Biblioteca Digital Inteligente - Contenidos Útiles</title>
-    <meta name="description" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
+    <meta name="description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
     <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.ico"/>
 
     <meta property="og:url" content="https://solicionespro.com/SmartShelf/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="SmartShelf Software" />
-    <meta property="og:description" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
+    <meta property="og:description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
     <meta charset="UTF-8"/>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes"/>
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
     <link rel="canonical" href="https://solicionespro.com/SmartShelf/" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
+    <meta property="og:site_name" content="SmartShelf | Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="SmartShelf: el software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar"/>
+    <meta property="og:title" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
     <meta property="og:description" content="La plataforma más fácil para Centralizar, Organizar y Acceder a Todos tus contenidos útiles en un Solo Lugar."/>
     <meta property="og:url" content="solicionespro.com/SmartShelf/"/>
 
@@ -54,8 +54,25 @@
     </header>
     <section class="hero">
         <div class="container">
-            <h1 style="font-size: 32px">Software online ideal para centralizar, organizar y acceder fácilmente a todos tus documentos, archivos y contenidos digitales desde un solo lugar</h1>
+            <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
+            <br>
+            <div style="display: flex; justify-content: center;">
+                <div style="position: relative; width: 100%; max-width: 560px;">
+                    <!-- Video embed -->
+                    <iframe width="100%" height="315" 
+                            src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0"
+                            title="Video Promocional" frameborder="0" allowfullscreen>
+                    </iframe>
+
+                    <!-- Invisible overlay link to open in a new tab -->
+                    <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12"
+                    target="_blank" 
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;">
+                    </a>
+                </div>
+            </div>
+            <br>
             <a href="videotrackerauth.php" class="btn1">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
         </div>
@@ -181,8 +198,8 @@
             <p>&copy; 2025 SmartShelf. Todos los derechos reservados.</p>
         </div>
         <div class="social-icons">
-        <a href="https://www.instagram.com/smartshelfcol/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-                <!--<a href="https://www.facebook.com/smartshelfcol" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>-->
+                <a href="https://www.instagram.com/smartshelfcol/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+                <a href="https://www.facebook.com/smartshelfcol" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>
                 <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
                 <!--<a href="mailto:adm@solicionespro.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</a>-->
                 <a href="https://www.tiktok.com/@smartshelfcol" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i>TikTok</a>
