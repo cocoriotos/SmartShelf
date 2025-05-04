@@ -57,19 +57,21 @@
             <h1 style="font-size: 32px">Centraliza, Organiza y Accede a Todo tu Conocimiento en un Solo Lugar</h1>
             <p>¿Te has preguntado cuánto tiempo pierdes buscando enlaces, artículos, recursos o herramientas que guardaste pero no recuerdas dónde? Con <strong>SmartShelf</strong>, esa frustración se acabó.</p>
             <br>
-            <div style="position: center; width: 100%; max-width: 560px;">
-                        <!-- Video embed -->
-                        <iframe width="100%" height="315" 
-                                src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0"
-                                title="Video Promocional" frameborder="0" allowfullscreen>
-                        </iframe>
-                        
-                        <!-- Invisible overlay link to open in a new tab -->
-                        <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12"
-                        target="_blank" 
-                        style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;">
-                        </a>
-                    </div>
+            <div style="display: flex; justify-content: center;">
+                <div style="position: relative; width: 100%; max-width: 560px;">
+                    <!-- Video embed -->
+                    <iframe width="100%" height="315" 
+                            src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0"
+                            title="Video Promocional" frameborder="0" allowfullscreen>
+                    </iframe>
+
+                    <!-- Invisible overlay link to open in a new tab -->
+                    <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12"
+                    target="_blank" 
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1;">
+                    </a>
+                </div>
+            </div>
             <a href="videotrackerauth.php" class="btn1">Ingresar</a>
             <a href="requestaccessfinal.php" class="btn1">Registrarse</a>
         </div>
