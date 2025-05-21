@@ -534,7 +534,9 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                         <th>Nombre</th>
                                                         <th>Apellido</th>
                                                         <th>Usuario</th>
+                                                        <th>Fecha Registro</th>
                                                         <th>Ultimo Acceso</th>
+                                                        <th>Días Corridos</th>
                                                         <th>Tipo de Suscripción</th>
                                                     </tr>
                                                 </thead>
@@ -542,7 +544,7 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                     <?php
                                                     // Consulta SQL
                                                     /*$sql = "SELECT name, lastname, username, suscriptionkind FROM videotips_app_access_list WHERE active = 1 order by suscriptionkind asc";*/
-                                                    $sql = "SELECT name, lastname, username, suscriptionkind, lastlogindate FROM videotips_app_access_list WHERE suscriptionkind <> 'De Pago' order by lastlogindate desc";
+                                                    $sql = "SELECT name, lastname, username, suscriptionkind, registrationdate, lastlogindate, trialdaysleft FROM videotips_app_access_list WHERE suscriptionkind <> 'De Pago' order by trialdaysleft desc";
                                                     $result = $conn->query($sql);
                                                     // Mostrar los resultados en la tabla
                                                     if ($result->num_rows > 0) {
@@ -552,7 +554,9 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
                                                             echo "<td>" . $row['name'] . "</td>";
                                                             echo "<td>" . $row['lastname'] . "</td>";
                                                             echo "<td><a href='mailto:" . $row["username"] . "'>" . $row["username"] . "</a></td>";
+                                                            echo "<td>" . $row['registrationdate'] . "</td>";
                                                             echo "<td>" . $row['lastlogindate'] . "</td>";
+                                                            echo "<td>" . $row['trialdaysleft'] . "</td>";
                                                             echo "<td>" . $row['suscriptionkind'] . "</td>";
                                                             echo "</tr>";
                                                             }   
