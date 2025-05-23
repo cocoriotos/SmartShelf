@@ -199,7 +199,7 @@
         </div>
         <div class="social-icons">
                 <a href="https://www.instagram.com/smartshelfcol/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-                <!--<a href="https://www.facebook.com/people/Julian-Gonzalez/pfbid02Nzh8E8Y2Lw7dqy2svb2MmCABpzpAoSNbVdsgKYxi8FT4XPt7dhg8HZu2UQ9rtbQol/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>-->
+                <a href="https://www.facebook.com/profile.php?id=61575835265080" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> FaceBook</a>
                 <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
                 <!--<a href="mailto:adm@solicionespro.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</a>-->
                 <a href="https://www.tiktok.com/@smartshelfcol" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i>TikTok</a>
