@@ -157,18 +157,18 @@
                     <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Búsqueda Instantánea</h3>
-                    <p>Encuentra lo que necesitas con solo escribir palabras clave.</p>
+                    <p style="color:black; font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Es una página útil. Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes.”</p>
+                    <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María José Ospino</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Acceso Rápido</h3>
-                    <p>Accede directamente al contenido o comparte enlaces de manera instantánea.</p>
+                    <p style="color:black; font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Recomiendo a SmartShelf como una biblioteca digital personal y fácil de usar. Permite guardar y organizar archivos de diversas categorías, facilitando la búsqueda rápida y eficiente a través de su función de busqueda🔍. Su eficacia para buscar y encontrar archivos la convierte en una herramienta imprescindible para cualquier persona que maneje un volumen considerable de archivos.”</p>
+                    <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Carol Zambrano</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Multiplataforma</h3>
-                    <p>Integra contenido de YouTube, LinkedIn, Google Drive y de más links públicos.</p>
+                    <p style="color:black; font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy practica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
+                    <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
                 </div>
-            </div>  
+        </div>  
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
             <h2 style="color: orange;">Testimonios</h2>
