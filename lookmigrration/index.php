@@ -153,6 +153,8 @@
                 <div class="feature-item">
                     <h3>Organización Inteligente</h3>
                     <p>Guarda enlaces de cualquier plataforma y clasifícalos en categorías personalizadas.</p>
+                    <p style="color:black; font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“SmartShelf es una app muy útil. Sino quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando necesites. Hay un buscador en la app que te ayudará a encontrar el link sin dificultad.”</p>
+                    <p class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — Sandra Ojeda</p>
                 </div>
                 <div class="feature-item">
                     <h3>Búsqueda Instantánea</h3>
@@ -166,7 +168,7 @@
                     <h3>Multiplataforma</h3>
                     <p>Integra contenido de YouTube, LinkedIn, Google Drive y de más links públicos.</p>
                 </div>
-            </div>
+            </div>  
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
             <h2 style="color: orange;">Testimonios</h2>
