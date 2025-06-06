@@ -159,7 +159,7 @@
                 </div>
                 <div class="feature-item">
                     <p style="color:black; font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“Es una página útil. Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes.”</p>
-                    <br><br><br><br>
+                    <br><br><br><br><br><br><br>
                     <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuaria SmartShelf — María José Ospino</p>
                 </div>
                 <div class="feature-item">
@@ -168,7 +168,7 @@
                 </div>
                 <div class="feature-item">
                     <p style="color:black; font-size: 1.125rem; font-style: italic; transform: skewX(5deg);">“La app para guardar enlaces es muy práctica y aplica bastante bien para ayudar a organizar tantos enlaces de Internet especialmente para buscarlos de una manera agil y personalizada para cada quien que la use.”</p>
-                    <br><br><br><br>
+                    <br><br><br><br><br>
                     <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
                 </div>
         </div>  
