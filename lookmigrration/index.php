@@ -172,8 +172,8 @@
                     <p style="color:black; font-size: 1.125rem;" class="mt-4 font-semibold text-sm text-gray-500">Usuario SmartShelf — Oscar Ariza</p>
                 </div>
         </div>  
-        <br>
         <h2>________________________________________________________________________________________________________</h2>
+        <br>
     </section>
 
    <section id="contact" class="contact">
