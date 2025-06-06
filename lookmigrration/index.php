@@ -149,6 +149,24 @@
             <p>Con <strong>SmartShelf</strong>, nunca más volverás a perder un enlace importante.</p>
             <a href="#contact" class="btn">¡Descubre SmartShelf Hoy!</a>
         </div>
+        <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Organización Inteligente</h3>
+                    <p>Guarda enlaces de cualquier plataforma y clasifícalos en categorías personalizadas.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Búsqueda Instantánea</h3>
+                    <p>Encuentra lo que necesitas con solo escribir palabras clave.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Acceso Rápido</h3>
+                    <p>Accede directamente al contenido o comparte enlaces de manera instantánea.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Multiplataforma</h3>
+                    <p>Integra contenido de YouTube, LinkedIn, Google Drive y de más links públicos.</p>
+                </div>
+            </div>
         <h2>________________________________________________________________________________________________________</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4">
             <h2 style="color: orange;">Testimonios</h2>
