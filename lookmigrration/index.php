@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartShelf - Tu Biblioteca Digital Inteligente - Contenidos Útiles</title>
     <meta name="description" content="Software online que Centraliza, Organiza y Accede a Todos tus contenidos útiles en un Solo Lugar"/>
-    <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.ico"/>
+    <link rel="icon" href="/SmartShelfUsefulContentLibraryDarrkLightGreenCircle.ico" tyope="image/x-icon"/>
 
     <meta property="og:url" content="https://solicionespro.com/SmartShelf/" />
     <meta property="og:type" content="article" />
