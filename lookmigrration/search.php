@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 350px; /* Limitar ancho */
+    max-width: 550px; /* Limitar ancho */
 }
 
 .search-icon {
