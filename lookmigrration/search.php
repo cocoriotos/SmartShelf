@@ -68,3 +68,55 @@ function searchCards() {
         let match = true;
         if (searchWords.length > 0) {
             match = searchWords.every(word => content.includes(word) || videoLink.includes(word));
+        }
+
+        if (match) {
+            filteredCards.push(card);
+        }
+    });
+
+    currentIndex = 0;
+    loadMoreCards();
+
+    updateCardCount(filteredCards.length);
+
+    document.querySelector(".clear-icon").style.display = searchTerm.length > 0 ? "block" : "none";
+}
+
+function loadMoreCards() {
+    const endIndex = currentIndex + cardsPerLoad;
+    for (let i = currentIndex; i < endIndex && i < filteredCards.length; i++) {
+        filteredCards[i].style.display = "block";
+    }
+    currentIndex = endIndex;
+}
+
+window.addEventListener("scroll", () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+        loadMoreCards();
+    }
+});
+
+function updateCardCount(visibleCards) {
+    document.querySelector(".total-cards").textContent = `Total de cards mostrados: ${visibleCards}`;
+}
+
+function clearSearch() {
+    document.getElementById("searchInput").value = "";
+    searchCards();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    searchCards();
+});
+</script>
+
+<div class="search-container">
+    <div class="search-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar..." oninput="searchCards()">
+        <i class="fas fa-times clear-icon" onclick="clearSearch()"></i>
+    </div>
+</div>
+
+<div class="total-cards"></div>
