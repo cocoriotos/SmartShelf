@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 text: '¡Todos los campos son obligatorios!',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
-                timer: 2000, // 2 segundos antes de redirigir
+                timer: 1000, // 1 segundos antes de redirigir
                 timerProgressBar: true, // Barra de progreso
                 willClose: () => {
                   window.location.href = 'closetaskscon.php'; // Redirección automática
@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   text: 'CAPTCHA ha expirado, recarga la página.',
                   icon: 'error',
                   confirmButtonText: 'Aceptar',
-                  timer: 2000, // 2 segundos antes de redirigir
+                  timer: 1000, // 1 segundos antes de redirigir
                   timerProgressBar: true, // Barra de progreso
                   willClose: () => {
                     window.location.href = 'closetaskscon.php'; // Redirección automática
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 text: 'CAPTCHA incorrecto.',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
-                timer: 2000, // 2 segundos antes de redirigir
+                timer: 1000, // 1 segundo antes de redirigir
                 timerProgressBar: true, // Barra de progreso
                 willClose: () => {
                   window.location.href = 'closetaskscon.php'; // Redirección automática
@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   text: 'Usuario no registrado.',
                   icon: 'error',
                   confirmButtonText: 'Aceptar',
-                  timer: 2000, // 2 segundos antes de redirigir
+                  timer: 1000, // 1 segundo antes de redirigir
                   timerProgressBar: true, // Barra de progreso
                   willClose: () => {
                     window.location.href = 'closetaskscon.php'; // Redirección automática
@@ -245,7 +245,7 @@ if ($captchat_status == 4) {
           content: 'custom-swal-content',
           confirmButton: 'custom-swal-confirm-button'
         },
-        timer: 2000, // 2 segundos antes de redirigir
+        timer: 1000, // 1 segundo antes de redirigir
         timerProgressBar: true, // Barra de progreso
         didOpen: () => {
           Swal.showLoading(); // Indicador de carga

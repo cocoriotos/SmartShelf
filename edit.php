@@ -185,7 +185,7 @@ if ($sessiontimeoutreached == 1) {
                 content: 'custom-swal-content',
                 confirmButton: 'custom-swal-confirm-button'
             },
-            timer: 2000, // 2000 milisegundos = 2 segundos
+            timer: 1500, // 1500 milisegundos = 1.5 segundos
             timerProgressBar: true, // Muestra una barra de progreso
             didOpen: () => {
                 Swal.showLoading(); // Muestra un indicador de carga

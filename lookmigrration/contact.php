@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 text: '¡Todos los campos son obligatorios!',
                 icon: 'error',
                 confirmButtonText: 'Aceptar',
-                timer: 2000, // 2 segundos antes de redirigir
+                timer: 1500, // 1.5 segundos antes de redirigir
                 timerProgressBar: true, // Barra de progreso
                 willClose: () => {
                   window.location.href = 'index.php'; // Redirección automática
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   text: 'CAPTCHA ha expirado, recarga la página.',
                   icon: 'error',
                   confirmButtonText: 'Aceptar',
-                  timer: 2000, // 2 segundos antes de redirigir
+                  timer: 1500, // 1.5 segundos antes de redirigir
                   timerProgressBar: true, // Barra de progreso
                   willClose: () => {
                     window.location.href = 'index.php'; // Redirección automática
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text: 'CAPTCHA incorrecto.',
             icon: 'error',
             confirmButtonText: 'Aceptar',
-            timer: 2000, // 2 segundos antes de redirigir
+            timer: 1500, // 1.5 segundos antes de redirigir
             timerProgressBar: true, // Barra de progreso
             willClose: () => {
               window.location.href = 'index.php'; // Redirección automática
@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   text: 'Gracias por contactarnos, estamos revisando tu mensaje y te responderemos pronto.',
                   icon: 'success',
                   confirmButtonText: 'Aceptar',
-                  timer: 2000, // 2 segundos antes de redirigir
+                  timer: 1500, // 1.5 segundos antes de redirigir
                   timerProgressBar: true, // Barra de progreso
                   willClose: () => {
                     window.location.href = 'index.php'; // Redirección automática
