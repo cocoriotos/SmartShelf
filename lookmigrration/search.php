@@ -1,74 +1,127 @@
 <!-- search.php -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome para íconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+.search-container {
+    margin-bottom: 15px;
+}
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #888;
+}
+#searchInput {
+    padding: 8px 35px 8px 30px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.clear-icon {
+    position: absolute;
+    right: 10px;
+    color: #888;
+    cursor: pointer;
+    display: none;
+}
+.total-cards {
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
 
 <script>
-function searchCards() {
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim(); // Obtener y normalizar el término de búsqueda
-    const cards = document.querySelectorAll(".grid-item"); // Obtener todas las cards
+let filteredCards = []; // Cards que coinciden con la búsqueda
+let cardsPerLoad = 20;  // Número de cards a mostrar por bloque
+let currentIndex = 0;   // Índice de hasta dónde hemos mostrado
 
-    // Dividir el término de búsqueda en palabras individuales
+function searchCards() {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".grid-item");
+
     const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
 
-    let visibleCards = 0; // Contador de cards visibles
+    filteredCards = [];
+
+    // Ocultamos todas
+    cards.forEach(card => card.style.display = "none");
 
     cards.forEach((card) => {
-        const content = card.textContent.toLowerCase(); // Obtener el contenido de la card
-        const videoLink = card.querySelector("a.btn-primary")?.getAttribute("href")?.toLowerCase() || ""; // Obtener el enlace de la card
+        const content = card.textContent.toLowerCase();
+        const videoLink = card.querySelector("a.btn-primary")?.getAttribute("href")?.toLowerCase() || "";
 
         let match = true;
-
-        // Verificar si todas las palabras de búsqueda están presentes en el contenido de la card o en el enlace
         if (searchWords.length > 0) {
             match = searchWords.every(word => content.includes(word) || videoLink.includes(word));
         }
 
-        // Mostrar u ocultar la card según si coincide con la búsqueda
         if (match) {
-            card.style.display = "block";
-            visibleCards++; // Incrementar el contador de cards visibles
-        } else {
-            card.style.display = "none";
+            filteredCards.push(card);
         }
     });
 
-    // Actualizar el conteo de cards visibles
-    updateCardCount(visibleCards);
+    // Reiniciar índice y mostrar el primer bloque
+    currentIndex = 0;
+    loadMoreCards();
 
-    // Mostrar u ocultar el ícono de limpiar
-    const clearIcon = document.querySelector(".clear-icon");
-    if (searchTerm.length > 0) {
-        clearIcon.style.display = "block";
-    } else {
-        clearIcon.style.display = "none";
-    }
+    // Actualizar el conteo
+    updateCardCount(filteredCards.length);
+
+    // Mostrar/ocultar botón de limpiar
+    document.querySelector(".clear-icon").style.display = searchTerm.length > 0 ? "block" : "none";
 }
 
+function loadMoreCards() {
+    const endIndex = currentIndex + cardsPerLoad;
+    for (let i = currentIndex; i < endIndex && i < filteredCards.length; i++) {
+        filteredCards[i].style.display = "block";
+    }
+    currentIndex = endIndex;
+}
 
+window.addEventListener("scroll", () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+        loadMoreCards();
+    }
+});
 
 function updateCardCount(visibleCards) {
-    const totalCardsContainer = document.querySelector(".total-cards");
-    totalCardsContainer.textContent = `Total de cards mostrados: ${visibleCards}`;
+    document.querySelector(".total-cards").textContent = `Total de cards mostrados: ${visibleCards}`;
 }
 
 function clearSearch() {
-    const searchInput = document.getElementById("searchInput");
-    searchInput.value = ""; // Limpiar el campo de búsqueda
-    searchCards(); // Actualizar la búsqueda
+    document.getElementById("searchInput").value = "";
+    searchCards();
 }
 
-// Inicializar el conteo de cards al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    const totalCards = document.querySelectorAll(".grid-item").length; // Obtener el total de cards
-    updateCardCount(totalCards); // Mostrar el conteo total de cards al cargar la página
+    searchCards(); // Cargar en bloques al inicio
 });
 </script>
 
 <div class="search-container">
     <div class="search-wrapper">
-        <i class="fas fa-search search-icon"></i> <!-- Ícono de búsqueda -->
+        <i class="fas fa-search search-icon"></i>
         <input type="text" id="searchInput" placeholder="Buscar..." oninput="searchCards()">
-        <i class="fas fa-times clear-icon" onclick="clearSearch()"></i> <!-- Ícono de limpiar -->
+        <i class="fas fa-times clear-icon" onclick="clearSearch()"></i>
     </div>
 </div>
 
-<div class="total-cards"></div> <!-- Contenedor para mostrar el total de cards -->
+<div class="total-cards"></div>
+
+<!-- Ejemplo de cards -->
+<div class="grid">
+    <div class="grid-item">
+        <h3>Card 1</h3>
+        <a href="video1.mp4" class="btn-primary">Ver video</a>
+    </div>
+    <div class="grid-item">
+        <h3>Card 2</h3>
+        <a href="video2.mp4" class="btn-primary">Ver video</a>
+    </div>
+    <!-- Aquí seguirían todas las demás .grid-item -->
+</div>
