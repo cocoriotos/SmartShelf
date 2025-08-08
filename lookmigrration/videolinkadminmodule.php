@@ -134,38 +134,44 @@ include "header.php";
                             <strong>Tus Contenidos Útiles</strong>
                         </label>
                     </center>
+
+
                     <div class="grid-container">
-                        <?php
-                        $query1 = "select * from videotips_videotips where active = 'Yes' and username ='$local_username' order by content asc";
-                        $result_links = mysqli_query($conn, $query1);
-                        while ($links = mysqli_fetch_array($result_links)) {
-                            $randomColor = getRandomLightColor();
-                        ?>
-                            <div class="grid-item" style="background-color: <?php echo $randomColor; ?>;">
-                                <div class="grid-item-content">
-                                    <button class="grid-item-action-btn" style="color: black; font-size: 40px; font-weight: bold;" onclick="toggleActions(event, <?php echo $links['id']; ?>)">...</button>
-                                    <div class="grid-item-actions">
-                                        <div class="grid-item-action-menu" id="action-menu-<?php echo $links['id']; ?>">
-                                            <button style="background: white; color: green; font-size: 12px;" onclick="copyToClipboard('<?php echo $links['videolink']; ?>'); toggleActions(event, <?php echo $links['id']; ?>);" class="btn btn-secondary">Copiar Enlace</button>
-                                            <button style="background: white; color: gray; font-size: 12px;" onclick="window.location.href = 'edit.php?id=<?php echo $links['id']; ?>'" class="btn btn-secondary">Modificar</button>
-                                            <button style="background: white; color: red; font-size: 12px;" onclick="confirmDelete(<?php echo $links['id']; ?>)" class="btn btn-secondary">Borrar</button>
-                                        </div>
+                    <?php
+                    $query1 = "SELECT * FROM videotips_videotips 
+                              WHERE active = 'Yes' AND username ='$local_username' 
+                              ORDER BY content ASC";
+                    $result_links = mysqli_query($conn, $query1);
+                    while ($links = mysqli_fetch_array($result_links)) {
+                        $randomColor = getRandomLightColor();
+                    ?>
+                        <div class="grid-item" style="background-color: <?php echo $randomColor; ?>; display: none;">
+                            <div class="grid-item-content">
+                                <button class="grid-item-action-btn" style="color: black; font-size: 40px; font-weight: bold;" onclick="toggleActions(event, <?php echo $links['id']; ?>)">...</button>
+                                <div class="grid-item-actions">
+                                    <div class="grid-item-action-menu" id="action-menu-<?php echo $links['id']; ?>">
+                                        <button style="background: white; color: green; font-size: 12px;" onclick="copyToClipboard('<?php echo $links['videolink']; ?>'); toggleActions(event, <?php echo $links['id']; ?>);" class="btn btn-secondary">Copiar Enlace</button>
+                                        <button style="background: white; color: gray; font-size: 12px;" onclick="window.location.href = 'edit.php?id=<?php echo $links['id']; ?>'" class="btn btn-secondary">Modificar</button>
+                                        <button style="background: white; color: red; font-size: 12px;" onclick="confirmDelete(<?php echo $links['id']; ?>)" class="btn btn-secondary">Borrar</button>
                                     </div>
-                                    <div class="grid-item-header"></div>
-                                    <span class="grid-item-title" style="color: blue"><?php echo $links['content']; ?></span>
-                                    <div class="grid-item-body">
-                                        <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $links['maincategory']; ?></span></p>
-                                        <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $links['category']; ?></span></p>
-                                        <p><span class="p-title">Contenido:</span><span class="p-content"><?php echo $links['proforpers']; ?></span></p>
-                                        <p><span class="p-title">Creación:</span><span class="p-content"><?php echo $links['creationdate']; ?></span></p>
-                                    </div>
-                                    <a href="<?php echo $links['videolink']; ?>" target="_blank" class="btn btn-primary">Ir al Contenido</a>
                                 </div>
+                                <div class="grid-item-header"></div>
+                                <span class="grid-item-title" style="color: blue"><?php echo $links['content']; ?></span>
+                                <div class="grid-item-body">
+                                    <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $links['maincategory']; ?></span></p>
+                                    <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $links['category']; ?></span></p>
+                                    <p><span class="p-title">Contenido:</span><span class="p-content"><?php echo $links['proforpers']; ?></span></p>
+                                    <p><span class="p-title">Creación:</span><span class="p-content"><?php echo $links['creationdate']; ?></span></p>
+                                </div>
+                                <a href="<?php echo $links['videolink']; ?>" target="_blank" class="btn btn-primary">Ir al Contenido</a>
                             </div>
-                        <?php } ?>
-                    </div>
+                        </div>
+                    <?php } ?>
                 </div>
-            </div>
+
+
+                </div>
+             </div>
         </div>
     </div>
     <!-- Botón de WhatsApp -->
@@ -295,6 +301,32 @@ include "header.php";
         });
     }
 </script>
+
+<script>
+let allCards = [];
+let cardsPerLoad = 20; // cantidad a mostrar por bloque
+let currentIndex = 0;
+
+function loadMoreCards() {
+    const endIndex = currentIndex + cardsPerLoad;
+    for (let i = currentIndex; i < endIndex && i < allCards.length; i++) {
+        allCards[i].style.display = "block";
+    }
+    currentIndex = endIndex;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    allCards = Array.from(document.querySelectorAll(".grid-item"));
+    loadMoreCards(); // Mostrar el primer bloque
+});
+
+window.addEventListener("scroll", () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+        loadMoreCards();
+    }
+});
+</script>
+
 
 <?php
 if ($copytoclipboard == 1) {
