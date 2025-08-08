@@ -134,8 +134,6 @@ include "header.php";
                             <strong>Tus Contenidos Útiles</strong>
                         </label>
                     </center>
-
-
                     <div class="grid-container">
                     <?php
                     $query1 = "SELECT * FROM videotips_videotips 
@@ -168,9 +166,7 @@ include "header.php";
                         </div>
                     <?php } ?>
                 </div>
-
-
-                </div>
+              </div>
              </div>
         </div>
     </div>
