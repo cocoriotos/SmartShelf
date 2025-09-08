@@ -201,10 +201,10 @@
                 <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk&list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5&index=12" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> Youtube</a>
                 <!--<a href="mailto:adm@solicionespro.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> E-Mail</a>-->
                 <a href="https://www.tiktok.com/@smartshelfcol" target="_blank"><i class="fa fa-tiktok" aria-hidden="true"></i>TikTok</a>
-                <a href="https://wa.me/573054293185" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                <a href="https://wa.me/573117592209" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
         </div>
     </footer>
-    <a href="https://wa.me/573054293185" target="_blank" 
+    <a href="https://wa.me/573117592209" target="_blank" 
         style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35" height="35" style="margin-right: 10px;"></a>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
