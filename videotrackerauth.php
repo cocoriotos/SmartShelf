@@ -70,7 +70,7 @@
                 <br>
                 <!--<p>Fecha: <?php /*echo date('m/d/Y');*/ ?></p>-->
             </form>
-        <a href="https://wa.me/573117592209" target="_blank" 
+        <a href="https://wa.me/573054293185" target="_blank" 
         style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35" height="35" style="margin-right: 10px;"></a>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
