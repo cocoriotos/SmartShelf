@@ -106,7 +106,7 @@ $suscriptionkind = "None";
 				{
 
 				} 
-				
+				//actualiza los dias usados de suscripcion trial
 				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
 				$result11=mysqli_query($conn, $query11);
 				
@@ -162,7 +162,13 @@ $suscriptionkind = "None";
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
-				  }else{	
+				  } 
+				  if ($suscriptiondaysleft > 365 && $suscriptionpayed == 1 && $suscriptionkind == 'De Pago' ) {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }    
+				  else{	
 						if(mysqli_num_rows($result1)==true)
 							{	
 								$query5="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), visits = visits+1, lastlogindate = CURDATE() where username ='$local_username'"; 
