@@ -20,6 +20,7 @@
     <li><a href="#how"      data-i18n="nav_how">Cómo Funciona</a></li>
     <li><a href="#pricing"  data-i18n="nav_pricing">Precios</a></li>
     <li><a href="#testi"    data-i18n="nav_reviews">Testimonios</a></li>
+    <li><a href="#support"  data-i18n="nav_support">Soporte</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-sw">
