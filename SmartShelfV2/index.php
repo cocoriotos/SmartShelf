@@ -44,6 +44,7 @@
   <a href="#how"      onclick="toggleMenu()" data-i18n="nav_how">Cómo Funciona</a>
   <a href="#pricing"  onclick="toggleMenu()" data-i18n="nav_pricing">Precios</a>
   <a href="#testi"    onclick="toggleMenu()" data-i18n="nav_reviews">Testimonios</a>
+  <a href="#support"  onclick="toggleMenu()" data-i18n="nav_support">Soporte</a>
   <a href="https://solicionespro.com/SmartShelf/videotrackerauth.php"
      data-i18n="nav_login">Ingresar</a>
   <a href="https://solicionespro.com/SmartShelf/requestaccessfinal.php"
@@ -83,8 +84,8 @@
     </div>
     <div class="hero-stats fu fu4">
       <div class="stat">
-        <span class="stat-num">30</span>
-        <span class="stat-lbl" data-i18n="stat1">días gratis</span>
+        <span class="stat-num">1</span>
+        <span class="stat-lbl" data-i18n="stat1">mes gratis</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
@@ -284,7 +285,7 @@
 
     <!-- Semestral (featured) -->
     <div class="p-card feat reveal">
-      <div class="p-badge"  data-i18n="plan2_badge">Más popular</div>
+      
       <div class="p-plan"   data-i18n="plan2_name">Semestral</div>
       <div class="p-amount"><span class="p-currency">$</span>40.000</div>
       <div class="p-period" data-i18n="plan2_per">COP · cada 6 meses</div>
@@ -302,6 +303,7 @@
 
     <!-- Anual -->
     <div class="p-card reveal">
+      <div class="p-badge"  data-i18n="plan3_badge">Más popular</div>
       <div class="p-plan"   data-i18n="plan3_name">Anual</div>
       <div class="p-amount"><span class="p-currency">$</span>60.000</div>
       <div class="p-period" data-i18n="plan3_per">COP · por año completo</div>
@@ -472,7 +474,7 @@
 const T = {
   es: {
     nav_features:"Características",nav_how:"Cómo Funciona",nav_pricing:"Precios",
-    nav_reviews:"Testimonios",nav_login:"Ingresar",nav_cta:"Prueba Gratis",
+    nav_reviews:"Testimonios",nav_support:"Soporte",nav_login:"Ingresar",nav_cta:"Prueba Gratis",
     nav_cta_free:"Comenzar Gratis — 30 días",
     hero_badge:"✦ Tu biblioteca digital personal",
     hero_title_1:"Guarda, Organiza",hero_title_2:"y Encuentra",
@@ -540,7 +542,7 @@ const T = {
   },
   en: {
     nav_features:"Features",nav_how:"How It Works",nav_pricing:"Pricing",
-    nav_reviews:"Reviews",nav_login:"Log In",nav_cta:"Free Trial",
+    nav_reviews:"Reviews",nav_support:"Support",nav_login:"Log In",nav_cta:"Free Trial",
     nav_cta_free:"Start Free — 30 days",
     hero_badge:"✦ Your personal digital library",
     hero_title_1:"Save, Organize",hero_title_2:"and Find",
@@ -606,7 +608,7 @@ const T = {
   },
   pt: {
     nav_features:"Recursos",nav_how:"Como Funciona",nav_pricing:"Preços",
-    nav_reviews:"Depoimentos",nav_login:"Entrar",nav_cta:"Teste Grátis",
+    nav_reviews:"Depoimentos",nav_support:"Suporte",nav_login:"Entrar",nav_cta:"Teste Grátis",
     nav_cta_free:"Começar Grátis — 30 dias",
     hero_badge:"✦ Sua biblioteca digital pessoal",
     hero_title_1:"Salve, Organize",hero_title_2:"e Encontre",
