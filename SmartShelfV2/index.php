@@ -13,7 +13,7 @@
 ════════════════════════════════════════ -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="smartshelf-logo.svg" alt="SmartShelf" />
+    <img src="smartshelf-logo.ico" alt="SmartShelf" />
   </a>
   <ul class="nav-links">
     <li><a href="#features" data-i18n="nav_features">Características</a></li>
