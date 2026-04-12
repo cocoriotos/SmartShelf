@@ -407,7 +407,7 @@
   <div class="f-grid">
     <div>
       <div class="f-logo">
-        <img src="smartshelf-logo.svg" alt="SmartShelf" />
+        <img src="smartshelf-logo.ico" alt="SmartShelf" />
       </div>
       <div class="f-tag" data-i18n="f_tag">Tu biblioteca digital inteligente. Centraliza, organiza y accede a todos tus contenidos en un solo lugar.</div>
       <div class="socials">
