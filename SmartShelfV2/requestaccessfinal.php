@@ -15,6 +15,11 @@
 </head>
 
 <body id="bodyadminmodule">
+    <div class="lang-sw">
+        <button class="lb on" onclick="setLang('es')">ES</button>
+        <button class="lb" onclick="setLang('en')">EN</button>
+        <button class="lb" onclick="setLang('pt')">PT</button>
+    </div>
     <div class="login-container">
         <!-- Enlaces de ayuda en la parte superior derecha -->
         <div class="help-links">
@@ -25,55 +30,55 @@
         <!-- Encabezado del formulario -->
         <div class="login-header">
             <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
-            <h1>Solicitud de Acceso</h1>
+            <h1 data-i18n="req_title">Solicitud de Acceso</h1>
         </div>
 
         <!-- Formulario de solicitud de acceso -->
         <form id="login" action="accessemailFinal.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" name="Name" placeholder="Nombre" required>
+                <input type="text" name="Name" data-i18n-placeholder="req_name" placeholder="Nombre" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" name="LastName" placeholder="Apellido" required>
+                <input type="text" name="LastName" data-i18n-placeholder="req_lastname" placeholder="Apellido" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
-                <input type="text" name="Email" placeholder="Correo electrónico" required>
+                <input type="text" name="Email" data-i18n-placeholder="req_email" placeholder="Correo electrónico" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-globe"></i>
-                <input type="text" name="Country" placeholder="País de residencia" required>
+                <input type="text" name="Country" data-i18n-placeholder="req_country" placeholder="País de residencia" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-city"></i>
-                <input type="text" name="City" placeholder="Ciudad de residencia" required>
+                <input type="text" name="City" data-i18n-placeholder="req_city" placeholder="Ciudad de residencia" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
-                <input type="password" name="password1" placeholder="Contraseña" required>
+                <input type="password" name="password1" data-i18n-placeholder="req_password" placeholder="Contraseña" required>
             </div>
             <img src="captcha.php" alt="CAPTCHA"><br>
-                <input type="text" name="captcha" placeholder="Ingrese el CAPTCHA" required><br>
+                <input type="text" name="captcha" data-i18n-placeholder="req_captcha" placeholder="Ingrese el CAPTCHA" required><br>
                 <br>
             <!-- Términos y condiciones -->
             <div class="terms">
                 <input type="checkbox" id="terms" onclick="toggleSubmitButton()" required>
-                <label for="terms">Acepto los <a href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
+                <label for="terms" data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
             </div>
             <br>
-            <button type="submit" class="btn-login" id="loginbutton" disabled>Enviar</button>
+            <button type="submit" class="btn-login" id="loginbutton" data-i18n="req_send" disabled>Enviar</button>
         </form>
 
         <!-- Botón de cancelar -->
         <form id="login" action="index.php" method="POST" autocomplete="off">
-            <button type="submit" class="btn-login">Cancelar</button>
+            <button type="submit" class="btn-login" data-i18n="req_cancel">Cancelar</button>
         </form>
 
         <!-- Información de contacto -->
         <form id="request-access">
-            <p>¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
+            <p data-i18n="req_questions">¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
             <br>
             <!--<p>Fecha: <?php /*echo date('m/d/Y');*/ ?></p>-->
         </form>
@@ -152,6 +157,13 @@
                 });
             }
         });
+    </script>
+    <script>
+const T={es:{req_title:"Solicitud de Acceso",req_name:"Nombre",req_lastname:"Apellido",req_email:"Correo electrónico",req_country:"País de residencia",req_city:"Ciudad de residencia",req_password:"Contraseña",req_captcha:"Ingrese el CAPTCHA",req_terms:"Acepto los <a href='TermsConditions.php' target='_blank'>términos y condiciones</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"¿Alguna duda? Contáctenos al Email:"},
+en:{req_title:"Access Request",req_name:"Name",req_lastname:"Last Name",req_email:"Email",req_country:"Country of residence",req_city:"City of residence",req_password:"Password",req_captcha:"Enter the CAPTCHA",req_terms:"I accept the <a href='TermsConditions.php' target='_blank'>terms and conditions</a>",req_send:"Send",req_cancel:"Cancel",req_questions:"Any questions? Contact us at Email:"},
+pt:{req_title:"Solicitação de Acesso",req_name:"Nome",req_lastname:"Sobrenome",req_email:"Email",req_country:"País de residência",req_city:"Cidade de residência",req_password:"Senha",req_captcha:"Digite o CAPTCHA",req_terms:"Aceito os <a href='TermsConditions.php' target='_blank'>termos e condições</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"Alguma dúvida? Contate-nos pelo Email:"}};
+
+function setLang(lang){const d=T[lang];document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(d[k]!==undefined)el.placeholder=d[k];});document.querySelectorAll('.lb').forEach(b=>{b.classList.toggle('on',b.textContent.trim()===lang.toUpperCase());});document.documentElement.lang=lang;}
     </script>
     <a href="https://wa.me/573054293185" target="_blank" 
     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">
