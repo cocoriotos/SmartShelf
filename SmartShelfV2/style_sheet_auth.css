@@ -1,0 +1,207 @@
+/* Estilos generales */
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor del formulario de login */
+.login-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Encabezado del login */
+.login-header {
+  margin-bottom: 10px;
+}
+
+.login-header img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.login-header h1 {
+  font-size: 14px;
+  color: #032642;
+  margin: 0;
+}
+
+/* Grupos de entrada (input) */
+.input-group {
+  display: flex;
+  align-items: center;
+  /*margin-bottom: 10px;*/
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.input-group i {
+  color: #032642;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* Enlace de "Olvidaste tu contraseña" */
+.forgot-password {
+  display: block;
+  margin-top: 10px;
+  color: #032642;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Formulario de solicitud de acceso */
+#request-access {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+#request-access p {
+  margin: 5px 0;
+}
+
+.btn-request {
+  background: none;
+  border: none;
+  color: #032642;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-request:hover {
+  color: #0c316d;
+}
+
+/* Enlaces de ayuda (Video Tutoriales y Manual del Usuario) */
+.help-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.help-links a {
+  display: block;
+  margin: 10px 0;
+  color: #032642;
+  /*text-decoration: none;*/
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.help-links a:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: block; /* Cambia a bloque para que los botones estén uno encima del otro */
+  margin-top: 10px;
+}
+
+/* Estilo para el botón "Cancelar" */
+.cancel-button,
+.btn-login {
+  /*background-color: #6c757d; 2 22 2'25*/ /* Color gris para diferenciarlo */
+  background: #032642;
+  text-align: center;
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  /*display: block; /* Asegura que el enlace ocupe toda la línea */
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  color: white; /* Color del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  margin-bottom: 10px; /* Espacio entre botones */
+}
+
+.cancel-button:hover {
+  background-color: #5a6268; /* Color gris más oscuro al pasar el mouse */
+}
+
+.btn-login:disabled {
+  background-color: #cccccc; /* Color gris claro cuando está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor a "no permitido" */
+  opacity: 0.7; /* Reduce la opacidad */
+}
+
+.btn-login:hover {
+  background-color: #6c757d;
+  /*background-color: #0c316d; 2 22 2025*/
+}
+
+/* Estilos personalizados para SweetAlert2 */
+
+.custom-swal-confirm-button {
+  background-color: #032642 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+}
+
+.custom-swal-confirm-button:hover {
+  background-color: #0c316d !important;
+}
+
+.custom-swal-popup {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.custom-swal-title {
+  color: #032642;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.custom-swal-content {
+  color: #555;
+  font-size: 16px;
+}
+
+.custom-swal-confirm-button {
+  background-color: #032642 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+}
+
+.custom-swal-confirm-button:hover {
+  background-color: #0c316d !important;
+}
