@@ -1,11 +1,50 @@
-/* Estilos generales */
-body {
+/* ─────────────────────────────────────────
+   SmartShelf Auth — Stylesheet
+   Palette: Deep navy · Electric blue · Crisp white
+   ───────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+
+/* ─── TOKENS ─── */
+:root {
+  --bg:       #08090e;
+  --bg2:      #0e1018;
+  --bg3:      #141720;
+  --bg4:      #1c2030;
+
+  --accent:   #2d6be4;
+  --accent-h: #4080ff;
+  --accent-d: #1a4dbb;
+  --acglow:   rgba(45, 107, 228, .10);
+  --acborder: rgba(45, 107, 228, .28);
+
+  --gold:     #f0b429;
+
+  --t1:  #f0f2f8;
+  --t2:  #8892a4;
+  --t3:  #4a5568;
+
+  --b0:  rgba(255, 255, 255, .04);
+  --b1:  rgba(255, 255, 255, .07);
+  --b2:  rgba(255, 255, 255, .13);
+
+  --r:   14px;
+  --nav: 68px;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html  { scroll-behavior: smooth; }
+body  {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--t1);
+  overflow-x: hidden;
+  line-height: 1.65;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,10 +53,11 @@ body {
 
 /* Contenedor del formulario de login */
 .login-container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg2);
+  padding: 30px;
+  border-radius: var(--r);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px var(--b1);
+  border: 1px solid var(--b2);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -25,36 +65,40 @@ body {
 
 /* Encabezado del login */
 .login-header {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .login-header img {
-  width: 200px;
-  height: auto;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .login-header h1 {
-  font-size: 14px;
-  color: #032642;
+  font-size: 1.5rem;
+  color: var(--t1);
   margin: 0;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
 }
 
 /* Grupos de entrada (input) */
 .input-group {
   display: flex;
   align-items: center;
-  /*margin-bottom: 10px;*/
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
+  margin-bottom: 15px;
+  background-color: var(--bg3);
+  border: 1px solid var(--b1);
+  border-radius: 8px;
+  padding: 12px 15px;
 }
 
 .input-group i {
-  color: #032642;
+  color: var(--accent);
   margin-right: 10px;
 }
 
@@ -64,26 +108,33 @@ body {
   background: none;
   width: 100%;
   font-size: 16px;
+  color: var(--t1);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.input-group input::placeholder {
+  color: var(--t2);
 }
 
 /* Enlace de "Olvidaste tu contraseña" */
 .forgot-password {
   display: block;
   margin-top: 10px;
-  color: #032642;
+  color: var(--accent);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .forgot-password:hover {
   text-decoration: underline;
+  color: var(--accent-h);
 }
 
 /* Formulario de solicitud de acceso */
 #request-access {
   margin-top: 20px;
   font-size: 14px;
-  color: #555;
+  color: var(--t2);
 }
 
 #request-access p {
@@ -93,10 +144,129 @@ body {
 .btn-request {
   background: none;
   border: none;
-  color: #032642;
+  color: var(--accent);
   text-decoration: underline;
   cursor: pointer;
   font-size: 14px;
+}
+
+.btn-request:hover {
+  color: var(--accent-h);
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: .875rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .22s;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-h);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(45,107,228,.35);
+}
+
+.btn-login {
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: .875rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .22s;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-login:hover:not(:disabled) {
+  background: var(--accent-h);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(45,107,228,.35);
+}
+
+.btn-login:disabled {
+  background: var(--t3);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* CAPTCHA */
+input[name="captcha"] {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid var(--b1);
+  border-radius: 8px;
+  background: var(--bg3);
+  color: var(--t1);
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[name="captcha"]::placeholder {
+  color: var(--t2);
+}
+
+/* Términos y condiciones */
+.terms {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 14px;
+  color: var(--t2);
+}
+
+.terms input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.terms a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+  color: var(--accent-h);
+}
+
+/* Enlaces de ayuda */
+.help-links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.help-links a {
+  color: var(--t2);
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.help-links a:hover {
+  color: var(--t1);
 }
 
 .btn-request:hover {
