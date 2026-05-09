@@ -39,11 +39,9 @@ include "sessions.php";
             <br>
         </form>
         
-        <form id="login" action="index.php" method="POST" autocomplete="off">
+        <form action="index.php" method="POST" autocomplete="off">
             <button type="submit" class="btn-login">Cancelar</button>
-            <br>
         </form>
-
 
         <!-- Información de contacto -->
         <form id="request-access">

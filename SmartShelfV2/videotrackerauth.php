@@ -62,23 +62,16 @@
                 <button type="submit" class="btn-login" data-i18n="auth_login">Ingresar</button>
             </form>
 
-            <form id="login" action="index.php" method="POST" autocomplete="off">
+            <form action="index.php" method="POST" autocomplete="off">
                 <button type="submit" class="btn-login" data-i18n="auth_cancel">Cancelar</button>
-                <br>
-                <a href="recoverpassword.php" class="forgot-password" data-i18n="auth_forgot">¿Olvidaste tu contraseña?</a>
             </form>
+            <a href="recoverpassword.php" class="forgot-password" data-i18n="auth_forgot">¿Olvidaste tu contraseña?</a>
 
             <form id="request-access" action="requestaccessfinal.php" method="POST" autocomplete="off">
-                <p data-i18n="auth_no_access">¿Sin acceso? <button type="submit" class="btn-request" style="font-size: 20px" data-i18n="auth_request_here">Solicitarlo aquí</button></p>
-                <br>
+                <p data-i18n="auth_no_access">¿Sin acceso? <button type="submit" class="btn-request" data-i18n="auth_request_here">Solicitarlo aquí</button></p>
                 <p data-i18n="auth_questions">¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
-                <br>
-                <!--<p>Fecha: <?php /*echo date('m/d/Y');*/ ?></p>-->
             </form>
-        <a href="https://wa.me/573054293185" target="_blank" 
-        style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35" height="35" style="margin-right: 10px;"></a>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 <script>
 const T={es:{auth_title:"Biblioteca de Contenidos Útiles",auth_login:"Ingresar",auth_cancel:"Cancelar",auth_forgot:"¿Olvidaste tu contraseña?",auth_no_access:"¿Sin acceso?",auth_request_here:"Solicitarlo aquí",auth_questions:"¿Alguna duda? Contáctenos al Email:",auth_email:"Email",auth_password:"Contraseña"},

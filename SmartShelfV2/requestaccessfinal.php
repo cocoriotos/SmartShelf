@@ -59,28 +59,21 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password1" data-i18n-placeholder="req_password" placeholder="Contraseña" required>
             </div>
-            <img src="captcha.php" alt="CAPTCHA"><br>
-                <input type="text" name="captcha" data-i18n-placeholder="req_captcha" placeholder="Ingrese el CAPTCHA" required><br>
-                <br>
-            <!-- Términos y condiciones -->
+            <img src="captcha.php" alt="CAPTCHA" class="captcha-image">
+            <input type="text" name="captcha" data-i18n-placeholder="req_captcha" placeholder="Ingrese el CAPTCHA" required>
             <div class="terms">
                 <input type="checkbox" id="terms" onclick="toggleSubmitButton()" required>
                 <label for="terms" data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
             </div>
-            <br>
             <button type="submit" class="btn-login" id="loginbutton" data-i18n="req_send" disabled>Enviar</button>
         </form>
 
-        <!-- Botón de cancelar -->
-        <form id="login" action="index.php" method="POST" autocomplete="off">
+        <form action="index.php" method="POST" autocomplete="off">
             <button type="submit" class="btn-login" data-i18n="req_cancel">Cancelar</button>
         </form>
 
-        <!-- Información de contacto -->
         <form id="request-access">
             <p data-i18n="req_questions">¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
-            <br>
-            <!--<p>Fecha: <?php /*echo date('m/d/Y');*/ ?></p>-->
         </form>
     </div>
 

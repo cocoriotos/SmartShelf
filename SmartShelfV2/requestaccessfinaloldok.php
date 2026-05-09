@@ -55,25 +55,19 @@
                 <input type="password" name="password1" placeholder="Contraseña" required>
             </div>
 
-            <!-- Términos y condiciones -->
             <div class="terms">
                 <input type="checkbox" id="terms" onclick="toggleSubmitButton()" required>
                 <label for="terms">Acepto los <a href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
             </div>
-            <br>
             <button type="submit" class="btn-login" id="loginbutton" disabled>Enviar</button>
         </form>
 
-        <!-- Botón de cancelar -->
-        <form id="login" action="index.php" method="POST" autocomplete="off">
+        <form action="index.php" method="POST" autocomplete="off">
             <button type="submit" class="btn-login">Cancelar</button>
         </form>
 
-        <!-- Información de contacto -->
         <form id="request-access">
             <p>¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
-            <br>
-            <!--<p>Fecha: <?php /*echo date('m/d/Y');*/ ?></p>-->
         </form>
     </div>
 
