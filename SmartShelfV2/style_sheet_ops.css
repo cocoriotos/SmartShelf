@@ -620,3 +620,75 @@ hr {
     color: #00aced; /* Color de hover opcional */
   }
 }
+
+/* Estilos para botones de cabecera */
+.header-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.96rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.header-action-btn i {
+  font-size: 1rem;
+}
+
+.header-action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.header-action-btn:active {
+  transform: translateY(0);
+}
+
+.header-action-btn.subscribe {
+  background-color: #e7fff3;
+  color: #0b5030;
+  border-color: rgba(37, 211, 102, 0.24);
+}
+
+.header-action-btn.tutorials {
+  background-color: #fff3f3;
+  color: #c4302b;
+  border-color: rgba(196, 24, 18, 0.18);
+}
+
+.header-action-btn.manual {
+  background-color: #f7f9fc;
+  color: #1f2e3c;
+  border-color: rgba(3, 38, 66, 0.08);
+}
+
+.header-action-btn.clear {
+  background-color: #fff8dc;
+  color: #6a5a18;
+  border-color: rgba(190, 158, 57, 0.18);
+}
+
+.header-action-btn.categories {
+  background-color: #eaf3ff;
+  color: #0f4377;
+  border-color: rgba(41, 106, 255, 0.18);
+}
+
+.header-action-btn.logout {
+  background-color: #fde9ef;
+  color: #8d2040;
+  border-color: rgba(226, 79, 109, 0.18);
+}
