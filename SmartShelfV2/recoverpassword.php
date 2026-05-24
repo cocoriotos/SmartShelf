@@ -36,7 +36,7 @@ include "sessions.php";
                 <input type="email" name="email" placeholder="Email" required>
             </div>
             <button type="submit" class="btn-login">Recuperar Contraseña</button>
-            <br>
+            <br><br>
         </form>
         
         <form action="index.php" method="POST" autocomplete="off">
