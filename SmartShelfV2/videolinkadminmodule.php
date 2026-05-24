@@ -394,8 +394,7 @@ include "header.php";
 
                 <!-- Sección de "Tus Contenidos Útiles" -->
                 <div class="col-md-12">
-                    <div class="search-wrapper"><?php include("search.php") ?></div> <!-- Incluir el buscador -->
-                    <br><br>
+                    <div class="search-wrapper"><?php include("search.php") ?><br><br></div> <!-- Incluir el buscador -->
                     <div class="section-card">
                         <div class="section-heading">Tus Contenidos Útiles</div>
                         <div class="section-subtitle">Accede rápido a tus enlaces más importantes con tarjetas limpias y modernas.</div>
