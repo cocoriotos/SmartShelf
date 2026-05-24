@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center;     /* Centrar verticalmente si tiene altura */
+    width: 100%;
 }
 
 .search-wrapper {
@@ -14,7 +15,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 550px; /* Limitar ancho */
+    max-width: none;
 }
 
 .search-icon {
@@ -24,10 +25,11 @@
 }
 
 #searchInput {
-    padding: 8px 35px 8px 30px;
+    padding: 10px 40px 10px 34px;
     width: 100%;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
 .clear-icon {
@@ -39,9 +41,11 @@
 }
 
 .total-cards {
-    margin-top: 10px;
+    margin-top: 14px;
     font-weight: bold;
     text-align: center;
+    width: 100%;
+    display: block;
 }
 </style>
 
