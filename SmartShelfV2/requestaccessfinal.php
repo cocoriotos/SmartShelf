@@ -66,6 +66,7 @@
                 <label for="terms" data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
             </div>
             <button type="submit" class="btn-login" id="loginbutton" data-i18n="req_send" disabled>Enviar</button>
+            <br>
         </form>
 
         <form action="index.php" method="POST" autocomplete="off">
