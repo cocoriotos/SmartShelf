@@ -642,10 +642,12 @@ hr {
   text-decoration: none;
   border: 1px solid transparent;
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  color: #ffffff;
 }
 
 .header-action-btn i {
   font-size: 1rem;
+  color: inherit;
 }
 
 .header-action-btn:hover {
@@ -658,37 +660,37 @@ hr {
 }
 
 .header-action-btn.subscribe {
-  background-color: #e7fff3;
-  color: #0b5030;
-  border-color: rgba(37, 211, 102, 0.24);
+  background-color: #1bb55d;
+  color: #ffffff;
+  border-color: rgba(37, 211, 102, 0.35);
 }
 
 .header-action-btn.tutorials {
-  background-color: #fff3f3;
-  color: #c4302b;
-  border-color: rgba(196, 24, 18, 0.18);
+  background-color: #d32f2f;
+  color: #ffffff;
+  border-color: rgba(196, 24, 18, 0.28);
 }
 
 .header-action-btn.manual {
-  background-color: #f7f9fc;
-  color: #1f2e3c;
-  border-color: rgba(3, 38, 66, 0.08);
+  background-color: #2f4f9f;
+  color: #ffffff;
+  border-color: rgba(47, 79, 159, 0.28);
 }
 
 .header-action-btn.clear {
-  background-color: #fff8dc;
-  color: #6a5a18;
-  border-color: rgba(190, 158, 57, 0.18);
+  background-color: #f9a826;
+  color: #ffffff;
+  border-color: rgba(194, 116, 21, 0.28);
 }
 
 .header-action-btn.categories {
-  background-color: #eaf3ff;
-  color: #0f4377;
-  border-color: rgba(41, 106, 255, 0.18);
+  background-color: #2672ff;
+  color: #ffffff;
+  border-color: rgba(38, 114, 255, 0.28);
 }
 
 .header-action-btn.logout {
-  background-color: #fde9ef;
-  color: #8d2040;
-  border-color: rgba(226, 79, 109, 0.18);
+  background-color: #d32f2f;
+  color: #ffffff;
+  border-color: rgba(226, 79, 109, 0.28);
 }
