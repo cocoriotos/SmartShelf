@@ -60,6 +60,7 @@
                     <input type="password" name="password" data-i18n-placeholder="auth_password" placeholder="Contraseña" required>
                 </div>
                 <button type="submit" class="btn-login" data-i18n="auth_login">Ingresar</button>
+                <br><br>
             </form>
 
             <form action="index.php" method="POST" autocomplete="off">
