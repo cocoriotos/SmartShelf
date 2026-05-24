@@ -19,7 +19,7 @@ $delconfirm = $_SESSION['delconfirm'];
 
 include "db_connection1.php";
 include "header.php";
-?>
+?>  
 
 <head>
     <script src="head.js" defer></script>
@@ -395,6 +395,7 @@ include "header.php";
                 <!-- Sección de "Tus Contenidos Útiles" -->
                 <div class="col-md-12">
                     <div class="search-wrapper"><?php include("search.php") ?></div> <!-- Incluir el buscador -->
+                    <br><br>
                     <div class="section-card">
                         <div class="section-heading">Tus Contenidos Útiles</div>
                         <div class="section-subtitle">Accede rápido a tus enlaces más importantes con tarjetas limpias y modernas.</div>
