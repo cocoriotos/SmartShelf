@@ -1,4 +1,5 @@
-<!-- Developed by Julián González Bucheli -->
+
+!-- Developed by Julián González Bucheli -->
 <html>
 <?php
 include "sessions.php";
@@ -33,149 +34,413 @@ include "header.php";
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
+    <style>
+        body.admin-module-page {
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #f7fcfb 0%, #ffffff 100%);
+            color: #10283d;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .admin-wrapper {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(3, 38, 66, 0.08);
+            box-shadow: 0 20px 45px rgba(3, 38, 66, 0.08);
+            border-radius: 28px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+
+        .hero-card {
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.18);
+            border-radius: 28px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+
+        .section-heading {
+            color: #0f3650;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: #4b6475;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group label {
+            color: #10283d;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            border: 1px solid #d7e6ea;
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 0.98rem;
+            color: #10283d;
+            background: #f9fefa;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #25d366;
+            box-shadow: 0 0 0 6px rgba(37, 211, 102, 0.12);
+            background: #ffffff;
+        }
+
+        .form-control::placeholder {
+            color: #7a8c97;
+        }
+
+        .btn-success {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            background-color: #25d366;
+            border: none;
+            color: #ffffff;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-success:hover:not(:disabled) {
+            background-color: #1bb55d;
+            transform: translateY(-1px);
+        }
+
+        .btn-success:disabled {
+            background-color: #c6dcc7;
+            cursor: not-allowed;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(37, 211, 102, 0) 0%, rgba(37, 211, 102, 0.28) 50%, rgba(37, 211, 102, 0) 100%);
+            margin: 36px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .content-card {
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 330px;
+            border: 1px solid rgba(3, 38, 66, 0.08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(243, 255, 250, 0.96));
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px rgba(3, 38, 66, 0.09);
+        }
+
+        .grid-item-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            height: 100%;
+        }
+
+        .grid-item-title {
+            color: #032642;
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .grid-item-body p {
+            margin: 8px 0;
+            color: #405862;
+        }
+
+        .grid-item-body .p-title {
+            font-weight: 700;
+            color: #10283d;
+            margin-bottom: 4px;
+        }
+
+        .grid-item-action-btn {
+            background: rgba(3, 38, 66, 0.06);
+            border: none;
+            border-radius: 999px;
+            width: 46px;
+            height: 46px;
+            font-size: 28px;
+            color: #032642;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .grid-item-action-btn:hover {
+            background: rgba(3, 38, 66, 0.12);
+        }
+
+        .grid-item-actions {
+            position: relative;
+        }
+
+        .grid-item-action-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            width: 220px;
+            background-color: #ffffff;
+            border: 1px solid rgba(3, 38, 66, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(3, 38, 66, 0.12);
+            z-index: 1000;
+        }
+
+        .grid-item-action-menu button {
+            display: block;
+            width: 100%;
+            padding: 12px 14px;
+            text-align: left;
+            background: none;
+            border: none;
+            border-bottom: 1px solid rgba(3, 38, 66, 0.06);
+            color: #10283d;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .grid-item-action-menu button:last-child {
+            border-bottom: none;
+        }
+
+        .grid-item-action-menu button:hover {
+            background: #f6fbf8;
+        }
+
+        .btn-primary {
+            background-color: #032642;
+            color: #ffffff;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0c316d;
+        }
+
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 18px 40px rgba(37, 211, 102, 0.24);
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .whatsapp-fab img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .search-wrapper {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .admin-wrapper {
+                padding: 24px 16px 48px;
+            }
+
+            .section-heading {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
 </head>
 
-<body id="bodyadminmodule" style="padding: 0%;">
-    <div class="container-fluid p-0">
-        <div class="row justify-content-start" style="padding: 0%; width: 100%;">
-            <!-- Formulario para Adicionar Enlaces -->
-            <div class="col-md-12">
-    <div class="card card-body" id="card-body">
-        <form action="savelinks.php" method="POST">
-            <center>
-                <label for="title" class="col-form-label" style="color: black; font-size: 28px;">
-                    <strong>Adicionar Enlace</strong>
-                </label>
-            </center>
+<body id="bodyadminmodule" class="admin-module-page">
+    <div class="admin-wrapper">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-start" style="width: 100%;">
+                <!-- Formulario para Adicionar Enlaces -->
+                <div class="col-md-12">
+                    <div class="section-card hero-card" id="card-body">
+                        <form action="savelinks.php" method="POST">
+                            <div class="section-heading">Adicionar Enlace</div>
+                            <div class="section-subtitle">Guarda y organiza contenido útil con el diseño de SmartShelf.</div>
 
-            <!-- Primera fila del formulario -->
-            <div class="row justify-content-center">
-                <!-- Campo: Enlace Útil -->
-                <div class="form-group col-md-4">
-                    <label for="videolink" class="col-form-label" style="color: black;">
-                        <strong>Enlace Útil</strong>
-                    </label>
-                    <textarea id="videolink" name="videolink" rows="1" class="form-control" placeholder="Pega aquí el enlace" required></textarea>
-                </div>
-
-                <!-- Campo: Categoría -->
-                <div class="form-group col-md-2">
-                    <label for="maincategory" class="col-form-label" style="color: black;">
-                        <strong>Categoría</strong>
-                    </label>
-                    <select class="form-control" name="maincategory" id="maincategory" onchange="getSubcategories(this.value)" required>
-                        <option value="" disabled selected>Seleccione una categoría</option>
-                        <?php
-                        $SQLSELECT = "SELECT distinct(maincategory) FROM videotips_viodetipscategory WHERE username = '$local_username' ORDER BY maincategory ASC";
-                        $result_set = mysqli_query($conn, $SQLSELECT);
-                        while ($rows = $result_set->fetch_assoc()) {
-                            $maincategory = $rows['maincategory'];
-                            echo "<option value='$maincategory'>$maincategory</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <!-- Campo: Subcategoría -->
-                <div class="form-group col-md-2">
-                    <label for="category" class="col-form-label" style="color: black;">
-                        <strong>Subcategoría</strong>
-                    </label>
-                    <select class="form-control" name="category" id="category" required>
-                        <option value="" disabled selected>Seleccione una subcategoría</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Segunda fila del formulario -->
-            <div class="row justify-content-center">
-                <!-- Campo: Tipo de Contenido -->
-                <div class="form-group col-md-4">
-                    <label for="proforpers" class="col-form-label" style="color: black;">
-                        <strong>Contenido</strong>
-                    </label>
-                    <select class="form-control" name="proforpers" id="proforpers" required>
-                        <?php
-                        $SQLSELECT = "SELECT proforpers FROM videotips_proforpers";
-                        $result_set = mysqli_query($conn, $SQLSELECT);
-                        while ($rows = $result_set->fetch_assoc()) {
-                            $proforpers = $rows['proforpers'];
-                            echo "<option value='$proforpers'>$proforpers</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <!-- Campo: Descripción -->
-                <div class="form-group col-md-4">
-                    <label for="description" class="col-form-label" style="color: black;">
-                        <strong>Descripción</strong>
-                    </label>
-                    <textarea id="description" name="description" rows="1" class="form-control" placeholder="Describe el contenido del enlace" required></textarea>
-                </div>
-            </div>
-
-            <!-- Botón de Guardar -->
-            <br>
-            <center>
-                <input id="save_link" type="submit" class="btn btn-success btn-block" name="save_link" value="Guardar" disabled>
-            </center>
-        </form>
-    </div>
-</div>
-
-            <!-- Sección de "Tus Contenidos Útiles" -->
-            <div class="col-md-12">
-                <br>
-                <center><?php include("search.php") ?></center> <!-- Incluir el buscador -->
-                <div class="card card-body" div="card-body">
-                    <center>
-                        <label for="description" class="col-form-label" style="color: black; font-size: 28px;">
-                            <strong>Tus Contenidos Útiles</strong>
-                        </label>
-                    </center>
-                    <div class="grid-container">
-                    <?php
-                    $query1 = "SELECT * FROM videotips_videotips 
-                              WHERE active = 'Yes' AND username ='$local_username' 
-                              ORDER BY content ASC";
-                    $result_links = mysqli_query($conn, $query1);
-                    while ($links = mysqli_fetch_array($result_links)) {
-                        $randomColor = getRandomLightColor();
-                    ?>
-                        <div class="grid-item" style="background-color: <?php echo $randomColor; ?>; display: none;">
-                            <div class="grid-item-content">
-                                <button class="grid-item-action-btn" style="color: black; font-size: 40px; font-weight: bold;" onclick="toggleActions(event, <?php echo $links['id']; ?>)">...</button>
-                                <div class="grid-item-actions">
-                                    <div class="grid-item-action-menu" id="action-menu-<?php echo $links['id']; ?>">
-                                        <button style="background: white; color: green; font-size: 12px;" onclick="copyToClipboard('<?php echo $links['videolink']; ?>'); toggleActions(event, <?php echo $links['id']; ?>);" class="btn btn-secondary">Copiar Enlace</button>
-                                        <button style="background: white; color: gray; font-size: 12px;" onclick="window.location.href = 'edit.php?id=<?php echo $links['id']; ?>'" class="btn btn-secondary">Modificar</button>
-                                        <button style="background: white; color: red; font-size: 12px;" onclick="confirmDelete(<?php echo $links['id']; ?>)" class="btn btn-secondary">Borrar</button>
-                                    </div>
+                            <!-- Primera fila del formulario -->
+                            <div class="form-row">
+                                <!-- Campo: Enlace Útil -->
+                                <div class="form-group">
+                                    <label for="videolink"><strong>Enlace Útil</strong></label>
+                                    <textarea id="videolink" name="videolink" rows="1" class="form-control" placeholder="Pega aquí el enlace" required></textarea>
                                 </div>
-                                <div class="grid-item-header"></div>
-                                <span class="grid-item-title" style="color: blue"><?php echo $links['content']; ?></span>
-                                <div class="grid-item-body">
-                                    <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $links['maincategory']; ?></span></p>
-                                    <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $links['category']; ?></span></p>
-                                    <p><span class="p-title">Contenido:</span><span class="p-content"><?php echo $links['proforpers']; ?></span></p>
-                                    <p><span class="p-title">Creación:</span><span class="p-content"><?php echo $links['creationdate']; ?></span></p>
+
+                                <!-- Campo: Categoría -->
+                                <div class="form-group">
+                                    <label for="maincategory"><strong>Categoría</strong></label>
+                                    <select class="form-control" name="maincategory" id="maincategory" onchange="getSubcategories(this.value)" required>
+                                        <option value="" disabled selected>Seleccione una categoría</option>
+                                        <?php
+                                        $SQLSELECT = "SELECT distinct(maincategory) FROM videotips_viodetipscategory WHERE username = '$local_username' ORDER BY maincategory ASC";
+                                        $result_set = mysqli_query($conn, $SQLSELECT);
+                                        while ($rows = $result_set->fetch_assoc()) {
+                                            $maincategory = $rows['maincategory'];
+                                            echo "<option value='$maincategory'>$maincategory</option>";
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                <a href="<?php echo $links['videolink']; ?>" target="_blank" class="btn btn-primary">Ir al Contenido</a>
+
+                                <!-- Campo: Subcategoría -->
+                                <div class="form-group">
+                                    <label for="category"><strong>Subcategoría</strong></label>
+                                    <select class="form-control" name="category" id="category" required>
+                                        <option value="" disabled selected>Seleccione una subcategoría</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                    <?php } ?>
+
+                            <!-- Segunda fila del formulario -->
+                            <div class="form-row">
+                                <!-- Campo: Tipo de Contenido -->
+                                <div class="form-group">
+                                    <label for="proforpers"><strong>Contenido</strong></label>
+                                    <select class="form-control" name="proforpers" id="proforpers" required>
+                                        <?php
+                                        $SQLSELECT = "SELECT proforpers FROM videotips_proforpers";
+                                        $result_set = mysqli_query($conn, $SQLSELECT);
+                                        while ($rows = $result_set->fetch_assoc()) {
+                                            $proforpers = $rows['proforpers'];
+                                            echo "<option value='$proforpers'>$proforpers</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <!-- Campo: Descripción -->
+                                <div class="form-group">
+                                    <label for="description"><strong>Descripción</strong></label>
+                                    <textarea id="description" name="description" rows="1" class="form-control" placeholder="Describe el contenido del enlace" required></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Botón de Guardar -->
+                            <div style="text-align:center; margin-top: 16px;">
+                                <input id="save_link" type="submit" class="btn btn-success" name="save_link" value="Guardar" disabled>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
-             </div>
+
+                <!-- Sección de "Tus Contenidos Útiles" -->
+                <div class="col-md-12">
+                    <div class="search-wrapper"><?php include("search.php") ?></div> <!-- Incluir el buscador -->
+                    <div class="section-card">
+                        <div class="section-heading">Tus Contenidos Útiles</div>
+                        <div class="section-subtitle">Accede rápido a tus enlaces más importantes con tarjetas limpias y modernas.</div>
+                        <div class="content-grid">
+                        <?php
+                        $query1 = "SELECT * FROM videotips_videotips 
+                                  WHERE active = 'Yes' AND username ='$local_username' 
+                                  ORDER BY content ASC";
+                        $result_links = mysqli_query($conn, $query1);
+                        while ($links = mysqli_fetch_array($result_links)) {
+                            $randomColor = getRandomLightColor();
+                        ?>
+                            <div class="content-card grid-item" style="background-color: <?php echo $randomColor; ?>; display: none;">
+                                <div class="grid-item-content">
+                                    <button class="grid-item-action-btn" onclick="toggleActions(event, <?php echo $links['id']; ?>)">...</button>
+                                    <div class="grid-item-actions">
+                                        <div class="grid-item-action-menu" id="action-menu-<?php echo $links['id']; ?>">
+                                            <button onclick="copyToClipboard('<?php echo $links['videolink']; ?>'); toggleActions(event, <?php echo $links['id']; ?>);">Copiar Enlace</button>
+                                            <button onclick="window.location.href = 'edit.php?id=<?php echo $links['id']; ?>'">Modificar</button>
+                                            <button onclick="confirmDelete(<?php echo $links['id']; ?>)">Borrar</button>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item-header"></div>
+                                    <span class="grid-item-title"><?php echo $links['content']; ?></span>
+                                    <div class="grid-item-body">
+                                        <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $links['maincategory']; ?></span></p>
+                                        <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $links['category']; ?></span></p>
+                                        <p><span class="p-title">Contenido:</span><span class="p-content"><?php echo $links['proforpers']; ?></span></p>
+                                        <p><span class="p-title">Creación:</span><span class="p-content"><?php echo $links['creationdate']; ?></span></p>
+                                    </div>
+                                    <a href="<?php echo $links['videolink']; ?>" target="_blank" class="btn btn-primary">Ir al Contenido</a>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Botón de WhatsApp -->
-    <a href="https://wa.me/573054293185" target="_blank" 
-        style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35" height="35" style="margin-right: 10px;"></a>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</body>
+    <a href="https://wa.me/573054293185" target="_blank" class="whatsapp-fab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span>Soporte</span>
+    </a>
+    </div>
 
 <script>
     function getSubcategories(maincategory) {
@@ -559,4 +824,5 @@ function getRandomLightColor() {
     return sprintf("#%02x%02x%02x", $red, $green, $blue); // Convierte a formato hexadecimal
 }
 ?>
+</body>
 </html>
