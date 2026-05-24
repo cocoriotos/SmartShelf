@@ -304,6 +304,33 @@ include "header.php";
             text-align: center;
         }
 
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            border: 1px solid rgba(3, 38, 66, 0.16);
+            background: rgba(255, 255, 255, 0.95);
+            color: #10283d;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+            min-width: 64px;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #032642;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
         @media (max-width: 768px) {
             .admin-wrapper {
                 padding: 24px 16px 48px;
@@ -314,6 +341,194 @@ include "header.php";
             }
         }
     </style>
+    <script>
+        window.moduleTranslations = {
+            es: {
+                add_link_title: 'Adicionar Enlace',
+                add_link_subtitle: 'Guarda y organiza contenido útil con el diseño de SmartShelf.',
+                useful_contents: 'Tus Contenidos Útiles',
+                search_placeholder: 'Buscar...',
+                select_category: 'Seleccione una categoría',
+                select_subcategory: 'Seleccione una subcategoría',
+                helpful_title: 'Enlace Útil',
+                category: 'Categoría',
+                subcategory: 'Subcategoría',
+                content: 'Contenido',
+                description: 'Descripción',
+                link_placeholder: 'Pega aquí el enlace',
+                description_placeholder: 'Describe el contenido del enlace',
+                save: 'Guardar',
+                copy: 'Copiar Enlace',
+                edit: 'Modificar',
+                delete: 'Borrar',
+                go_content: 'Ir al Contenido',
+                label_category: 'Categoría:',
+                label_subcategory: 'Subcategoría:',
+                label_content: 'Contenido:',
+                label_creation: 'Creación:',
+                support: 'Soporte',
+                confirm_title: '¿Estás seguro?',
+                confirm_delete_button: 'Sí, borrar',
+                cancel_button: 'Cancelar',
+                cancel_text: 'El elemento no fue borrado.',
+                accept_button: 'Aceptar',
+                message_title: 'Mensaje',
+                copied_text: '¡Enlace copiado al portapapeles!',
+                added_text: '¡Enlace Adicionado Exitosamente!',
+                updated_text: 'Enlace Actualizado Exitosamente',
+                delete_error_text: 'Hubo un problema al borrar el enlace, intente nuevamente',
+            },
+            en: {
+                add_link_title: 'Add Link',
+                add_link_subtitle: 'Save and organize useful content with the SmartShelf design.',
+                useful_contents: 'Your Useful Contents',
+                search_placeholder: 'Search...',
+                select_category: 'Select a category',
+                select_subcategory: 'Select a subcategory',
+                helpful_title: 'Useful Link',
+                category: 'Category',
+                subcategory: 'Subcategory',
+                content: 'Content',
+                description: 'Description',
+                link_placeholder: 'Paste the link here',
+                description_placeholder: 'Describe the link content',
+                save: 'Save',
+                copy: 'Copy Link',
+                edit: 'Edit',
+                delete: 'Delete',
+                go_content: 'Go to Content',
+                label_category: 'Category:',
+                label_subcategory: 'Subcategory:',
+                label_content: 'Content:',
+                label_creation: 'Creation:',
+                support: 'Support',
+                confirm_title: 'Are you sure?',
+                confirm_delete_button: 'Yes, delete',
+                cancel_button: 'Cancel',
+                cancel_text: 'The item was not deleted.',
+                accept_button: 'OK',
+                message_title: 'Message',
+                copied_text: 'Link copied to clipboard!',
+                added_text: 'Link added successfully!',
+                updated_text: 'Link updated successfully',
+                delete_error_text: 'There was a problem deleting the link, please try again',
+            },
+            pt: {
+                add_link_title: 'Adicionar Link',
+                add_link_subtitle: 'Salve e organize conteúdo útil com o design do SmartShelf.',
+                useful_contents: 'Seus Conteúdos Úteis',
+                search_placeholder: 'Buscar...',
+                select_category: 'Selecione uma categoria',
+                select_subcategory: 'Selecione uma subcategoria',
+                helpful_title: 'Link Útil',
+                category: 'Categoria',
+                subcategory: 'Subcategoria',
+                content: 'Conteúdo',
+                description: 'Descrição',
+                link_placeholder: 'Cole o link aqui',
+                description_placeholder: 'Descreva o conteúdo do link',
+                save: 'Salvar',
+                copy: 'Copiar Link',
+                edit: 'Editar',
+                delete: 'Excluir',
+                go_content: 'Ir ao Conteúdo',
+                label_category: 'Categoria:',
+                label_subcategory: 'Subcategoria:',
+                label_content: 'Conteúdo:',
+                label_creation: 'Criação:',
+                support: 'Suporte',
+                confirm_title: 'Tem certeza?',
+                confirm_delete_button: 'Sim, excluir',
+                cancel_button: 'Cancelar',
+                cancel_text: 'O item não foi excluído.',
+                accept_button: 'OK',
+                message_title: 'Mensagem',
+                copied_text: 'Link copiado para a área de transferência!',
+                added_text: 'Link adicionado com sucesso!',
+                updated_text: 'Link atualizado com sucesso',
+                delete_error_text: 'Houve um problema ao excluir o link, tente novamente',
+            }
+        };
+
+        window.currentLang = localStorage.getItem('moduleLang') || 'es';
+
+        function t(key) {
+            const translations = window.moduleTranslations?.[window.currentLang] || window.moduleTranslations?.es || {};
+            return translations[key] || key;
+        }
+
+        function updateModuleText() {
+            const updateText = (selector, key) => {
+                const el = document.querySelector(selector);
+                if (el) el.textContent = t(key);
+            };
+
+            updateText('#heading-add-link', 'add_link_title');
+            updateText('#subtitle-add-link', 'add_link_subtitle');
+            updateText('#heading-useful-contents', 'useful_contents');
+            updateText('#label-videolink', 'helpful_title');
+            updateText('#label-maincategory', 'category');
+            updateText('#label-category', 'subcategory');
+            updateText('#label-proforpers', 'content');
+            updateText('#label-description', 'description');
+            updateText('#support-label', 'support');
+
+            const mainCategoryPlaceholder = document.querySelector('#maincategory option[data-i18n="select_category"]');
+            const subCategoryPlaceholder = document.querySelector('#category option[data-i18n="select_subcategory"]');
+            if (mainCategoryPlaceholder) mainCategoryPlaceholder.textContent = t('select_category');
+            if (subCategoryPlaceholder) subCategoryPlaceholder.textContent = t('select_subcategory');
+
+            const descr = document.getElementById('description');
+            if (descr) descr.placeholder = t('description_placeholder');
+            const linkInput = document.getElementById('videolink');
+            if (linkInput) linkInput.placeholder = t('link_placeholder');
+
+            const saveButton = document.getElementById('save_link');
+            if (saveButton) saveButton.value = t('save');
+
+            document.querySelectorAll('.action-button[data-action="copy"]').forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-copy"></i> ' + t('copy');
+            });
+            document.querySelectorAll('.action-button[data-action="edit"]').forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-edit"></i> ' + t('edit');
+            });
+            document.querySelectorAll('.action-button[data-action="delete"]').forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-trash-alt"></i> ' + t('delete');
+            });
+
+            document.querySelectorAll('[data-key="label-category"]').forEach(el => el.textContent = t('label_category'));
+            document.querySelectorAll('[data-key="label-subcategory"]').forEach(el => el.textContent = t('label_subcategory'));
+            document.querySelectorAll('[data-key="label-content"]').forEach(el => el.textContent = t('label_content'));
+            document.querySelectorAll('[data-key="label-creation"]').forEach(el => el.textContent = t('label_creation'));
+
+            document.querySelectorAll('.content-link-btn').forEach(btn => btn.textContent = t('go_content'));
+
+            if (window.updateSearchTexts) {
+                window.updateSearchTexts(window.currentLang);
+            }
+        }
+
+        function setModuleLanguage(lang) {
+            window.currentLang = lang;
+            localStorage.setItem('moduleLang', lang);
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+            updateModuleText();
+            if (window.updateSearchTexts) window.updateSearchTexts(lang);
+            if (window.searchCards) window.searchCards();
+            window.dispatchEvent(new Event('languageChanged'));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    setModuleLanguage(this.dataset.lang);
+                });
+            });
+            setModuleLanguage(window.currentLang);
+        });
+    </script>
 </head>
 
 <body id="bodyadminmodule" class="admin-module-page">
@@ -324,22 +539,27 @@ include "header.php";
                 <div class="col-md-12">
                     <div class="section-card hero-card" id="card-body">
                         <form action="savelinks.php" method="POST">
-                            <div class="section-heading">Adicionar Enlace</div>
-                            <div class="section-subtitle">Guarda y organiza contenido útil con el diseño de SmartShelf.</div>
+                            <div class="lang-switcher">
+                                <button type="button" class="lang-btn active" data-lang="es">ES</button>
+                                <button type="button" class="lang-btn" data-lang="en">EN</button>
+                                <button type="button" class="lang-btn" data-lang="pt">PT</button>
+                            </div>
+                            <div class="section-heading" id="heading-add-link">Adicionar Enlace</div>
+                            <div class="section-subtitle" id="subtitle-add-link">Guarda y organiza contenido útil con el diseño de SmartShelf.</div>
 
                             <!-- Primera fila del formulario -->
                             <div class="form-row">
                                 <!-- Campo: Enlace Útil -->
                                 <div class="form-group">
-                                    <label for="videolink"><strong>Enlace Útil</strong></label>
+                                    <label for="videolink" id="label-videolink"><strong>Enlace Útil</strong></label>
                                     <textarea id="videolink" name="videolink" rows="1" class="form-control" placeholder="Pega aquí el enlace" required></textarea>
                                 </div>
 
                                 <!-- Campo: Categoría -->
                                 <div class="form-group">
-                                    <label for="maincategory"><strong>Categoría</strong></label>
+                                    <label for="maincategory" id="label-maincategory"><strong>Categoría</strong></label>
                                     <select class="form-control" name="maincategory" id="maincategory" onchange="getSubcategories(this.value)" required>
-                                        <option value="" disabled selected>Seleccione una categoría</option>
+                                        <option value="" disabled selected data-i18n="select_category">Seleccione una categoría</option>
                                         <?php
                                         $SQLSELECT = "SELECT distinct(maincategory) FROM videotips_viodetipscategory WHERE username = '$local_username' ORDER BY maincategory ASC";
                                         $result_set = mysqli_query($conn, $SQLSELECT);
@@ -353,9 +573,9 @@ include "header.php";
 
                                 <!-- Campo: Subcategoría -->
                                 <div class="form-group">
-                                    <label for="category"><strong>Subcategoría</strong></label>
+                                    <label for="category" id="label-category"><strong>Subcategoría</strong></label>
                                     <select class="form-control" name="category" id="category" required>
-                                        <option value="" disabled selected>Seleccione una subcategoría</option>
+                                        <option value="" disabled selected data-i18n="select_subcategory">Seleccione una subcategoría</option>
                                     </select>
                                 </div>
                             </div>
@@ -364,7 +584,7 @@ include "header.php";
                             <div class="form-row">
                                 <!-- Campo: Tipo de Contenido -->
                                 <div class="form-group">
-                                    <label for="proforpers"><strong>Contenido</strong></label>
+                                    <label for="proforpers" id="label-proforpers"><strong>Contenido</strong></label>
                                     <select class="form-control" name="proforpers" id="proforpers" required>
                                         <?php
                                         $SQLSELECT = "SELECT proforpers FROM videotips_proforpers";
@@ -379,7 +599,7 @@ include "header.php";
 
                                 <!-- Campo: Descripción -->
                                 <div class="form-group">
-                                    <label for="description"><strong>Descripción</strong></label>
+                                    <label for="description" id="label-description"><strong>Descripción</strong></label>
                                     <textarea id="description" name="description" rows="1" class="form-control" placeholder="Describe el contenido del enlace" required></textarea>
                                 </div>
                             </div>
@@ -396,8 +616,8 @@ include "header.php";
                 <div class="col-md-12">
                     <div class="search-section"><?php include("search.php") ?></div> <!-- Incluir el buscador -->
                     <div class="section-card">
-                        <div class="section-heading">Tus Contenidos Útiles</div>
-                        <div class="section-subtitle">Accede rápido a tus enlaces más importantes con tarjetas limpias y modernas.</div>
+                        <div class="section-heading" id="heading-useful-contents">Tus Contenidos Útiles</div>
+                        <div class="section-subtitle" id="subtitle-useful-contents">Accede rápido a tus enlaces más importantes con tarjetas limpias y modernas.</div>
                         <div class="content-grid">
                         <?php
                         $query1 = "SELECT * FROM videotips_videotips 
@@ -412,20 +632,20 @@ include "header.php";
                                     <button class="grid-item-action-btn" onclick="toggleActions(event, <?php echo $links['id']; ?>)">...</button>
                                     <div class="grid-item-actions">
                                         <div class="grid-item-action-menu" id="action-menu-<?php echo $links['id']; ?>">
-                                            <button onclick="copyToClipboard('<?php echo $links['videolink']; ?>'); toggleActions(event, <?php echo $links['id']; ?>);">Copiar Enlace</button>
-                                            <button onclick="window.location.href = 'edit.php?id=<?php echo $links['id']; ?>'">Modificar</button>
-                                            <button onclick="confirmDelete(<?php echo $links['id']; ?>)">Borrar</button>
+                                            <button class="action-button" data-action="copy" onclick="copyToClipboard('<?php echo $links['videolink']; ?>'); toggleActions(event, <?php echo $links['id']; ?>);">Copiar Enlace</button>
+                                            <button class="action-button" data-action="edit" onclick="window.location.href = 'edit.php?id=<?php echo $links['id']; ?>'">Modificar</button>
+                                            <button class="action-button" data-action="delete" onclick="confirmDelete(<?php echo $links['id']; ?>)">Borrar</button>
                                         </div>
                                     </div>
                                     <div class="grid-item-header"></div>
                                     <span class="grid-item-title"><?php echo $links['content']; ?></span>
                                     <div class="grid-item-body">
-                                        <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $links['maincategory']; ?></span></p>
-                                        <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $links['category']; ?></span></p>
-                                        <p><span class="p-title">Contenido:</span><span class="p-content"><?php echo $links['proforpers']; ?></span></p>
-                                        <p><span class="p-title">Creación:</span><span class="p-content"><?php echo $links['creationdate']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-category">Categoría:</span><span class="p-content"><?php echo $links['maincategory']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-subcategory">Subcategoría:</span><span class="p-content"><?php echo $links['category']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-content">Contenido:</span><span class="p-content"><?php echo $links['proforpers']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-creation">Creación:</span><span class="p-content"><?php echo $links['creationdate']; ?></span></p>
                                     </div>
-                                    <a href="<?php echo $links['videolink']; ?>" target="_blank" class="btn btn-primary">Ir al Contenido</a>
+                                    <a href="<?php echo $links['videolink']; ?>" target="_blank" class="btn btn-primary content-link-btn">Ir al Contenido</a>
                                 </div>
                             </div>
                         <?php } ?>
@@ -438,7 +658,7 @@ include "header.php";
     <!-- Botón de WhatsApp -->
     <a href="https://wa.me/573054293185" target="_blank" class="whatsapp-fab">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        <span>Soporte</span>
+        <span id="support-label">Soporte</span>
     </a>
     </div>
 

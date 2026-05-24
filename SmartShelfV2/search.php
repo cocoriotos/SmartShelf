@@ -101,8 +101,29 @@ window.addEventListener("scroll", () => {
     }
 });
 
+const searchTranslations = {
+    es: {
+        placeholder: "Buscar...",
+        totalCards: "Total de cards mostrados"
+    },
+    en: {
+        placeholder: "Search...",
+        totalCards: "Total cards shown"
+    },
+    pt: {
+        placeholder: "Buscar...",
+        totalCards: "Total de cards exibidos"
+    }
+};
+
+function getCurrentSearchLang() {
+    return window.currentLang || 'es';
+}
+
 function updateCardCount(visibleCards) {
-    document.querySelector(".total-cards").textContent = `Total de cards mostrados: ${visibleCards}`;
+    const lang = getCurrentSearchLang();
+    const label = searchTranslations[lang]?.totalCards || searchTranslations.es.totalCards;
+    document.querySelector(".total-cards").textContent = `${label}: ${visibleCards}`;
 }
 
 function clearSearch() {
@@ -110,8 +131,25 @@ function clearSearch() {
     searchCards();
 }
 
+function updateSearchLang() {
+    const lang = getCurrentSearchLang();
+    const placeholder = searchTranslations[lang]?.placeholder || searchTranslations.es.placeholder;
+    const input = document.getElementById("searchInput");
+    if (input) {
+        input.placeholder = placeholder;
+    }
+    updateCardCount(filteredCards.length);
+}
+
+window.updateSearchTexts = updateSearchLang;
+
 document.addEventListener("DOMContentLoaded", () => {
+    updateSearchLang();
     searchCards();
+});
+
+window.addEventListener("languageChanged", () => {
+    updateSearchLang();
 });
 </script>
 
