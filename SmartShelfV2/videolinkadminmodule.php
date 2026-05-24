@@ -1,5 +1,5 @@
 
-!-- Developed by Julián González Bucheli -->
+<!-- Developed by Julián González Bucheli -->
 <html>
 <?php
 include "sessions.php";
