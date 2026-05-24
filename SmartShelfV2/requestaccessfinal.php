@@ -15,11 +15,6 @@
 </head>
 
 <body id="bodyadminmodule">
-    <div class="lang-sw">
-        <button class="lb on" onclick="setLang('es')">ES</button>
-        <button class="lb" onclick="setLang('en')">EN</button>
-        <button class="lb" onclick="setLang('pt')">PT</button>
-    </div>
     <div class="login-container">
         <!-- Enlaces de ayuda en la parte superior derecha -->
         <div class="help-links">
@@ -28,13 +23,17 @@
         </div>
 
         <!-- Encabezado del formulario -->
-        <div class="login-header">
             <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
             <h1 data-i18n="req_title">Solicitud de Acceso</h1>
         </div>
 
         <!-- Formulario de solicitud de acceso -->
         <form id="login" action="accessemailFinal.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
+            <div class="lang-sw">
+                <button class="lb on" type="button" onclick="setLang('es')">ES</button>
+                <button class="lb" type="button" onclick="setLang('en')">EN</button>
+                <button class="lb" type="button" onclick="setLang('pt')">PT</button>
+            </div>
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="Name" data-i18n-placeholder="req_name" placeholder="Nombre" required>

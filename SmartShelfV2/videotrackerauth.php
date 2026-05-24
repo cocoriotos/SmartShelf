@@ -34,12 +34,7 @@
         </script>
     </head>
 	
-	<body id="bodyadminmodule">   
-        <div class="lang-sw">
-            <button class="lb on" onclick="setLang('es')">ES</button>
-            <button class="lb" onclick="setLang('en')">EN</button>
-            <button class="lb" onclick="setLang('pt')">PT</button>
-        </div>
+	<body id="bodyadminmodule">
         <div class="login-container">
             <!-- New section for "Video Tutoriales" and "Manual del Usuario" links -->
             <div class="help-links">
@@ -51,6 +46,11 @@
                 <h1 data-i18n="auth_title">Biblioteca de Contenidos Útiles</h1>
             </div>
             <form id="login" action="access_success_Tasks_final.php" method="POST" autocomplete="off">
+                <div class="lang-sw">
+                    <button class="lb on" type="button" onclick="setLang('es')">ES</button>
+                    <button class="lb" type="button" onclick="setLang('en')">EN</button>
+                    <button class="lb" type="button" onclick="setLang('pt')">PT</button>
+                </div>
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
                     <input type="text" name="email" data-i18n-placeholder="auth_email" placeholder="Email" required>
