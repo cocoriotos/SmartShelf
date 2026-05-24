@@ -153,11 +153,36 @@
         });
     </script>
     <script>
-const T={es:{req_title:"Solicitud de Acceso",req_name:"Nombre",req_lastname:"Apellido",req_email:"Correo electrónico",req_country:"País de residencia",req_city:"Ciudad de residencia",req_password:"Contraseña",req_captcha:"Ingrese el CAPTCHA",req_terms:"Acepto los <a href='TermsConditions.php' target='_blank'>términos y condiciones</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"¿Alguna duda? Contáctenos al Email:"},
-en:{req_title:"Access Request",req_name:"Name",req_lastname:"Last Name",req_email:"Email",req_country:"Country of residence",req_city:"City of residence",req_password:"Password",req_captcha:"Enter the CAPTCHA",req_terms:"I accept the <a href='TermsConditions.php' target='_blank'>terms and conditions</a>",req_send:"Send",req_cancel:"Cancel",req_questions:"Any questions? Contact us at Email:"},
-pt:{req_title:"Solicitação de Acesso",req_name:"Nome",req_lastname:"Sobrenome",req_email:"Email",req_country:"País de residência",req_city:"Cidade de residência",req_password:"Senha",req_captcha:"Digite o CAPTCHA",req_terms:"Aceito os <a href='TermsConditions.php' target='_blank'>termos e condições</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"Alguma dúvida? Contate-nos pelo Email:"}};
+const T={
+    es:{req_title:"Solicitud de Acceso",req_name:"Nombre",req_lastname:"Apellido",req_email:"Correo electrónico",req_country:"País de residencia",req_city:"Ciudad de residencia",req_password:"Contraseña",req_captcha:"Ingrese el CAPTCHA",req_terms:"Acepto los <a href='TermsConditions.php' target='_blank'>términos y condiciones</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"¿Alguna duda? Contáctenos al Email:"},
+    en:{req_title:"Access Request",req_name:"Name",req_lastname:"Last Name",req_email:"Email",req_country:"Country of residence",req_city:"City of residence",req_password:"Password",req_captcha:"Enter the CAPTCHA",req_terms:"I accept the <a href='TermsConditions.php' target='_blank'>terms and conditions</a>",req_send:"Send",req_cancel:"Cancel",req_questions:"Any questions? Contact us at Email:"},
+    pt:{req_title:"Solicitação de Acesso",req_name:"Nome",req_lastname:"Sobrenome",req_email:"Email",req_country:"País de residência",req_city:"Cidade de residência",req_password:"Senha",req_captcha:"Digite o CAPTCHA",req_terms:"Aceito os <a href='TermsConditions.php' target='_blank'>termos e condições</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"Alguma dúvida? Contate-nos pelo Email:"}
+};
 
-function setLang(lang){const d=T[lang];document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(d[k]!==undefined)el.placeholder=d[k];});document.querySelectorAll('.lb').forEach(b=>{b.classList.toggle('on',b.textContent.trim()===lang.toUpperCase());});document.documentElement.lang=lang;}
+function applyTranslations(lang){
+    const d = T[lang] || T.es;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(d[k]!==undefined)el.placeholder=d[k];});
+    document.querySelectorAll('.lb').forEach(b=>{b.classList.toggle('on',b.textContent.trim()===lang.toUpperCase());});
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang){
+    if(!T[lang]) return;
+    localStorage.setItem('smartshelfLang', lang);
+    applyTranslations(lang);
+    window.dispatchEvent(new Event('languageChanged'));
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    const initial = localStorage.getItem('smartshelfLang') || 'es';
+    applyTranslations(initial);
+});
+
+window.addEventListener('languageChanged', ()=>{
+    const lang = localStorage.getItem('smartshelfLang') || 'es';
+    applyTranslations(lang);
+});
     </script>
     <a href="https://wa.me/573054293185" target="_blank" 
     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">

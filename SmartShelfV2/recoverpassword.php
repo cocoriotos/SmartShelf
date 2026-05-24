@@ -26,16 +26,16 @@ include "sessions.php";
         <!-- Encabezado del formulario -->
         <div class="login-header">
             <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
-            <h1>Recuperación de Contraseña</h1>
+            <h1 data-i18n="rec_title">Recuperación de Contraseña</h1>
         </div>
 
         <!-- Formulario de recuperación de contraseña -->
         <form id="login" action="recoverpasswordemailFinal.php" method="POST" autocomplete="off">
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="email" name="email" data-i18n-placeholder="rec_email" placeholder="Email" required>
             </div>
-            <button type="submit" class="btn-login">Recuperar Contraseña</button>
+            <button type="submit" class="btn-login" data-i18n="rec_submit">Recuperar Contraseña</button>
             <br><br>
         </form>
         
@@ -53,18 +53,13 @@ include "sessions.php";
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        // Validation (keeps same behavior)
         document.getElementById("login").addEventListener("submit", function(event) {
             var emailInput = document.querySelector("input[name='email']");
             var email = emailInput.value;
-
-            // Expresión regular para validar el formato de un correo electrónico
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
             if (!emailPattern.test(email)) {
-                // Evita que el formulario se envíe
                 event.preventDefault();
-
-                // Muestra el SweetAlert
                 Swal.fire({
                     title: 'Mensaje',
                     text: 'Por favor, ingresa una dirección de correo electrónico válida.',
@@ -76,11 +71,32 @@ include "sessions.php";
                         content: 'custom-swal-content',
                         confirmButton: 'custom-swal-confirm-button'
                     }
-                }).then(() => {
-                    // Redirige a la página de recovery
-                    window.location.href = 'recoverpassword.php';
-                });
+                }).then(() => { window.location.href = 'recoverpassword.php'; });
             }
+        });
+
+        // Simple i18n for this page
+        const T = {
+          es: { rec_title: 'Recuperación de Contraseña', rec_email: 'Email', rec_submit: 'Recuperar Contraseña' },
+          en: { rec_title: 'Password Recovery', rec_email: 'Email', rec_submit: 'Recover Password' },
+          pt: { rec_title: 'Recuperação de Senha', rec_email: 'Email', rec_submit: 'Recuperar Senha' }
+        };
+
+        function applyTranslationsRec(lang){
+          const d = T[lang] || T.es;
+          document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});
+          document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(d[k]!==undefined)el.placeholder=d[k];});
+          document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+          const lang = localStorage.getItem('smartshelfLang') || 'es';
+          applyTranslationsRec(lang);
+        });
+
+        window.addEventListener('languageChanged', ()=>{
+          const lang = localStorage.getItem('smartshelfLang') || 'es';
+          applyTranslationsRec(lang);
         });
     </script>
 </body>

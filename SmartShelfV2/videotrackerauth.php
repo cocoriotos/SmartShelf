@@ -75,11 +75,36 @@
 
 
 <script>
-const T={es:{auth_title:"Biblioteca de Contenidos Útiles",auth_login:"Ingresar",auth_cancel:"Cancelar",auth_forgot:"¿Olvidaste tu contraseña?",auth_no_access:"¿Sin acceso?",auth_request_here:"Solicitarlo aquí",auth_questions:"¿Alguna duda? Contáctenos al Email:",auth_email:"Email",auth_password:"Contraseña"},
-en:{auth_title:"Useful Content Library",auth_login:"Log In",auth_cancel:"Cancel",auth_forgot:"Forgot your password?",auth_no_access:"No access?",auth_request_here:"Request it here",auth_questions:"Any questions? Contact us at Email:",auth_email:"Email",auth_password:"Password"},
-pt:{auth_title:"Biblioteca de Conteúdos Úteis",auth_login:"Entrar",auth_cancel:"Cancelar",auth_forgot:"Esqueceu sua senha?",auth_no_access:"Sem acesso?",auth_request_here:"Solicite aqui",auth_questions:"Alguma dúvida? Contate-nos pelo Email:",auth_email:"Email",auth_password:"Senha"}};
+const T={
+    es:{auth_title:"Biblioteca de Contenidos Útiles",auth_login:"Ingresar",auth_cancel:"Cancelar",auth_forgot:"¿Olvidaste tu contraseña?",auth_no_access:"¿Sin acceso?",auth_request_here:"Solicitarlo aquí",auth_questions:"¿Alguna duda? Contáctenos al Email:",auth_email:"Email",auth_password:"Contraseña"},
+    en:{auth_title:"Useful Content Library",auth_login:"Log In",auth_cancel:"Cancel",auth_forgot:"Forgot your password?",auth_no_access:"No access?",auth_request_here:"Request it here",auth_questions:"Any questions? Contact us at Email:",auth_email:"Email",auth_password:"Password"},
+    pt:{auth_title:"Biblioteca de Conteúdos Úteis",auth_login:"Entrar",auth_cancel:"Cancelar",auth_forgot:"Esqueceu sua senha?",auth_no_access:"Sem acesso?",auth_request_here:"Solicite aqui",auth_questions:"Alguma dúvida? Contate-nos pelo Email:",auth_email:"Email",auth_password:"Senha"}
+};
 
-function setLang(lang){const d=T[lang];document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(d[k]!==undefined)el.placeholder=d[k];});document.querySelectorAll('.lb').forEach(b=>{b.classList.toggle('on',b.textContent.trim()===lang.toUpperCase());});document.documentElement.lang=lang;}
+function applyTranslations(lang){
+    const d = T[lang] || T.es;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k]!==undefined)el.innerHTML=d[k];});
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.getAttribute('data-i18n-placeholder');if(d[k]!==undefined)el.placeholder=d[k];});
+    document.querySelectorAll('.lb').forEach(b=>{b.classList.toggle('on',b.textContent.trim()===lang.toUpperCase());});
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang){
+    if(!T[lang]) return;
+    localStorage.setItem('smartshelfLang', lang);
+    applyTranslations(lang);
+    window.dispatchEvent(new Event('languageChanged'));
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    const initial = localStorage.getItem('smartshelfLang') || 'es';
+    applyTranslations(initial);
+});
+
+window.addEventListener('languageChanged', ()=>{
+    const lang = localStorage.getItem('smartshelfLang') || 'es';
+    applyTranslations(lang);
+});
 </script>
     </body>
 </html>
