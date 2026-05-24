@@ -450,7 +450,7 @@ include "header.php";
             }
         };
 
-        window.currentLang = localStorage.getItem('moduleLang') || 'es';
+        window.currentLang = localStorage.getItem('smartshelfLang') || localStorage.getItem('moduleLang') || 'es';
 
         function t(key) {
             const translations = window.moduleTranslations?.[window.currentLang] || window.moduleTranslations?.es || {};
@@ -511,6 +511,7 @@ include "header.php";
         function setModuleLanguage(lang) {
             window.currentLang = lang;
             localStorage.setItem('moduleLang', lang);
+            localStorage.setItem('smartshelfLang', lang);
             document.querySelectorAll('.lang-btn').forEach(button => {
                 button.classList.toggle('active', button.dataset.lang === lang);
             });
