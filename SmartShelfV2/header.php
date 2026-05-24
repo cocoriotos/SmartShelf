@@ -11,7 +11,7 @@ $name = $_SESSION['name'];
 <html lang="us"> 
   <header>
   <nav class="navbar navbar-dark bg-dark d-flex justify-content-center" id="welcome" >
-  <center><a id="welcome"  class="navbar-brand"><span class="username-style"><?php echo $name; ?></span>, éstas en tu Biblioteca de Contenidos Útiles</a></center>
+  <center><a id="welcome"  class="navbar-brand"><span class="username-style"><?php echo $name; ?></span>, <span data-i18n="header_welcome_msg">estás en tu Biblioteca de Contenidos Útiles</span></a></center>
   </nav>
   <script src="copynumber.js"></script>
   <script src="copypaypal.js"></script>
@@ -47,7 +47,8 @@ $name = $_SESSION['name'];
           header_manual: 'Manual',
           header_clear: 'Clear Form',
           header_categories: 'Categories',
-          header_logout: 'Logout'
+          header_logout: 'Logout',
+          header_welcome_msg: 'you are in your Useful Contents Library'
         },
         pt: {
           header_subscribe: 'Inscrever-se',
@@ -55,7 +56,8 @@ $name = $_SESSION['name'];
           header_manual: 'Manual',
           header_clear: 'Limpar Formulário',
           header_categories: 'Categorias',
-          header_logout: 'Sair'
+          header_logout: 'Sair',
+          header_welcome_msg: 'você está na sua Biblioteca de Conteúdos Úteis'
         }
       };
 
@@ -70,6 +72,7 @@ $name = $_SESSION['name'];
       }
 
       document.addEventListener('DOMContentLoaded', updateHeaderLang);
+      window.addEventListener('languageChanged', updateHeaderLang);
     </script>
 	</header>
   <br>
