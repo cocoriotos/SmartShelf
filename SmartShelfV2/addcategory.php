@@ -154,6 +154,23 @@
             color: #ffffff;
             transform: translateY(-1px);
         }
+
+        .search-wrapper {
+            width: 100%;
+            display: block;
+        }
+
+        .search-wrapper > * {
+            width: 100%;
+        }
+
+        .cards-count {
+            text-align: center;
+            margin: 12px 0;
+            font-weight: 700;
+            color: #405862;
+        }
+
         .section-divider {
             height: 1px;
             background: linear-gradient(90deg, rgba(37, 211, 102, 0) 0%, rgba(37, 211, 102, 0.28) 50%, rgba(37, 211, 102, 0) 100%);
@@ -361,6 +378,13 @@
                         <div class="search-wrapper">
                             <?php include("search.php") ?>
                         </div>
+                        <?php
+                            $count_query = "SELECT COUNT(*) as cnt FROM videotips_viodetipscategory WHERE username ='$local_username'";
+                            $count_res = mysqli_query($conn, $count_query);
+                            $count_row = mysqli_fetch_assoc($count_res);
+                            $total_cards = $count_row ? $count_row['cnt'] : 0;
+                        ?>
+                        <div class="cards-count">Total: <?php echo $total_cards; ?></div>
                         <div class="content-grid">
                             <?php 
                                 $query1 = "select * from videotips_viodetipscategory where username ='$local_username' order by id, maincategory, category asc";
