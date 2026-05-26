@@ -384,7 +384,6 @@
                             $count_row = mysqli_fetch_assoc($count_res);
                             $total_cards = $count_row ? $count_row['cnt'] : 0;
                         ?>
-                        <div class="cards-count">Total: <?php echo $total_cards; ?></div>
                         <div class="content-grid">
                             <?php 
                                 $query1 = "select * from videotips_viodetipscategory where username ='$local_username' order by id, maincategory, category asc";
