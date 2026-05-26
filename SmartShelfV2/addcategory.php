@@ -156,7 +156,12 @@
         }
 
         .search-wrapper {
-            width: 100%;
+            width: calc(100% + 64px);
+            margin-left: -32px;
+            margin-right: -32px;
+            padding: 20px 32px;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid rgba(3, 38, 66, 0.08);
             display: block;
         }
 
@@ -166,9 +171,10 @@
 
         .cards-count {
             text-align: center;
-            margin: 12px 0;
+            margin: 20px 0 8px 0;
             font-weight: 700;
             color: #405862;
+            font-size: 0.95rem;
         }
 
         .section-divider {
@@ -374,17 +380,10 @@
                 </div>
 
                 <div class="col-md-12">
+                    <div class="search-wrapper">
+                        <?php include("search.php") ?>
+                    </div>
                     <div class="section-card">
-                        <div class="search-wrapper">
-                            <?php include("search.php") ?>
-                            <br>
-                        </div>
-                        <?php
-                            $count_query = "SELECT COUNT(*) as cnt FROM videotips_viodetipscategory WHERE username ='$local_username'";
-                            $count_res = mysqli_query($conn, $count_query);
-                            $count_row = mysqli_fetch_assoc($count_res);
-                            $total_cards = $count_row ? $count_row['cnt'] : 0;
-                        ?>
                         <div class="content-grid">
                             <?php 
                                 $query1 = "select * from videotips_viodetipscategory where username ='$local_username' order by id, maincategory, category asc";
