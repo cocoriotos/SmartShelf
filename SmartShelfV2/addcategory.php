@@ -377,6 +377,7 @@
                     <div class="section-card">
                         <div class="search-wrapper">
                             <?php include("search.php") ?>
+                            <br>
                         </div>
                         <?php
                             $count_query = "SELECT COUNT(*) as cnt FROM videotips_viodetipscategory WHERE username ='$local_username'";
