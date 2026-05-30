@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center;     /* Centrar verticalmente si tiene altura */
+    width: 100%;
 }
 
 .search-wrapper {
@@ -14,7 +15,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 550px; /* Limitar ancho */
+    max-width: none;
 }
 
 .search-icon {
@@ -24,10 +25,11 @@
 }
 
 #searchInput {
-    padding: 8px 35px 8px 30px;
+    padding: 10px 40px 10px 34px;
     width: 100%;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
 .clear-icon {
@@ -39,9 +41,11 @@
 }
 
 .total-cards {
-    margin-top: 10px;
+    margin-top: 14px;
     font-weight: bold;
     text-align: center;
+    width: 100%;
+    display: block;
 }
 </style>
 
@@ -97,8 +101,29 @@ window.addEventListener("scroll", () => {
     }
 });
 
+const searchTranslations = {
+    es: {
+        placeholder: "Buscar...",
+        totalCards: "Total de cards mostrados"
+    },
+    en: {
+        placeholder: "Search...",
+        totalCards: "Total cards shown"
+    },
+    pt: {
+        placeholder: "Buscar...",
+        totalCards: "Total de cards exibidos"
+    }
+};
+
+function getCurrentSearchLang() {
+    return window.currentLang || 'es';
+}
+
 function updateCardCount(visibleCards) {
-    document.querySelector(".total-cards").textContent = `Total de cards mostrados: ${visibleCards}`;
+    const lang = getCurrentSearchLang();
+    const label = searchTranslations[lang]?.totalCards || searchTranslations.es.totalCards;
+    document.querySelector(".total-cards").textContent = `${label}: ${visibleCards}`;
 }
 
 function clearSearch() {
@@ -106,8 +131,25 @@ function clearSearch() {
     searchCards();
 }
 
+function updateSearchLang() {
+    const lang = getCurrentSearchLang();
+    const placeholder = searchTranslations[lang]?.placeholder || searchTranslations.es.placeholder;
+    const input = document.getElementById("searchInput");
+    if (input) {
+        input.placeholder = placeholder;
+    }
+    updateCardCount(filteredCards.length);
+}
+
+window.updateSearchTexts = updateSearchLang;
+
 document.addEventListener("DOMContentLoaded", () => {
+    updateSearchLang();
     searchCards();
+});
+
+window.addEventListener("languageChanged", () => {
+    updateSearchLang();
 });
 </script>
 

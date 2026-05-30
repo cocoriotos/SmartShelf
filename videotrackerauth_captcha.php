@@ -54,24 +54,19 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Contraseña" required>
                 </div>
-                <img src="captcha.php" alt="CAPTCHA"><br>
-                <input type="text" name="captcha" placeholder="Ingrese el CAPTCHA" required><br>
-                <br>
+                <img src="captcha.php" alt="CAPTCHA" class="captcha-image">
+                <input type="text" name="captcha" placeholder="Ingrese el CAPTCHA" required>
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
 
-            <form id="login" action="index.php" method="POST" autocomplete="off">
+            <form action="index.php" method="POST" autocomplete="off">
                 <button type="submit" class="btn-login">Cancelar</button>
-                <br>
-                <a href="recoverpassword.php" class="forgot-password">¿Olvidaste tu contraseña?</a>
             </form>
+            <a href="recoverpassword.php" class="forgot-password">¿Olvidaste tu contraseña?</a>
 
             <form id="request-access" action="requestaccessfinal.php" method="POST" autocomplete="off">
-                <p>¿Sin acceso? <button type="submit" class="btn-request" style="font-size: 20px">Solicitarlo aquí</button></p>
-                <br>
+                <p>¿Sin acceso? <button type="submit" class="btn-request">Solicitarlo aquí</button></p>
                 <p>¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
-                <br>
-                <!--<p>Fecha: <?php /*echo date('m/d/Y');*/ ?></p>-->
             </form>
         </div>
     </body>

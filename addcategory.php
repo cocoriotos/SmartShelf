@@ -12,75 +12,410 @@
     include "headercategory.php";
     include "db_connection1.php";
 ?>
-<head>	
-    <script src="head.js" defer></script>		
-    <script src="categorytoclipboard.js" defer></script>  
-    <link rel="stylesheet" href="style_sheet_ops.css"/>
-	<script src="Popper/popper.min.js"></script>
+<head>
+    <script src="head.js" defer></script>
+    <script src="categorytoclipboard.js" defer></script>
+    <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style_sheet_ops.css" />
+    <script src="Popper/popper.min.js"></script>
     <script src="plugins/sweetalert/sweetalert.min.js"></script>
     <script src="plugins/alertifyjs/alertify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/js/alertify.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css" />
+    <style>
+        /* Copiado de videolinkadminmodule para homogeneidad */
+        body.admin-module-page {
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #f7fcfb 0%, #ffffff 100%);
+            color: #10283d;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .admin-wrapper {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(3, 38, 66, 0.08);
+            box-shadow: 0 20px 45px rgba(3, 38, 66, 0.08);
+            border-radius: 28px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+
+        .hero-card {
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.18);
+            border-radius: 28px;
+            padding: 32px;
+            margin-bottom: 28px;
+        }
+
+        .section-heading {
+            color: #0f3650;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: #4b6475;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group label {
+            color: #10283d;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            border: 1px solid #d7e6ea;
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 0.98rem;
+            color: #10283d;
+            background: #f9fefa;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #25d366;
+            box-shadow: 0 0 0 6px rgba(37, 211, 102, 0.12);
+            background: #ffffff;
+        }
+
+        .btn-success {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            background-color: #25d366;
+            border: none;
+            color: #ffffff;
+            padding: 14px 24px;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            border: 1px solid rgba(3, 38, 66, 0.16);
+            background: rgba(255, 255, 255, 0.95);
+            color: #10283d;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+            min-width: 64px;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #032642;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .search-wrapper {
+            width: calc(100% + 64px);
+            margin-left: -32px;
+            margin-right: -32px;
+            padding: 20px 32px;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid rgba(3, 38, 66, 0.08);
+            display: block;
+        }
+
+        .search-wrapper > * {
+            width: 100%;
+        }
+
+        .cards-count {
+            text-align: center;
+            margin: 20px 0 8px 0;
+            font-weight: 700;
+            color: #405862;
+            font-size: 0.95rem;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(37, 211, 102, 0) 0%, rgba(37, 211, 102, 0.28) 50%, rgba(37, 211, 102, 0) 100%);
+            margin: 36px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .content-card {
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 330px;
+            border: 1px solid rgba(3, 38, 66, 0.08);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(243, 255, 250, 0.96));
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px rgba(3, 38, 66, 0.09);
+        }
+
+        .grid-item-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            height: 100%;
+        }
+
+        .grid-item-title {
+            color: #032642;
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .grid-item-body p {
+            margin: 8px 0;
+            color: #405862;
+        }
+
+        .grid-item-body .p-title {
+            font-weight: 700;
+            color: #10283d;
+            margin-bottom: 4px;
+        }
+
+        .grid-item-action-btn {
+            background: rgba(3, 38, 66, 0.06);
+            border: none;
+            border-radius: 999px;
+            width: 46px;
+            height: 46px;
+            font-size: 28px;
+            color: #032642;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .grid-item-action-btn:hover {
+            background: rgba(3, 38, 66, 0.12);
+        }
+
+        .grid-item-actions {
+            position: relative;
+        }
+
+        .grid-item-action-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            width: 220px;
+            background-color: #ffffff;
+            border: 1px solid rgba(3, 38, 66, 0.08);
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(3, 38, 66, 0.12);
+            z-index: 1000;
+        }
+
+        .grid-item-action-menu button {
+            display: block;
+            width: 100%;
+            padding: 12px 14px;
+            text-align: left;
+            background: none;
+            border: none;
+            border-bottom: 1px solid rgba(3, 38, 66, 0.06);
+            color: #10283d;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .grid-item-action-menu button:last-child {
+            border-bottom: none;
+        }
+
+        .grid-item-action-menu button:hover {
+            background: #f6fbf8;
+        }
+
+        .action-button {
+            background: rgba(3, 38, 66, 0.06);
+            border: none;
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: #032642;
+            cursor: pointer;
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        window.moduleTranslations = {
+            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría' },
+            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category' },
+            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria' }
+        };
+
+        window.currentLang = localStorage.getItem('smartshelfLang') || localStorage.getItem('moduleLang') || 'es';
+
+        function t(key) {
+            const translations = window.moduleTranslations?.[window.currentLang] || window.moduleTranslations?.es || {};
+            return translations[key] || key;
+        }
+
+        function updateModuleText() {
+            const updateText = (selector, key) => {
+                const el = document.querySelector(selector);
+                if (el) el.textContent = t(key);
+            };
+
+            updateText('#heading-add-category', 'add_category_title');
+            updateText('#subtitle-add-category', 'add_category_subtitle');
+            const saveButton = document.getElementById('save_link');
+            if (saveButton) saveButton.value = t('save');
+        }
+
+        function setModuleLanguage(lang) {
+            window.currentLang = lang;
+            localStorage.setItem('moduleLang', lang);
+            localStorage.setItem('smartshelfLang', lang);
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+            updateModuleText();
+            window.dispatchEvent(new Event('languageChanged'));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    setModuleLanguage(this.dataset.lang);
+                });
+            });
+            setModuleLanguage(window.currentLang);
+        });
+    </script>
 </head>
-<body id="bodyadminmodule" style="padding: 0%;">
-    <div class="container-fluid p-0">
-        <div class="row justify-content-start" style="padding: 0%; width: 100%;">
-            <div class="col-md-12"> 
-                <div class="card card-body">
-                    <form action="savecategory.php" method="POST">
-                        <center><label for="title" class="col-form-label" style="color: black; font-size: 28px;"><strong>Adicionar Categoría y Subcategoría</strong></label></center><br>
-                        <div class="row justify-content-center">
-                            <div class="form-group col-md-4">
-                                <label for="maincategory" class="col-form-label" style="color: black;"><strong>Categoría</strong></label><br>	
-                                <input class="form-control" style="text-align: center;" id="maincategory" type="text" name="maincategory" placeholder="Digite la Categoría Principal" required><br>
-                            </div><br>
-                            <div class="form-group col-md-4">
-                                <label for="category" class="col-form-label" style="color: black;"><strong>Subcategoría</strong></label><br>	
-                                <input class="form-control" style="text-align: center;" id="category" type="text" name="category" placeholder="Digite la SubCategoría" required><br> 
-                            </div>	
-                        </div>
-                        <center><input id="save_link" type="submit" class="btn btn-success btn-block" name="add filter" value="Adicionar Categoría"></center><br>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <br>
-                <center><?php include("search.php") ?></center>
-                <div class="card card-body">
-                    <div class="grid-container">
-                        <?php 
-                            $query1 = "select * from videotips_viodetipscategory where username ='$local_username' order by id, maincategory, category asc";
-                            $result_categories = mysqli_query($conn, $query1);
-                            while($categories = mysqli_fetch_array($result_categories)) { 
-                                $randomColor = getRandomLightColor();		  
-                        ?>
-                        <div class="grid-item" style="background-color: <?php echo $randomColor; ?>;">
-                            <button class="grid-item-action-btn" style="color: black; font-size: 40px; font-weight: bold;" onclick="toggleActions(event, <?php echo $categories['id']; ?>)">...</button>	
-                            <div class="grid-item-actions">
-                                <div class="grid-item-action-menu" id="action-menu-<?php echo $categories['id']; ?>">
-                                    <button style="background: white; color: green; font-size: 12px;" onclick="copyToClipboard('<?php echo $categories['maincategory']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);" class="btn btn-secondary">Copiar Categoría</button>
-                                    <button style="background: white; color: green; font-size: 12px;" onclick="copyToClipboard('<?php echo $categories['category']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);" class="btn btn-secondary">Copiar Subcategoría</button>
-                                    <button style="background: white; color: gray; font-size: 12px;" onclick="window.location.href = 'editcategory.php?id=<?php echo $categories['id']; ?>'" class="btn btn-secondary">Modificar</button>
-                                    <button style="background: white; color: red; font-size: 12px;" onclick="confirmDelete(<?php echo $categories['id']; ?>)" class="btn btn-secondary">Borrar</button>
+<body id="bodyadminmodule" class="admin-module-page">
+    <div class="admin-wrapper">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-start" style="width: 100%;">
+                <div class="col-md-12">
+                    <div class="section-card hero-card">
+                        <form action="savecategory.php" method="POST">
+                            <div class="lang-switcher">
+                                <button type="button" class="lang-btn" data-lang="es">ES</button>
+                                <button type="button" class="lang-btn" data-lang="en">EN</button>
+                                <button type="button" class="lang-btn" data-lang="pt">PT</button>
+                            </div>
+                            <div class="section-heading" id="heading-add-category">Adicionar Categoría y Subcategoría</div>
+                            <div class="section-subtitle" id="subtitle-add-category">Administra tus categorías con el diseño de SmartShelf.</div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="maincategory"><strong>Categoría</strong></label>
+                                    <input class="form-control" id="maincategory" type="text" name="maincategory" placeholder="Digite la Categoría Principal" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category"><strong>Subcategoría</strong></label>
+                                    <input class="form-control" id="category" type="text" name="category" placeholder="Digite la SubCategoría" required>
                                 </div>
                             </div>
-                            <div class="grid-item-header"></div>
-                            <span class="grid-item-title" style="color: blue"><?php echo $categories['content']; ?></span>
-                            <div class="grid-item-body">
-                                <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $categories['maincategory']; ?></span></p>
-                                <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $categories['category']; ?></span></p>
+
+                            <div style="text-align:center; margin-top: 16px;">
+                                <input id="save_link" type="submit" class="btn btn-success" name="add filter" value="Adicionar Categoría">
                             </div>
-                        </div> 
-                        <?php } ?>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="search-wrapper">
+                        <?php include("search.php") ?>
+                    </div>
+                    <div class="section-card">
+                        <div class="content-grid">
+                            <?php 
+                                $query1 = "select * from videotips_viodetipscategory where username ='$local_username' order by id, maincategory, category asc";
+                                $result_categories = mysqli_query($conn, $query1);
+                                while($categories = mysqli_fetch_array($result_categories)) { 
+                                    $randomColor = getRandomLightColor();          
+                            ?>
+                            <div class="content-card grid-item" style="background-color: <?php echo $randomColor; ?>;">
+                                <div class="grid-item-content">
+                                    <button class="grid-item-action-btn" onclick="toggleActions(event, <?php echo $categories['id']; ?>)">...</button>
+                                    <div class="grid-item-actions">
+                                        <div class="grid-item-action-menu" id="action-menu-<?php echo $categories['id']; ?>">
+                                            <button class="action-button" onclick="copyToClipboard('<?php echo $categories['maincategory']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);">Copiar Categoría</button>
+                                            <button class="action-button" onclick="copyToClipboard('<?php echo $categories['category']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);">Copiar Subcategoría</button>
+                                            <button class="action-button" onclick="window.location.href = 'editcategory.php?id=<?php echo $categories['id']; ?>'">Modificar</button>
+                                            <button class="action-button" onclick="confirmDelete(<?php echo $categories['id']; ?>)">Borrar</button>
+                                        </div>
+                                    </div>
+                                    <span class="grid-item-title"><?php echo $categories['content']; ?></span>
+                                    <div class="grid-item-body">
+                                        <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $categories['maincategory']; ?></span></p>
+                                        <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $categories['category']; ?></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 <script>
     function toggleActions(event, id) {
