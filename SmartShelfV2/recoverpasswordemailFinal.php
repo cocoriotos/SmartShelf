@@ -51,7 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$message.= "Por favor no responder éste correo \n\n";
 			$message.= "Gracias por su solicitud, ya puede ingresar a la app desde este enlace https://solicionespro.com/videotips/videotrackerauth.php con su usuario $email  y la contraseña correspondiente. \n\n";
 			$header = "From: adm@solicionespro.com" . "\r\n";
-			/*$header.= "Bcc: cocoriotos@hotmail.com\r\n";*/
+			$header.= "Content-Type: text/plain; charset=UTF-8" . "\r\n";
+			$header.= "Reply-To: noreply@solicionespro.com" . "\r\n";
 			$header.= "X-Mailer: PHP/". phpversion();
 			
 			$mail1 = mail($to,$subject,$message,$header);
