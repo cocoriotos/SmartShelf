@@ -84,6 +84,7 @@ $local_username=$_SESSION['email'];
 $password=$_POST['password'];
 $admrole =0;
 $suscriptionkind = "None";
+$active = 0;
 
 	if($_POST)
  {
@@ -116,6 +117,14 @@ $suscriptionkind = "None";
 				$stmt->execute();
 				$result12 = $stmt->get_result();
 				$suscriptionkind = $result12->fetch_assoc()['suscriptionkind'];
+
+				//extracta en variables si el usuario está activo o no
+				$stmt = $conn->prepare("SELECT active FROM videotips_app_access_list WHERE username = ?");
+				$stmt->bind_param("s", $local_username);
+				$stmt->execute();
+				$result13 = $stmt->get_result();
+				$active = $result13->fetch_assoc()['active'];
+
 
 				$stmt = $conn->prepare("SELECT suscriptiondaysleft FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
@@ -174,7 +183,29 @@ $suscriptionkind = "None";
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }   
-				  if ($suscriptiondaysleft > 365 && $suscriptionpayed == 1 && $suscriptionkind == 'De Pago' ) {
+				if ($active == 0 && $suscriptionkind == 'Owner') {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }
+				if ($active == 0 && $suscriptionkind == 'Partner') {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }
+				if ($suscriptionkind == 'Suspendida') {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }
+				if ($active == 0 && $suscriptionkind == 'Test') {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }
+
+
+				  if ($suscriptiondaysleft > 365  && $suscriptionkind == 'De Pago' ) {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
