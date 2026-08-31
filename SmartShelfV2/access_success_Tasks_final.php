@@ -109,7 +109,8 @@ $suscriptionkind = "None";
 				//actualiza los dias usados de suscripcion trial
 				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
 				$result11=mysqli_query($conn, $query11);
-				
+
+                //extracta en variables de session el tipo de suscripcion, dias restantes y si ha pagado o no
 				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
@@ -128,27 +129,32 @@ $suscriptionkind = "None";
 				$result4 = $stmt->get_result();
 				$suscriptionpayed = $result4->fetch_assoc()['suscriptionpayed'];
 
+				//extracta en variables de session el nombre del usuario
 				$stmt = $conn->prepare("SELECT name FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
 				$result7 = $stmt->get_result();
 				$_SESSION['name'] = $result7->fetch_assoc()['name'];
 
+				//consulta si el usuario y contraseña son correctos y si esta activa la cuenta
 				$query1="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
 				$result1=mysqli_query($conn, $query1); 	
 
+				//actuzaliza la fecha de ultimo acceso del usuario 
 				$query2="UPDATE videotips_suscription_payments SET currentdate = CURDATE() where username ='$local_username'"; 
 				$result2=mysqli_query($conn, $query2);
 
+				//actualiza los dias restantes de suscripcion de pago 
 				$query6="UPDATE videotips_suscription_payments SET suscriptiondaysleft = (365 - (DATEDIFF(CURDATE(), lastpaymentdate))) where username ='$local_username'"; 
 				$result6=mysqli_query($conn, $query6);
 
+				//extracta en variables de session el rol de administrador
 				$query10="select adm_role from videotips_app_access_list where username ='$local_username'"; 
 				$result10=mysqli_query($conn, $query10);
 				$admrole = $result10->fetch_assoc()['adm_role'];
 				
 				
-
+				//si el usuario es administrador lo redirecciona a la pagina de administracion de usuarios
 				if ($admrole > 0){
 					$admrole = 0;
 					$query15="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
@@ -158,11 +164,16 @@ $suscriptionkind = "None";
 				}
 				
 
-				if ($suscriptiondaysleft > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
+				//if ($suscriptiondaysleft > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
+			    //  $_SESSION['suscriptiondue']=1;
+			   //   header("refresh:0; url=suscriptionpayment.php");
+			  //	exit();
+			  //	  }
+				if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
-				  } 
+				  }   
 				  if ($suscriptiondaysleft > 365 && $suscriptionpayed == 1 && $suscriptionkind == 'De Pago' ) {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
