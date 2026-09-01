@@ -22,7 +22,7 @@ $query31="SET SQL_SAFE_UPDATES = 0";
 $result31=mysqli_query($conn, $query31);
 $query32="SET SQL_SAFE_UPDATES = 0";
 $result32=mysqli_query($conn, $query32);
-$query33="UPDATE videotips_app_access_list SET suscriptionkind = 'Suspendida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
+$query33="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
 $result33=mysqli_query($conn, $query33);
 $query34="SET SQL_SAFE_UPDATES = 1";
 $result34=mysqli_query($conn, $query34);
