@@ -218,6 +218,11 @@ $active = 0;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }
+				if ($suscriptionkind == 'Vencido') {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }
 
 
 				  if ($suscriptiondaysleft > 365  && $suscriptionkind == 'De Pago' ) {
