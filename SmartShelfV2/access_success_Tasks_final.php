@@ -108,23 +108,28 @@ $active = 0;
 
 				} 
 				//habilitar la actualizacion masiva 
-				$query31="SET SQL_SAFE_UPDATES = 0";
-				$result31=mysqli_query($conn, $query31);
-				$query32="SET SQL_SAFE_UPDATES = 0";
-				$result32=mysqli_query($conn, $query32);
+				$query1="SET SQL_SAFE_UPDATES = 0";
+				$result1=mysqli_query($conn, $query1);
+				$query2="SET SQL_SAFE_UPDATES = 0";
+				$result2=mysqli_query($conn, $query2);
 
 
 
 				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
-				$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
-				$result9=mysqli_query($conn, $query9);
+				$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
+				$result3=mysqli_query($conn, $query3);
 				
 				//deshabilitar la actualizacion masiva
-				$query32="SET SQL_SAFE_UPDATES = 1";
+				$query4="SET SQL_SAFE_UPDATES = 1";
+
+				//actualiza los dias usados de suscripcion
+				$query5="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
+				$result5=mysqli_query($conn, $query5);
 
 				//actualiza los dias usados de suscripcion trial
-				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
+				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
 				$result11=mysqli_query($conn, $query11);
+
 
                 //extracta en variables de session el tipo de suscripcion, dias restantes y si ha pagado o no
 				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
