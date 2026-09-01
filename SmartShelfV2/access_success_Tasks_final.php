@@ -127,67 +127,66 @@ $active = 0;
 				$result5=mysqli_query($conn, $query5);
 
 				//actualiza los dias usados de suscripcion trial
-				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
-				$result11=mysqli_query($conn, $query11);
-
-
+				$query6="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
+				$result6=mysqli_query($conn, $query6);
+				
                 //extracta en variables de session el tipo de suscripcion, dias restantes y si ha pagado o no
 				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
-				$result12 = $stmt->get_result();
-				$suscriptionkind = $result12->fetch_assoc()['suscriptionkind'];
+				$result7 = $stmt->get_result();
+				$suscriptionkind = $result7->fetch_assoc()['suscriptionkind'];
 
 				//extracta en variables si el usuario está activo o no
 				$stmt = $conn->prepare("SELECT active FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
-				$result13 = $stmt->get_result();
-				$active = $result13->fetch_assoc()['active'];
+				$result8 = $stmt->get_result();
+				$active = $result8->fetch_assoc()['active'];
 
 
 				$stmt = $conn->prepare("SELECT suscriptiondaysleft FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
-				$result3 = $stmt->get_result();
-				$suscriptiondaysleft = $result3->fetch_assoc()['suscriptiondaysleft'];
+				$result9 = $stmt->get_result();
+				$suscriptiondaysleft = $result9->fetch_assoc()['suscriptiondaysleft'];
 
 				$stmt = $conn->prepare("SELECT suscriptionpayed FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
-				$result4 = $stmt->get_result();
-				$suscriptionpayed = $result4->fetch_assoc()['suscriptionpayed'];
+				$result10 = $stmt->get_result();
+				$suscriptionpayed = $result10->fetch_assoc()['suscriptionpayed'];
 
 				//extracta en variables de session el nombre del usuario
 				$stmt = $conn->prepare("SELECT name FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
-				$result7 = $stmt->get_result();
-				$_SESSION['name'] = $result7->fetch_assoc()['name'];
+				$result11 = $stmt->get_result();
+				$_SESSION['name'] = $result11->fetch_assoc()['name'];
 
 				//consulta si el usuario y contraseña son correctos y si esta activa la cuenta
-				$query1="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
-				$result1=mysqli_query($conn, $query1); 	
+				$query12="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
+				$result12=mysqli_query($conn, $query12); 	
 
 				//actuzaliza la fecha de ultimo acceso del usuario 
-				$query2="UPDATE videotips_suscription_payments SET currentdate = CURDATE() where username ='$local_username'"; 
-				$result2=mysqli_query($conn, $query2);
+				$query13="UPDATE videotips_suscription_payments SET currentdate = CURDATE() where username ='$local_username'"; 
+				$result13=mysqli_query($conn, $query13);
 
 				//actualiza los dias restantes de suscripcion de pago 
-				$query6="UPDATE videotips_suscription_payments SET suscriptiondaysleft = (365 - (DATEDIFF(CURDATE(), lastpaymentdate))) where username ='$local_username'"; 
-				$result6=mysqli_query($conn, $query6);
+				$query14="UPDATE videotips_suscription_payments SET suscriptiondaysleft = (365 - (DATEDIFF(CURDATE(), lastpaymentdate))) where username ='$local_username'"; 
+				$result14=mysqli_query($conn, $query14);
 
 				//extracta en variables de session el rol de administrador
-				$query10="select adm_role from videotips_app_access_list where username ='$local_username'"; 
-				$result10=mysqli_query($conn, $query10);
-				$admrole = $result10->fetch_assoc()['adm_role'];
+				$query15="select adm_role from videotips_app_access_list where username ='$local_username'"; 
+				$result15=mysqli_query($conn, $query15);
+				$admrole = $result15->fetch_assoc()['adm_role'];
 				
 				
 				//si el usuario es administrador lo redirecciona a la pagina de administracion de usuarios
 				if ($admrole > 0){
 					$admrole = 0;
-					$query15="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
-					$result15=mysqli_query($conn, $query15);
+					$query16="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
+					$result16=mysqli_query($conn, $query16);
 					header("refresh:0; url=AppMgmt.php");
 					exit();
 				}
@@ -238,8 +237,8 @@ $active = 0;
 				  else{	
 						if(mysqli_num_rows($result1)==true)
 							{	
-								$query5="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), visits = visits+1, lastlogindate = CURDATE() where username ='$local_username'"; 
-								$result5=mysqli_query($conn, $query5);
+								$query17="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), visits = visits+1, lastlogindate = CURDATE() where username ='$local_username'"; 
+								$result17=mysqli_query($conn, $query17);
 								header("refresh:0; url=videolinkadminmodule.php");
 								exit();
 							}
