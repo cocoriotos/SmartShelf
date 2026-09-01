@@ -17,11 +17,11 @@ if (!isset($_SESSION['email'])) {
 // Si el usuario está autenticado, continuar con el resto del código
 $local_username = $_SESSION['email']; // Obtener el email del usuario desde la sesión
 
-//actualizar todos los registros que estén por encima de 365 días de vencimiento de suscripción y ponerlos como vencido, se parmite las actualizaciones masivas y se vuelven a denegar para evitar errores de seguridad
+//actualizar todos los registros que estén por encima de 365 días de vencimiento de suscripción y ponerlos como vencido
 $query31="SET SQL_SAFE_UPDATES = 0";
 $query32="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)"; 
 $result32=mysqli_query($conn, $query32);
-$query33="SET SQL_SAFE_UPDATES = 1";
+$query33="SET SQL_SAFE_UPDATES = 0";
 
 /*Sync daysleft */
 //actualizar los días restantes de suscripción y de los dias de prueba para todos los usuarios

@@ -107,10 +107,18 @@ $active = 0;
 				{
 
 				} 
+				//habilitar la actualizacion masiva 
+				$query31="SET SQL_SAFE_UPDATES = 0";
+				$result31=mysqli_query($conn, $query31);
+
+
 				//actualiza el estado de pago a suspendido si el tiempo de suscripcion ha vencido
 				$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Suspendida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
 				$result9=mysqli_query($conn, $query9);
 				
+				//deshabilitar la actualizacion masiva
+				$query32="SET SQL_SAFE_UPDATES = 1";
+
 				//actualiza los dias usados de suscripcion trial
 				$query11="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
 				$result11=mysqli_query($conn, $query11);
