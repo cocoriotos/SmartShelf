@@ -19,9 +19,13 @@ $local_username = $_SESSION['email']; // Obtener el email del usuario desde la s
 
 //actualizar todos los registros que estén por encima de 365 días de vencimiento de suscripción y ponerlos como vencido
 $query31="SET SQL_SAFE_UPDATES = 0";
-$query32="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)"; 
+$result31=mysqli_query($conn, $query31);
+$query32="SET SQL_SAFE_UPDATES = 0";
 $result32=mysqli_query($conn, $query32);
-$query33="SET SQL_SAFE_UPDATES = 0";
+$query33="UPDATE videotips_app_access_list SET suscriptionkind = 'Suspendida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
+$result33=mysqli_query($conn, $query33);
+$query34="SET SQL_SAFE_UPDATES = 1";
+$result34=mysqli_query($conn, $query34);
 
 /*Sync daysleft */
 //actualizar los días restantes de suscripción y de los dias de prueba para todos los usuarios
