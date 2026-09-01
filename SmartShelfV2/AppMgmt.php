@@ -24,7 +24,7 @@ $query8="SET SQL_SAFE_UPDATES = 0";
 $result8=mysqli_query($conn, $query8);
 
 //actualiza el estado de pago a suspendido si el tiempo de suscripcion ha vencido
-$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
+$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
 $result9=mysqli_query($conn, $query9);
 
 
