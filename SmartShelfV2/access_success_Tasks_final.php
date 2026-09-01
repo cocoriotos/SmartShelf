@@ -218,7 +218,7 @@ $active = 0;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }
-				if ($suscriptionkind == 'Vencido') {
+				if ($suscriptionkind == 'Vencida') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
