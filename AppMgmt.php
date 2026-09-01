@@ -17,11 +17,23 @@ if (!isset($_SESSION['email'])) {
 // Si el usuario está autenticado, continuar con el resto del código
 $local_username = $_SESSION['email']; // Obtener el email del usuario desde la sesión
 
-/*Sync daysleft */
+//habilitar la actualizacion masiva 
+$query7="SET SQL_SAFE_UPDATES = 0";
+$result7=mysqli_query($conn, $query7);
+$query8="SET SQL_SAFE_UPDATES = 0";
+$result8=mysqli_query($conn, $query8);
 
+//actualiza el estado de pago a suspendido si el tiempo de suscripcion ha vencido
+$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
+$result9=mysqli_query($conn, $query9);
+
+
+/*Sync daysleft */
+//actualizar los días restantes de suscripción y de los dias de prueba para todos los usuarios
 $query20="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)"; 
 $result20=mysqli_query($conn, $query20);
 
+//actualizar los días restantes de suscripción y de los dias de prueba para todos los usuarios
 $query4 = "UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)";
 $result4 = mysqli_query($conn, $query4);
 
