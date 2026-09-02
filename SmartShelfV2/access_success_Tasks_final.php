@@ -84,6 +84,7 @@ $local_username=$_SESSION['email'];
 $password=$_POST['password'];
 $admrole =0;
 $suscriptionkind = "None";
+$trialdaysleft = 0;
 $active = 0;
 
 	if($_POST)
@@ -180,6 +181,13 @@ $active = 0;
 				$query15="select adm_role from videotips_app_access_list where username ='$local_username'"; 
 				$result15=mysqli_query($conn, $query15);
 				$admrole = $result15->fetch_assoc()['adm_role'];
+
+				//extracta en variable trialdaysleft 
+				$stmt = $conn->prepare("SELECT trialdaysleft FROM videotips_app_access_list WHERE username = ?");
+				$stmt->bind_param("s", $local_username);
+				$stmt->execute();
+				$result17 = $stmt->get_result();
+				$trialdaysleft = $result17->fetch_assoc()['trialdaysleft'];
 				
 				
 				//si el usuario es administrador lo redirecciona a la pagina de administracion de usuarios
@@ -197,11 +205,22 @@ $active = 0;
 			   //   header("refresh:0; url=suscriptionpayment.php");
 			  //	exit();
 			  //	  }
-				if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
+				
+			 	  if ($trialdaysleft > 31 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
-				  }   
+				  }
+				   //if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
+					//$_SESSION['suscriptiondue']=1;
+					//header("refresh:0; url=suscriptionpayment.php");
+					//exit();
+				  //}
+			 	 //if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
+				//	$_SESSION['suscriptiondue']=1;
+				//	header("refresh:0; url=suscriptionpayment.php");
+				//	exit();
+				 // }   
 				if ($active == 0 && $suscriptionkind == 'Owner') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
