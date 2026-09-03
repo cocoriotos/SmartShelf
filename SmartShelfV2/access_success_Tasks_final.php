@@ -127,6 +127,7 @@ $active = 0;
 				
 				//deshabilitar la actualizacion masiva
 				$query4="SET SQL_SAFE_UPDATES = 1";
+				$result4=mysqli_query($conn, $query4);
 
 				//actualiza los dias usados de suscripcion
 				$query5="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
