@@ -109,23 +109,23 @@ $active = 0;
 
 				} 
 				//habilitar la actualizacion masiva 
-				$query1="SET SQL_SAFE_UPDATES = 0";
-				$result1=mysqli_query($conn, $query1);
-				$query2="SET SQL_SAFE_UPDATES = 0";
-				$result2=mysqli_query($conn, $query2);
+				////$query1="SET SQL_SAFE_UPDATES = 0";
+				////$result1=mysqli_query($conn, $query1);
+				////$query2="SET SQL_SAFE_UPDATES = 0";
+				////$result2=mysqli_query($conn, $query2);
 
 
 				//actualiza el estado de suscripción a trial si el tiempo de suscripcion ha vencido
-				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where suscriptiondaysleft > 31 and trialdaysleft < 31 and username ='$local_username'"; 
-				$result25=mysqli_query($conn, $query25);
+				////$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where suscriptiondaysleft > 31 and trialdaysleft < 31 and username ='$local_username'"; 
+				////$result25=mysqli_query($conn, $query25);
 
 				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
-				$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
-				$result3=mysqli_query($conn, $query3);
+				////$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
+				////$result3=mysqli_query($conn, $query3);
 
 				//deshabilitar la actualizacion masiva
-				$query4="SET SQL_SAFE_UPDATES = 1";
-				$result4=mysqli_query($conn, $query4);
+				////$query4="SET SQL_SAFE_UPDATES = 1";
+				////$result4=mysqli_query($conn, $query4);
 
 				//actualiza los dias usados de suscripcion
 				$query5="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
@@ -190,15 +190,15 @@ $active = 0;
 				$stmt = $conn->prepare("SELECT trialdaysleft FROM videotips_app_access_list WHERE username = ?");
 				$stmt->bind_param("s", $local_username);
 				$stmt->execute();
-				$result17 = $stmt->get_result();
-				$trialdaysleft = $result17->fetch_assoc()['trialdaysleft'];
+				$result16 = $stmt->get_result();
+				$trialdaysleft = $result16->fetch_assoc()['trialdaysleft'];
 				
 				
 				//si el usuario es administrador lo redirecciona a la pagina de administracion de usuarios
 				if ($admrole > 0){
 					$admrole = 0;
-					$query16="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
-					$result16=mysqli_query($conn, $query16);
+					$query17="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
+					$result17=mysqli_query($conn, $query17);
 					header("refresh:0; url=AppMgmt.php");
 					exit();
 				}
