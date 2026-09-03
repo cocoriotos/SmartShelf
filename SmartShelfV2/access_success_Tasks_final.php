@@ -258,7 +258,7 @@ $active = 0;
 					exit();
 				  }    
 				  else{	
-						if(mysqli_num_rows($result1)==true)
+						if(mysqli_num_rows($result12)==true)
 							{	
 								$query17="update videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), visits = visits+1, lastlogindate = CURDATE() where username ='$local_username'"; 
 								$result17=mysqli_query($conn, $query17);
