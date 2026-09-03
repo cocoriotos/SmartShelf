@@ -116,7 +116,7 @@ $active = 0;
 
 
 				//actualiza el estado de suscripción a trial si el tiempo de suscripcion ha vencido
-				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 31 and username ='$local_username'"; 
+				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where suscriptiondaysleft > 31 and trialdaysleft < 31 and username ='$local_username'"; 
 				$result25=mysqli_query($conn, $query25);
 
 				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
