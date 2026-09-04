@@ -119,10 +119,10 @@ $active = 0;
 				$result5=mysqli_query($conn, $query5);
 				
 				//habilitar la actualizacion masiva 
-				//$query1="SET SQL_SAFE_UPDATES = 0";
-				//$result1=mysqli_query($conn, $query1);
-				//$query2="SET SQL_SAFE_UPDATES = 0";
-				//$result2=mysqli_query($conn, $query2);
+				$query1="SET SQL_SAFE_UPDATES = 0";
+				$result1=mysqli_query($conn, $query1);
+				$query2="SET SQL_SAFE_UPDATES = 0";
+				$result2=mysqli_query($conn, $query2);
 				
 				//actualiza el estado de suscripción a trial si el tiempo de Trial ha vencido
 				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 32 and username ='$local_username'"; 
@@ -151,7 +151,7 @@ $active = 0;
 
 				//deshabilitar la actualizacion masiva
 				$query4="SET SQL_SAFE_UPDATES = 1";
-				//$result4=mysqli_query($conn, $query4);
+				
 				
 				
                 //extracta en variables de session el tipo de suscripcion, dias restantes y si ha pagado o no
