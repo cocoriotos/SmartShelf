@@ -84,7 +84,7 @@ $local_username=$_SESSION['email'];
 $password=$_POST['password'];
 $admrole =0;
 $suscriptionkind = "None";
-$trialdaysleft = 0;
+//$trialdaysleft = 0;
 $active = 0;
 
 	if($_POST)
