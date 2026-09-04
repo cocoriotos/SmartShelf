@@ -84,7 +84,7 @@ $local_username=$_SESSION['email'];
 $password=$_POST['password'];
 $admrole =0;
 $suscriptionkind = "None";
-//$trialdaysleft = 0;
+$trialdaysleft = 0;
 $active = 0;
 
 	if($_POST)
@@ -151,7 +151,7 @@ $active = 0;
 
 				//deshabilitar la actualizacion masiva
 				$query4="SET SQL_SAFE_UPDATES = 1";
-				$result4=mysqli_query($conn, $query4);
+				//$result4=mysqli_query($conn, $query4);
 				
 				
                 //extracta en variables de session el tipo de suscripcion, dias restantes y si ha pagado o no
