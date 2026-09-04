@@ -109,31 +109,32 @@ $active = 0;
 
 				} 
 				//habilitar la actualizacion masiva 
-				////$query1="SET SQL_SAFE_UPDATES = 0";
-				////$result1=mysqli_query($conn, $query1);
-				////$query2="SET SQL_SAFE_UPDATES = 0";
-				////$result2=mysqli_query($conn, $query2);
+				$query1="SET SQL_SAFE_UPDATES = 0";
+				$result1=mysqli_query($conn, $query1);
+				$query2="SET SQL_SAFE_UPDATES = 0";
+				$result2=mysqli_query($conn, $query2);
 
-
-				//actualiza el estado de suscripción a trial si el tiempo de suscripcion ha vencido
-				////$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where suscriptiondaysleft > 31 and trialdaysleft < 31 and username ='$local_username'"; 
-				////$result25=mysqli_query($conn, $query25);
-
-				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
-				////$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
-				////$result3=mysqli_query($conn, $query3);
-
-				//deshabilitar la actualizacion masiva
-				////$query4="SET SQL_SAFE_UPDATES = 1";
-				////$result4=mysqli_query($conn, $query4);
-
-				//actualiza los dias usados de suscripcion
-				$query5="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
+				//actualiza los dias usados de suscripcion del usuario  
+				$query5="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate), lastlogindate = CURDATE()  where username ='$local_username'"; 
 				$result5=mysqli_query($conn, $query5);
 
+				//actualiza el estado de suscripción a trial si el tiempo de Trial ha vencido
+				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 32 and username ='$local_username'"; 
+				$result25=mysqli_query($conn, $query25);
+
 				//actualiza los dias usados de suscripcion trial
-				//$query6="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username' and suscriptionkind = 'Trial'"; 
-				//$result6=mysqli_query($conn, $query6);
+				$query6="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username'"; 
+				$result6=mysqli_query($conn, $query6);
+				
+
+				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
+				$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
+				$result3=mysqli_query($conn, $query3);
+
+				//deshabilitar la actualizacion masiva
+				$query4="SET SQL_SAFE_UPDATES = 1";
+				$result4=mysqli_query($conn, $query4);
+				
 				
                 //extracta en variables de session el tipo de suscripcion, dias restantes y si ha pagado o no
 				$stmt = $conn->prepare("SELECT suscriptionkind FROM videotips_app_access_list WHERE username = ?");
@@ -204,27 +205,23 @@ $active = 0;
 				}
 				
 
-				//if ($suscriptiondaysleft > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
-			    //  $_SESSION['suscriptiondue']=1;
-			   //   header("refresh:0; url=suscriptionpayment.php");
-			  //	exit();
-			  //	  }
+				if ($suscriptiondaysleft > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
+			      $_SESSION['suscriptiondue']=1;
+			      header("refresh:0; url=suscriptionpayment.php");
+			  	exit();
+			  	  }
 				
 			 	  if ($trialdaysleft > 31 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }
-				   //if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
-					//$_SESSION['suscriptiondue']=1;
-					//header("refresh:0; url=suscriptionpayment.php");
-					//exit();
-				  //}
-			 	 //if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
-				//	$_SESSION['suscriptiondue']=1;
-				//	header("refresh:0; url=suscriptionpayment.php");
-				//	exit();
-				 // }   
+				   if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
+					$_SESSION['suscriptiondue']=1;
+					header("refresh:0; url=suscriptionpayment.php");
+					exit();
+				  }
+			 	    
 				if ($active == 0 && $suscriptionkind == 'Owner') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
