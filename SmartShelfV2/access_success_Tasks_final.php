@@ -129,20 +129,20 @@ $active = 0;
 				$result25=mysqli_query($conn, $query25);
 
 				//habilitar la actualizacion masiva 
-				//$query1="SET SQL_SAFE_UPDATES = 0";
-				//$result1=mysqli_query($conn, $query1);
-				//$query2="SET SQL_SAFE_UPDATES = 0";
-				//$result2=mysqli_query($conn, $query2);
+				$query1="SET SQL_SAFE_UPDATES = 0";
+				$result1=mysqli_query($conn, $query1);
+				$query2="SET SQL_SAFE_UPDATES = 0";
+				$result2=mysqli_query($conn, $query2);
 
 				//actualiza los dias usados de suscripcion trial
 				$query6="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username'"; 
 				$result6=mysqli_query($conn, $query6);
 				
 				//habilitar la actualizacion masiva 
-				//$query1="SET SQL_SAFE_UPDATES = 0";
-				//$result1=mysqli_query($conn, $query1);
-				//$query2="SET SQL_SAFE_UPDATES = 0";
-				//$result2=mysqli_query($conn, $query2);
+				$query1="SET SQL_SAFE_UPDATES = 0";
+				$result1=mysqli_query($conn, $query1);
+				$query2="SET SQL_SAFE_UPDATES = 0";
+				$result2=mysqli_query($conn, $query2);
 
 
 				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
