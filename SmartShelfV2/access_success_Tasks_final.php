@@ -124,8 +124,8 @@ $active = 0;
 				$query2="SET SQL_SAFE_UPDATES = 0";
 				$result2=mysqli_query($conn, $query2);
 				
-				//actualiza el estado de suscripción a trial si el tiempo de Trial ha vencido
-				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 32 and username ='$local_username'"; 
+				//actualiza el estado de suscripción a trial si el tiempo de Trial no ha vencido
+				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 32 and suscriptiondaysleft < 32  and username ='$local_username'"; 
 				$result25=mysqli_query($conn, $query25);
 
 				//habilitar la actualizacion masiva 
