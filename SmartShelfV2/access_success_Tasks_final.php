@@ -134,8 +134,8 @@ $active = 0;
 				$query2="SET SQL_SAFE_UPDATES = 0";
 				$result2=mysqli_query($conn, $query2);
 
-				//actualiza los dias usados de suscripcion trial
-				$query6="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), lastlogindate = CURDATE()  where username ='$local_username'"; 
+				//actualiza la suscripcion a vencida si el tiempo de suscripcion ha vencido
+				$query6="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptionpayed = 0 and suscriptiondaysleft > 365 and username ='$local_username'"; 
 				$result6=mysqli_query($conn, $query6);
 				
 				//habilitar la actualizacion masiva 
