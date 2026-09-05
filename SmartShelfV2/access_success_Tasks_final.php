@@ -135,7 +135,7 @@ $active = 0;
 				$result2=mysqli_query($conn, $query2);
 
 				//actualiza la suscripcion a vencida si el tiempo de suscripcion ha vencido
-				$query6="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptionpayed = 0 and suscriptiondaysleft > 365 and username ='$local_username'"; 
+				$query6="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where ((suscriptionpayed = 0 and suscriptiondaysleft > 365) or (suscriptionpayed = 0 and trialdaysleft > 31)) and Susername ='$local_username'"; 
 				$result6=mysqli_query($conn, $query6);
 				
 				//habilitar la actualizacion masiva 
