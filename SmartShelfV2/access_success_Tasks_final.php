@@ -125,7 +125,7 @@ $active = 0;
 				$result2=mysqli_query($conn, $query2);
 				
 				//actualiza el estado de suscripción a trial si el tiempo de Trial no ha vencido
-				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 32 and suscriptiondaysleft < 32  and username ='$local_username'"; 
+				$query25="UPDATE videotips_app_access_list SET suscriptionkind = 'Trial' where trialdaysleft < 32 and suscriptiondaysleft < 32 and username ='$local_username'"; 
 				$result25=mysqli_query($conn, $query25);
 
 				//habilitar la actualizacion masiva 
@@ -135,7 +135,7 @@ $active = 0;
 				$result2=mysqli_query($conn, $query2);
 
 				//actualiza la suscripcion a vencida si el tiempo de suscripcion ha vencido
-				$query6="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where ((suscriptionpayed = 0 and suscriptiondaysleft > 365) or (suscriptionpayed = 0 and trialdaysleft > 31)) and username ='$local_username'"; 
+				$query6="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where ((suscriptionpayed = 0 and suscriptiondaysleft > 365) or (suscriptionpayed = 0 and trialdaysleft > 31)) and (suscriptionkind = 'De Pago' or suscriptionkind = 'Vencida' or suscriptionkind = 'Trial' or suscriptionkind = 'Suspendida') and username ='$local_username'"; 
 				$result6=mysqli_query($conn, $query6);
 				
 				//habilitar la actualizacion masiva 
