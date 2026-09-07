@@ -88,13 +88,13 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
               <table id="autosearch" class="display" font color="back">
                   <thead id="tableswhite">
                   <tr>
-                  <th>Usuario</th>
-                    <th>Suscripción Activa</th>
+                    <th>Usuario</th>
+                    <th>Activa</th>
                     <th>Fecha Pago</th>
-                    <th>Fecha inicial </th>
+                    <th>Fecha Registro</th>
                     <th>Suscripcion</th>
                     <th>Paquete</th>
-                    <th>Días Suscripción </th>
+                    <th>Días a disfrutar de la suscripción</th>
                     <!--<th>Descargar Documento</th>-->
                   </tr>
                   </thead>
@@ -106,12 +106,12 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     while($links = mysqli_fetch_array($result_links)) { ?>
                     <tr>
                       <td align="center"><?php echo $links['username']?></td>
-                      <td align="center"><?php echo $links['active']?></td>
-                      <td align="center"><?php echo $links['lastsuscriptionpaymentdate'] ?></td>
-                      <td align="center"><?php echo $links['registrationdate'] ?></td>
-                      <td align="center"><?php echo $links['suscriptionkind'] ?></td>
-                      <td align="center"><?php echo $links['suscription_package'] ?></td>
-                      <td align="center"><?php echo $links['suscriptiondaysleft'] ?></td>
+                      <td align="center"><?php echo $links['activa']?></td>
+                      <td align="center"><?php echo $links['lastsuscriptionpaymentdate']?></td>
+                      <td align="center"><?php echo $links['registrationdate']?></td>
+                      <td align="center"><?php echo $links['suscriptionkind']?></td>
+                      <td align="center"><?php echo $links['suscription_package']?></td>
+                      <td align="center"><?php echo $links['daystoenjoy']?></td>
                       </td>
                     </tr>
                     <?php }?>
