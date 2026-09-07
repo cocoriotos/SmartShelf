@@ -27,6 +27,15 @@ $result8=mysqli_query($conn, $query8);
 $query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
 $result9=mysqli_query($conn, $query9);
 
+//habilitar la actualizacion masiva    
+$query1="SET SQL_SAFE_UPDATES = 0";
+$result1=mysqli_query($conn, $query1);
+$query2="SET SQL_SAFE_UPDATES = 0";
+$result2=mysqli_query($conn, $query2);
+				
+//Asignación del valor de dias de suscripción a disfrutar   
+$query4="UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate))"; 
+$result4=mysqli_query($conn, $query4);
 
 /*Sync daysleft */
 //actualizar los días restantes de suscripción y de los dias de prueba para todos los usuarios
