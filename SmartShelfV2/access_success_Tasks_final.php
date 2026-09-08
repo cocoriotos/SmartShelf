@@ -126,7 +126,7 @@ $active = 0;
 				$result2=mysqli_query($conn, $query2);
 				
 				//Asignación del valor de dias de suscripción a disfrutar   
-				$query4="UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate)) where (suscriptionkind = 'Suspendida' or suscriptionkind = 'Vencida' or suscriptionkind = 'Trial' or suscriptionkind = 'Vencida') and username ='$local_username'"; 
+				$query4="UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate)) where (suscriptionkind = 'Suspendida' or suscriptionkind = 'Vencida' or suscriptionkind = 'Trial' or suscriptionkind = 'De Pago') and username ='$local_username'"; 
 				$result4=mysqli_query($conn, $query4);
 
 
