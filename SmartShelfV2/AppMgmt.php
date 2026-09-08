@@ -34,7 +34,7 @@ $query2="SET SQL_SAFE_UPDATES = 0";
 $result2=mysqli_query($conn, $query2);
 				
 //Asignación del valor de dias de suscripción a disfrutar   
-$query4="UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate)) UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate)) where (suscriptionkind = 'Suspendida' or suscriptionkind = 'Vencida' or suscriptionkind = 'Trial' or suscriptionkind = 'Vencida')"; 
+$query4="UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate)) UPDATE videotips_app_access_list SET daystoenjoy = IF(DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate) > 365, 0, DATEDIFF(CURRENT_DATE(), lastsuscriptionpaymentdate)) where suscriptionkind in ('Suspendida', 'Vencida', 'Trial', 'Vencida')"; 
 $result4=mysqli_query($conn, $query4);
 
 /*Sync daysleft */
