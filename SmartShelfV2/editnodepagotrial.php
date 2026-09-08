@@ -52,12 +52,12 @@ include "db_connection1.php";
 						<select name="suscriptionactive" class="form-control" autofocus><?php $query = "SELECT active FROM videotips_active"; $result = mysqli_query($conn, $query); while ($suscriptionactive = mysqli_fetch_assoc($result)) {$active = $suscriptionactive['active']; $selected = ($active == $row['suscriptionactive']) ? 'selected' : ''; echo "<option value='$active' $selected>$active</option>";}?></select>
 					</div>
 					<div class="form-group">
-                        <a>Días usados de suscripción</a><br>
-						<input type="text" name="suscriptiondaysleft" class="form-control" placeholder="Dias de suscripción usados" value = "<?php echo $row['suscriptiondaysleft'];?>"  readonly></input><br>
-					</div>
-					<div class="form-group">
                         <a>Suscripción Pagada</a><br>
 						<select name="suscriptionpayed" class="form-control" autofocus><?php $query = "SELECT active FROM videotips_active"; $result = mysqli_query($conn, $query); while ($suscriptionpayed = mysqli_fetch_assoc($result)) {$active = $suscriptionpayed['active']; $selected = ($active == $row['suscriptionpayed']) ? 'selected' : ''; echo "<option value='$active' $selected>$active</option>";}?></select>
+					</div>
+					<div class="form-group">
+                        <a>Días usados de suscripción</a><br>
+						<input type="text" name="daystoenjoy" class="form-control" placeholder="Dias de suscripción usados" value = "<?php echo $row['suscriptiondaysleft'];?>"  readonly></input><br>
 					</div>
 					<div class="form-group">
                         <a> Fecha de Inscripción</a><br>
