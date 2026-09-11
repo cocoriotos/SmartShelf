@@ -23,10 +23,6 @@ $result7=mysqli_query($conn, $query7);
 $query8="SET SQL_SAFE_UPDATES = 0";
 $result8=mysqli_query($conn, $query8);
 
-//actualiza el estado de pago a suspendido si el tiempo de suscripcion ha vencido
-$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago'"; 
-$result9=mysqli_query($conn, $query9);
-
 //habilitar la actualizacion masiva    
 $query1="SET SQL_SAFE_UPDATES = 0";
 $result1=mysqli_query($conn, $query1);
@@ -47,6 +43,11 @@ $result2=mysqli_query($conn, $query2);
 $query5="UPDATE videotips_app_access_list SET daystoenjoy = DATEDIFF(CURRENT_DATE(), registrationdate) where suscriptionkind in ('Owner', 'Partner')"; 
 $result5=mysqli_query($conn, $query5);
 
+//habilitar la actualizacion masiva    
+$query1="SET SQL_SAFE_UPDATES = 0";
+$result1=mysqli_query($conn, $query1);
+$query2="SET SQL_SAFE_UPDATES = 0";
+$result2=mysqli_query($conn, $query2);
 
 
 /*Sync daysleft */
@@ -54,9 +55,27 @@ $result5=mysqli_query($conn, $query5);
 $query20="UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), registrationdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)"; 
 $result20=mysqli_query($conn, $query20);
 
+//habilitar la actualizacion masiva    
+$query1="SET SQL_SAFE_UPDATES = 0";
+$result1=mysqli_query($conn, $query1);
+$query2="SET SQL_SAFE_UPDATES = 0";
+$result2=mysqli_query($conn, $query2);
+
+
 //actualizar los días restantes de suscripción y de los dias de prueba para todos los usuarios
 $query4 = "UPDATE videotips_app_access_list SET suscriptiondaysleft = DATEDIFF(CURDATE(), lastsuscriptionpaymentdate), trialdaysleft = DATEDIFF(CURDATE(), registrationdate)";
 $result4 = mysqli_query($conn, $query4);
+
+//habilitar la actualizacion masiva    
+$query1="SET SQL_SAFE_UPDATES = 0";
+$result1=mysqli_query($conn, $query1);
+$query2="SET SQL_SAFE_UPDATES = 0";
+$result2=mysqli_query($conn, $query2);
+
+
+//actualiza el estado de pago a suspendido si el tiempo de suscripcion ha vencido
+$query9="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where daystoenjoy > 365 and suscriptionkind = 'De Pago'"; 
+$result9=mysqli_query($conn, $query9);
 
 /*Consulta para contar los usuarios suscritos*/
 $query = "SELECT COUNT(suscriptionpayed) as total_suscriptions FROM videotips_app_access_list WHERE suscriptionpayed = 1 and suscriptionkind = 'De Pago'";
