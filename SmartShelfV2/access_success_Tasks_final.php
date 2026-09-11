@@ -256,9 +256,9 @@ $active = 0;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }		
-				if ($daystoenjoy < 31 && $suscriptionkind == 'Trial') {
+				if ($daystoenjoy < 31 && $suscriptionkind == 'Trial' && $active == '0') {
 					$_SESSION['suscriptiondue']=1;
-					header("refresh:0; url=videolinkadminmodule.php");
+					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }  
 				  
