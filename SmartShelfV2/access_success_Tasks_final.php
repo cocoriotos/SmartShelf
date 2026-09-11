@@ -211,7 +211,7 @@ $active = 0;
 				$_SESSION['name'] = $result11->fetch_assoc()['name'];
 
 				//consulta si el usuario y contraseña son correctos y si esta activa la cuenta
-				$query12="select * from videotips_app_access_list where email='$local_username' and password='$password'"; 
+				$query12="select * from videotips_app_access_list where email='$local_username' and active='1' and password='$password'"; 
 				$result12=mysqli_query($conn, $query12); 	
 
 				//actuzaliza la fecha de ultimo acceso del usuario 
