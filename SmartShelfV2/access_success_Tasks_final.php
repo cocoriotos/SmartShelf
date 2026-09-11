@@ -255,13 +255,7 @@ $active = 0;
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
-				  }
-				   if ($suscriptiondaysleft > 31 && $suscriptionkind == 'Trial') {
-					$_SESSION['suscriptiondue']=1;
-					header("refresh:0; url=suscriptionpayment.php");
-					exit();
-				  }
-			 	    
+				  }			 	    
 				if ($active == 0 && $suscriptionkind == 'Owner') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
