@@ -110,7 +110,7 @@ $result15 = mysqli_query($conn, $query15);
 $query16 = "SELECT COUNT(*) as twelvesuscriptions FROM videotips_app_access_list  WHERE suscriptionkind = 'De Pago' and (365-suscriptiondaysleft between 331 and 366)";
 $result16 = mysqli_query($conn, $query16);
 
-$query17 = "UPDATE videotips_app_access_list SET suscriptionpayed = 0 WHERE trialdaysleft  > 16 and suscriptionkind = 'Trial'";
+$query17 = "UPDATE videotips_app_access_list SET suscriptionpayed = 0 WHERE trialdaysleft  > 31 and suscriptionkind = 'Trial'";
 $result17 = mysqli_query($conn, $query17);
 
 $query18 = "UPDATE videotips_app_access_list a JOIN (SELECT username, COUNT(*) AS link_count FROM videotips_videotips GROUP BY username) v ON a.username = v.username SET a.linksquantity = v.link_count";

@@ -245,13 +245,13 @@ $active = 0;
 				}
 				
 
-				if ($suscriptiondaysleft > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
+				if ($daystoenjoy > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
 			      $_SESSION['suscriptiondue']=1;
 			      header("refresh:0; url=suscriptionpayment.php");
 			  	exit();
 			  	  }
 				
-			 	  if ($trialdaysleft > 31 && $suscriptionkind == 'Trial') {
+			 	  if ($daystoenjoy > 31 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
