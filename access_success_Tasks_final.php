@@ -264,7 +264,7 @@ $active = 0;
 			  	  exit();
 			  	  }
 
-				if ($daystoenjoy < 366 &&  $suscriptionkind == 'De Pago' && $active == 1) {
+				if ($daystoenjoy < 366 &&  $suscriptionkind == 'De Pago' && $active == 0) {
 			      $_SESSION['suscriptiondue']=1;
 			      header("refresh:0; url=videolinkadminmodule.php");
 			  	  exit();
