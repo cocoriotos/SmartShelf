@@ -161,10 +161,10 @@ $active = 0;
 				$result6=mysqli_query($conn, $query6);
 				
 				//habilitar la actualizacion masiva 
-				$query1="SET SQL_SAFE_UPDATES = 0";
-				$result1=mysqli_query($conn, $query1);
-				$query2="SET SQL_SAFE_UPDATES = 0";
-				$result2=mysqli_query($conn, $query2);
+				//$query1="SET SQL_SAFE_UPDATES = 0";
+				//$result1=mysqli_query($conn, $query1);
+				//$query2="SET SQL_SAFE_UPDATES = 0";
+				//$result2=mysqli_query($conn, $query2);
 
 
 				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
