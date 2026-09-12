@@ -168,8 +168,8 @@ $active = 0;
 
 
 				//actualiza el estado de pago a vencido si el tiempo de suscripcion ha vencido
-				$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
-				$result3=mysqli_query($conn, $query3);
+				//$query3="UPDATE videotips_app_access_list SET suscriptionkind = 'Vencida' where suscriptiondaysleft > 365 and suscriptionkind = 'De Pago' and username ='$local_username'"; 
+				//$result3=mysqli_query($conn, $query3);
 
 				//deshabilitar la actualizacion masiva
 				$query4="SET SQL_SAFE_UPDATES = 1";
