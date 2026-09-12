@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     timer: 2000,
                     timerProgressBar: true,
                     willClose: () => {
-                        window.location.href = 'closetaskscon.php';
+                        window.location.href = 'requestaccessfinal.php';
                     }
                 });
             });
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     timer: 2000,
                     timerProgressBar: true,
                     willClose: () => {
-                        window.location.href = 'closetaskscon.php';
+                        window.location.href = 'requestaccessfinal.php';
                     }
                 });
             });
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     timer: 2000,
                     timerProgressBar: true,
                     willClose: () => {
-                        window.location.href = 'closetaskscon.php';
+                        window.location.href = 'requestaccessfinal.php';
                     }
                 });
             });
