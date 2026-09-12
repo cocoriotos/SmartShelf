@@ -264,9 +264,9 @@ $active = 0;
 			  	  exit();
 			  	  }
 
-				if ($daystoenjoy < 366 &&  $suscriptionkind == 'De Pago' && $active == 0) {
+				 if ($daystoenjoy < 366 &&  $suscriptionkind == 'De Pago' && $active == 0) {
 			      $_SESSION['suscriptiondue']=1;
-			      header("refresh:0; url=videolinkadminmodule.php");
+			      header("refresh:0; url=suscriptionpayment.php");
 			  	  exit();
 			  	  }
 
@@ -275,7 +275,7 @@ $active = 0;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
 				  }		
-				if ($daystoenjoy < 31 && $suscriptionkind == 'Trial' && $active == '0') {
+				if ($daystoenjoy < 31 && $suscriptionkind == 'Trial' && $active == 0) {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
 					exit();
