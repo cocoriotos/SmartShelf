@@ -240,7 +240,7 @@ $active = 0;
 				if ($admrole > 0){
 					$admrole = 0;
 					$query17="UPDATE videotips_app_access_list SET lastlogindate = CURDATE()  where username ='$local_username'"; 
-					$result17=mysqli_query($conn, $query17);
+					$result17=mysqli_query($conn, $query17); 
 					header("refresh:0; url=AppMgmt.php");
 					exit();
 				}
@@ -258,7 +258,7 @@ $active = 0;
 			  	  exit();
 			  	  }
 
-				if ($daystoenjoy == 0 && $suscriptionkind == 'De Pago') {
+				if ($daystoenjoy == 0 && $suscriptiondaysleft > 365 && $suscriptionkind == 'De Pago') {
 			      $_SESSION['suscriptiondue']=1;
 			      header("refresh:0; url=suscriptionpayment.php");
 			  	  exit();

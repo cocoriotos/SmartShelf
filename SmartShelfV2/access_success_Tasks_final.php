@@ -258,7 +258,7 @@ $active = 0;
 			  	  exit();
 			  	  }
 
-				  if ($daystoenjoy == 0 &&  $suscriptionkind == 'De Pago') {
+				  if ($daystoenjoy == 0 && $suscriptiondaysleft > 365 &&  $suscriptionkind == 'De Pago') {
 			      $_SESSION['suscriptiondue']=1;
 			      header("refresh:0; url=suscriptionpayment.php");
 			  	  exit();
