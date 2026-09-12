@@ -257,7 +257,13 @@ $active = 0;
 			      header("refresh:0; url=suscriptionpayment.php");
 			  	  exit();
 			  	  }
-				  
+
+				if ($daystoenjoy > 365 && $suscriptionkind == 'De Pago') {
+			      $_SESSION['suscriptiondue']=1;
+			      header("refresh:0; url=suscriptionpayment.php");
+			  	  exit();
+			  	  }
+
 			 	  if ($daystoenjoy > 31 && $suscriptionkind == 'Trial') {
 					$_SESSION['suscriptiondue']=1;
 					header("refresh:0; url=suscriptionpayment.php");
