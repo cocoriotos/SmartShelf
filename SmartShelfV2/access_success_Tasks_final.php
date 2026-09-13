@@ -245,6 +245,11 @@ $active = 0;
 					exit();
 				}
 				
+				if ($active == 1 && $daystoenjoy < 365 && $suscriptionpayed == 1 && $suscriptionkind == 'De Pago') {
+			      $_SESSION['suscriptiondue']=1;
+			      header("refresh:0; url=videolinkadminmodule.php");
+			  	  exit();
+			  	  }
 
 				if ($daystoenjoy > 31 && $suscriptionpayed == 0 && $suscriptionkind == 'Trial') {
 			      $_SESSION['suscriptiondue']=1;
