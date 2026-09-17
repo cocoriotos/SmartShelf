@@ -104,15 +104,15 @@ window.addEventListener("scroll", () => {
 const searchTranslations = {
     es: {
         placeholder: "Buscar...",
-        totalCards: "Total de contenidos mostrados"
+        totalCards: "Total de contenidos/Categorías mostrados"
     },
     en: {
         placeholder: "Search...",
-        totalCards: "Total con shown"
+        totalCards: "Total contents/Categories shown"
     },
     pt: {
         placeholder: "Buscar...",
-        totalCards: "Total de conteúdos exibidos"
+        totalCards: "Total de conteúdos/Categorias exibidos"
     }
 };
 
