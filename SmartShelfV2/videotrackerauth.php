@@ -70,15 +70,19 @@
 
             <form id="request-access" action="requestaccessfinal.php" method="POST" autocomplete="off">
                 <p data-i18n="auth_no_access">¿Sin acceso? <button type="submit" class="btn-request" data-i18n="auth_request_here">Solicitarlo aquí</button></p>
-                <p data-i18n="auth_questions">¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
+                <p>
+                    <span data-i18n="auth_questions">¿Alguna duda?</span><br>
+                    <span data-i18n="auth_contact_email">Contáctenos al Email:</span>
+                    <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
+                </p>
             </form>
 
 
 <script>
 const T={
-    es:{auth_title:"Biblioteca de Contenidos Útiles",auth_login:"Ingresar",auth_cancel:"Cancelar",auth_forgot:"¿Olvidaste tu contraseña?",auth_no_access:"¿Sin acceso?",auth_request_here:"Solicitarlo aquí",auth_questions:"¿Alguna duda? Contáctenos al Email:",auth_email:"Email",auth_password:"Contraseña"},
-    en:{auth_title:"Useful Content Library",auth_login:"Log In",auth_cancel:"Cancel",auth_forgot:"Forgot your password?",auth_no_access:"No access?",auth_request_here:"Request it here",auth_questions:"Any questions? Contact us at Email:",auth_email:"Email",auth_password:"Password"},
-    pt:{auth_title:"Biblioteca de Conteúdos Úteis",auth_login:"Entrar",auth_cancel:"Cancelar",auth_forgot:"Esqueceu sua senha?",auth_no_access:"Sem acesso?",auth_request_here:"Solicite aqui",auth_questions:"Alguma dúvida? Contate-nos pelo Email:",auth_email:"Email",auth_password:"Senha"}
+    es:{auth_title:"Biblioteca de Contenidos Útiles",auth_login:"Ingresar",auth_cancel:"Cancelar",auth_forgot:"¿Olvidaste tu contraseña?",auth_no_access:"¿Sin acceso?",auth_request_here:"Solicitarlo aquí",auth_questions:"¿Alguna duda?",auth_contact_email:"Contáctenos al Email:",auth_email:"Email",auth_password:"Contraseña"},
+    en:{auth_title:"Useful Content Library",auth_login:"Log In",auth_cancel:"Cancel",auth_forgot:"Forgot your password?",auth_no_access:"No access?",auth_request_here:"Request it here",auth_questions:"Any questions?",auth_contact_email:"Contact us by email:",auth_email:"Email",auth_password:"Password"},
+    pt:{auth_title:"Biblioteca de Conteúdos Úteis",auth_login:"Entrar",auth_cancel:"Cancelar",auth_forgot:"Esqueceu sua senha?",auth_no_access:"Sem acesso?",auth_request_here:"Solicite aqui",auth_questions:"Alguma dúvida?",auth_contact_email:"Contate-nos pelo Email:",auth_email:"Email",auth_password:"Senha"}
 };
 
 function applyTranslations(lang){
