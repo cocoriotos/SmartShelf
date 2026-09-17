@@ -23,6 +23,7 @@
         </div>
 
         <!-- Encabezado del formulario -->
+        <div class="login-header">
             <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
             <h1 data-i18n="req_title">Solicitud de Acceso</h1>
         </div>
@@ -69,9 +70,9 @@
             <br><br>
         </form>
 
-        <form action="index.php" method="POST" autocomplete="off">
-            <button type="submit" class="btn-login" data-i18n="req_cancel">Cancelar</button>
-        </form>
+        <div class="cancel-action">
+            <button type="button" class="btn-login" data-i18n="req_cancel" onclick="window.location.href = 'index.php';">Cancelar</button>
+        </div>
 
         <form id="request-access">
             <p>
