@@ -6,7 +6,7 @@
     <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
     <script src="head.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="style_sheet_auth.css">
+    <link rel="stylesheet" href="style_sheet_auth.css?v=20260917">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
@@ -23,11 +23,13 @@
         </div>
 
         <!-- Encabezado del formulario -->
+        <div class="login-header">
             <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
             <h1 data-i18n="req_title">Solicitud de Acceso</h1>
         </div>
 
         <!-- Formulario de solicitud de acceso -->
+        <div class="request-access-stack">
         <form id="login" action="accessemailFinal.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
             <div class="lang-sw">
                 <button class="lb on" type="button" onclick="setLang('es')">ES</button>
@@ -68,13 +70,18 @@
             <br><br>
         </form>
 
-        <form action="index.php" method="POST" autocomplete="off">
-            <button type="submit" class="btn-login" data-i18n="req_cancel">Cancelar</button>
-        </form>
+        <div class="cancel-action">
+            <button type="button" class="btn-login" data-i18n="req_cancel" onclick="window.location.href = 'index.php';">Cancelar</button>
+        </div>
 
         <form id="request-access">
-            <p data-i18n="req_questions">¿Alguna duda? Contáctenos al Email: <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a></p>
+            <p class="contact-question" data-i18n="req_questions">¿Alguna duda? Usa el Boton de WhatsApp</p>
+            <p class="contact-email-line">
+                <span data-i18n="req_contact_email">Contáctenos al Email:</span>
+                <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
+            </p>
         </form>
+        </div>
     </div>
 
     <script>
@@ -153,9 +160,9 @@
     </script>
     <script>
 const T={
-    es:{req_title:"Solicitud de Acceso",req_name:"Nombre",req_lastname:"Apellido",req_email:"Correo electrónico",req_country:"País de residencia",req_city:"Ciudad de residencia",req_password:"Contraseña",req_captcha:"Ingrese el CAPTCHA",req_terms:"Acepto los <a href='TermsConditions.php' target='_blank'>términos y condiciones</a>",req_send:"Enviar",req_cancel:"Cancelar"},
-    en:{req_title:"Access Request",req_name:"Name",req_lastname:"Last Name",req_email:"Email",req_country:"Country of residence",req_city:"City of residence",req_password:"Password",req_captcha:"Enter the CAPTCHA",req_terms:"I accept the <a href='TermsConditions.php' target='_blank'>terms and conditions</a>",req_send:"Send",req_cancel:"Cancel"},
-    pt:{req_title:"Solicitação de Acesso",req_name:"Nome",req_lastname:"Sobrenome",req_email:"Email",req_country:"País de residência",req_city:"Cidade de residência",req_password:"Senha",req_captcha:"Digite o CAPTCHA",req_terms:"Aceito os <a href='TermsConditions.php' target='_blank'>termos e condições</a>",req_send:"Enviar",req_cancel:"Cancelar"}
+    es:{req_title:"Solicitud de Acceso",req_name:"Nombre",req_lastname:"Apellido",req_email:"Correo electrónico",req_country:"País de residencia",req_city:"Ciudad de residencia",req_password:"Contraseña",req_captcha:"Ingrese el CAPTCHA",req_terms:"Acepto los <a href='TermsConditions.php' target='_blank'>términos y condiciones</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"¿Alguna duda?",req_contact_email:"Contáctenos al Email:"},
+    en:{req_title:"Access Request",req_name:"Name",req_lastname:"Last Name",req_email:"Email",req_country:"Country of residence",req_city:"City of residence",req_password:"Password",req_captcha:"Enter the CAPTCHA",req_terms:"I accept the <a href='TermsConditions.php' target='_blank'>terms and conditions</a>",req_send:"Send",req_cancel:"Cancel",req_questions:"Any questions?",req_contact_email:"Contact us by email:"},
+    pt:{req_title:"Solicitação de Acesso",req_name:"Nome",req_lastname:"Sobrenome",req_email:"Email",req_country:"País de residência",req_city:"Cidade de residência",req_password:"Senha",req_captcha:"Digite o CAPTCHA",req_terms:"Aceito os <a href='TermsConditions.php' target='_blank'>termos e condições</a>",req_send:"Enviar",req_cancel:"Cancelar",req_questions:"Alguma dúvida?",req_contact_email:"Contate-nos pelo Email:"}
 };
 
 function applyTranslations(lang){
@@ -183,7 +190,7 @@ window.addEventListener('languageChanged', ()=>{
     applyTranslations(lang);
 });
     </script>
-    <a href="https://wa.me/573054293185" target="_blank" 
+    <a href="https://wa.me/573117592209" target="_blank"
     style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 50px; font-size: 16px; text-decoration: none; display: flex; align-items: center;">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="35" height="35" style="margin-right: 10px;"></a>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

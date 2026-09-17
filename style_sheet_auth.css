@@ -65,12 +65,31 @@ select {
 .login-container {
   position: relative;
   z-index: 1;
-  width: min(100%, 520px);
+  display: block !important;
+  align-items: stretch;
+  width: 100%;
+  max-width: 520px;
   padding: 32px;
   border-radius: var(--radius);
   background: rgba(8, 14, 29, 0.95);
   border: 1px solid var(--b2);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.request-access-stack {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.request-access-stack > form {
+  display: block !important;
+  width: 100%;
+}
+
+.cancel-action {
+  width: 100%;
+  margin-top: 16px;
 }
 
 .login-header {
@@ -153,6 +172,15 @@ select {
 
 #request-access p {
   margin: 0;
+}
+
+#request-access .contact-question > span,
+#request-access .contact-email-line {
+  display: block !important;
+}
+
+#request-access .contact-email-line {
+  margin-top: 4px;
 }
 
 .btn-request {
