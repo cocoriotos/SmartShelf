@@ -301,9 +301,9 @@
     </style>
     <script>
         window.moduleTranslations = {
-            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría', label_category: 'Categoría:', label_subcategory: 'Subcategoría:' },
-            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category', label_category: 'Category:', label_subcategory: 'Subcategory:' },
-            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria', label_category: 'Categoria:', label_subcategory: 'Subcategoria:' }
+            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría', label_category: 'Categoría:', label_subcategory: 'Subcategoría:', form_category: 'Categoría', form_subcategory: 'Subcategoría', maincategory_placeholder: 'Digite la Categoría Principal', subcategory_placeholder: 'Digite la SubCategoría' },
+            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category', label_category: 'Category:', label_subcategory: 'Subcategory:', form_category: 'Category', form_subcategory: 'Subcategory', maincategory_placeholder: 'Enter the Main Category', subcategory_placeholder: 'Enter the Subcategory' },
+            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria', label_category: 'Categoria:', label_subcategory: 'Subcategoria:', form_category: 'Categoria', form_subcategory: 'Subcategoria', maincategory_placeholder: 'Digite a Categoria Principal', subcategory_placeholder: 'Digite a Subcategoria' }
         };
 
         window.currentLang = localStorage.getItem('smartshelfLang') || localStorage.getItem('moduleLang') || 'es';
@@ -321,6 +321,12 @@
 
             updateText('#heading-add-category', 'add_category_title');
             updateText('#subtitle-add-category', 'add_category_subtitle');
+            updateText('#label-maincategory', 'form_category');
+            updateText('#label-category', 'form_subcategory');
+            const mainCategoryInput = document.getElementById('maincategory');
+            if (mainCategoryInput) mainCategoryInput.placeholder = t('maincategory_placeholder');
+            const subcategoryInput = document.getElementById('category');
+            if (subcategoryInput) subcategoryInput.placeholder = t('subcategory_placeholder');
             document.querySelectorAll('[data-key="label-category"]').forEach(el => el.textContent = t('label_category'));
             document.querySelectorAll('[data-key="label-subcategory"]').forEach(el => el.textContent = t('label_subcategory'));
             const saveButton = document.getElementById('save_link');
@@ -365,11 +371,11 @@
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="maincategory"><strong>Categoría</strong></label>
+                                    <label for="maincategory" id="label-maincategory"><strong>Categoría</strong></label>
                                     <input class="form-control" id="maincategory" type="text" name="maincategory" placeholder="Digite la Categoría Principal" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="category"><strong>Subcategoría</strong></label>
+                                    <label for="category" id="label-category"><strong>Subcategoría</strong></label>
                                     <input class="form-control" id="category" type="text" name="category" placeholder="Digite la SubCategoría" required>
                                 </div>
                             </div>
