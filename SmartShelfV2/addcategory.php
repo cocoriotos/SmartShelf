@@ -155,7 +155,7 @@
             transform: translateY(-1px);
         }
 
-        .search-wrapper {
+        .category-search-row {
             width: calc(100% + 64px);
             margin-left: -32px;
             margin-right: -32px;
@@ -165,7 +165,7 @@
             display: block;
         }
 
-        .search-wrapper > * {
+        .category-search-row > * {
             width: 100%;
         }
 
@@ -380,7 +380,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <div class="search-wrapper">
+                    <div class="category-search-row">
                         <?php include("search.php") ?>
                     </div>
                     <div class="section-card">
