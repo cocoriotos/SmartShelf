@@ -155,7 +155,7 @@
             transform: translateY(-1px);
         }
 
-        .search-wrapper {
+        .category-search-row {
             width: calc(100% + 64px);
             margin-left: -32px;
             margin-right: -32px;
@@ -165,7 +165,7 @@
             display: block;
         }
 
-        .search-wrapper > * {
+        .category-search-row > * {
             width: 100%;
         }
 
@@ -301,9 +301,9 @@
     </style>
     <script>
         window.moduleTranslations = {
-            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría' },
-            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category' },
-            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria' }
+            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría', label_category: 'Categoría:', label_subcategory: 'Subcategoría:', form_category: 'Categoría', form_subcategory: 'Subcategoría', maincategory_placeholder: 'Digite la Categoría Principal', subcategory_placeholder: 'Digite la SubCategoría', copy_category: 'Copiar Categoría', copy_subcategory: 'Copiar Subcategoría', edit_category: 'Modificar', delete_category: 'Borrar' },
+            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category', label_category: 'Category:', label_subcategory: 'Subcategory:', form_category: 'Category', form_subcategory: 'Subcategory', maincategory_placeholder: 'Enter the Main Category', subcategory_placeholder: 'Enter the Subcategory', copy_category: 'Copy Category', copy_subcategory: 'Copy Subcategory', edit_category: 'Edit', delete_category: 'Delete' },
+            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria', label_category: 'Categoria:', label_subcategory: 'Subcategoria:', form_category: 'Categoria', form_subcategory: 'Subcategoria', maincategory_placeholder: 'Digite a Categoria Principal', subcategory_placeholder: 'Digite a Subcategoria', copy_category: 'Copiar Categoria', copy_subcategory: 'Copiar Subcategoria', edit_category: 'Modificar', delete_category: 'Excluir' }
         };
 
         window.currentLang = localStorage.getItem('smartshelfLang') || localStorage.getItem('moduleLang') || 'es';
@@ -321,6 +321,18 @@
 
             updateText('#heading-add-category', 'add_category_title');
             updateText('#subtitle-add-category', 'add_category_subtitle');
+            updateText('#label-maincategory', 'form_category');
+            updateText('#label-category', 'form_subcategory');
+            const mainCategoryInput = document.getElementById('maincategory');
+            if (mainCategoryInput) mainCategoryInput.placeholder = t('maincategory_placeholder');
+            const subcategoryInput = document.getElementById('category');
+            if (subcategoryInput) subcategoryInput.placeholder = t('subcategory_placeholder');
+            document.querySelectorAll('[data-key="label-category"]').forEach(el => el.textContent = t('label_category'));
+            document.querySelectorAll('[data-key="label-subcategory"]').forEach(el => el.textContent = t('label_subcategory'));
+            document.querySelectorAll('[data-key="copy-category"]').forEach(el => el.textContent = t('copy_category'));
+            document.querySelectorAll('[data-key="copy-subcategory"]').forEach(el => el.textContent = t('copy_subcategory'));
+            document.querySelectorAll('[data-key="edit-category"]').forEach(el => el.textContent = t('edit_category'));
+            document.querySelectorAll('[data-key="delete-category"]').forEach(el => el.textContent = t('delete_category'));
             const saveButton = document.getElementById('save_link');
             if (saveButton) saveButton.value = t('save');
         }
@@ -363,11 +375,11 @@
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="maincategory"><strong>Categoría</strong></label>
+                                    <label for="maincategory" id="label-maincategory"><strong>Categoría</strong></label>
                                     <input class="form-control" id="maincategory" type="text" name="maincategory" placeholder="Digite la Categoría Principal" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="category"><strong>Subcategoría</strong></label>
+                                    <label for="category" id="label-category"><strong>Subcategoría</strong></label>
                                     <input class="form-control" id="category" type="text" name="category" placeholder="Digite la SubCategoría" required>
                                 </div>
                             </div>
@@ -380,7 +392,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <div class="search-wrapper">
+                    <div class="category-search-row">
                         <?php include("search.php") ?>
                     </div>
                     <div class="section-card">
@@ -396,16 +408,16 @@
                                     <button class="grid-item-action-btn" onclick="toggleActions(event, <?php echo $categories['id']; ?>)">...</button>
                                     <div class="grid-item-actions">
                                         <div class="grid-item-action-menu" id="action-menu-<?php echo $categories['id']; ?>">
-                                            <button class="action-button" onclick="copyToClipboard('<?php echo $categories['maincategory']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);">Copiar Categoría</button>
-                                            <button class="action-button" onclick="copyToClipboard('<?php echo $categories['category']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);">Copiar Subcategoría</button>
-                                            <button class="action-button" onclick="window.location.href = 'editcategory.php?id=<?php echo $categories['id']; ?>'">Modificar</button>
-                                            <button class="action-button" onclick="confirmDelete(<?php echo $categories['id']; ?>)">Borrar</button>
+                                            <button class="action-button" data-key="copy-category" onclick="copyToClipboard('<?php echo $categories['maincategory']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);">Copiar Categoría</button>
+                                            <button class="action-button" data-key="copy-subcategory" onclick="copyToClipboard('<?php echo $categories['category']; ?>'); toggleActions(event, <?php echo $categories['id']; ?>);">Copiar Subcategoría</button>
+                                            <button class="action-button" data-key="edit-category" onclick="window.location.href = 'editcategory.php?id=<?php echo $categories['id']; ?>'">Modificar</button>
+                                            <button class="action-button" data-key="delete-category" onclick="confirmDelete(<?php echo $categories['id']; ?>)">Borrar</button>
                                         </div>
                                     </div>
                                     <span class="grid-item-title"><?php echo $categories['content']; ?></span>
                                     <div class="grid-item-body">
-                                        <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $categories['maincategory']; ?></span></p>
-                                        <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $categories['category']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-category">Categoría:</span><span class="p-content"><?php echo $categories['maincategory']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-subcategory">Subcategoría:</span><span class="p-content"><?php echo $categories['category']; ?></span></p>
                                     </div>
                                 </div>
                             </div>

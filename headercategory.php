@@ -10,7 +10,7 @@ $name = $_SESSION['name'];
 </head>
 <header>
   <nav class="navbar navbar-dark bg-dark d-flex justify-content-center" id="welcome">
-  <center><a id="welcome"  class="navbar-brand"><span class="username-style"><?php echo $name; ?></span>, éstas en tu Biblioteca de Contenidos Útiles</a></center>
+  <center><a id="welcome"  class="navbar-brand"><span class="username-style"><?php echo $name; ?></span>, <span data-i18n="header_welcome_msg">estás en tu Biblioteca de Contenidos Útiles</span></a></center>
   </nav>
   
   <nav class="navbar navbar-dark bg-dark d-flex justify-content-between align-items-center">
@@ -27,9 +27,9 @@ $name = $_SESSION['name'];
     <script src="https://kit.fontawesome.com/60f0db780e.js" crossorigin="anonymous"></script>
     <script>
       const headerTranslations = {
-        es: { header_clear: 'Limpiar Formulario', header_add_link: 'Adicionar Enlace', header_logout: 'Salir' },
-        en: { header_clear: 'Clear Form', header_add_link: 'Add Link', header_logout: 'Logout' },
-        pt: { header_clear: 'Limpar Formulário', header_add_link: 'Adicionar Link', header_logout: 'Sair' }
+        es: { header_welcome_msg: 'estás en tu Biblioteca de Contenidos Útiles', header_clear: 'Limpiar Formulario', header_add_link: 'Adicionar Enlace', header_logout: 'Salir' },
+        en: { header_welcome_msg: 'you are in your Useful Contents Library', header_clear: 'Clear Form', header_add_link: 'Add Link', header_logout: 'Logout' },
+        pt: { header_welcome_msg: 'você está na sua Biblioteca de Conteúdos Úteis', header_clear: 'Limpar Formulário', header_add_link: 'Adicionar Link', header_logout: 'Sair' }
       };
       function updateHeaderLang() {
         const lang = localStorage.getItem('smartshelfLang') || 'es';
@@ -41,6 +41,7 @@ $name = $_SESSION['name'];
         document.documentElement.lang = lang;
       }
       document.addEventListener('DOMContentLoaded', updateHeaderLang);
+      window.addEventListener('languageChanged', updateHeaderLang);
     </script>
 	</header>
   </html>

@@ -34,6 +34,7 @@ $name = $_SESSION['name'];
     <script>
       const headerTranslations = {
         es: {
+          header_welcome_msg: 'estás en tu Biblioteca de Contenidos Útiles',
           header_subscribe: 'Suscribirse',
           header_tutorials: 'Tutoriales',
           header_manual: 'Manual',
