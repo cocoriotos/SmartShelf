@@ -20,7 +20,7 @@
     <li><a href="#how"      data-i18n="nav_how">Cómo Funciona</a></li>
     <li><a href="#pricing"  data-i18n="nav_pricing">Precios</a></li>
     <li><a href="#testi"    data-i18n="nav_reviews">Testimonios</a></li>
-    <li><a href="https://wa.me/573054293185"  data-i18n="nav_support">Soporte</a></li>
+    <li><a href="https://wa.me/573117592209"  data-i18n="nav_support">Soporte</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-sw">
@@ -388,7 +388,7 @@
        class="btn btn-primary btn-lg" data-i18n="cta_btn1">Crear mi cuenta gratis ›</a>
 
     <!-- WhatsApp button with SVG icon -->
-    <a href="https://wa.me/573054293185" class="btn-outline-lg" data-i18n="cta_btn2">
+    <a href="https://wa.me/573117592209" class="btn-outline-lg" data-i18n="cta_btn2">
       <span class="wa-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.001-3.176-1.24-6.165-3.48-8.448zM12.045 21.785h-.005c-1.774 0-3.513-.476-5.031-1.378l-.361-.214-3.741.975.997-3.63-.235-.374a9.859 9.859 0 01-1.517-5.267c.003-5.45 4.46-9.883 9.943-9.883 2.654 0 5.145 1.031 7.021 2.902a9.825 9.825 0 012.908 6.998c-.003 5.452-4.462 9.871-9.98 9.871zm5.465-7.398c-.3-.149-1.773-.873-2.048-.972-.274-.099-.474-.149-.674.149-.198.297-.773.972-.947 1.17-.174.199-.349.223-.647.075-.3-.149-1.266-.465-2.411-1.483-.892-.792-1.492-1.77-1.668-2.069-.174-.298-.019-.459.131-.607.134-.133.298-.348.447-.521.15-.174.199-.298.299-.496.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.923-2.218-.242-.58-.487-.501-.674-.51l-.573-.01c-.198 0-.522.074-.796.372-.273.297-1.045 1.02-1.045 2.487s1.07 2.884 1.219 3.082c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.627.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.174-1.413-.074-.124-.273-.198-.573-.348z" fill="#25D366"/>
@@ -423,7 +423,7 @@
         <a href="https://www.tiktok.com/@smartshelfcol" class="soc" title="TikTok">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="https://wa.me/573054293185" class="soc" title="WhatsApp">
+        <a href="https://wa.me/573117592209" class="soc" title="WhatsApp">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.001-3.176-1.24-6.165-3.48-8.448z" fill="currentColor"/></svg>
         </a>
       </div>
@@ -441,7 +441,7 @@
       <div class="f-col-title" data-i18n="f_support">Soporte</div>
       <ul class="f-links">
         <li><a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" data-i18n="f_tutorials">Tutoriales</a></li>
-        <li><a href="https://wa.me/573054293185" data-i18n="f_whatsapp">WhatsApp</a></li>
+        <li><a href="https://wa.me/573117592209" data-i18n="f_whatsapp">WhatsApp</a></li>
         <li><a href="https://solicionespro.com/SmartShelf/TermsConditions.php" data-i18n="f_terms">Términos y Condiciones</a></li>
       </ul>
     </div>

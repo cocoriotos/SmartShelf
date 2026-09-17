@@ -657,7 +657,7 @@ include "header.php";
         </div>
     </div>
     <!-- Botón de WhatsApp -->
-    <a href="https://wa.me/573054293185" target="_blank" class="whatsapp-fab">
+    <a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         <span id="support-label">Soporte</span>
     </a>

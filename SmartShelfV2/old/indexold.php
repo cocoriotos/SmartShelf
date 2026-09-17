@@ -686,7 +686,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b1);padding:56px 6% 28px
   <p class="cta-sub" data-i18n="cta_sub">30 días para explorar todo SmartShelf sin restricciones. Tu conocimiento merece un mejor hogar.</p>
   <div class="cta-btns">
     <a href="https://solicionespro.com/SmartShelf/requestaccessfinal.php" class="btn btn-primary btn-lg" data-i18n="cta_btn1">Crear mi cuenta gratis ›</a>
-    <a href="https://wa.me/573054293185" class="btn-outline-lg btn" data-i18n="cta_btn2">Hablar con soporte</a>
+    <a href="https://wa.me/573117592209" class="btn-outline-lg btn" data-i18n="cta_btn2">Hablar con soporte</a>
   </div>
 </section>
 
@@ -701,7 +701,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b1);padding:56px 6% 28px
         <a href="https://www.facebook.com/profile.php?id=61575835265080" class="soc" title="Facebook">👤</a>
         <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" class="soc" title="YouTube">▶️</a>
         <a href="https://www.tiktok.com/@smartshelfcol" class="soc" title="TikTok">♪</a>
-        <a href="https://wa.me/573054293185" class="soc" title="WhatsApp">💬</a>
+        <a href="https://wa.me/573117592209" class="soc" title="WhatsApp">💬</a>
       </div>
     </div>
     <div>
@@ -717,7 +717,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b1);padding:56px 6% 28px
       <div class="f-col-title" data-i18n="f_support">Soporte</div>
       <ul class="f-links">
         <li><a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" data-i18n="f_tutorials">Tutoriales</a></li>
-        <li><a href="https://wa.me/573054293185" data-i18n="f_whatsapp">WhatsApp</a></li>
+        <li><a href="https://wa.me/573117592209" data-i18n="f_whatsapp">WhatsApp</a></li>
         <li><a href="https://solicionespro.com/SmartShelf/TermsConditions.php" data-i18n="f_terms">Términos y Condiciones</a></li>
       </ul>
     </div>
