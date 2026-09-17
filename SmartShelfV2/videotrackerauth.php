@@ -70,12 +70,10 @@
 
             <form id="request-access" action="requestaccessfinal.php" method="POST" autocomplete="off">
                 <p data-i18n="auth_no_access">¿Sin acceso? <button type="submit" class="btn-request" data-i18n="auth_request_here">Solicitarlo aquí</button></p>
-                <p class="contact-question">
-                    <span data-i18n="auth_questions">¿Alguna duda?</span>
-                    <span class="contact-email-line">
-                        <span data-i18n="auth_contact_email">Contáctenos al Email:</span>
-                        <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
-                    </span>
+                <p class="contact-question" data-i18n="auth_questions">¿Alguna duda?</p>
+                <p class="contact-email-line">
+                    <span data-i18n="auth_contact_email">Contáctenos al Email:</span>
+                    <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
                 </p>
             </form>
 
