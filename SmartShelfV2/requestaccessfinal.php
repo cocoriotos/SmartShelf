@@ -28,6 +28,7 @@
         </div>
 
         <!-- Formulario de solicitud de acceso -->
+        <div class="request-access-stack">
         <form id="login" action="accessemailFinal.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
             <div class="lang-sw">
                 <button class="lb on" type="button" onclick="setLang('es')">ES</button>
@@ -79,6 +80,7 @@
                 <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
             </p>
         </form>
+        </div>
     </div>
 
     <script>
