@@ -301,9 +301,9 @@
     </style>
     <script>
         window.moduleTranslations = {
-            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría' },
-            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category' },
-            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria' }
+            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría', label_category: 'Categoría:', label_subcategory: 'Subcategoría:' },
+            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category', label_category: 'Category:', label_subcategory: 'Subcategory:' },
+            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria', label_category: 'Categoria:', label_subcategory: 'Subcategoria:' }
         };
 
         window.currentLang = localStorage.getItem('smartshelfLang') || localStorage.getItem('moduleLang') || 'es';
@@ -321,6 +321,8 @@
 
             updateText('#heading-add-category', 'add_category_title');
             updateText('#subtitle-add-category', 'add_category_subtitle');
+            document.querySelectorAll('[data-key="label-category"]').forEach(el => el.textContent = t('label_category'));
+            document.querySelectorAll('[data-key="label-subcategory"]').forEach(el => el.textContent = t('label_subcategory'));
             const saveButton = document.getElementById('save_link');
             if (saveButton) saveButton.value = t('save');
         }
@@ -404,8 +406,8 @@
                                     </div>
                                     <span class="grid-item-title"><?php echo $categories['content']; ?></span>
                                     <div class="grid-item-body">
-                                        <p><span class="p-title">Categoría:</span><span class="p-content"><?php echo $categories['maincategory']; ?></span></p>
-                                        <p><span class="p-title">Subcategoría:</span><span class="p-content"><?php echo $categories['category']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-category">Categoría:</span><span class="p-content"><?php echo $categories['maincategory']; ?></span></p>
+                                        <p><span class="p-title" data-key="label-subcategory">Subcategoría:</span><span class="p-content"><?php echo $categories['category']; ?></span></p>
                                     </div>
                                 </div>
                             </div>
