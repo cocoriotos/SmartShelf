@@ -306,7 +306,7 @@
       <ul class="f-links">
         <li><a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" target="_blank" rel="noopener" data-i18n="f_tutorials">Tutoriales</a></li>
         <li><a href="https://wa.me/573054293185" target="_blank" rel="noopener" data-i18n="f_whatsapp">WhatsApp</a></li>
-        <li><a href="contact.php" data-i18n="f_contact">Contáctenos</a></li>
+        <li><a href="https://wa.me/573054293185" target="_blank" rel="noopener" data-i18n="f_contact">Contáctenos</a></li>
         <li><a href="https://solicionespro.com/SmartShelf/SmartShelfV2/TermsConditions.php" target="_blank" rel="noopener" data-i18n="f_terms">Términos y Condiciones</a></li>
       </ul>
     </div>
