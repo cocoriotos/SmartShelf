@@ -75,8 +75,8 @@
         </div>
 
         <form id="request-access">
-            <p>
-                <span data-i18n="req_questions">¿Alguna duda?</span><br>
+            <p class="contact-question" data-i18n="req_questions">¿Alguna duda?</p>
+            <p class="contact-email-line">
                 <span data-i18n="req_contact_email">Contáctenos al Email:</span>
                 <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
             </p>
