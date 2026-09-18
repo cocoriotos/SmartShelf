@@ -35,9 +35,127 @@
             min-height: 100vh;
         }
 
+        body.admin-module-page {
+            --welcome-bottom: 48px;
+        }
+
+        body.admin-module-page .header-action-group {
+            display: none;
+        }
+
         .admin-wrapper {
-            max-width: 1180px;
-            margin: 0 auto;
+            max-width: none;
+            margin: 0;
+            padding: 32px 20px 64px;
+        }
+
+        .module-workspace {
+            display: block;
+        }
+
+        .module-sidebar {
+            position: fixed;
+            top: var(--welcome-bottom);
+            left: 0;
+            z-index: 1100;
+            width: 68px;
+            height: calc(100vh - var(--welcome-bottom));
+            overflow-y: auto;
+            padding: 14px;
+            background: #032642;
+            border-radius: 0;
+            box-shadow: 0 16px 32px rgba(3, 38, 66, 0.16);
+            transition: width 0.2s ease;
+        }
+
+        .module-sidebar:not(.collapsed) {
+            width: 240px;
+        }
+
+        .module-sidebar-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 34px;
+            margin-bottom: 12px;
+            border: 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .module-sidebar-toggle i,
+        .module-sidebar-link i {
+            color: #ffffff !important;
+        }
+
+        .module-sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .module-sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 10px;
+            background: transparent;
+            color: #ffffff;
+            text-align: left;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .module-sidebar-link i {
+            flex: 0 0 24px;
+            width: 24px;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .module-sidebar-link:hover,
+        .module-sidebar-link.active {
+            background: #25d366;
+        }
+
+        .module-sidebar.collapsed {
+            width: 68px;
+        }
+
+        .module-sidebar.collapsed .module-sidebar-link span {
+            display: none;
+        }
+
+        .module-sidebar.collapsed .module-sidebar-link {
+            justify-content: center;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .module-main {
+            min-width: 0;
+            margin-left: 90px;
+            transition: margin-left 0.2s ease;
+        }
+
+        .module-workspace.sidebar-open .module-main {
+            margin-left: 262px;
+        }
+
+        .module-view.is-hidden {
+            display: none;
+        }
+
+        .admin-wrapper {
+            max-width: none;
+            margin: 0;
             padding: 32px 20px 64px;
         }
 
@@ -201,6 +319,25 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        @media (max-width: 768px) {
+            .admin-wrapper {
+                padding: 24px 16px 48px 90px;
+            }
+
+            .module-sidebar {
+                top: var(--welcome-bottom);
+                height: calc(100vh - var(--welcome-bottom));
+            }
+
+            .module-main {
+                margin-left: 0;
+            }
+
+            .module-workspace.sidebar-open .module-main {
+                margin-left: 172px;
+            }
+        }
+
         .content-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 22px 48px rgba(3, 38, 66, 0.09);
@@ -301,9 +438,9 @@
     </style>
     <script>
         window.moduleTranslations = {
-            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría', label_category: 'Categoría:', label_subcategory: 'Subcategoría:', form_category: 'Categoría', form_subcategory: 'Subcategoría', maincategory_placeholder: 'Digite la Categoría Principal', subcategory_placeholder: 'Digite la SubCategoría', copy_category: 'Copiar Categoría', copy_subcategory: 'Copiar Subcategoría', edit_category: 'Modificar', delete_category: 'Borrar' },
-            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category', label_category: 'Category:', label_subcategory: 'Subcategory:', form_category: 'Category', form_subcategory: 'Subcategory', maincategory_placeholder: 'Enter the Main Category', subcategory_placeholder: 'Enter the Subcategory', copy_category: 'Copy Category', copy_subcategory: 'Copy Subcategory', edit_category: 'Edit', delete_category: 'Delete' },
-            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria', label_category: 'Categoria:', label_subcategory: 'Subcategoria:', form_category: 'Categoria', form_subcategory: 'Subcategoria', maincategory_placeholder: 'Digite a Categoria Principal', subcategory_placeholder: 'Digite a Subcategoria', copy_category: 'Copiar Categoria', copy_subcategory: 'Copiar Subcategoria', edit_category: 'Modificar', delete_category: 'Excluir' }
+            es: { add_category_title: 'Adicionar Categoría y Subcategoría', add_category_subtitle: 'Administra tus categorías con el diseño de SmartShelf.' , save: 'Adicionar Categoría', label_category: 'Categoría:', label_subcategory: 'Subcategoría:', form_category: 'Categoría', form_subcategory: 'Subcategoría', maincategory_placeholder: 'Digite la Categoría Principal', subcategory_placeholder: 'Digite la SubCategoría', copy_category: 'Copiar Categoría', copy_subcategory: 'Copiar Subcategoría', edit_category: 'Modificar', delete_category: 'Borrar', sidebar_add: 'Adicionar Enlace', sidebar_search: 'Buscar Categoría', sidebar_exit: 'Salir' },
+            en: { add_category_title: 'Add Category and Subcategory', add_category_subtitle: 'Manage your categories with SmartShelf design.' , save: 'Add Category', label_category: 'Category:', label_subcategory: 'Subcategory:', form_category: 'Category', form_subcategory: 'Subcategory', maincategory_placeholder: 'Enter the Main Category', subcategory_placeholder: 'Enter the Subcategory', copy_category: 'Copy Category', copy_subcategory: 'Copy Subcategory', edit_category: 'Edit', delete_category: 'Delete', sidebar_add: 'Add Link', sidebar_search: 'Search Category', sidebar_exit: 'Logout' },
+            pt: { add_category_title: 'Adicionar Categoria e Subcategoria', add_category_subtitle: 'Gerencie suas categorias com o design SmartShelf.' , save: 'Adicionar Categoria', label_category: 'Categoria:', label_subcategory: 'Subcategoria:', form_category: 'Categoria', form_subcategory: 'Subcategoria', maincategory_placeholder: 'Digite a Categoria Principal', subcategory_placeholder: 'Digite a Subcategoria', copy_category: 'Copiar Categoria', copy_subcategory: 'Copiar Subcategoria', edit_category: 'Modificar', delete_category: 'Excluir', sidebar_add: 'Adicionar Link', sidebar_search: 'Buscar Categoria', sidebar_exit: 'Sair' }
         };
 
         window.currentLang = localStorage.getItem('smartshelfLang') || localStorage.getItem('moduleLang') || 'es';
@@ -333,6 +470,9 @@
             document.querySelectorAll('[data-key="copy-subcategory"]').forEach(el => el.textContent = t('copy_subcategory'));
             document.querySelectorAll('[data-key="edit-category"]').forEach(el => el.textContent = t('edit_category'));
             document.querySelectorAll('[data-key="delete-category"]').forEach(el => el.textContent = t('delete_category'));
+            document.querySelectorAll('[data-i18n="sidebar_add"]').forEach(el => el.textContent = t('sidebar_add'));
+            document.querySelectorAll('[data-i18n="sidebar_search"]').forEach(el => el.textContent = t('sidebar_search'));
+            document.querySelectorAll('[data-i18n="sidebar_exit"]').forEach(el => el.textContent = t('sidebar_exit'));
             const saveButton = document.getElementById('save_link');
             if (saveButton) saveButton.value = t('save');
         }
@@ -361,8 +501,26 @@
 <body id="bodyadminmodule" class="admin-module-page">
     <div class="admin-wrapper">
         <div class="container-fluid p-0">
+            <div class="module-workspace">
+                <aside class="module-sidebar collapsed" id="module-sidebar">
+                    <button type="button" class="module-sidebar-toggle" aria-label="Menu" onclick="toggleModuleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <nav class="module-sidebar-nav">
+                        <a class="module-sidebar-link" href="videolinkadminmodule.php">
+                            <i class="fas fa-plus-circle"></i><span data-i18n="sidebar_add">Adicionar Enlace</span>
+                        </a>
+                        <button type="button" class="module-sidebar-link" data-view="search-category" onclick="showCategoryView('search-category', this)">
+                            <i class="fas fa-search"></i><span data-i18n="sidebar_search">Buscar Categoría</span>
+                        </button>
+                        <a class="module-sidebar-link" href="closetaskscon.php">
+                            <i class="fas fa-right-from-bracket"></i><span data-i18n="sidebar_exit">Salir</span>
+                        </a>
+                    </nav>
+                </aside>
+                <div class="module-main">
             <div class="row justify-content-start" style="width: 100%;">
-                <div class="col-md-12">
+                <div class="col-md-12 module-view" data-view-panel="add-category">
                     <div class="section-card hero-card">
                         <form action="savecategory.php" method="POST">
                             <div class="lang-switcher">
@@ -391,7 +549,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 module-view is-hidden" data-view-panel="search-category">
                     <div class="category-search-row">
                         <?php include("search.php") ?>
                     </div>
@@ -426,10 +584,46 @@
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 </body>
 <script>
+    function alignCategorySidebar() {
+        const welcomeNav = document.querySelector('nav#welcome');
+        if (!welcomeNav) return;
+
+        const welcomeBottom = Math.ceil(welcomeNav.getBoundingClientRect().bottom);
+        document.documentElement.style.setProperty('--welcome-bottom', `${welcomeBottom}px`);
+    }
+
+    function toggleModuleSidebar() {
+        const sidebar = document.getElementById('module-sidebar');
+        const workspace = document.querySelector('.module-workspace');
+        const isCollapsed = sidebar.classList.toggle('collapsed');
+        workspace.classList.toggle('sidebar-open', !isCollapsed);
+    }
+
+    function showCategoryView(viewName, selectedButton) {
+        document.querySelectorAll('[data-view-panel]').forEach(panel => {
+            panel.classList.toggle('is-hidden', panel.dataset.viewPanel !== viewName);
+        });
+
+        document.querySelectorAll('.module-sidebar-link[data-view]').forEach(button => {
+            button.classList.toggle('active', button === selectedButton);
+        });
+
+        if (viewName === 'search-category' && window.searchCards) {
+            window.searchCards();
+        }
+    }
+
+    alignCategorySidebar();
+    window.addEventListener('load', alignCategorySidebar);
+    window.addEventListener('resize', alignCategorySidebar);
+
     function toggleActions(event, id) {
         event.stopPropagation(); // Evita que el evento de clic se propague al documento
         var actionMenu = document.getElementById("action-menu-" + id);
