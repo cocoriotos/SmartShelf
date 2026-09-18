@@ -48,24 +48,26 @@ include "header.php";
         }
 
         .admin-wrapper {
-            max-width: 1180px;
-            margin: 0 auto;
+            max-width: none;
+            margin: 0;
             padding: 32px 20px 64px;
         }
 
         .module-workspace {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
+            display: block;
         }
 
         .module-sidebar {
-            position: sticky;
-            top: 20px;
-            flex: 0 0 210px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1100;
+            width: 210px;
+            height: 100vh;
+            overflow-y: auto;
             padding: 14px;
             background: #032642;
-            border-radius: 18px;
+            border-radius: 0;
             box-shadow: 0 16px 32px rgba(3, 38, 66, 0.16);
         }
 
@@ -81,6 +83,11 @@ include "header.php";
             background: rgba(255, 255, 255, 0.12);
             color: #ffffff;
             cursor: pointer;
+        }
+
+        .module-sidebar-toggle i,
+        .module-sidebar-link i {
+            color: #ffffff !important;
         }
 
         .module-sidebar-nav {
@@ -125,7 +132,7 @@ include "header.php";
         }
 
         .module-sidebar.collapsed {
-            flex-basis: 66px;
+            width: 210px;
         }
 
         .module-sidebar.collapsed .module-sidebar-link span {
@@ -137,8 +144,8 @@ include "header.php";
         }
 
         .module-main {
-            flex: 1 1 auto;
             min-width: 0;
+            margin-left: 234px;
         }
 
         .module-view.is-hidden {
@@ -447,7 +454,7 @@ include "header.php";
 
         @media (max-width: 768px) {
             .admin-wrapper {
-                padding: 24px 16px 48px;
+                padding: 24px 16px 48px 234px;
             }
 
             .section-heading {
@@ -455,23 +462,25 @@ include "header.php";
             }
 
             .module-workspace {
-                flex-direction: column;
+                display: block;
             }
 
             .module-sidebar {
-                position: static;
-                width: 100%;
-                flex-basis: auto;
+                width: 210px;
+                height: 100vh;
             }
 
             .module-sidebar-nav {
-                flex-direction: row;
-                flex-wrap: wrap;
+                flex-direction: column;
             }
 
             .module-sidebar-link {
-                width: auto;
-                flex: 1 1 150px;
+                width: 100%;
+                flex: none;
+            }
+
+            .module-main {
+                margin-left: 0;
             }
         }
     </style>
