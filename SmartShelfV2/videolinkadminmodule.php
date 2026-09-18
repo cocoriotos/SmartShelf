@@ -833,15 +833,15 @@ include "header.php";
 </script>
 
 <script>
-let allCards = [];
-let cardsPerLoad = 20; // cantidad a mostrar por bloque
-let currentIndex = 0;
+let moduleCards = [];
+let moduleCardsPerLoad = 20; // cantidad a mostrar por bloque
+let moduleCurrentIndex = 0;
 
 function sortCards(sortKey) {
     const cardGrid = document.querySelector('.content-grid');
     if (!cardGrid) return;
 
-    allCards.sort((firstCard, secondCard) => {
+    moduleCards.sort((firstCard, secondCard) => {
         const firstValue = firstCard.dataset['sort' + sortKey.charAt(0).toUpperCase() + sortKey.slice(1)] || '';
         const secondValue = secondCard.dataset['sort' + sortKey.charAt(0).toUpperCase() + sortKey.slice(1)] || '';
 
@@ -854,34 +854,34 @@ function sortCards(sortKey) {
         return firstValue.localeCompare(secondValue, undefined, { sensitivity: 'base' });
     });
 
-    allCards.forEach(card => cardGrid.appendChild(card));
-    currentIndex = 0;
-    allCards.forEach(card => card.style.display = 'none');
-    loadMoreCards();
+    moduleCards.forEach(card => cardGrid.appendChild(card));
+    moduleCurrentIndex = 0;
+    moduleCards.forEach(card => card.style.display = 'none');
+    loadMoreModuleCards();
 }
 
-function loadMoreCards() {
-    const endIndex = currentIndex + cardsPerLoad;
-    for (let i = currentIndex; i < endIndex && i < allCards.length; i++) {
-        allCards[i].style.display = "block";
+function loadMoreModuleCards() {
+    const endIndex = moduleCurrentIndex + moduleCardsPerLoad;
+    for (let i = moduleCurrentIndex; i < endIndex && i < moduleCards.length; i++) {
+        moduleCards[i].style.display = "block";
     }
-    currentIndex = endIndex;
+    moduleCurrentIndex = endIndex;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    allCards = Array.from(document.querySelectorAll(".grid-item"));
+    moduleCards = Array.from(document.querySelectorAll(".grid-item"));
     const cardSort = document.getElementById('card-sort');
     if (cardSort) {
         cardSort.addEventListener('change', () => sortCards(cardSort.value));
         sortCards(cardSort.value);
     } else {
-        loadMoreCards(); // Mostrar el primer bloque
+        loadMoreModuleCards(); // Mostrar el primer bloque
     }
 });
 
 window.addEventListener("scroll", () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-        loadMoreCards();
+        loadMoreModuleCards();
     }
 });
 </script>
