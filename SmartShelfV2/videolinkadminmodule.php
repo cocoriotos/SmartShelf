@@ -52,8 +52,7 @@ include "header.php";
             font-size: 0.78rem;
         }
 
-        body.admin-module-page .header-action-btn.clear,
-        body.admin-module-page .header-action-btn.categories {
+        body.admin-module-page .header-action-btn.clear {
             display: none;
         }
 
@@ -704,9 +703,6 @@ include "header.php";
                         </button>
                         <button type="button" class="module-sidebar-link" data-view="search-content" onclick="showModuleView('search-content', this)">
                             <i class="fas fa-search"></i><span data-i18n="sidebar_search">Buscar Contenido</span>
-                        </button>
-                        <button type="button" class="module-sidebar-link" onclick="window.location.href='addcategory.php'">
-                            <i class="fas fa-folder-tree"></i><span data-i18n="sidebar_categories">Categorías</span>
                         </button>
                     </nav>
                 </aside>
