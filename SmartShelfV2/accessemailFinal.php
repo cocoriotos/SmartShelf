@@ -138,8 +138,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO videotips_accessrequests (name, lastname, email, country, city, password, processed, granted, phone) VALUES ('$name', '$lastname', '$email', '$country', '$city','$password','Yes','Yes', '$phone')";
         $result = $conn->query($query);
 
-        $query1 = "INSERT INTO videotips_app_access_list (name,lastname, username, email, password, role, active, adm_role, suscriptionactive, terms_conditions_awareness,suscriptionkind,lastsuscriptionpaymentdate,suscriptiondaysleft,trialdaysleft) VALUES ('$name', '$lastname', '$email', '$email', '$password', 'user', 1, 0, 1, 'Yes','Trial',CURDATE(),0,0,'$phone')";
+        $query1 = "INSERT INTO videotips_app_access_list (name, lastname, username, email, phone, password, role, active, adm_role, suscriptionactive, terms_conditions_awareness, suscriptionkind, lastsuscriptionpaymentdate, suscriptiondaysleft, trialdaysleft) VALUES ('$name', '$lastname', '$email', '$email', '$phone', '$password', 'user', 1, 0, 1, 'Yes', 'Trial', CURDATE(), 0, 0)";
         $result1 = $conn->query($query1);
+
+        if (!$result || !$result1) {
+            error_log('Registration insert failed: ' . $conn->error);
+            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        title: 'Mensaje',
+                        text: 'No fue posible guardar la información de registro. Intente nuevamente.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    }).then(() => {
+                        window.location.href = 'requestaccessfinal.php';
+                    });
+                });
+            </script>";
+            exit();
+        }
 
         $query2 = "INSERT INTO videotips_suscription_payments (username, active, freeregistrationdate) SELECT email, active, registrationdate from videotips_app_access_list where username = '$email'";
         $result2 = $conn->query($query2);
