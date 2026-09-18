@@ -304,6 +304,24 @@ include "header.php";
             text-align: center;
         }
 
+        .cards-sort {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+            margin: 0 0 20px;
+        }
+
+        .cards-sort label {
+            color: #405862;
+            font-weight: 700;
+        }
+
+        .cards-sort select {
+            width: auto;
+            min-width: 220px;
+        }
+
         .lang-switcher {
             display: flex;
             justify-content: center;
@@ -348,6 +366,11 @@ include "header.php";
                 add_link_subtitle: 'Guarda y organiza contenido útil con el diseño de SmartShelf.',
                 useful_contents: 'Tus Contenidos Útiles',
                 search_placeholder: 'Buscar...',
+                sort_by: 'Ordenar por',
+                sort_date: 'Fecha',
+                sort_category: 'Categoría',
+                sort_subcategory: 'Subcategoría',
+                sort_content: 'Contenido',
                 select_category: 'Seleccione una categoría',
                 select_subcategory: 'Seleccione una subcategoría',
                 helpful_title: 'Enlace Útil',
@@ -383,6 +406,11 @@ include "header.php";
                 add_link_subtitle: 'Save and organize useful content with the SmartShelf design.',
                 useful_contents: 'Your Useful Contents',
                 search_placeholder: 'Search...',
+                sort_by: 'Sort by',
+                sort_date: 'Date',
+                sort_category: 'Category',
+                sort_subcategory: 'Subcategory',
+                sort_content: 'Content',
                 select_category: 'Select a category',
                 select_subcategory: 'Select a subcategory',
                 helpful_title: 'Useful Link',
@@ -418,6 +446,11 @@ include "header.php";
                 add_link_subtitle: 'Salve e organize conteúdo útil com o design do SmartShelf.',
                 useful_contents: 'Seus Conteúdos Úteis',
                 search_placeholder: 'Buscar...',
+                sort_by: 'Ordenar por',
+                sort_date: 'Data',
+                sort_category: 'Categoria',
+                sort_subcategory: 'Subcategoria',
+                sort_content: 'Conteúdo',
                 select_category: 'Selecione uma categoria',
                 select_subcategory: 'Selecione uma subcategoria',
                 helpful_title: 'Link Útil',
@@ -506,6 +539,12 @@ include "header.php";
             if (window.updateSearchTexts) {
                 window.updateSearchTexts(window.currentLang);
             }
+
+            const sortLabel = document.querySelector('[data-i18n="sort_by"]');
+            if (sortLabel) sortLabel.textContent = t('sort_by');
+            document.querySelectorAll('#card-sort option[data-i18n]').forEach(option => {
+                option.textContent = t(option.dataset.i18n);
+            });
         }
 
         function setModuleLanguage(lang) {
@@ -619,6 +658,15 @@ include "header.php";
                     <div class="section-card">
                         <div class="section-heading" id="heading-useful-contents">Tus Contenidos Útiles</div>
                         <div class="section-subtitle" id="subtitle-useful-contents">Accede rápido a tus enlaces más importantes con tarjetas limpias y modernas.</div>
+                        <div class="cards-sort">
+                            <label for="card-sort" data-i18n="sort_by">Ordenar por</label>
+                            <select id="card-sort" class="form-control">
+                                <option value="date" data-i18n="sort_date">Fecha</option>
+                                <option value="category" data-i18n="sort_category">Categoría</option>
+                                <option value="subcategory" data-i18n="sort_subcategory">Subcategoría</option>
+                                <option value="content" data-i18n="sort_content">Contenido</option>
+                            </select>
+                        </div>
                         <div class="content-grid">
                         <?php
                         $query1 = "SELECT * FROM videotips_videotips 
@@ -628,7 +676,7 @@ include "header.php";
                         while ($links = mysqli_fetch_array($result_links)) {
                             $randomColor = getRandomLightColor();
                         ?>
-                            <div class="content-card grid-item" style="background-color: <?php echo $randomColor; ?>; display: none;">
+                            <div class="content-card grid-item" data-sort-date="<?php echo htmlspecialchars($links['creationdate'], ENT_QUOTES, 'UTF-8'); ?>" data-sort-category="<?php echo htmlspecialchars($links['maincategory'], ENT_QUOTES, 'UTF-8'); ?>" data-sort-subcategory="<?php echo htmlspecialchars($links['category'], ENT_QUOTES, 'UTF-8'); ?>" data-sort-content="<?php echo htmlspecialchars($links['content'], ENT_QUOTES, 'UTF-8'); ?>" style="background-color: <?php echo $randomColor; ?>; display: none;">
                                 <div class="grid-item-content">
                                     <button class="grid-item-action-btn" onclick="toggleActions(event, <?php echo $links['id']; ?>)">...</button>
                                     <div class="grid-item-actions">
@@ -789,6 +837,29 @@ let allCards = [];
 let cardsPerLoad = 20; // cantidad a mostrar por bloque
 let currentIndex = 0;
 
+function sortCards(sortKey) {
+    const cardGrid = document.querySelector('.content-grid');
+    if (!cardGrid) return;
+
+    allCards.sort((firstCard, secondCard) => {
+        const firstValue = firstCard.dataset['sort' + sortKey.charAt(0).toUpperCase() + sortKey.slice(1)] || '';
+        const secondValue = secondCard.dataset['sort' + sortKey.charAt(0).toUpperCase() + sortKey.slice(1)] || '';
+
+        if (sortKey === 'date') {
+            const firstDate = Date.parse(firstValue) || 0;
+            const secondDate = Date.parse(secondValue) || 0;
+            return secondDate - firstDate;
+        }
+
+        return firstValue.localeCompare(secondValue, undefined, { sensitivity: 'base' });
+    });
+
+    allCards.forEach(card => cardGrid.appendChild(card));
+    currentIndex = 0;
+    allCards.forEach(card => card.style.display = 'none');
+    loadMoreCards();
+}
+
 function loadMoreCards() {
     const endIndex = currentIndex + cardsPerLoad;
     for (let i = currentIndex; i < endIndex && i < allCards.length; i++) {
@@ -799,7 +870,13 @@ function loadMoreCards() {
 
 document.addEventListener("DOMContentLoaded", () => {
     allCards = Array.from(document.querySelectorAll(".grid-item"));
-    loadMoreCards(); // Mostrar el primer bloque
+    const cardSort = document.getElementById('card-sort');
+    if (cardSort) {
+        cardSort.addEventListener('change', () => sortCards(cardSort.value));
+        sortCards(cardSort.value);
+    } else {
+        loadMoreCards(); // Mostrar el primer bloque
+    }
 });
 
 window.addEventListener("scroll", () => {
