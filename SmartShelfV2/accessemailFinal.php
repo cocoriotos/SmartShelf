@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>";
 		exit();
     } else {
-        $query = "INSERT INTO videotips_accessrequests (name, lastname, email, country, city, password,processed,granted) VALUES ('$name', '$lastname', '$email', '$country', '$city','$password','Yes','Yes')";
+        $query = "INSERT INTO videotips_accessrequests (name, lastname, email, country, city, password,processed,granted,phone) VALUES ('$name', '$lastname', '$email', '$country', '$city','$password','Yes','Yes')";
         $result = $conn->query($query);
 
         $query1 = "INSERT INTO videotips_app_access_list (name,lastname, username, email, phone, password, role, active, adm_role, suscriptionactive, terms_conditions_awareness,suscriptionkind,lastsuscriptionpaymentdate,suscriptiondaysleft,trialdaysleft) VALUES ('$name', '$lastname', '$email', '$email', '$phone', '$password', 'user', 1, 0, 1, 'Yes','Trial',CURDATE(),0,0)";
