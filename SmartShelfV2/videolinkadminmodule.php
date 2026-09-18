@@ -59,16 +59,17 @@ include "header.php";
 
         .module-sidebar {
             position: fixed;
-            top: 0;
+            top: 96px;
             left: 0;
             z-index: 1100;
-            width: 210px;
-            height: 100vh;
+            width: 68px;
+            height: calc(100vh - 96px);
             overflow-y: auto;
             padding: 14px;
             background: #032642;
             border-radius: 0;
             box-shadow: 0 16px 32px rgba(3, 38, 66, 0.16);
+            transition: width 0.2s ease;
         }
 
         .module-sidebar-toggle {
@@ -114,16 +115,23 @@ include "header.php";
         .module-sidebar-link {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
-            padding: 11px 12px;
+            padding: 12px;
             border: 0;
             border-radius: 10px;
             background: transparent;
             color: #ffffff;
             text-align: left;
-            font-size: 0.86rem;
+            font-size: 1rem;
             cursor: pointer;
+        }
+
+        .module-sidebar-link i {
+            flex: 0 0 24px;
+            width: 24px;
+            font-size: 1.25rem;
+            text-align: center;
         }
 
         .module-sidebar-link:hover,
@@ -132,7 +140,11 @@ include "header.php";
         }
 
         .module-sidebar.collapsed {
-            width: 210px;
+            width: 68px;
+        }
+
+        .module-sidebar:not(.collapsed) {
+            width: 240px;
         }
 
         .module-sidebar.collapsed .module-sidebar-link span {
@@ -143,9 +155,20 @@ include "header.php";
             display: none;
         }
 
+        .module-sidebar.collapsed .module-sidebar-link {
+            justify-content: center;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
         .module-main {
             min-width: 0;
-            margin-left: 234px;
+            margin-left: 90px;
+            transition: margin-left 0.2s ease;
+        }
+
+        .module-workspace.sidebar-open .module-main {
+            margin-left: 262px;
         }
 
         .module-view.is-hidden {
@@ -454,7 +477,7 @@ include "header.php";
 
         @media (max-width: 768px) {
             .admin-wrapper {
-                padding: 24px 16px 48px 234px;
+                padding: 24px 16px 48px 90px;
             }
 
             .section-heading {
@@ -466,8 +489,9 @@ include "header.php";
             }
 
             .module-sidebar {
-                width: 210px;
-                height: 100vh;
+                top: 96px;
+                width: 68px;
+                height: calc(100vh - 96px);
             }
 
             .module-sidebar-nav {
@@ -480,7 +504,11 @@ include "header.php";
             }
 
             .module-main {
-                margin-left: 0;
+                margin-left: 90px;
+            }
+
+            .module-workspace.sidebar-open .module-main {
+                margin-left: 262px;
             }
         }
     </style>
@@ -901,7 +929,10 @@ include "header.php";
 
 <script>
     function toggleModuleSidebar() {
-        document.getElementById('module-sidebar').classList.toggle('collapsed');
+        const sidebar = document.getElementById('module-sidebar');
+        const workspace = document.querySelector('.module-workspace');
+        const isCollapsed = sidebar.classList.toggle('collapsed');
+        workspace.classList.toggle('sidebar-open', !isCollapsed);
     }
 
     function showModuleView(viewName, selectedButton) {
