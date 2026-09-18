@@ -44,15 +44,6 @@ include "header.php";
         }
 
         body.admin-module-page .header-action-group {
-            gap: 8px;
-        }
-
-        body.admin-module-page .header-action-btn {
-            padding: 6px 10px;
-            font-size: 0.78rem;
-        }
-
-        body.admin-module-page .header-action-btn.clear {
             display: none;
         }
 
@@ -98,6 +89,21 @@ include "header.php";
             gap: 8px;
         }
 
+        .module-sidebar-section {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .module-sidebar-section-title {
+            padding: 0 12px 6px;
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
         .module-sidebar-link {
             display: flex;
             align-items: center;
@@ -123,6 +129,10 @@ include "header.php";
         }
 
         .module-sidebar.collapsed .module-sidebar-link span {
+            display: none;
+        }
+
+        .module-sidebar.collapsed .module-sidebar-section-title {
             display: none;
         }
 
@@ -475,6 +485,9 @@ include "header.php";
                 sidebar_add: 'Adicionar Enlace',
                 sidebar_search: 'Buscar Contenido',
                 sidebar_categories: 'Categorías',
+                sidebar_subscription: 'Suscripción',
+                sidebar_documentation: 'Documentación',
+                sidebar_exit: 'Salir',
                 sort_by: 'Ordenar por',
                 sort_date: 'Fecha',
                 sort_category: 'Categoría',
@@ -518,6 +531,9 @@ include "header.php";
                 sidebar_add: 'Add Link',
                 sidebar_search: 'Search Content',
                 sidebar_categories: 'Categories',
+                sidebar_subscription: 'Subscription',
+                sidebar_documentation: 'Documentation',
+                sidebar_exit: 'Logout',
                 sort_by: 'Sort by',
                 sort_date: 'Date',
                 sort_category: 'Category',
@@ -561,6 +577,9 @@ include "header.php";
                 sidebar_add: 'Adicionar Link',
                 sidebar_search: 'Buscar Conteúdo',
                 sidebar_categories: 'Categorias',
+                sidebar_subscription: 'Assinatura',
+                sidebar_documentation: 'Documentação',
+                sidebar_exit: 'Sair',
                 sort_by: 'Ordenar por',
                 sort_date: 'Data',
                 sort_category: 'Categoria',
@@ -623,6 +642,9 @@ include "header.php";
             document.querySelectorAll('[data-i18n="sidebar_add"]').forEach(el => el.textContent = t('sidebar_add'));
             document.querySelectorAll('[data-i18n="sidebar_search"]').forEach(el => el.textContent = t('sidebar_search'));
             document.querySelectorAll('[data-i18n="sidebar_categories"]').forEach(el => el.textContent = t('sidebar_categories'));
+            document.querySelectorAll('[data-i18n="sidebar_subscription"]').forEach(el => el.textContent = t('sidebar_subscription'));
+            document.querySelectorAll('[data-i18n="sidebar_documentation"]').forEach(el => el.textContent = t('sidebar_documentation'));
+            document.querySelectorAll('[data-i18n="sidebar_exit"]').forEach(el => el.textContent = t('sidebar_exit'));
 
             const mainCategoryPlaceholder = document.querySelector('#maincategory option[data-i18n="select_category"]');
             const subCategoryPlaceholder = document.querySelector('#category option[data-i18n="select_subcategory"]');
@@ -693,7 +715,7 @@ include "header.php";
     <div class="admin-wrapper">
         <div class="container-fluid p-0">
             <div class="module-workspace">
-                <aside class="module-sidebar" id="module-sidebar">
+                <aside class="module-sidebar collapsed" id="module-sidebar">
                     <button type="button" class="module-sidebar-toggle" aria-label="Menu" onclick="toggleModuleSidebar()">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -704,6 +726,29 @@ include "header.php";
                         <button type="button" class="module-sidebar-link" data-view="search-content" onclick="showModuleView('search-content', this)">
                             <i class="fas fa-search"></i><span data-i18n="sidebar_search">Buscar Contenido</span>
                         </button>
+                        <button type="button" class="module-sidebar-link" onclick="window.location.href='addcategory.php'">
+                            <i class="fas fa-folder-tree"></i><span data-i18n="sidebar_categories">Categorías</span>
+                        </button>
+                        <div class="module-sidebar-section">
+                            <div class="module-sidebar-section-title" data-i18n="sidebar_subscription">Suscripción</div>
+                            <button type="button" class="module-sidebar-link" onclick="window.location.href='suscriptionpayment.php'">
+                                <i class="fas fa-gem"></i><span data-i18n="header_subscribe">Suscribirse</span>
+                            </button>
+                        </div>
+                        <div class="module-sidebar-section">
+                            <div class="module-sidebar-section-title" data-i18n="sidebar_documentation">Documentación</div>
+                            <a class="module-sidebar-link" href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank">
+                                <i class="fas fa-play-circle"></i><span data-i18n="header_tutorials">Tutoriales</span>
+                            </a>
+                            <a class="module-sidebar-link" href="UCLToolManualDelUsuario2025.pdf" target="_blank">
+                                <i class="fas fa-book-open"></i><span data-i18n="header_manual">Manual</span>
+                            </a>
+                        </div>
+                        <div class="module-sidebar-section">
+                            <button type="button" class="module-sidebar-link" onclick="window.location.href='closetaskscon.php'">
+                                <i class="fas fa-right-from-bracket"></i><span data-i18n="sidebar_exit">Salir</span>
+                            </button>
+                        </div>
                     </nav>
                 </aside>
                 <div class="module-main">
