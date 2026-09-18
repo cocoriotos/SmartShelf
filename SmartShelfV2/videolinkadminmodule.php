@@ -43,10 +43,97 @@ include "header.php";
             min-height: 100vh;
         }
 
+        body.admin-module-page .header-action-group {
+            gap: 8px;
+        }
+
+        body.admin-module-page .header-action-btn {
+            padding: 6px 10px;
+            font-size: 0.78rem;
+        }
+
+        body.admin-module-page .header-action-btn.clear,
+        body.admin-module-page .header-action-btn.categories {
+            display: none;
+        }
+
         .admin-wrapper {
             max-width: 1180px;
             margin: 0 auto;
             padding: 32px 20px 64px;
+        }
+
+        .module-workspace {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .module-sidebar {
+            position: sticky;
+            top: 20px;
+            flex: 0 0 210px;
+            padding: 14px;
+            background: #032642;
+            border-radius: 18px;
+            box-shadow: 0 16px 32px rgba(3, 38, 66, 0.16);
+        }
+
+        .module-sidebar-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 34px;
+            margin-bottom: 12px;
+            border: 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .module-sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .module-sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 11px 12px;
+            border: 0;
+            border-radius: 10px;
+            background: transparent;
+            color: #ffffff;
+            text-align: left;
+            font-size: 0.86rem;
+            cursor: pointer;
+        }
+
+        .module-sidebar-link:hover,
+        .module-sidebar-link.active {
+            background: #25d366;
+        }
+
+        .module-sidebar.collapsed {
+            flex-basis: 66px;
+        }
+
+        .module-sidebar.collapsed .module-sidebar-link span {
+            display: none;
+        }
+
+        .module-main {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .module-view.is-hidden {
+            display: none;
         }
 
         .section-card {
@@ -357,6 +444,26 @@ include "header.php";
             .section-heading {
                 font-size: 1.75rem;
             }
+
+            .module-workspace {
+                flex-direction: column;
+            }
+
+            .module-sidebar {
+                position: static;
+                width: 100%;
+                flex-basis: auto;
+            }
+
+            .module-sidebar-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .module-sidebar-link {
+                width: auto;
+                flex: 1 1 150px;
+            }
         }
     </style>
     <script>
@@ -366,6 +473,9 @@ include "header.php";
                 add_link_subtitle: 'Guarda y organiza contenido útil con el diseño de SmartShelf.',
                 useful_contents: 'Tus Contenidos Útiles',
                 search_placeholder: 'Buscar...',
+                sidebar_add: 'Adicionar Enlace',
+                sidebar_search: 'Buscar Contenido',
+                sidebar_categories: 'Categorías',
                 sort_by: 'Ordenar por',
                 sort_date: 'Fecha',
                 sort_category: 'Categoría',
@@ -406,6 +516,9 @@ include "header.php";
                 add_link_subtitle: 'Save and organize useful content with the SmartShelf design.',
                 useful_contents: 'Your Useful Contents',
                 search_placeholder: 'Search...',
+                sidebar_add: 'Add Link',
+                sidebar_search: 'Search Content',
+                sidebar_categories: 'Categories',
                 sort_by: 'Sort by',
                 sort_date: 'Date',
                 sort_category: 'Category',
@@ -446,6 +559,9 @@ include "header.php";
                 add_link_subtitle: 'Salve e organize conteúdo útil com o design do SmartShelf.',
                 useful_contents: 'Seus Conteúdos Úteis',
                 search_placeholder: 'Buscar...',
+                sidebar_add: 'Adicionar Link',
+                sidebar_search: 'Buscar Conteúdo',
+                sidebar_categories: 'Categorias',
                 sort_by: 'Ordenar por',
                 sort_date: 'Data',
                 sort_category: 'Categoria',
@@ -505,6 +621,9 @@ include "header.php";
             updateText('#label-proforpers', 'content');
             updateText('#label-description', 'description');
             updateText('#support-label', 'support');
+            document.querySelectorAll('[data-i18n="sidebar_add"]').forEach(el => el.textContent = t('sidebar_add'));
+            document.querySelectorAll('[data-i18n="sidebar_search"]').forEach(el => el.textContent = t('sidebar_search'));
+            document.querySelectorAll('[data-i18n="sidebar_categories"]').forEach(el => el.textContent = t('sidebar_categories'));
 
             const mainCategoryPlaceholder = document.querySelector('#maincategory option[data-i18n="select_category"]');
             const subCategoryPlaceholder = document.querySelector('#category option[data-i18n="select_subcategory"]');
@@ -574,9 +693,27 @@ include "header.php";
 <body id="bodyadminmodule" class="admin-module-page">
     <div class="admin-wrapper">
         <div class="container-fluid p-0">
+            <div class="module-workspace">
+                <aside class="module-sidebar" id="module-sidebar">
+                    <button type="button" class="module-sidebar-toggle" aria-label="Menu" onclick="toggleModuleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <nav class="module-sidebar-nav">
+                        <button type="button" class="module-sidebar-link active" data-view="add-link" onclick="showModuleView('add-link', this)">
+                            <i class="fas fa-plus-circle"></i><span data-i18n="sidebar_add">Adicionar Enlace</span>
+                        </button>
+                        <button type="button" class="module-sidebar-link" data-view="search-content" onclick="showModuleView('search-content', this)">
+                            <i class="fas fa-search"></i><span data-i18n="sidebar_search">Buscar Contenido</span>
+                        </button>
+                        <button type="button" class="module-sidebar-link" onclick="window.location.href='addcategory.php'">
+                            <i class="fas fa-folder-tree"></i><span data-i18n="sidebar_categories">Categorías</span>
+                        </button>
+                    </nav>
+                </aside>
+                <div class="module-main">
             <div class="row justify-content-start" style="width: 100%;">
                 <!-- Formulario para Adicionar Enlaces -->
-                <div class="col-md-12">
+                <div class="col-md-12 module-view" data-view-panel="add-link">
                     <div class="section-card hero-card" id="card-body">
                         <form action="savelinks.php" method="POST">
                             <div class="lang-switcher">
@@ -653,7 +790,7 @@ include "header.php";
                 </div>
 
                 <!-- Sección de "Tus Contenidos Útiles" -->
-                <div class="col-md-12">
+                <div class="col-md-12 module-view is-hidden" data-view-panel="search-content">
                     <div class="search-section"><?php include("search.php") ?></div> <!-- Incluir el buscador -->
                     <div class="section-card">
                         <div class="section-heading" id="heading-useful-contents">Tus Contenidos Útiles</div>
@@ -702,6 +839,8 @@ include "header.php";
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Botón de WhatsApp -->
@@ -709,9 +848,26 @@ include "header.php";
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         <span id="support-label">Soporte</span>
     </a>
-    </div>
 
 <script>
+    function toggleModuleSidebar() {
+        document.getElementById('module-sidebar').classList.toggle('collapsed');
+    }
+
+    function showModuleView(viewName, selectedButton) {
+        document.querySelectorAll('[data-view-panel]').forEach(panel => {
+            panel.classList.toggle('is-hidden', panel.dataset.viewPanel !== viewName);
+        });
+
+        document.querySelectorAll('.module-sidebar-link[data-view]').forEach(button => {
+            button.classList.toggle('active', button === selectedButton);
+        });
+
+        if (viewName === 'search-content' && window.searchCards) {
+            window.searchCards();
+        }
+    }
+
     function getSubcategories(maincategory) {
         if (maincategory == "") {
             document.getElementById("category").innerHTML = "<option value=''>Seleccione una subcategoría</option>";
