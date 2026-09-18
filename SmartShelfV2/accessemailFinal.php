@@ -10,7 +10,7 @@ $captcha_input = $_POST["captcha"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar que los campos existan
-    if (!isset($_POST["Name"]) || !isset($_POST["LastName"]) || !isset($_POST["Email"]) || !isset($_POST["Country"]) || !isset($_POST["City"]) || !isset($_POST["password1"]) || !isset($_POST["captcha"])) {
+    if (!isset($_POST["Name"]) || !isset($_POST["LastName"]) || !isset($_POST["Email"]) || !isset($_POST["Country"]) || !isset($_POST["City"]) || !isset($_POST["phone"]) || !isset($_POST["password1"]) || !isset($_POST["captcha"])) {
         echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
         echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -89,6 +89,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST['Email']);
     $country = mysqli_real_escape_string($conn, $_POST['Country']);
     $city = mysqli_real_escape_string($conn, $_POST['City']);
+    $phone = trim($_POST['phone']);
+    if ($phone === '' || !preg_match('/^[0-9]+$/', $phone)) {
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Mensaje',
+                    text: 'El número telefónico debe contener solo números.',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                }).then(() => {
+                    window.location.href = 'requestaccessfinal.php';
+                });
+            });
+        </script>";
+        exit();
+    }
+    $phone = mysqli_real_escape_string($conn, $phone);
     /*$password = password_hash($_POST['password1'], PASSWORD_DEFAULT);*/
     $password = mysqli_real_escape_string($conn, $_POST['password1']);
 
@@ -120,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO videotips_accessrequests (name, lastname, email, country, city, password,processed,granted) VALUES ('$name', '$lastname', '$email', '$country', '$city','$password','Yes','Yes')";
         $result = $conn->query($query);
 
-        $query1 = "INSERT INTO videotips_app_access_list (name,lastname, username, email, password, role, active, adm_role, suscriptionactive, terms_conditions_awareness,suscriptionkind,lastsuscriptionpaymentdate,suscriptiondaysleft,trialdaysleft) VALUES ('$name', '$lastname', '$email', '$email', '$password', 'user', 1, 0, 1, 'Yes','Trial',CURDATE(),0,0)";
+        $query1 = "INSERT INTO videotips_app_access_list (name,lastname, username, email, phone, password, role, active, adm_role, suscriptionactive, terms_conditions_awareness,suscriptionkind,lastsuscriptionpaymentdate,suscriptiondaysleft,trialdaysleft) VALUES ('$name', '$lastname', '$email', '$email', '$phone', '$password', 'user', 1, 0, 1, 'Yes','Trial',CURDATE(),0,0)";
         $result1 = $conn->query($query1);
 
         $query2 = "INSERT INTO videotips_suscription_payments (username, active, freeregistrationdate) SELECT email, active, registrationdate from videotips_app_access_list where username = '$email'";
