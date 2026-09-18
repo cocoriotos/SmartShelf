@@ -43,6 +43,10 @@ include "header.php";
             min-height: 100vh;
         }
 
+        body.admin-module-page {
+            --welcome-bottom: 48px;
+        }
+
         body.admin-module-page .header-action-group {
             display: none;
         }
@@ -59,11 +63,11 @@ include "header.php";
 
         .module-sidebar {
             position: fixed;
-            top: 96px;
+            top: var(--welcome-bottom);
             left: 0;
             z-index: 1100;
             width: 68px;
-            height: calc(100vh - 96px);
+            height: calc(100vh - var(--welcome-bottom));
             overflow-y: auto;
             padding: 14px;
             background: #032642;
@@ -489,9 +493,9 @@ include "header.php";
             }
 
             .module-sidebar {
-                top: 96px;
+                top: var(--welcome-bottom);
                 width: 68px;
-                height: calc(100vh - 96px);
+                height: calc(100vh - var(--welcome-bottom));
             }
 
             .module-sidebar-nav {
@@ -928,6 +932,18 @@ include "header.php";
     </a>
 
 <script>
+    function alignSidebarToWelcome() {
+        const welcomeNav = document.querySelector('nav#welcome');
+        if (!welcomeNav) return;
+
+        const welcomeBottom = Math.ceil(welcomeNav.getBoundingClientRect().bottom);
+        document.documentElement.style.setProperty('--welcome-bottom', `${welcomeBottom}px`);
+    }
+
+    alignSidebarToWelcome();
+    window.addEventListener('load', alignSidebarToWelcome);
+    window.addEventListener('resize', alignSidebarToWelcome);
+
     function toggleModuleSidebar() {
         const sidebar = document.getElementById('module-sidebar');
         const workspace = document.querySelector('.module-workspace');
