@@ -58,16 +58,19 @@ include "header.php";
         }
 
         .module-workspace {
+            position: relative;
             display: block;
+            min-height: calc(100vh - var(--welcome-bottom));
         }
 
         .module-sidebar {
-            position: fixed;
-            top: var(--welcome-bottom);
+            position: absolute;
+            top: 0;
             left: 0;
             z-index: 1100;
             width: 68px;
-            height: calc(100vh - var(--welcome-bottom));
+            min-height: calc(100vh - var(--welcome-bottom));
+            height: 100%;
             overflow-y: auto;
             padding: 14px;
             background: #032642;
@@ -151,8 +154,16 @@ include "header.php";
             width: 240px;
         }
 
+        .module-sidebar.collapsed:hover {
+            width: 240px;
+        }
+
         .module-sidebar.collapsed .module-sidebar-link span {
             display: none;
+        }
+
+        .module-sidebar.collapsed:hover .module-sidebar-link span {
+            display: inline;
         }
 
         .module-sidebar.collapsed .module-sidebar-section-title {
@@ -163,6 +174,12 @@ include "header.php";
             justify-content: center;
             padding-left: 8px;
             padding-right: 8px;
+        }
+
+        .module-sidebar.collapsed:hover .module-sidebar-link {
+            justify-content: flex-start;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         .module-main {
@@ -493,9 +510,9 @@ include "header.php";
             }
 
             .module-sidebar {
-                top: var(--welcome-bottom);
                 width: 68px;
-                height: calc(100vh - var(--welcome-bottom));
+                min-height: calc(100vh - var(--welcome-bottom));
+                height: 100%;
             }
 
             .module-sidebar-nav {
