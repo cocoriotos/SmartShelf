@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SmartShelf — Tu Biblioteca Digital Inteligente</title>
-<link rel="icon" href="SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/>
+<title>G O R A — Tu Biblioteca Digital Inteligente</title>
+<link rel="icon" href="GORA.ico"/>
+<!-- <link rel="icon" href="SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/> -->
 <link rel="stylesheet" href="smartshelf.css"/>
 </head>
 <body>
@@ -12,7 +13,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="smartshelf-logo.png" alt="SmartShelf"/>
+    <img src="GORAArmony9192026.png" alt="SmartShelf"/>
   </a>
   <ul class="nav-links">
     <li><a href="#features" data-i18n="nav_features">Características</a></li>
@@ -61,7 +62,7 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-orb"></div>
   <div class="hero-content">
-    <div class="hero-badge fu fu1" data-i18n="hero_badge">✦ Tu biblioteca digital personal</div>
+    <div class="hero-badge fu fu1" data-i18n="hero_badge">✦ Tu biblioteca digital personal | De Pereira para el mundo </div>
     <h1 class="hero-title fu fu2">
       <span data-i18n="hero_title_1">Guarda, Organiza</span><br>
       <em data-i18n="hero_title_2">y Encuentra</em>
@@ -90,7 +91,7 @@
       </div>
       <div class="b-body">
         <div class="a-side">
-          <div class="a-logo-sm">SmartShelf</div>
+          <div class="a-logo-sm">G O R A</div>
           <div class="a-cat-lbl" data-i18n="mock_cats">Categorías</div>
           <div class="a-cat on"><span class="a-dot"></span><span data-i18n="mock_all">Todo</span></div>
           <div class="a-cat"><span class="a-dot"></span>YouTube</div>
@@ -139,7 +140,7 @@
       </ul>
     </div>
     <div class="sol-card reveal">
-      <h3 class="sol-title" data-i18n="sol_title">SmartShelf lo resuelve todo</h3>
+      <h3 class="sol-title" data-i18n="sol_title">G O R A lo resuelve todo</h3>
       <p class="sol-desc" data-i18n="sol_desc">Un solo lugar para guardar cualquier enlace de internet. Categorizado, buscable y accesible desde cualquier dispositivo.</p>
       <div class="sol-feature"><span class="sol-check">✓</span><span data-i18n="sol_f1">Guarda links de YouTube, LinkedIn, Drive, o cualquier URL pública</span></div>
       <div class="sol-feature"><span class="sol-check">✓</span><span data-i18n="sol_f2">Categorías y subcategorías personalizadas por ti</span></div>
@@ -155,7 +156,7 @@
   <div class="tc">
     <div class="s-tag" data-i18n="feat_tag">Características</div>
     <h2 class="s-title" data-i18n="feat_title">Todo lo que necesitas para organizar tu conocimiento</h2>
-    <p class="s-sub" data-i18n="feat_sub">SmartShelf fue diseñado para que guardar y encontrar contenido sea simple, rápido y sin fricción.</p>
+    <p class="s-sub" data-i18n="feat_sub">G O R A fue diseñada para que guardar y encontrar contenido sea simple, rápido y sin fricción.</p>
   </div>
   <div class="feat-grid">
     <div class="feat-card reveal"><div class="feat-ico">🗂️</div><div class="feat-title" data-i18n="f1_title">Organización Inteligente</div><div class="feat-desc" data-i18n="f1_desc">Crea categorías y subcategorías completamente personalizadas para clasificar tus contenidos exactamente como tú lo necesitas.</div></div>
@@ -186,10 +187,10 @@
   <div class="tc">
     <div class="s-tag" data-i18n="video_tag">Demo</div>
     <h2 class="s-title" data-i18n="video_title">Míralo en acción</h2>
-    <p class="s-sub" data-i18n="video_sub">En menos de 3 minutos verás exactamente cómo SmartShelf puede cambiar la forma en que gestionas tu información.</p>
+    <p class="s-sub" data-i18n="video_sub">En menos de 3 minutos verás exactamente cómo G O R A puede cambiar la forma en que gestionas tu información.</p>
   </div>
   <div class="video-wrap reveal">
-    <iframe src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0&modestbranding=1" title="SmartShelf Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0&modestbranding=1" title="G O R A Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <p class="video-caption" data-i18n="video_caption">¿Tienes preguntas? Escríbenos por <a href="https://wa.me/573117592209" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">WhatsApp</a> y te ayudamos.</p>
 </section>
@@ -257,10 +258,10 @@
     <p class="s-sub" data-i18n="testi_sub">Personas reales que transformaron cómo gestionan su contenido digital.</p>
   </div>
   <div class="testi-grid">
-    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t1_text">Si no quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando los necesites. Su buscador es increíble.</p><div class="t-author"><div class="t-avatar">SO</div><div><div class="t-name">Sandra Ojeda</div><div class="t-handle" data-i18n="t_user">Usuaria SmartShelf</div></div></div></div>
-    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t2_text">Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes. Una herramienta que uso todos los días.</p><div class="t-author"><div class="t-avatar">MJ</div><div><div class="t-name">María José Ospino</div><div class="t-handle" data-i18n="t_user">Usuaria SmartShelf</div></div></div></div>
-    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t3_text">Una biblioteca digital personal y fácil de usar. La función de búsqueda es imprescindible para cualquier persona que maneje un volumen considerable de contenidos digitales.</p><div class="t-author"><div class="t-avatar">CZ</div><div><div class="t-name">Carol Zambrano</div><div class="t-handle" data-i18n="t_user">Usuaria SmartShelf</div></div></div></div>
-    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t4_text">Muy práctica para organizar tantos enlaces de internet, especialmente para buscarlos de una manera ágil y personalizada. La recomiendo ampliamente.</p><div class="t-author"><div class="t-avatar">OA</div><div><div class="t-name">Oscar Ariza</div><div class="t-handle" data-i18n="t_user2">Usuario SmartShelf</div></div></div></div>
+    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t1_text">Si no quieres enloquecer con tantos links de tu interés guardados por todos lados, esta app te ayuda a organizarlos y encontrarlos cuando los necesites. Su buscador es increíble.</p><div class="t-author"><div class="t-avatar">SO</div><div><div class="t-name">Sandra Ojeda</div><div class="t-handle" data-i18n="t_user">Usuaria G O R A</div></div></div></div>
+    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t2_text">Permite guardar de forma ordenada y segura los links de acceso de las páginas importantes. Una herramienta que uso todos los días.</p><div class="t-author"><div class="t-avatar">MJ</div><div><div class="t-name">María José Ospino</div><div class="t-handle" data-i18n="t_user">Usuaria G O R A</div></div></div></div>
+    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t3_text">Una biblioteca digital personal y fácil de usar. La función de búsqueda es imprescindible para cualquier persona que maneje un volumen considerable de contenidos digitales.</p><div class="t-author"><div class="t-avatar">CZ</div><div><div class="t-name">Carol Zambrano</div><div class="t-handle" data-i18n="t_user">Usuaria G O R A</div></div></div></div>
+    <div class="t-card reveal"><div class="t-q">"</div><div class="t-stars">★★★★★</div><p class="t-text" data-i18n="t4_text">Muy práctica para organizar tantos enlaces de internet, especialmente para buscarlos de una manera ágil y personalizada. La recomiendo ampliamente.</p><div class="t-author"><div class="t-avatar">OA</div><div><div class="t-name">Oscar Ariza</div><div class="t-handle" data-i18n="t_user2">Usuario G O R A</div></div></div></div>
   </div>
 </section>
 
@@ -268,7 +269,7 @@
 <section id="cta">
   <div class="trial-badge" data-i18n="cta_badge">✦ Sin tarjeta de crédito · Sin compromisos</div>
   <h2 class="cta-title" data-i18n="cta_title">Deja de perder links.<br>Empieza hoy, gratis.</h2>
-  <p class="cta-sub" data-i18n="cta_sub">30 días para explorar todo SmartShelf sin restricciones. Tu conocimiento merece un mejor hogar.</p>
+  <p class="cta-sub" data-i18n="cta_sub">30 días para explorar todo G O R A sin restricciones. Tu conocimiento merece un mejor hogar.</p>
   <div class="cta-btns">
     <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-i18n="cta_btn1">Crear mi cuenta gratis ›</a>
     <a href="https://wa.me/573117592209" target="_blank" rel="noopener" class="btn-outline-lg">
