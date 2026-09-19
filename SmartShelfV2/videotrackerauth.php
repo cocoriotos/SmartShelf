@@ -42,7 +42,7 @@
                 <a id="ayuda" href="UCLToolManualDelUsuario2025.pdf" target="_blank">Manual del Usuario</a>-->
             </div> 
             <div class="login-header">
-                <img src="GORAarmoniy.png" alt="GORA Logo" class="logo">
+                <img src="GORAarmony.png" alt="GORA Logo" class="logo">
                 <h1 data-i18n="auth_title">Biblioteca de Contenidos Útiles</h1>
             </div>
             <form id="login" action="access_success_Tasks_final.php" method="POST" autocomplete="off">
