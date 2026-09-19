@@ -13,7 +13,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <img src="GORAarmony.png" alt="G O R A"/>
+    <img src="GORA.ico" alt="G O R A"/>
   </a>
   <ul class="nav-links">
     <li><a href="#features" data-i18n="nav_features">Características</a></li>
