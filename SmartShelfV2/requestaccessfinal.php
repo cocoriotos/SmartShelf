@@ -24,7 +24,7 @@
 
         <!-- Encabezado del formulario -->
         <div class="login-header">
-            <img src="GORAarmony.ico" alt="GORA Logo" class="logo">
+            <img src="GORAarmony.png" alt="GORA Logo" class="logo">
             <h1 data-i18n="req_title">Solicitud de Acceso</h1>
         </div>
 
