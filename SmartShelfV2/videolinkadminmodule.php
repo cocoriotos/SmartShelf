@@ -1108,9 +1108,13 @@ function sortCards(sortKey) {
     });
 
     moduleCards.forEach(card => cardGrid.appendChild(card));
-    moduleCurrentIndex = 0;
-    moduleCards.forEach(card => card.style.display = 'none');
-    loadMoreModuleCards();
+    if (window.searchCards) {
+        window.searchCards();
+    } else {
+        moduleCurrentIndex = 0;
+        moduleCards.forEach(card => card.style.display = 'none');
+        loadMoreModuleCards();
+    }
 }
 
 function loadMoreModuleCards() {
@@ -1127,13 +1131,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cardSort) {
         cardSort.addEventListener('change', () => sortCards(cardSort.value));
         sortCards(cardSort.value);
-    } else {
+    } else if (!window.searchCards) {
         loadMoreModuleCards(); // Mostrar el primer bloque
     }
 });
 
 window.addEventListener("scroll", () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+    if (!window.searchCards && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
         loadMoreModuleCards();
     }
 });
