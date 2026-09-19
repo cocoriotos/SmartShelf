@@ -54,7 +54,7 @@ include "header.php";
         .admin-wrapper {
             max-width: none;
             margin: 0;
-            padding: 32px 20px 64px;
+            padding: 0 20px 64px 0;
         }
 
         .module-workspace {
@@ -498,7 +498,7 @@ include "header.php";
 
         @media (max-width: 768px) {
             .admin-wrapper {
-                padding: 24px 16px 48px 90px;
+                padding: 0 16px 48px 0;
             }
 
             .section-heading {

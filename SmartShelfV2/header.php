@@ -76,5 +76,4 @@ $name = $_SESSION['name'];
       window.addEventListener('languageChanged', updateHeaderLang);
     </script>
 	</header>
-  <br>
     </html>
