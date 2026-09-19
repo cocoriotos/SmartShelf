@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Acceso - SmartShelf</title>
-    <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+    <title>Solicitud de Acceso - C O R A</title>
+    <link rel="icon" href="GORA.ico" type="image/x-icon">
     <script src="head.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style_sheet_auth.css?v=20260917">
@@ -24,7 +24,7 @@
 
         <!-- Encabezado del formulario -->
         <div class="login-header">
-            <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
+            <img src="GORAarmony.ico" alt="GORA Logo" class="logo">
             <h1 data-i18n="req_title">Solicitud de Acceso</h1>
         </div>
 
