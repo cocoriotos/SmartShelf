@@ -7,8 +7,8 @@
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - SmartShelf</title>
-        <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+        <title>Login - G O R A</title>
+        <link rel="icon" href="GORA.ico" type="image/x-icon">
         <script src="head.js?v=<?php echo time(); ?>" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="style_sheet_auth.css?v=<?php echo time(); ?>">
@@ -42,7 +42,7 @@
                 <a id="ayuda" href="UCLToolManualDelUsuario2025.pdf" target="_blank">Manual del Usuario</a>-->
             </div> 
             <div class="login-header">
-                <img src="SmartShelfUsefulContentLibraryDarrkLightGreen.ico" alt="SmartShelf Logo" class="logo">
+                <img src="GORA.ico" alt="GORA Logo" class="logo">
                 <h1 data-i18n="auth_title">Biblioteca de Contenidos Útiles</h1>
             </div>
             <form id="login" action="access_success_Tasks_final.php" method="POST" autocomplete="off">

@@ -15,7 +15,8 @@
 <head>
     <script src="head.js" defer></script>
     <script src="categorytoclipboard.js" defer></script>
-    <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+    <link rel="icon" href="GORA.ico" type="image/x-icon">
+    <!--<link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">-->
     <link rel="stylesheet" href="style_sheet_ops.css" />
     <script src="Popper/popper.min.js"></script>
     <script src="plugins/sweetalert/sweetalert.min.js"></script>
@@ -46,20 +47,23 @@
         .admin-wrapper {
             max-width: none;
             margin: 0;
-            padding: 32px 20px 64px;
+            padding: 0 20px 64px 0;
         }
 
         .module-workspace {
+            position: relative;
             display: block;
+            min-height: calc(100vh - var(--welcome-bottom));
         }
 
         .module-sidebar {
-            position: fixed;
-            top: var(--welcome-bottom);
+            position: absolute;
+            top: 0;
             left: 0;
             z-index: 1100;
             width: 68px;
-            height: calc(100vh - var(--welcome-bottom));
+            min-height: calc(100vh - var(--welcome-bottom));
+            height: 100%;
             overflow-y: auto;
             padding: 14px;
             background: #032642;
@@ -69,6 +73,10 @@
         }
 
         .module-sidebar:not(.collapsed) {
+            width: 240px;
+        }
+
+        .module-sidebar.collapsed:hover {
             width: 240px;
         }
 
@@ -133,10 +141,20 @@
             display: none;
         }
 
+        .module-sidebar.collapsed:hover .module-sidebar-link span {
+            display: inline;
+        }
+
         .module-sidebar.collapsed .module-sidebar-link {
             justify-content: center;
             padding-left: 8px;
             padding-right: 8px;
+        }
+
+        .module-sidebar.collapsed:hover .module-sidebar-link {
+            justify-content: flex-start;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         .module-main {
@@ -156,7 +174,7 @@
         .admin-wrapper {
             max-width: none;
             margin: 0;
-            padding: 32px 20px 64px;
+            padding: 0 20px 64px 0;
         }
 
         .section-card {
@@ -321,12 +339,12 @@
 
         @media (max-width: 768px) {
             .admin-wrapper {
-                padding: 24px 16px 48px 90px;
+                padding: 0 16px 48px 0;
             }
 
             .module-sidebar {
-                top: var(--welcome-bottom);
-                height: calc(100vh - var(--welcome-bottom));
+                min-height: calc(100vh - var(--welcome-bottom));
+                height: 100%;
             }
 
             .module-main {
