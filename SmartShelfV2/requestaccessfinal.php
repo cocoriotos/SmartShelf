@@ -68,6 +68,12 @@
             <input type="text" name="captcha" data-i18n-placeholder="req_captcha" placeholder="Ingrese el CAPTCHA" required>
             <div class="terms">
                 <input type="checkbox" id="terms" onclick="toggleSubmitButton()" required>
+
+            <p class="contact-email-line">
+                <span data-i18n="req_contact_email">Acepto los:</span>
+                <a for="terms" href="TermsConditions.php" style="color: var(--accent); text-decoration: underline;">términos y condiciones.com</a>
+            </p>
+
                 <label for="terms" data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank" class="terms-link">términos y condiciones</a></label>
             </div>
             <button type="submit" class="btn-login" id="loginbutton" data-i18n="req_send" disabled>Enviar</button>
