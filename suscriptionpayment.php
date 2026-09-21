@@ -21,8 +21,137 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
 //$local_username = $_SESSION['email']; // Obtener el email del usuario desde la sesión
 ?>
 <head>
-  <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+  <link rel="icon" href="GORA.ico" type="image/x-icon">
   <link rel="stylesheet" href="style_sheet.css"/>
+	<style>
+    body#bodyadminmodule {
+      --welcome-bottom: 48px;
+      margin: 0;
+    }
+
+    .subscription-actions {
+      display: none !important;
+    }
+
+    .subscription-workspace {
+      position: relative;
+      min-height: calc(100vh - var(--welcome-bottom));
+      padding: 0 20px 64px 90px;
+    }
+
+    .subscription-sidebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      width: 68px;
+      min-height: calc(100vh - var(--welcome-bottom));
+      height: 100%;
+      overflow-y: auto;
+      padding: 14px;
+      background: #032642;
+      box-shadow: 0 16px 32px rgba(3, 38, 66, 0.16);
+      transition: width 0.2s ease;
+    }
+
+    .subscription-sidebar:not(.collapsed),
+    .subscription-sidebar.collapsed:hover {
+      width: 240px;
+    }
+
+    .subscription-sidebar-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 34px;
+      margin-bottom: 12px;
+      border: 0;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .subscription-sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .subscription-sidebar-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: #fff;
+      font-size: 1rem;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .subscription-sidebar-link:hover {
+      background: #25d366;
+    }
+
+    .subscription-sidebar-link i {
+      flex: 0 0 24px;
+      width: 24px;
+      color: #fff;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    .subscription-sidebar.collapsed .subscription-sidebar-link span {
+      display: none;
+    }
+
+    .subscription-sidebar.collapsed:hover .subscription-sidebar-link span {
+      display: inline;
+    }
+
+    .subscription-sidebar.collapsed .subscription-sidebar-link {
+      justify-content: center;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    .subscription-sidebar.collapsed:hover .subscription-sidebar-link {
+      justify-content: flex-start;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .subscription-sidebar-section {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .subscription-sidebar-title {
+      padding: 0 12px 6px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .subscription-sidebar.collapsed .subscription-sidebar-title {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .subscription-workspace {
+        padding-left: 90px;
+      }
+    }
+
+    </style>
 	<script src="Popper/popper.min.js"></script>
 	<script src="plugins/sweetalert/sweetalert.min.js"></script>
 	<script src="plugins/alertifyjs/alertify.min.js"></script>
@@ -37,7 +166,50 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
     <script src="copypaypal.js"></script>
 </header>  	
 <body id="bodyadminmodule">
-          <br><br>
+  <div class="subscription-workspace">
+    <aside class="subscription-sidebar collapsed" id="subscription-sidebar">
+      <button type="button" class="subscription-sidebar-toggle" aria-label="Menu" onclick="toggleSubscriptionSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="subscription-sidebar-nav">
+        <!--<a class="subscription-sidebar-link" href="videolinkadminmodule.php">
+          <i class="fas fa-plus-circle"></i><span>Adicionar Enlace</span>
+        </a>
+        <a class="subscription-sidebar-link" href="addcategory.php">
+          <i class="fas fa-folder-tree"></i><span>Categorías</span>
+        </a>-->
+        <div class="subscription-sidebar-section">
+          <div class="subscription-sidebar-title">Medios de Pago de Suscripción</div>
+          <button type="button" class="subscription-sidebar-link" onclick="copiarPaypal()">
+            <i class="fab fa-paypal"></i><span>Copiar cuenta Paypal: YSXRZMT2AAG4G</span>
+          </button>
+          <button type="button" class="subscription-sidebar-link" onclick="window.open('https://www.paypal.com/', '_blank')">
+            <i class="fas fa-external-link-alt"></i><span>Ir a Paypal</span>
+          </button>
+          <button type="button" class="subscription-sidebar-link" onclick="copiarNumero()">
+            <i class="fas fa-mobile-alt"></i><span>Copiar númeroNequi: 3054293185</span>
+          </button>
+          <button type="button" class="subscription-sidebar-link" onclick="window.open('https://clientes.nequi.com.co/recargas', '_blank')">
+            <i class="fas fa-external-link-alt"></i><span>Ir a Nequi</span>
+          </button>
+        </div>
+        <div class="subscription-sidebar-section">
+          <div class="subscription-sidebar-title">Documentación</div>
+          <a class="subscription-sidebar-link" href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank">
+            <i class="fas fa-play-circle"></i><span>Tutoriales</span>
+          </a>
+          <a class="subscription-sidebar-link" href="UCLToolManualDelUsuario2025.pdf" target="_blank">
+            <i class="fas fa-book-open"></i><span>Manual</span>
+          </a>
+        </div>
+        <div class="subscription-sidebar-section">
+          <a class="subscription-sidebar-link" href="closetaskscon.php">
+            <!--<i class="fas fa-right-from-bracket"></i><span>Salir</span>-->
+            <i class="fas fa-right-from-bracket"></i><span data-i18n="sidebar_exit">Salir</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
   <div class="container1">
       <div class="column-wrap clearfix">
             <div class="col-xs-12">
@@ -59,7 +231,8 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     <center><p style="color: blue; font-weight: bold; font-size: 24px;"> Condiciones </p></center>
                     <br>
                     <p> 1. No incluir información sensitiva ni personal. No nos hacemos responsables del salvaguardar o uso de su información por terceros</p>
-                    <p> 2. Tratamiento de los datos bajo la modalidad de Habeas Data</p>
+                    <!-- <p>  Habeas Data</p> -->
+                    <p>2. Tratamiento de los datos bajo la modalidad de <a href="HabeasData.pdf" target="_blank" style="color: var(--accent) !important; text-decoration: underline;">Habeas Data</a></p>
                     <p> 3. No nos responsabilizamos por información que incite a la violencia física, psicológica, delitos informáticos o cualquier manifestación delictiva</p>
                     <p> 4. Opciones de valores por Suscripción: </p>
                     <p><span class="destacado">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$20.000</span> Pesos Colombianos COP por Tres Meses</p>
@@ -71,7 +244,7 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     <p> 1. Pago por Nequi al número +57 305 4293185 o PayPal al YSXRZMT2AAG4G.</p> 
                     <p> 2. Tomar una imagen por cada uno de los pagos realizados y convertirlas a formato PDF</p>
                     <p> 3. Al realizar el pago dar click en el botón de abajo para enviar correo el archivo PDF o una imagen del pago realizado.</p>
-                    <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 3054293185</p>
+                    <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 311 7592209</p>
 				        </div>
           </div>
           </center>
@@ -124,7 +297,26 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                 <!--<center><input type="submit" class="btn btn-success btn-block" name="save_link" value="Agregar Constancia de Pago"></input></center>-->
         </div>
   </div>
+</div>
 </body>
+
+<script>
+  function alignSubscriptionSidebar() {
+    const welcomeNav = document.querySelector('nav#welcome');
+    if (!welcomeNav) return;
+
+    const welcomeBottom = Math.ceil(welcomeNav.getBoundingClientRect().bottom);
+    document.documentElement.style.setProperty('--welcome-bottom', `${welcomeBottom}px`);
+  }
+
+  function toggleSubscriptionSidebar() {
+    document.getElementById('subscription-sidebar').classList.toggle('collapsed');
+  }
+
+  alignSubscriptionSidebar();
+  window.addEventListener('load', alignSubscriptionSidebar);
+  window.addEventListener('resize', alignSubscriptionSidebar);
+</script>
 
 <?php
 if ($suscriptiondue == 1) {

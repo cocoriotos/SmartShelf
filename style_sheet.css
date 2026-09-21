@@ -158,6 +158,8 @@ ul {
   padding: 10px; /* Control padding */
   text-align: center;
 }
+
+
 /*----*/
 /* Estilos para los botones */
 /*.btn {
@@ -226,7 +228,7 @@ table tr:hover {
 /* Estilos para los iconos */
 .fas {
   cursor: pointer;
-  color: black;
+  color: white;
   transition: color 0.3s ease;
 }
 
