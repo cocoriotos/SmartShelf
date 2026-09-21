@@ -231,7 +231,8 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     <center><p style="color: blue; font-weight: bold; font-size: 24px;"> Condiciones </p></center>
                     <br>
                     <p> 1. No incluir información sensitiva ni personal. No nos hacemos responsables del salvaguardar o uso de su información por terceros</p>
-                    <p> 2. Tratamiento de los datos bajo la modalidad de Habeas Data</p>
+                    <p>  Habeas Data</p>
+                    <label >2. Tratamiento de los datos bajo la modalidad de <a href="HabeasData.pdf" target="_blank" style="color: var(--accent) !important; text-decoration: underline;">términos y condiciones</a></label>
                     <p> 3. No nos responsabilizamos por información que incite a la violencia física, psicológica, delitos informáticos o cualquier manifestación delictiva</p>
                     <p> 4. Opciones de valores por Suscripción: </p>
                     <p><span class="destacado">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$20.000</span> Pesos Colombianos COP por Tres Meses</p>
@@ -243,7 +244,7 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     <p> 1. Pago por Nequi al número +57 305 4293185 o PayPal al YSXRZMT2AAG4G.</p> 
                     <p> 2. Tomar una imagen por cada uno de los pagos realizados y convertirlas a formato PDF</p>
                     <p> 3. Al realizar el pago dar click en el botón de abajo para enviar correo el archivo PDF o una imagen del pago realizado.</p>
-                    <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 3054293185</p>
+                    <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 311 7592209</p>
 				        </div>
           </div>
           </center>
