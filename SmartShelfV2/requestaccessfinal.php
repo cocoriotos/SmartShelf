@@ -82,7 +82,7 @@
             <p class="contact-question" data-i18n="req_questions">¿Alguna duda? Usa el Boton de WhatsApp</p>
             <p class="contact-email-line">
                 <span data-i18n="req_contact_email">Contáctenos al Email:</span>
-                <a href="mailto:adm@solicionespro.com" style="color: var(--accent); text-decoration: underline;">adm@solicionespro.com</a>
+                <a for="terms" href="mailto:adm@solicionespro.com" style="color: var(--accent); text-decoration: underline;">adm@solicionespro.com</a>
             </p>
         </form>
         </div>
