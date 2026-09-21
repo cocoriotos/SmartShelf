@@ -21,14 +21,6 @@
   --radius: 26px;
 }
 
-.terms a.terms-link {
-  color: var(--accent); /* O el color exacto que necesites, ej: #0056b3 */
-  text-decoration: underline; /* Opcional para que parezca enlace */
-}
-
-.terms a.terms-link:hover {
-  color: var(--t1); /* Color cuando pasen el mouse por encima */
-}
 
 *, *::before, *::after {
   margin: 0;
