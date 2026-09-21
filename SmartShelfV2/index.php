@@ -49,7 +49,7 @@
     Soporte
   </a>
   <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/videotrackerauth.php" target="_blank" rel="noopener" data-i18n="nav_login">Ingresar</a>
-  <a href="https://solicionespro.com/SmartShelf/SmartShelfV2requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" style="text-align:center;" data-i18n="nav_cta_free">Comenzar Gratis — 30 días</a>
+  <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" style="text-align:center;" data-i18n="nav_cta_free">Comenzar Gratis — 30 días</a>
   <div class="mob-lang">
     <button class="lb on" onclick="setLang('es');toggleMenu()">ES</button>
     <button class="lb" onclick="setLang('en');toggleMenu()">EN</button>
