@@ -226,7 +226,7 @@ table tr:hover {
 /* Estilos para los iconos */
 .fas {
   cursor: pointer;
-  color: black;
+  color: white;
   transition: color 0.3s ease;
 }
 
