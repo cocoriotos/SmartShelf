@@ -7,7 +7,7 @@
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - G O R A</title>
+        <title>Login - GORA</title>
         <link rel="icon" href="GORA.ico" type="image/x-icon">
         <script src="head.js?v=<?php echo time(); ?>" defer></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -73,7 +73,8 @@
                 <p class="contact-question" data-i18n="auth_questions">¿Alguna duda? Usa el Boton de WhatsApp</p>
                 <p class="contact-email-line">
                     <span data-i18n="auth_contact_email">Contáctenos al Email:</span>
-                    <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
+                    <a for="terms" href="mailto:adm@solicionespro.com" style="color: var(--accent); text-decoration: underline;">adm@solicionespro.com</a>
+                    <!--<a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>-->
                 </p>
             </form>
 
