@@ -21,7 +21,7 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
 //$local_username = $_SESSION['email']; // Obtener el email del usuario desde la sesión
 ?>
 <head>
-  <link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+  <link rel="icon" href="GORA.ico" type="image/x-icon">
   <link rel="stylesheet" href="style_sheet.css"/>
 	<style>
     body#bodyadminmodule {
@@ -69,7 +69,7 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
       border: 0;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.12);
-      color: #fff;
+      color: #ffffff;
       cursor: pointer;
     }
 
@@ -172,22 +172,22 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
         <i class="fas fa-bars"></i>
       </button>
       <nav class="subscription-sidebar-nav">
-        <a class="subscription-sidebar-link" href="videolinkadminmodule.php">
+        <!--<a class="subscription-sidebar-link" href="videolinkadminmodule.php">
           <i class="fas fa-plus-circle"></i><span>Adicionar Enlace</span>
         </a>
         <a class="subscription-sidebar-link" href="addcategory.php">
           <i class="fas fa-folder-tree"></i><span>Categorías</span>
-        </a>
+        </a>-->
         <div class="subscription-sidebar-section">
-          <div class="subscription-sidebar-title">Suscripción</div>
+          <div class="subscription-sidebar-title">Medios de Pago de Suscripción</div>
           <button type="button" class="subscription-sidebar-link" onclick="copiarPaypal()">
-            <i class="fab fa-paypal"></i><span>Paypal: YSXRZMT2AAG4G</span>
+            <i class="fab fa-paypal"></i><span>Copiar cuenta Paypal: YSXRZMT2AAG4G</span>
           </button>
           <button type="button" class="subscription-sidebar-link" onclick="window.open('https://www.paypal.com/', '_blank')">
             <i class="fas fa-external-link-alt"></i><span>Ir a Paypal</span>
           </button>
           <button type="button" class="subscription-sidebar-link" onclick="copiarNumero()">
-            <i class="fas fa-mobile-alt"></i><span>Nequi: 3117592209</span>
+            <i class="fas fa-mobile-alt"></i><span>Copiar númeroNequi: 3054293185</span>
           </button>
           <button type="button" class="subscription-sidebar-link" onclick="window.open('https://clientes.nequi.com.co/recargas', '_blank')">
             <i class="fas fa-external-link-alt"></i><span>Ir a Nequi</span>
@@ -204,7 +204,8 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
         </div>
         <div class="subscription-sidebar-section">
           <a class="subscription-sidebar-link" href="closetaskscon.php">
-            <i class="fas fa-right-from-bracket"></i><span>Salir</span>
+            <!--<i class="fas fa-right-from-bracket"></i><span>Salir</span>-->
+            <i class="fas fa-right-from-bracket"></i><span data-i18n="sidebar_exit">Salir</span>
           </a>
         </div>
       </nav>
