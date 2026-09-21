@@ -68,7 +68,7 @@
             <input type="text" name="captcha" data-i18n-placeholder="req_captcha" placeholder="Ingrese el CAPTCHA" required>
             <div class="terms">
                 <input type="checkbox" id="terms" onclick="toggleSubmitButton()" required>
-                <label for="terms" data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
+                <label for="terms" data-i18n="req_terms">Acepto los <a for="terms" href="TermsConditions.php" target="_blank">términos y condiciones</a></label>
             </div>
             <button type="submit" class="btn-login" id="loginbutton" data-i18n="req_send" disabled>Enviar</button>
             <br><br>
@@ -82,7 +82,7 @@
             <p class="contact-question" data-i18n="req_questions">¿Alguna duda? Usa el Boton de WhatsApp</p>
             <p class="contact-email-line">
                 <span data-i18n="req_contact_email">Contáctenos al Email:</span>
-                <a href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
+                <a for="terms" href="mailto:adm@solicionespro.com">adm@solicionespro.com</a>
             </p>
         </form>
         </div>
