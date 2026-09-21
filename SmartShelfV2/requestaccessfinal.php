@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Acceso - C O R A</title>
+    <title>Solicitud de Acceso - CORA</title>
     <link rel="icon" href="GORA.ico" type="image/x-icon">
     <script src="head.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -68,7 +68,7 @@
             <input type="text" name="captcha" data-i18n-placeholder="req_captcha" placeholder="Ingrese el CAPTCHA" required>
             <div class="terms">
                 <input type="checkbox" id="terms" onclick="toggleSubmitButton()" required>
-                <label data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank" style="color: var(--accent) !important; text-decoration: underline;">términos y condiciones</a></label>
+                <label for="terms" data-i18n="req_terms">Acepto los <a href="TermsConditions.php" target="_blank" class="terms-link">términos y condiciones</a></label>
             </div>
             <button type="submit" class="btn-login" id="loginbutton" data-i18n="req_send" disabled>Enviar</button>
             <br><br>
