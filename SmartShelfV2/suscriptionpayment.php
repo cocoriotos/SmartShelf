@@ -298,6 +298,10 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
         </div>
   </div>
 </div>
+<a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span id="support-label">Soporte</span>
+    </a>
 </body>
 
 <script>
