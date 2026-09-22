@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>GORA — Tu Biblioteca Digital Inteligente</title>
 <link rel="icon" href="GORA.ico"/>
-<!-- <link rel="icon" href="SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/> -->
 <link rel="stylesheet" href="smartshelf.css"/>
 </head>
 <body>
@@ -183,7 +182,7 @@
 </section>
 
 <!-- VIDEO -->
-<section id="video">
+<!--<section id="video">
   <div class="tc">
     <div class="s-tag" data-i18n="video_tag">Demo</div>
     <h2 class="s-title" data-i18n="video_title">Míralo en acción</h2>
@@ -193,7 +192,7 @@
     <iframe src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0&modestbranding=1" title="GORA Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <p class="video-caption" data-i18n="video_caption">¿Tienes preguntas? Escríbenos por <a href="https://wa.me/573117592209" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">WhatsApp</a> y te ayudamos.</p>
-</section>
+</section>-->
 
 <!-- PRICING -->
 <section id="pricing">
