@@ -531,6 +531,76 @@ include "header.php";
             .module-workspace.sidebar-open .module-main {
                 margin-left: 262px;
             }
+
+            .section-card,
+            .hero-card {
+                padding: 18px 14px;
+                border-radius: 18px;
+            }
+
+            .section-heading {
+                font-size: 1.4rem;
+                line-height: 1.25;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                line-height: 1.45;
+                margin-bottom: 1.2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .form-control,
+            .form-group label,
+            .btn-success {
+                font-size: 16px;
+            }
+
+            .form-control {
+                min-height: 48px;
+                padding: 12px 14px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .content-card {
+                min-height: 0;
+                border-radius: 16px;
+            }
+
+            .grid-item-content {
+                padding: 18px;
+                gap: 14px;
+            }
+
+            .grid-item-title {
+                font-size: 1.1rem;
+            }
+
+            .grid-item-body p,
+            .content-link-btn,
+            .cards-sort label,
+            .cards-sort select {
+                font-size: 16px;
+            }
+
+            .cards-sort {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .cards-sort select {
+                width: 100%;
+                min-height: 48px;
+            }
         }
     </style>
     <script>

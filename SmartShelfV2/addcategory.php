@@ -354,6 +354,67 @@
             .module-workspace.sidebar-open .module-main {
                 margin-left: 172px;
             }
+
+            .section-card,
+            .hero-card {
+                padding: 18px 14px;
+                border-radius: 18px;
+            }
+
+            .section-heading {
+                font-size: 1.4rem;
+                line-height: 1.25;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                line-height: 1.45;
+                margin-bottom: 1.2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .form-control,
+            .form-group label,
+            .btn-success {
+                font-size: 16px;
+            }
+
+            .form-control {
+                min-height: 48px;
+                padding: 12px 14px;
+            }
+
+            .category-search-row {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 14px 0;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .content-card {
+                min-height: 0;
+                border-radius: 16px;
+            }
+
+            .grid-item-content {
+                padding: 18px;
+                gap: 14px;
+            }
+
+            .grid-item-title,
+            .grid-item-body p,
+            .action-button {
+                font-size: 16px;
+            }
         }
 
         .content-card:hover {

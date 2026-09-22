@@ -171,6 +171,45 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
         padding-left: 90px;
       }
 
+      .subscription-workspace .container1,
+      .subscription-workspace .col-md-12 {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .subscription-workspace .column-custom,
+      .subscription-workspace .card {
+        padding: 16px !important;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .subscription-workspace p {
+        font-size: 16px !important;
+        line-height: 1.55;
+      }
+
+      .subscription-workspace h3,
+      .subscription-workspace .col-form-label {
+        font-size: 1.35rem !important;
+        line-height: 1.3;
+      }
+
+      .subscription-workspace table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 16px;
+      }
+
+      .subscription-workspace input[type="button"] {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px !important;
+      }
+
       .whatsapp-fab {
         right: 16px;
         bottom: 16px;
