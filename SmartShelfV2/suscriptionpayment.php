@@ -249,6 +249,10 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
           </div>
           </center>
           <hr>
+          <a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span id="support-label">Soporte</span>
+    </a>
       </div>    
   </div>
 
@@ -296,10 +300,6 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
 
                 <!--<center><input type="submit" class="btn btn-success btn-block" name="save_link" value="Agregar Constancia de Pago"></input></center>-->
         </div>
-        <a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        <span id="support-label">Soporte</span>
-    </a>
   </div>
 </div>
 
