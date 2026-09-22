@@ -246,13 +246,13 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     <p> 3. Al realizar el pago dar click en el botón de abajo para enviar correo el archivo PDF o una imagen del pago realizado.</p>
                     <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 311 7592209</p>
 				        </div>
-          </div>
-          </center>
-          <hr>
-          <a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
+                <a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         <span id="support-label">Soporte</span>
     </a>
+          </div>
+          </center>
+          <hr>
       </div>    
   </div>
 
