@@ -145,9 +145,35 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
       display: none;
     }
 
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25d366;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.24);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp-fab img {
+      width: 30px;
+      height: 30px;
+    }
+
     @media (max-width: 768px) {
       .subscription-workspace {
         padding-left: 90px;
+      }
+
+      .whatsapp-fab {
+        right: 16px;
+        bottom: 16px;
       }
     }
 
