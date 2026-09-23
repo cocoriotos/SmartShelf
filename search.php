@@ -47,6 +47,24 @@
     width: 100%;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .search-container {
+        margin-bottom: 12px;
+    }
+
+    #searchInput {
+        min-height: 48px;
+        padding: 12px 42px 12px 38px;
+        font-size: 16px;
+    }
+
+    .total-cards {
+        margin-top: 10px;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
 </style>
 
 <script>

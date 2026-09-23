@@ -145,9 +145,74 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
       display: none;
     }
 
+    .whatsapp-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25d366;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.24);
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp-fab img {
+      width: 30px;
+      height: 30px;
+    }
+
     @media (max-width: 768px) {
       .subscription-workspace {
         padding-left: 90px;
+      }
+
+      .subscription-workspace .container1,
+      .subscription-workspace .col-md-12 {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .subscription-workspace .column-custom,
+      .subscription-workspace .card {
+        padding: 16px !important;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .subscription-workspace p {
+        font-size: 16px !important;
+        line-height: 1.55;
+      }
+
+      .subscription-workspace h3,
+      .subscription-workspace .col-form-label {
+        font-size: 1.35rem !important;
+        line-height: 1.3;
+      }
+
+      .subscription-workspace table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 16px;
+      }
+
+      .subscription-workspace input[type="button"] {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px !important;
+      }
+
+      .whatsapp-fab {
+        right: 16px;
+        bottom: 16px;
       }
     }
 
@@ -246,6 +311,10 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
                     <p> 3. Al realizar el pago dar click en el botón de abajo para enviar correo el archivo PDF o una imagen del pago realizado.</p>
                     <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 311 7592209</p>
 				        </div>
+                <a href="https://wa.me/573117592209" target="_blank" class="whatsapp-fab">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span id="support-label">Soporte</span>
+    </a>
           </div>
           </center>
           <hr>
@@ -298,6 +367,7 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
         </div>
   </div>
 </div>
+
 </body>
 
 <script>

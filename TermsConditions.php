@@ -56,7 +56,7 @@ include "sessionvalidation.php";*/
                     <p> 1. Pago por Nequi al número +57 305 4293185 o Paypal al YSXRZMT2AAG4G.</p> 
                     <p> 2. Tomar una imagen del pago realizado y convertirla a formato PDF</p>
                     <p> 3. Enviar correo el archivo PDF o una imágen del pago realizado desde la cuenta de correo con la que se registró.</p>
-                    <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 3117592209</p>
+                    <p> 4. Si tiene alguna duda, enviar correo al administrador: adm@solicionespro.com o WhatsApp: +57 3054293185</p>
 				        </div>
           </div>
           </center>
