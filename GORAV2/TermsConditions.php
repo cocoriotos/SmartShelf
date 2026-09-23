@@ -5,7 +5,7 @@ include "sessionvalidation.php";*/
 ?>
 <html lang="us">
 <head>
-<link rel="icon" href="SSCircleBackgroundWhite.ico" type="image/x-icon">
+<link rel="icon" href="GORA.ico" type="image/x-icon">
 <link rel="stylesheet" href="style_sheet.css"/>
 </head>
 <header>
@@ -44,7 +44,7 @@ include "sessionvalidation.php";*/
                     <center><p style="color: blue; font-weight: bold; font-size: 24px;"> Condiciones </p></center>
                     <br>
                     <p> 1. No incluir información sensitiva ni personal. No nos hacemos responsables del salvaguardar o uso de su información por terceros</p>
-                    <p> 2. Tratamiento de los datos bajo la modalidad de Habeas Data</p>
+                    <p> 2. Tratamiento de los datos bajo la modalidad de <a href="HabeasData.pdf" target="_blank" style="color: var(--accent) !important; text-decoration: underline;">Habeas Data</a></p>
                     <p> 3. No nos responsabilizamos por información que incite a la violencia física, psicológica, delitos informáticos o cualquier manifestación delictiva</p>
                     <p> 4. Opciones de valores por Suscripción: </p>
                     <<p><span class="destacado">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$20.000</span> Pesos Colombianos COP por Tres Meses</p>
