@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Si la petición no es un directorio real y tampoco un archivo real
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    
+    # Añade la extensión .php de forma interna
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
