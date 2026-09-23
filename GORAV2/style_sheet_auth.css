@@ -292,7 +292,7 @@ input[name="captcha"]::placeholder {
 
 
 .terms {
-  flex-direction: column;
+  /*flex-direction: column;*/
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -309,6 +309,7 @@ input[name="captcha"]::placeholder {
 }
 
 .terms label {
+  cursor: pointer;
   line-height: 1.4;
 }
 
@@ -320,6 +321,16 @@ input[name="captcha"]::placeholder {
 .terms a.terms-link:hover {
   color: var(--t1) !important;
 }
+
+.terms input[type="checkbox"] {
+    flex-shrink: 0; /* Evita que el checkbox se comprima o desaparezca */
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    margin-top: 4px;
+}
+
+
 
 .form .alertaError,
 .form .alertaExito {
