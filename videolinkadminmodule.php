@@ -54,20 +54,23 @@ include "header.php";
         .admin-wrapper {
             max-width: none;
             margin: 0;
-            padding: 32px 20px 64px;
+            padding: 0 20px 64px 0;
         }
 
         .module-workspace {
+            position: relative;
             display: block;
+            min-height: calc(100vh - var(--welcome-bottom));
         }
 
         .module-sidebar {
-            position: fixed;
-            top: var(--welcome-bottom);
+            position: absolute;
+            top: 0;
             left: 0;
             z-index: 1100;
             width: 68px;
-            height: calc(100vh - var(--welcome-bottom));
+            min-height: calc(100vh - var(--welcome-bottom));
+            height: 100%;
             overflow-y: auto;
             padding: 14px;
             background: #032642;
@@ -151,8 +154,16 @@ include "header.php";
             width: 240px;
         }
 
+        .module-sidebar.collapsed:hover {
+            width: 240px;
+        }
+
         .module-sidebar.collapsed .module-sidebar-link span {
             display: none;
+        }
+
+        .module-sidebar.collapsed:hover .module-sidebar-link span {
+            display: inline;
         }
 
         .module-sidebar.collapsed .module-sidebar-section-title {
@@ -163,6 +174,12 @@ include "header.php";
             justify-content: center;
             padding-left: 8px;
             padding-right: 8px;
+        }
+
+        .module-sidebar.collapsed:hover .module-sidebar-link {
+            justify-content: flex-start;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         .module-main {
@@ -481,7 +498,7 @@ include "header.php";
 
         @media (max-width: 768px) {
             .admin-wrapper {
-                padding: 24px 16px 48px 90px;
+                padding: 0 16px 48px 0;
             }
 
             .section-heading {
@@ -493,9 +510,9 @@ include "header.php";
             }
 
             .module-sidebar {
-                top: var(--welcome-bottom);
                 width: 68px;
-                height: calc(100vh - var(--welcome-bottom));
+                min-height: calc(100vh - var(--welcome-bottom));
+                height: 100%;
             }
 
             .module-sidebar-nav {
@@ -513,6 +530,76 @@ include "header.php";
 
             .module-workspace.sidebar-open .module-main {
                 margin-left: 262px;
+            }
+
+            .section-card,
+            .hero-card {
+                padding: 18px 14px;
+                border-radius: 18px;
+            }
+
+            .section-heading {
+                font-size: 1.4rem;
+                line-height: 1.25;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                line-height: 1.45;
+                margin-bottom: 1.2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .form-control,
+            .form-group label,
+            .btn-success {
+                font-size: 16px;
+            }
+
+            .form-control {
+                min-height: 48px;
+                padding: 12px 14px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .content-card {
+                min-height: 0;
+                border-radius: 16px;
+            }
+
+            .grid-item-content {
+                padding: 18px;
+                gap: 14px;
+            }
+
+            .grid-item-title {
+                font-size: 1.1rem;
+            }
+
+            .grid-item-body p,
+            .content-link-btn,
+            .cards-sort label,
+            .cards-sort select {
+                font-size: 16px;
+            }
+
+            .cards-sort {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .cards-sort select {
+                width: 100%;
+                min-height: 48px;
             }
         }
     </style>
@@ -1108,9 +1195,13 @@ function sortCards(sortKey) {
     });
 
     moduleCards.forEach(card => cardGrid.appendChild(card));
-    moduleCurrentIndex = 0;
-    moduleCards.forEach(card => card.style.display = 'none');
-    loadMoreModuleCards();
+    if (window.searchCards) {
+        window.searchCards();
+    } else {
+        moduleCurrentIndex = 0;
+        moduleCards.forEach(card => card.style.display = 'none');
+        loadMoreModuleCards();
+    }
 }
 
 function loadMoreModuleCards() {
@@ -1127,13 +1218,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cardSort) {
         cardSort.addEventListener('change', () => sortCards(cardSort.value));
         sortCards(cardSort.value);
-    } else {
+    } else if (!window.searchCards) {
         loadMoreModuleCards(); // Mostrar el primer bloque
     }
 });
 
 window.addEventListener("scroll", () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+    if (!window.searchCards && (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
         loadMoreModuleCards();
     }
 });
