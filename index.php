@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>GORA — Tu Biblioteca Digital Inteligente</title>
+<title>GORA— Tu Biblioteca Digital Inteligente</title>
 <link rel="icon" href="GORA.ico"/>
-<!-- <link rel="icon" href="SmartShelfUsefulContentLibraryDarrkLightGreen.ico"/> -->
 <link rel="stylesheet" href="smartshelf.css"/>
 </head>
 <body>
@@ -31,8 +30,8 @@
       <button class="lb" onclick="setLang('en')">EN</button>
       <button class="lb" onclick="setLang('pt')">PT</button>
     </div>
-    <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/videotrackerauth.php" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="nav_login">Ingresar</a>
-    <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="nav_cta">Prueba Gratis</a>
+    <a href="https://solicionespro.com/GORA/GORAV2/videotrackerauth.php" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="nav_login">Ingresar</a>
+    <a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="nav_cta">Prueba Gratis</a>
   </div>
   <button class="ham" onclick="toggleMenu()" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -48,8 +47,8 @@
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.001-3.176-1.24-6.165-3.48-8.448z" fill="#25D366"/></svg>
     Soporte
   </a>
-  <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/videotrackerauth.php" target="_blank" rel="noopener" data-i18n="nav_login">Ingresar</a>
-  <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" style="text-align:center;" data-i18n="nav_cta_free">Comenzar Gratis — 30 días</a>
+  <a href="https://solicionespro.com/GORA/GORAV2/videotrackerauth.php" target="_blank" rel="noopener" data-i18n="nav_login">Ingresar</a>
+  <a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" style="text-align:center;" data-i18n="nav_cta_free">Comenzar Gratis — 30 días</a>
   <div class="mob-lang">
     <button class="lb on" onclick="setLang('es');toggleMenu()">ES</button>
     <button class="lb" onclick="setLang('en');toggleMenu()">EN</button>
@@ -71,7 +70,7 @@
     </h1>
     <p class="hero-sub fu fu3" data-i18n="hero_sub">¿Cuántos links perdidos tienes hoy? GORA centraliza todos tus contenidos favoritos de internet en un solo lugar, con búsqueda instantánea y acceso desde cualquier dispositivo.</p>
     <div class="hero-ctas fu fu4">
-      <a href="https://solicionespro.com/SmartShelf/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-i18n="hero_cta1">Comenzar Gratis — 30 días ›</a>
+      <a href="https://solicionespro.com/GORA/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-i18n="hero_cta1">Comenzar Gratis — 30 días ›</a>
       <a href="#video" class="btn-outline-lg" data-i18n="hero_cta2">Ver Demo</a>
     </div>
     <div class="hero-stats fu fu4">
@@ -183,7 +182,7 @@
 </section>
 
 <!-- VIDEO -->
-<section id="video">
+<!--<section id="video">
   <div class="tc">
     <div class="s-tag" data-i18n="video_tag">Demo</div>
     <h2 class="s-title" data-i18n="video_title">Míralo en acción</h2>
@@ -193,7 +192,7 @@
     <iframe src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0&modestbranding=1" title="GORA Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <p class="video-caption" data-i18n="video_caption">¿Tienes preguntas? Escríbenos por <a href="https://wa.me/573117592209" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">WhatsApp</a> y te ayudamos.</p>
-</section>
+</section>--> 
 
 <!-- PRICING -->
 <section id="pricing">
@@ -214,7 +213,7 @@
         <li class="p-feat"><span class="p-chk">✓</span><span data-i18n="pfeat3">Buscador inteligente</span></li>
         <li class="p-feat"><span class="p-chk">✓</span><span data-i18n="pfeat4">Acceso desde cualquier dispositivo</span></li>
       </ul>
-      <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;" data-i18n="plan_btn">Comenzar ›</a>
+      <a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;" data-i18n="plan_btn">Comenzar ›</a>
     </div>
     <div class="p-card reveal">
       <div class="p-plan" data-i18n="plan2_name">Semestral</div>
@@ -228,7 +227,7 @@
         <li class="p-feat"><span class="p-chk">✓</span><span data-i18n="pfeat4">Acceso desde cualquier dispositivo</span></li>
         <li class="p-feat"><span class="p-chk">✓</span><span data-i18n="pfeat5">Tutoriales y soporte prioritario</span></li>
       </ul>
-      <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;" data-i18n="plan_btn">Comenzar ›</a>
+      <a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;" data-i18n="plan_btn">Comenzar ›</a>
     </div>
     <div class="p-card feat reveal">
       <div class="p-badge" data-i18n="plan3_badge">Más popular</div>
@@ -244,7 +243,7 @@
         <li class="p-feat"><span class="p-chk">✓</span><span data-i18n="pfeat5">Tutoriales y soporte prioritario</span></li>
         <li class="p-feat"><span class="p-chk">✓</span><span data-i18n="pfeat6">Acceso anticipado a nuevas funciones</span></li>
       </ul>
-      <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="plan_btn">Comenzar ›</a>
+      <a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="plan_btn">Comenzar ›</a>
     </div>
   </div>
   <p style="text-align:center;margin-top:28px;font-size:.82rem;color:var(--t3);" data-i18n="price_note">Todos los planes incluyen 30 días de prueba gratuita. Sin tarjeta de crédito.</p>
@@ -271,7 +270,7 @@
   <h2 class="cta-title" data-i18n="cta_title">Deja de perder links.<br>Empieza hoy, gratis.</h2>
   <p class="cta-sub" data-i18n="cta_sub">30 días para explorar todo GORA sin restricciones. Tu conocimiento merece un mejor hogar.</p>
   <div class="cta-btns">
-    <a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-i18n="cta_btn1">Crear mi cuenta gratis ›</a>
+    <a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-i18n="cta_btn1">Crear mi cuenta gratis ›</a>
     <a href="https://wa.me/573117592209" target="_blank" rel="noopener" class="btn-outline-lg">
       <span class="wa-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.001-3.176-1.24-6.165-3.48-8.448zM12.045 21.785h-.005c-1.774 0-3.513-.476-5.031-1.378l-.361-.214-3.741.975.997-3.63-.235-.374a9.859 9.859 0 01-1.517-5.267c.003-5.45 4.46-9.883 9.943-9.883 2.654 0 5.145 1.031 7.021 2.902a9.825 9.825 0 012.908 6.998c-.003 5.452-4.462 9.871-9.98 9.871zm5.465-7.398c-.3-.149-1.773-.873-2.048-.972-.274-.099-.474-.149-.674.149-.198.297-.773.972-.947 1.17-.174.199-.349.223-.647.075-.3-.149-1.266-.465-2.411-1.483-.892-.792-1.492-1.77-1.668-2.069-.174-.298-.019-.459.131-.607.134-.133.298-.348.447-.521.15-.174.199-.298.299-.496.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.923-2.218-.242-.58-.487-.501-.674-.51l-.573-.01c-.198 0-.522.074-.796.372-.273.297-1.045 1.02-1.045 2.487s1.07 2.884 1.219 3.082c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.627.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.174-1.413-.074-.124-.273-.198-.573-.348z" fill="#25D366"/></svg></span>
       <span data-i18n="cta_btn2">Hablar con soporte</span>
@@ -286,10 +285,10 @@
       <div class="f-logo"><img src="GORAarmony.png" alt="GORAarmony"/></div>
       <div class="f-tag" data-i18n="f_tag">Tu biblioteca digital inteligente. Centraliza, organiza y accede a todos tus contenidos en un solo lugar.</div>
       <div class="socials">
-        <a href="https://www.instagram.com/smartshelfcol/" target="_blank" rel="noopener" class="soc" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.facebook.com/profile.php?id=61575835265080" target="_blank" rel="noopener" class="soc" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" target="_blank" rel="noopener" class="soc" title="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" stroke="currentColor" stroke-width="2"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-        <a href="https://www.tiktok.com/@smartshelfcol" target="_blank" rel="noopener" class="soc" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.instagram.com/goracoloficial" target="_blank" rel="noopener" class="soc" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.facebook.com/people/Gora-App/pfbid032TPGC76as7biVs9jRwgr48jaQZNpCTKdkmrVioJxmvsv4YdGvU8FMmr31NoXzQ85l/" target="_blank" rel="noopener" class="soc" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.youtube.com/@GORAColOficial" target="_blank" rel="noopener" class="soc" title="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" stroke="currentColor" stroke-width="2"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.tiktok.com/@goracoloficial" target="_blank" rel="noopener" class="soc" title="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="https://wa.me/573117592209" target="_blank" rel="noopener" class="soc" title="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.445h.006c6.585 0 11.946-5.336 11.949-11.896.001-3.176-1.24-6.165-3.48-8.448z" fill="currentColor"/></svg></a>
       </div>
     </div>
@@ -299,7 +298,7 @@
         <li><a href="#features" data-i18n="nav_features">Características</a></li>
         <li><a href="#how" data-i18n="nav_how">Cómo Funciona</a></li>
         <li><a href="#pricing" data-i18n="nav_pricing">Precios</a></li>
-        <li><a href="https://solicionespro.com/SmartShelf/SmartShelfV2/requestaccessfinal.php" target="_blank" rel="noopener" data-i18n="f_trial">Prueba Gratis</a></li>
+        <li><a href="https://solicionespro.com/GORA/GORAV2/requestaccessfinal.php" target="_blank" rel="noopener" data-i18n="f_trial">Prueba Gratis</a></li>
       </ul>
     </div>
     <div>
@@ -308,16 +307,16 @@
         <li><a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" target="_blank" rel="noopener" data-i18n="f_tutorials">Tutoriales</a></li>
         <li><a href="https://wa.me/573117592209" target="_blank" rel="noopener" data-i18n="f_whatsapp">WhatsApp</a></li>
         <li><a href="https://wa.me/573117592209" target="_blank" rel="noopener" data-i18n="f_contact">Contáctenos</a></li>
-        <li><a href="https://solicionespro.com/SmartShelf/SmartShelfV2/TermsConditions.php" target="_blank" rel="noopener" data-i18n="f_terms">Términos y Condiciones</a></li>
+        <li><a href="https://solicionespro.com/GORA/GORAV2/TermsConditions.php" target="_blank" rel="noopener" data-i18n="f_terms">Términos y Condiciones</a></li>
       </ul>
     </div>
     <div>
       <div class="f-col-title" data-i18n="f_follow">Síguenos</div>
       <ul class="f-links">
-        <li><a href="https://www.instagram.com/smartshelfcol/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61575835265080" target="_blank" rel="noopener">Facebook</a></li>
-        <li><a href="https://www.tiktok.com/@smartshelfcol" target="_blank" rel="noopener">TikTok</a></li>
-        <li><a href="https://www.youtube.com/watch?v=rzKkmjfY7nk" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.instagram.com/goracoloficial" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/people/Gora-App/pfbid032TPGC76as7biVs9jRwgr48jaQZNpCTKdkmrVioJxmvsv4YdGvU8FMmr31NoXzQ85l/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@goracoloficial" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.youtube.com/@GORAColOficial" target="_blank" rel="noopener">YouTube</a></li>
       </ul>
     </div>
   </div>
