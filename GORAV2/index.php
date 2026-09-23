@@ -192,7 +192,7 @@
     <iframe src="https://www.youtube.com/embed/rzKkmjfY7nk?rel=0&modestbranding=1" title="GORA Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <p class="video-caption" data-i18n="video_caption">¿Tienes preguntas? Escríbenos por <a href="https://wa.me/573117592209" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">WhatsApp</a> y te ayudamos.</p>
-</section>-->
+</section>--> 
 
 <!-- PRICING -->
 <section id="pricing">
