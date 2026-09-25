@@ -7,4 +7,4 @@
     
     # Añade la extensión .php de forma interna
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
-</IfModule>
+</IfModule> 

@@ -260,10 +260,10 @@ $suscriptiondue = $_SESSION['suscriptiondue'];
         </div>
         <div class="subscription-sidebar-section">
           <div class="subscription-sidebar-title">Documentación</div>
-          <a class="subscription-sidebar-link" href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank">
+          <!--<a class="subscription-sidebar-link" href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank">
             <i class="fas fa-play-circle"></i><span>Tutoriales</span>
-          </a>
-          <a class="subscription-sidebar-link" href="UCLToolManualDelUsuario2025.pdf" target="_blank">
+          </a>-->
+          <a class="subscription-sidebar-link" href="GORAToolManualDelUsuario2026.pdf" target="_blank">
             <i class="fas fa-book-open"></i><span>Manual</span>
           </a>
         </div>

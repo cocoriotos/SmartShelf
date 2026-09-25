@@ -865,10 +865,10 @@ include "header.php";
                         </div>
                         <div class="module-sidebar-section">
                             <div class="module-sidebar-section-title" data-i18n="sidebar_documentation">Documentación</div>
-                            <a class="module-sidebar-link" href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank">
+                            <!--<a class="module-sidebar-link" href="https://www.youtube.com/playlist?list=PLRQ5KF9igtB2GRlHLSP6Uwx1lzy387Wz5" target="_blank">
                                 <i class="fas fa-play-circle"></i><span data-i18n="header_tutorials">Tutoriales</span>
-                            </a>
-                            <a class="module-sidebar-link" href="UCLToolManualDelUsuario2025.pdf" target="_blank">
+                            </a>-->
+                            <a class="module-sidebar-link" href="GORAToolManualDelUsuario2026.pdf" target="_blank">
                                 <i class="fas fa-book-open"></i><span data-i18n="header_manual">Manual</span>
                             </a>
                         </div>
